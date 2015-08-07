@@ -2,30 +2,44 @@ hosts:
   cr1-eqiad.wikimedia.org:
     template: cr
     site: eqiad
+    data:
+       mgmt_ip: [ 10.65.0.12/16, 10.65.0.13/16 ]
 
   cr2-eqiad.wikimedia.org:
     template: cr
     site: eqiad
+    data:
+       mgmt_ip: [ 10.65.0.14/16, 10.65.0.15/16 ]
 
   cr1-codfw.wikimedia.org:
     template: cr
     site: codfw
+    data:
+       mgmt_ip: [ 10.193.0.10/16, 10.193.0.11/16 ]
 
   cr2-codfw.wikimedia.org:
     template: cr
     site: codfw
+    data:
+       mgmt_ip: [ 10.193.0.12/16, 10.193.0.13/16 ]
 
   cr1-ulsfo.wikimedia.org:
     template: cr
     site: ulsfo
+    data:
+       mgmt_ip: [ 10.128.128.2/17 ]
 
   cr2-ulsfo.wikimedia.org:
     template: cr
     site: ulsfo
+    data:
+       mgmt_ip: [ 10.128.128.3/17 ]
 
   cr1-esams.wikimedia.org:
     template: cr
     site: esams
+    data:
+       mgmt_ip: [ 10.21.0.116/24 ]
 
   cr2-knams.wikimedia.org:
     template: cr
@@ -51,7 +65,7 @@ commondata:
 sitedata:
     eqiad:
        confed: 65001
-       backup_router: 10.65.0.1
+       mgmt_gw: 10.65.0.1
        customers:
          - 64700 # fundraising-eqiad
        bgp_out:
@@ -65,7 +79,7 @@ sitedata:
          - 208.80.154.139
     codfw:
        confed: 65002
-       backup_router: 10.193.0.1
+       mgmt_gw: 10.193.0.1
        customers:
          - 64701 # fundraising-codfw
        bgp_out:
@@ -78,7 +92,7 @@ sitedata:
          - 10.192.17.6
     ulsfo:
        confed: 65004
-       backup_router: 10.128.128.1
+       mgmt_gw: 10.128.128.1
        customers:
          - 11820 # WMF HQ
        bgp_out:
@@ -91,7 +105,7 @@ sitedata:
     esams:
        asn: 43821
        confed:
-       backup_router: 10.21.0.1
+       mgmt_gw: 10.21.0.1
        bgp_out:
          - 91.198.174.0/24
          - 185.15.56.0/22
