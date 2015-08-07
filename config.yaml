@@ -51,6 +51,7 @@ commondata:
 sitedata:
     eqiad:
        confed: 65001
+       backup_router: 10.65.0.1
        customers:
          - 64700 # fundraising-eqiad
        bgp_out:
@@ -64,6 +65,7 @@ sitedata:
          - 208.80.154.139
     codfw:
        confed: 65002
+       backup_router: 10.193.0.1
        customers:
          - 64701 # fundraising-codfw
        bgp_out:
@@ -76,6 +78,7 @@ sitedata:
          - 10.192.17.6
     ulsfo:
        confed: 65004
+       backup_router: 10.128.128.1
        customers:
          - 11820 # WMF HQ
        bgp_out:
@@ -88,6 +91,7 @@ sitedata:
     esams:
        asn: 43821
        confed:
+       backup_router: 10.21.0.1
        bgp_out:
          - 91.198.174.0/24
          - 185.15.56.0/22
