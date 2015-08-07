@@ -1,0 +1,16 @@
+prefix-list fundraising-eqiad4 {
+    10.64.40.0/23;
+    208.80.154.218/31;
+    208.80.155.0/27;
+}
+policy-statement BGP_fundraising_in {
+    term address {
+        from {
+            family inet;
+            protocol bgp;
+            prefix-list-filter fundraising-eqiad4 orlonger;
+        }
+        then accept;
+    }
+    then reject;
+}

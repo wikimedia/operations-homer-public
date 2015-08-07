@@ -1,0 +1,24 @@
+as-path AS11820 "11820+$";
+prefix-list AS11820_ip4 {
+    198.73.209.0/24;
+}
+prefix-list AS11820_ip6 {
+    2620:62:c000::/48;
+}
+policy-statement AS11820_in {
+    term routes4 {
+        from {
+            as-path AS11820;
+            prefix-list AS11820_ip4;
+        }
+        then next policy;
+    }
+    term routes6 {
+        from {
+            as-path AS11820;
+            prefix-list AS11820_ip6;
+        }
+        then next policy;
+    }
+    then reject;
+}
