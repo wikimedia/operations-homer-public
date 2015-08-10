@@ -103,8 +103,10 @@ sitedata:
        customers:
          - 64701 # fundraising-codfw
        bgp_out:
+         #- 208.80.152.0/22
          - 208.80.152.0/23
        bgp6_out:
+         #- 2620:0:860::/46
          - 2620:0:860::/48
        lvs_secondary:
          - 10.192.17.4
@@ -113,8 +115,10 @@ sitedata:
     eqdfw:
        confed: 65002
        bgp_out:
+         #- 208.80.152.0/22
          - 208.80.152.0/23
        bgp6_out:
+         #- 2620:0:860::/46
          - 2620:0:860::/48
     ulsfo:
        confed: 65004
