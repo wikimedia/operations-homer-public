@@ -1,4 +1,5 @@
 hosts:
+  # core routers
   cr1-eqiad.wikimedia.org:
     template: cr
     site: eqiad
@@ -57,6 +58,27 @@ hosts:
 
   cr2-knams.wikimedia.org:
     template: cr
+    site: esams
+
+  cr2-knams.wikimedia.org:
+    template: cr
+    site: esams
+
+  # msw/mr
+  mr1-eqiad.wikimedia.org:
+    template: mr
+    site: eqiad
+
+  msw1-eqiad.mgmt.eqiad.wmnet:
+    template: msw
+    site: eqiad
+
+  mr1-ulsfo.wikimedia.org:
+    template: mr
+    site: ulsfo
+
+  mr1-esams.wikimedia.org:
+    template: mr
     site: esams
 
 commondata:
