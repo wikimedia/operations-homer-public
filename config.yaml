@@ -64,7 +64,16 @@ hosts:
     template: cr
     site: esams
 
-  # msw/mr
+  # peering switches
+  psw1-eqiad.mgmt.eqiad.wmnet:
+    template: generic
+    site: eqiad
+
+  psw2-eqiad.mgmt.eqiad.wmnet:
+    template: generic
+    site: eqiad
+
+  # management switches/routers
   mr1-eqiad.wikimedia.org:
     template: mr
     site: eqiad
