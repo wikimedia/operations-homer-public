@@ -82,6 +82,14 @@ hosts:
     template: msw
     site: eqiad
 
+  mr1-codfw.wikimedia.org:
+    template: mr
+    site: codfw
+
+  msw1-codfw.mgmt.codfw.wmnet:
+    template: msw
+    site: codfw
+
   mr1-ulsfo.wikimedia.org:
     template: mr
     site: ulsfo
