@@ -141,6 +141,15 @@ hosts:
     template: mr
     site: esams
 
+  # payments firewall
+  #pfw-eqiad.wikimedia.org:
+  #  template: pfw
+  #  site: eqiad
+
+  #pfw-codfw.wikimedia.org:
+  #  template: pfw
+  #  site: codfw
+
 commondata:
     asn: 14907
     lvs:
