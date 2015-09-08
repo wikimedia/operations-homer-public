@@ -54,10 +54,6 @@ hosts:
     template: cr
     site: esams
 
-  cr2-knams.wikimedia.org:
-    template: cr
-    site: esams
-
   # peering switches
   psw1-eqiad.mgmt.eqiad.wmnet:
     template: generic
