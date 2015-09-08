@@ -67,6 +67,55 @@ hosts:
     template: generic
     site: eqiad
 
+  # access switches
+  asw-a-eqiad.mgmt.eqiad.wmnet:
+    template: asw
+    site: eqiad
+
+  asw2-a5-eqiad.mgmt.eqiad.wmnet:
+    template: asw
+    site: eqiad
+
+  asw-b-eqiad.mgmt.eqiad.wmnet:
+    template: asw
+    site: eqiad
+
+  asw-c-eqiad.mgmt.eqiad.wmnet:
+    template: asw
+    site: eqiad
+
+  asw-d-eqiad.mgmt.eqiad.wmnet:
+    template: asw
+    site: eqiad
+
+  asw-a-codfw.mgmt.codfw.wmnet:
+    template: asw
+    site: codfw
+
+  asw-b-codfw.mgmt.codfw.wmnet:
+    template: asw
+    site: codfw
+
+  asw-c-codfw.mgmt.codfw.wmnet:
+    template: asw
+    site: codfw
+
+  asw-d-codfw.mgmt.codfw.wmnet:
+    template: asw
+    site: codfw
+
+  csw2-esams.mgmt.esams.wmnet:
+    template: asw
+    site: esams
+
+  asw-esams.mgmt.esams.wmnet:
+    template: asw
+    site: esams
+
+  asw-ulsfo.mgmt.ulsfo.wmnet:
+    template: asw
+    site: ulsfo
+
   # management switches/routers
   mr1-eqiad.wikimedia.org:
     template: mr
