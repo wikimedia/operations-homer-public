@@ -12,9 +12,9 @@ hosts:
     data:
        mgmt_ip: [ 10.65.0.14/16, 10.65.0.15/16 ]
 
-#  cr1-eqord.wikimedia.org:
-#    template: cr
-#    site: eqord
+  cr1-eqord.wikimedia.org:
+    template: cr
+    site: eqord
 
   cr1-codfw.wikimedia.org:
     template: cr
