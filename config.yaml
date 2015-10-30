@@ -59,10 +59,6 @@ hosts:
     template: generic
     site: eqiad
 
-  psw2-eqiad.mgmt.eqiad.wmnet:
-    template: generic
-    site: eqiad
-
   # access switches
   asw-a-eqiad.mgmt.eqiad.wmnet:
     template: asw
