@@ -1,0 +1,15 @@
+prefix-list kubernetes-service-ips {
+    192.168.28.0/24;
+    192.168.29.0/24;
+}
+policy-statement kubernetes_import {
+    term service_IPs {
+        from {
+            family inet;
+            protocol bgp;
+            prefix-list-filter kubernetes-service-ips longer;
+        }
+        then accept;
+    }
+    then reject;
+}
