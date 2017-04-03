@@ -60,11 +60,6 @@ hosts:
     template: cr
     site: knams
 
-  # peering switches
-  psw1-eqiad.mgmt.eqiad.wmnet:
-    template: generic
-    site: eqiad
-
   # access switches
   asw-a-eqiad.mgmt.eqiad.wmnet:
     template: asw
