@@ -1,8 +1,8 @@
 prefix-list kubernetes-pod-ips4 {
-    10.64.64.0/21;
+    10.192.64.0/21;
 }
 prefix-list kubernetes-pod-ips6 {
-    2620:0:861:cabe::/64;
+    2620:0:860:cabe::/64;
 }
 policy-statement kubernetes_import {
     term pod_ips4 {

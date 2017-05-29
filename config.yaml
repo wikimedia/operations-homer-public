@@ -170,6 +170,7 @@ sitedata:
        mgmt_gw: 10.65.0.1
        customers:
          - 64601 # k8s-eqiad
+         - 64603 # k8s-staging-eqiad
          - 64700 # fundraising-eqiad
        bgp_out:
          - 208.80.152.0/22
@@ -190,6 +191,7 @@ sitedata:
        confed: 65002
        mgmt_gw: 10.193.0.1
        customers:
+         - 64602 # k8s-codfw
          - 64701 # fundraising-codfw
        bgp_out:
          #- 208.80.152.0/22
