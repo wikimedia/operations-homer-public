@@ -77,10 +77,6 @@ hosts:
     template: asw
     site: eqiad
 
-  asw-d-eqiad.mgmt.eqiad.wmnet:
-    template: asw
-    site: eqiad
-
   asw2-d-eqiad.mgmt.eqiad.wmnet:
     template: asw
     site: eqiad
