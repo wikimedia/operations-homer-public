@@ -56,6 +56,12 @@ hosts:
     data:
        mgmt_ip: [ 10.21.0.117/24, 10.21.0.118/24 ]
 
+  cr3-esams.wikimedia.org:
+    template: cr
+    site: esams
+    data:
+       mgmt_ip: [ 10.21.0.119/24, 10.21.0.120/24 ]
+
   cr2-knams.wikimedia.org:
     template: cr
     site: knams
