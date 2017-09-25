@@ -226,7 +226,6 @@ sitedata:
          - 10.128.0.13
          - 10.128.0.14
     esams:
-       asn: 43821
        confed:
        mgmt_gw: 10.21.0.1
        bgp_out:
@@ -245,7 +244,6 @@ sitedata:
          - 10.20.0.13
          - 10.20.0.14
     knams:
-       asn: 43821
        confed:
        mgmt_gw: 10.21.0.1
        bgp_out:
