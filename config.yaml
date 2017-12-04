@@ -66,6 +66,12 @@ hosts:
     template: cr
     site: knams
 
+  cr1-eqsin.wikimedia.org:
+    template: cr
+    site: eqsin
+    data:
+       mgmt_ip: [ 10.132.128.2/17, 10.132.128.3/17 ]
+
   # access switches
   asw-a-eqiad.mgmt.eqiad.wmnet:
     template: asw
@@ -214,6 +220,13 @@ sitedata:
          - 198.35.26.0/23
        bgp6_out:
          - 2620:0:863::/48
+    eqsin:
+       confed: 65005
+       mgmt_gw: 10.132.128.1
+       bgp_out:
+         - 103.102.166.0/24
+       bgp6_out:
+         - 2001:df2:e500::/48
     esams:
        confed:
        mgmt_gw: 10.21.0.1
