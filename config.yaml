@@ -77,6 +77,10 @@ hosts:
     template: asw
     site: eqiad
 
+  asw2-a-eqiad.mgmt.eqiad.wmnet:
+    template: asw
+    site: eqiad
+
   asw2-a5-eqiad.mgmt.eqiad.wmnet:
     template: asw
     site: eqiad
@@ -85,7 +89,15 @@ hosts:
     template: asw
     site: eqiad
 
+  asw2-b-eqiad.mgmt.eqiad.wmnet:
+    template: asw
+    site: eqiad
+
   asw-c-eqiad.mgmt.eqiad.wmnet:
+    template: asw
+    site: eqiad
+
+  asw2-c-eqiad.mgmt.eqiad.wmnet:
     template: asw
     site: eqiad
 
@@ -117,7 +129,7 @@ hosts:
     template: asw
     site: esams
 
-  asw-ulsfo.mgmt.ulsfo.wmnet:
+  asw2-ulsfo.mgmt.ulsfo.wmnet:
     template: asw
     site: ulsfo
 
