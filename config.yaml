@@ -12,7 +12,7 @@ hosts:
     data:
        mgmt_ip: [ 10.65.0.14/16, 10.65.0.15/16 ]
 
-  cr1-eqord.wikimedia.org:
+  cr2-eqord.wikimedia.org:
     template: cr
     site: eqord
 
@@ -28,17 +28,17 @@ hosts:
     data:
        mgmt_ip: [ 10.193.0.12/16, 10.193.0.13/16 ]
 
-  cr1-eqdfw.wikimedia.org:
+  cr2-eqdfw.wikimedia.org:
     template: cr
     site: eqdfw
 
-  cr1-ulsfo.wikimedia.org:
+  cr3-ulsfo.wikimedia.org:
     template: cr
     site: ulsfo
     data:
        mgmt_ip: [ 10.128.128.2/17 ]
 
-  cr2-ulsfo.wikimedia.org:
+  cr4-ulsfo.wikimedia.org:
     template: cr
     site: ulsfo
     data:
