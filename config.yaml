@@ -36,13 +36,13 @@ hosts:
     template: cr
     site: ulsfo
     data:
-       mgmt_ip: [ 10.128.128.2/17 ]
+      mgmt_junos: True # Separate mgmt interface in special routing instance
 
   cr4-ulsfo.wikimedia.org:
     template: cr
     site: ulsfo
     data:
-       mgmt_ip: [ 10.128.128.3/17 ]
+      mgmt_junos: True # Separate mgmt interface in special routing instance
 
   cr1-esams.wikimedia.org:
     template: cr
