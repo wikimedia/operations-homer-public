@@ -73,6 +73,13 @@ hosts:
     data:
        mgmt_ip: [ 10.132.128.2/17, 10.132.128.3/17 ]
 
+  cr2-eqsin.wikimedia.org:
+    template: cr
+    site: eqsin
+    data:
+       mgmt_junos: True # Separate mgmt interface in special routing instance
+
+
   # access switches
   asw-a-eqiad.mgmt.eqiad.wmnet:
     template: asw
