@@ -84,14 +84,26 @@ hosts:
   asw2-a-eqiad.mgmt.eqiad.wmnet:
     template: asw
     site: eqiad
+    data:
+      license_keys:
+        - ***REMOVED***
+        - ***REMOVED***
 
   asw2-b-eqiad.mgmt.eqiad.wmnet:
     template: asw
     site: eqiad
+    data:
+      license_keys:
+        - ***REMOVED***
+        - ***REMOVED***
 
   asw2-c-eqiad.mgmt.eqiad.wmnet:
     template: asw
     site: eqiad
+    data:
+      license_keys:
+        - ***REMOVED***
+        - ***REMOVED***
 
   asw2-d-eqiad.mgmt.eqiad.wmnet:
     template: asw
