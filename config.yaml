@@ -81,27 +81,11 @@ hosts:
 
 
   # access switches
-  asw-a-eqiad.mgmt.eqiad.wmnet:
-    template: asw
-    site: eqiad
-
   asw2-a-eqiad.mgmt.eqiad.wmnet:
     template: asw
     site: eqiad
 
-  asw2-a5-eqiad.mgmt.eqiad.wmnet:
-    template: asw
-    site: eqiad
-
-  asw-b-eqiad.mgmt.eqiad.wmnet:
-    template: asw
-    site: eqiad
-
   asw2-b-eqiad.mgmt.eqiad.wmnet:
-    template: asw
-    site: eqiad
-
-  asw-c-eqiad.mgmt.eqiad.wmnet:
     template: asw
     site: eqiad
 
@@ -140,6 +124,10 @@ hosts:
   asw2-ulsfo.mgmt.ulsfo.wmnet:
     template: asw
     site: ulsfo
+
+  asw1-eqsin.mgmt.eqsin.wmnet:
+    template: asw
+    site: eqsin
 
   # management switches/routers
   mr1-eqiad.wikimedia.org:
