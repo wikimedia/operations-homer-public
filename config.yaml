@@ -157,6 +157,8 @@ hosts:
   msw1-codfw.mgmt.codfw.wmnet:
     template: msw
     site: codfw
+    data:
+        lldp_disabled: ['ge-0/0/32.0']
 
   mr1-ulsfo.wikimedia.org:
     template: mr
