@@ -212,12 +212,14 @@ sitedata:
          - 2620:0:860::/46
        ping_offload_vip: 208.80.154.224/32
        ping_offload_redirect: 10.64.32.31
+       central_syslog: syslog.eqiad.wmnet
     eqord:
        confed: 65001
        bgp_out:
          - 208.80.152.0/22
        bgp6_out:
          - 2620:0:860::/46
+       central_syslog: syslog.eqiad.wmnet
     codfw:
        confed: 65002
        mgmt_gw: 10.193.0.1
@@ -232,6 +234,7 @@ sitedata:
          - 2620:0:860::/48
        ping_offload_vip: 208.80.153.224/32
        ping_offload_redirect: 10.192.0.22
+       central_syslog: syslog.codfw.wmnet
     eqdfw:
        confed: 65002
        bgp_out:
@@ -240,6 +243,7 @@ sitedata:
        bgp6_out:
          #- 2620:0:860::/46
          - 2620:0:860::/48
+       central_syslog: syslog.codfw.wmnet
     ulsfo:
        confed: 65004
        mgmt_gw: 10.128.128.1
@@ -249,6 +253,7 @@ sitedata:
          - 198.35.26.0/23
        bgp6_out:
          - 2620:0:863::/48
+       central_syslog: syslog.codfw.wmnet
     eqsin:
        confed: 65005
        mgmt_gw: 10.132.128.1
@@ -256,6 +261,7 @@ sitedata:
          - 103.102.166.0/24
        bgp6_out:
          - 2001:df2:e500::/48
+       central_syslog: syslog.codfw.wmnet
     esams:
        confed:
        mgmt_gw: 10.21.0.1
@@ -271,6 +277,7 @@ sitedata:
          - 91.198.174.224/28
        lvs6:
          - 2620:0:862:ed1a::/64
+       central_syslog: syslog.eqiad.wmnet
     knams:
        confed:
        mgmt_gw: 10.21.0.1
@@ -286,3 +293,4 @@ sitedata:
          - 91.198.174.224/28
        lvs6:
          - 2620:0:862:ed1a::/64
+       central_syslog: syslog.eqiad.wmnet
