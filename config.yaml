@@ -154,6 +154,10 @@ hosts:
     template: mr
     site: codfw
 
+  mr1-eqsin.wikimedia.org:
+    template: mr
+    site: eqsin
+
   msw1-codfw.mgmt.codfw.wmnet:
     template: msw
     site: codfw
