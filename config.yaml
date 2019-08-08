@@ -162,7 +162,7 @@ hosts:
     template: msw
     site: codfw
     data:
-        lldp_disabled: ['ge-0/0/32.0']
+        lldp_disabled: ['ge-0/0/32']
 
   mr1-ulsfo.wikimedia.org:
     template: mr
