@@ -1,0 +1,89 @@
+eqiad:
+   confed: 65001
+   mgmt_gw: 10.65.0.1
+   customers:
+     - 64601 # k8s-eqiad
+     - 64603 # k8s-staging-eqiad
+     - 64700 # fundraising-eqiad
+   bgp_out:
+     - 208.80.152.0/22
+     - 208.80.154.0/23
+     - 185.15.56.0/24
+   bgp6_out:
+     - 2620:0:860::/46
+   ping_offload_vip: 208.80.154.224/32
+   ping_offload_redirect: 10.64.32.31
+eqord:
+   confed: 65001
+   bgp_out:
+     - 208.80.152.0/22
+   bgp6_out:
+     - 2620:0:860::/46
+codfw:
+   confed: 65002
+   mgmt_gw: 10.193.0.1
+   customers:
+     - 64602 # k8s-codfw
+     - 64701 # fundraising-codfw
+   bgp_out:
+     #- 208.80.152.0/22
+     - 208.80.152.0/23
+   bgp6_out:
+     #- 2620:0:860::/46
+     - 2620:0:860::/48
+   ping_offload_vip: 208.80.153.224/32
+   ping_offload_redirect: 10.192.0.22
+eqdfw:
+   confed: 65002
+   bgp_out:
+     #- 208.80.152.0/22
+     - 208.80.152.0/23
+   bgp6_out:
+     #- 2620:0:860::/46
+     - 2620:0:860::/48
+ulsfo:
+   confed: 65004
+   mgmt_gw: 10.128.128.1
+   customers:
+     - 11820 # WMF HQ
+   bgp_out:
+     - 198.35.26.0/23
+   bgp6_out:
+     - 2620:0:863::/48
+eqsin:
+   confed: 65005
+   mgmt_gw: 10.132.128.1
+   bgp_out:
+     - 103.102.166.0/24
+   bgp6_out:
+     - 2001:df2:e500::/48
+esams:
+   confed:
+   mgmt_gw: 10.21.0.1
+   bgp_out:
+     - 91.198.174.0/24
+     - 185.15.56.0/22
+   bgp6_out:
+     - 2620:0:862::/48
+     - 2a02:ec80::/32
+   lvs:
+     - 10.2.0.0/16
+     - 91.198.174.192/27
+     - 91.198.174.232/29
+   lvs6:
+     - 2620:0:862:ed1a::/64
+knams:
+   confed:
+   mgmt_gw: 10.21.0.1
+   bgp_out:
+     - 91.198.174.0/24
+     - 185.15.56.0/22
+   bgp6_out:
+     - 2620:0:862::/48
+     - 2a02:ec80::/32
+   lvs:
+     - 10.2.0.0/16
+     - 91.198.174.192/27
+     - 91.198.174.232/29
+   lvs6:
+     - 2620:0:862:ed1a::/64

@@ -1,0 +1,167 @@
+cr1-eqiad.wikimedia.org:
+  role: cr
+  site: eqiad
+  config:
+     mgmt_ip: [ 10.65.0.12/16, 10.65.0.13/16 ]
+
+cr2-eqiad.wikimedia.org:
+  role: cr
+  site: eqiad
+  config:
+     mgmt_ip: [ 10.65.0.14/16, 10.65.0.15/16 ]
+
+cr2-eqord.wikimedia.org:
+  role: cr
+  site: eqord
+
+cr1-codfw.wikimedia.org:
+  role: cr
+  site: codfw
+  config:
+     mgmt_ip: [ 10.193.0.10/16, 10.193.0.11/16 ]
+
+cr2-codfw.wikimedia.org:
+  role: cr
+  site: codfw
+  config:
+     mgmt_ip: [ 10.193.0.12/16, 10.193.0.13/16 ]
+
+cr2-eqdfw.wikimedia.org:
+  role: cr
+  site: eqdfw
+
+cr3-ulsfo.wikimedia.org:
+  role: cr
+  site: ulsfo
+  config:
+    mgmt_junos: True # Separate mgmt interface in special routing instance
+
+cr4-ulsfo.wikimedia.org:
+  role: cr
+  site: ulsfo
+  config:
+    mgmt_junos: True # Separate mgmt interface in special routing instance
+
+cr1-esams.wikimedia.org:
+  role: cr
+  site: esams
+  config:
+     mgmt_ip: [ 10.21.0.116/24 ]
+
+cr2-esams.wikimedia.org:
+  role: cr
+  site: esams
+  config:
+     mgmt_ip: [ 10.21.0.117/24, 10.21.0.118/24 ]
+
+#  Commented out until the host is ready
+#  cr3-esams.wikimedia.org:
+#    role: cr
+#    site: esams
+#    config:
+#       mgmt_ip: [ 10.21.0.119/24, 10.21.0.120/24 ]
+
+cr2-knams.wikimedia.org:
+  role: cr
+  site: knams
+
+cr1-eqsin.wikimedia.org:
+  role: cr
+  site: eqsin
+  config:
+     mgmt_ip: [ 10.132.128.2/17, 10.132.128.3/17 ]
+
+cr2-eqsin.wikimedia.org:
+  role: cr
+  site: eqsin
+  config:
+     mgmt_junos: True # Separate mgmt interface in special routing instance
+
+# access switches
+asw2-a-eqiad.mgmt.eqiad.wmnet:
+  role: asw
+  site: eqiad
+
+asw2-b-eqiad.mgmt.eqiad.wmnet:
+  role: asw
+  site: eqiad
+
+asw2-c-eqiad.mgmt.eqiad.wmnet:
+  role: asw
+  site: eqiad
+
+asw2-d-eqiad.mgmt.eqiad.wmnet:
+  role: asw
+  site: eqiad
+
+asw-a-codfw.mgmt.codfw.wmnet:
+  role: asw
+  site: codfw
+
+asw-b-codfw.mgmt.codfw.wmnet:
+  role: asw
+  site: codfw
+
+asw-c-codfw.mgmt.codfw.wmnet:
+  role: asw
+  site: codfw
+
+asw-d-codfw.mgmt.codfw.wmnet:
+  role: asw
+  site: codfw
+
+csw2-esams.mgmt.esams.wmnet:
+  role: asw
+  site: esams
+
+asw-esams.mgmt.esams.wmnet:
+  role: asw
+  site: esams
+
+asw2-ulsfo.mgmt.ulsfo.wmnet:
+  role: asw
+  site: ulsfo
+
+asw1-eqsin.mgmt.eqsin.wmnet:
+  role: asw
+  site: eqsin
+
+# management switches/routers
+mr1-eqiad.wikimedia.org:
+  role: mr
+  site: eqiad
+
+msw1-eqiad.mgmt.eqiad.wmnet:
+  role: msw
+  site: eqiad
+
+mr1-codfw.wikimedia.org:
+  role: mr
+  site: codfw
+
+mr1-eqsin.wikimedia.org:
+  role: mr
+  site: eqsin
+
+msw1-codfw.mgmt.codfw.wmnet:
+  role: msw
+  site: codfw
+  config:
+      lldp_disabled: ['ge-0/0/32']
+
+mr1-ulsfo.wikimedia.org:
+  role: mr
+  site: ulsfo
+
+mr1-esams.wikimedia.org:
+  role: mr
+  site: esams
+
+# payments firewall
+#pfw-eqiad.wikimedia.org:
+#  role: pfw
+#  site: eqiad
+
+#pfw-codfw.wikimedia.org:
+#  role: pfw
+#  site: codfw
