@@ -325,3 +325,6 @@ ospf:
          - ae1.100
          - ae1.103
          - ae1.302
+
+juniper_protocols: ['bfd', 'bgp', 'dvmrp', 'igmp', 'ldp', 'msdp', 'nhrp', 'ospf', 'ospf3', 'pgm', 'pim', 'rip', 'ripng', 'router-discovery', 'rsvp', 'sap', 'vrrp']
+juniper_services: ['any-service', 'bootp', 'dhcp', 'dhcpv6', 'dns', 'finger', 'ftp', 'http', 'https', 'ident-reset', 'ike', 'lsping', 'netconf', 'ntp', 'ping', 'r2cp', 'reverse-ssh', 'reverse-telnet', 'rlogin', 'rpm', 'rsh', 'snmp', 'snmp-trap', 'ssh', 'telnet', 'tftp', 'traceroute', 'xnm-clear-text', 'xnm-ssl']

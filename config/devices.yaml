@@ -130,6 +130,20 @@ asw1-eqsin.mgmt.eqsin.wmnet:
 mr1-eqiad.wikimedia.org:
   role: mr
   site: eqiad
+  config:
+    security_zones:
+      - name: production
+        services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
+        interfaces:  ['lo0.0','ge-0/0/1.401','ge-0/0/1.402']
+      - name: untrust
+        services: ['ssh', 'ping', 'traceroute']
+        interfaces: ['ge-0/0/5.0']
+      - name: mgmt
+        services: ['ssh', 'ping', 'traceroute']
+        interfaces: ['ge-0/0/0.0']
+      - name: access
+        services:  ['ssh', 'ping', 'traceroute', 'dhcp']
+        interfaces: ['ge-0/0/2.0']
 
 msw1-eqiad.mgmt.eqiad.wmnet:
   role: msw
@@ -138,6 +152,21 @@ msw1-eqiad.mgmt.eqiad.wmnet:
 mr1-codfw.wikimedia.org:
   role: mr
   site: codfw
+  config:
+    security_zones:
+      - name: production
+        services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
+        interfaces:  ['lo0.0','ge-0/0/1.401','ge-0/0/1.402']
+      - name: untrust
+        services: ['ssh', 'ping', 'traceroute']
+        interfaces: ['ge-0/0/7']
+      - name: mgmt
+        services: ['ssh', 'ping', 'traceroute']
+        interfaces: ['ge-0/0/0.0']
+      - name: access
+        services:  ['ssh', 'ping', 'traceroute', 'dhcp']
+        interfaces: ['ge-0/0/2']
+
 
 mr1-eqsin.wikimedia.org:
   role: mr
@@ -156,6 +185,24 @@ mr1-ulsfo.wikimedia.org:
 mr1-esams.wikimedia.org:
   role: mr
   site: esams
+  config:
+    security_zones:
+      - name: production
+        services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
+        interfaces:  ['lo0.0','ge-0/0/1.404','ge-0/0/1.405']
+      - name: untrust
+        services: ['ssh', 'ping', 'traceroute']
+        interfaces: ['ge-2/0/0.2484']
+      - name: mgmt
+        services: ['ssh', 'ping', 'traceroute']
+        interfaces: ['ge-0/0/0.0','ge-0/0/1.200']
+      - name: access
+        services:  ['ssh', 'ping', 'traceroute', 'dhcp']
+        interfaces: ['ge-0/0/2.0']
+      - name: customers
+        services:  ['ping', 'traceroute']
+        interfaces: ['ge-2/0/0.2483']
+        screen: untrust-screen
 
 # payments firewall
 #pfw-eqiad.wikimedia.org:

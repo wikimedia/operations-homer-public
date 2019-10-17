@@ -1,0 +1,14 @@
+mr:
+  security_zones:
+    - name: production
+      services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
+      interfaces:  ['lo0.0','ge-0/0/4.401','ge-0/0/4.402']
+    - name: untrust
+      services: ['ssh', 'ping', 'traceroute']
+      interfaces: ['ge-0/0/0.0']
+    - name: mgmt
+      services: ['ssh', 'ping', 'traceroute']
+      interfaces: ['vlan.900']
+    - name: access
+      services:  ['ssh', 'ping', 'traceroute', 'dhcp']
+      interfaces: ['ge-0/0/7.0']
