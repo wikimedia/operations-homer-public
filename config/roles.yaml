@@ -12,3 +12,6 @@ mr:
     - name: access
       services:  ['ssh', 'ping', 'traceroute', 'dhcp']
       interfaces: ['ge-0/0/7.0']
+
+cr:
+  lldp_disabled: ['external']

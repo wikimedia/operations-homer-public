@@ -81,22 +81,32 @@ cr2-eqsin.wikimedia.org:
 asw2-a-eqiad.mgmt.eqiad.wmnet:
   role: asw
   site: eqiad
+  config:
+    lldp_disabled: ['ge-8/0/10']
 
 asw2-b-eqiad.mgmt.eqiad.wmnet:
   role: asw
   site: eqiad
+  config:
+    igmp_snooping: False #T201039
 
 asw2-c-eqiad.mgmt.eqiad.wmnet:
   role: asw
   site: eqiad
+  config:
+    igmp_snooping: False #T201039
 
 asw2-d-eqiad.mgmt.eqiad.wmnet:
   role: asw
   site: eqiad
+  config:
+    igmp_snooping: False #T201039
 
 asw-a-codfw.mgmt.codfw.wmnet:
   role: asw
   site: codfw
+  config:
+    lldp_disabled: ['ge-1/0/47']
 
 asw-b-codfw.mgmt.codfw.wmnet:
   role: asw
@@ -121,10 +131,14 @@ asw-esams.mgmt.esams.wmnet:
 asw2-ulsfo.mgmt.ulsfo.wmnet:
   role: asw
   site: ulsfo
+  config:
+    lldp_disabled: ['ge-1/0/13']
 
 asw1-eqsin.mgmt.eqsin.wmnet:
   role: asw
   site: eqsin
+  config:
+    lldp_disabled: ['ge-0/0/23']
 
 # management switches/routers
 mr1-eqiad.wikimedia.org:
@@ -166,7 +180,6 @@ mr1-codfw.wikimedia.org:
       - name: access
         services:  ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/2']
-
 
 mr1-eqsin.wikimedia.org:
   role: mr
