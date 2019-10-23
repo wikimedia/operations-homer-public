@@ -185,7 +185,7 @@ ospf:
         bfd: True
         metric: 1390
       - cr2-eqdfw.wikimedia.org: xe-0/1/3.23
-        cr2-knams.wikimedia.org: xe-1/1/0.23
+        cr2-knams.wikimedia.org: xe-0/1/5.23
         bfd: True
         metric: 1550
       - cr2-eqiad.wikimedia.org: xe-3/2/3.0
@@ -209,20 +209,23 @@ ospf:
         bfd: True
         metric: 3000
       - cr1-eqiad.wikimedia.org: xe-4/2/2.13
-        cr2-knams.wikimedia.org: xe-1/1/0.13
+        cr2-knams.wikimedia.org: xe-0/1/5.13
         bfd: True
         metric: 1820
-      - cr1-esams.wikimedia.org: ae1.401
+      - cr3-esams.wikimedia.org: ae1.401
         cr2-knams.wikimedia.org: ae1.401
         bfd: True
-      - cr1-esams.wikimedia.org: ae1.402
-        cr2-esams.wikimedia.org: ae1.402
+      - cr2-esams.wikimedia.org: ae1.403
+        cr2-knams.wikimedia.org: ae1.403
         bfd: True
-      - cr1-esams.wikimedia.org: ae1.404
+      - cr3-esams.wikimedia.org: ae0.0
+        cr2-esams.wikimedia.org: ae0.0
+        bfd: True
+      - cr2-esams.wikimedia.org: ae1.404
         mr1-esams.wikimedia.org: ge-0/0/1.404
         metric: 20000
-      - cr2-esams.wikimedia.org: ae1.405
-        mr1-esams.wikimedia.org: ge-0/0/1.405
+      - cr3-esams.wikimedia.org: ae1.402
+        mr1-esams.wikimedia.org: ge-0/0/1.402
         metric: 20000
   stub:
       mr1-ulsfo.wikimedia.org:
@@ -236,9 +239,8 @@ ospf:
          - ge-0/0/2.0
          - ge-0/0/0.0
       mr1-esams.wikimedia.org:
-         - ge-2/0/0.2483
-         - ge-0/0/0.0
-         - ge-0/0/1.200
+         - ge-0/0/6.2483
+         - irb.900
       cr3-ulsfo.wikimedia.org:
          - et-0/0/1.1201
          - et-0/0/1.1211
@@ -317,14 +319,14 @@ ospf:
          - ae4.1020
          - ae4.1004
          - ae4.1023
-      cr1-esams.wikimedia.org:
+      cr3-esams.wikimedia.org:
          - ae1.100
+         - ae1.102
          - ae1.103
-         - ae1.302
       cr2-esams.wikimedia.org:
          - ae1.100
+         - ae1.102
          - ae1.103
-         - ae1.302
 
 juniper_protocols: ['bfd', 'bgp', 'dvmrp', 'igmp', 'ldp', 'msdp', 'nhrp', 'ospf', 'ospf3', 'pgm', 'pim', 'rip', 'ripng', 'router-discovery', 'rsvp', 'sap', 'vrrp']
 juniper_services: ['any-service', 'bootp', 'dhcp', 'dhcpv6', 'dns', 'finger', 'ftp', 'http', 'https', 'ident-reset', 'ike', 'lsping', 'netconf', 'ntp', 'ping', 'r2cp', 'reverse-ssh', 'reverse-telnet', 'rlogin', 'rpm', 'rsh', 'snmp', 'snmp-trap', 'ssh', 'telnet', 'tftp', 'traceroute', 'xnm-clear-text', 'xnm-ssl']
