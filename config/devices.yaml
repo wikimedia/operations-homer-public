@@ -120,14 +120,6 @@ asw-d-codfw.mgmt.codfw.wmnet:
   role: asw
   site: codfw
 
-csw2-esams.mgmt.esams.wmnet:
-  role: asw
-  site: esams
-
-asw-esams.mgmt.esams.wmnet:
-  role: asw
-  site: esams
-
 asw2-esams.mgmt.esams.wmnet:
   role: asw
   site: esams
