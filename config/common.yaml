@@ -260,9 +260,9 @@ ospf:
          - ae1.520
          - ae1.530
       cr2-eqsin.wikimedia.org:
-         - ae2.510
-         - ae2.520
-         - ae2.530
+         - ae1.510
+         - ae1.520
+         - ae1.530
       cr1-codfw.wikimedia.org:
          - ae1.2001
          - ae2.2002
