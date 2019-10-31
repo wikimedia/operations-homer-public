@@ -12,14 +12,36 @@ eqiad:
    bgp6_out:
      - 2620:0:860::/46
    ping_offload_vip: 208.80.154.224/32
-   ping_offload_redirect: 10.64.32.31
-   sample: True # Enable IPFIX sampling
+   ping_offload_redirect: 10.64.32.31  # ping1001.eqiad.wmnet
+   sampling:
+     collector: 10.64.32.88  # netflow1001.eqiad.wmnet
+   dhcp_relay:
+     server: 208.80.154.22  # install1002.wikimedia.org
+     interfaces:
+       - ae1.1001
+       - ae1.1017
+       - ae1.1117
+       - ae2.1002
+       - ae2.1018
+       - ae2.1021
+       - ae2.1118
+       - ae3.1003
+       - ae3.1019
+       - ae3.1022
+       - ae3.1119
+       - ae4.1020
+       - ae4.1004
+       - ae2.1202
+
 eqord:
    confed: 65001
    bgp_out:
      - 208.80.152.0/22
    bgp6_out:
      - 2620:0:860::/46
+   sampling:
+     enabled: false
+     collector: 10.64.32.88  # netflow1001.eqiad.wmnet
 codfw:
    confed: 65002
    mgmt_gw: 10.193.0.1
@@ -33,8 +55,24 @@ codfw:
      #- 2620:0:860::/46
      - 2620:0:860::/48
    ping_offload_vip: 208.80.153.224/32
-   ping_offload_redirect: 10.192.0.22
-   sample: True # Enable IPFIX sampling
+   ping_offload_redirect: 10.192.0.22  # ping2001.codfw.wmnet
+   sampling:
+     collector: 10.192.0.148  # netflow2001.codfw.wmnet
+   dhcp_relay:
+     server: 208.80.153.53  # install2002.wikimedia.org
+     interfaces:
+       - ae1.2001
+       - ae2.2002
+       - ae3.2003
+       - ae4.2004
+       - ae1.2017
+       - ae2.2018
+       - ae3.2019
+       - ae4.2020
+       - ae2.2122
+       - ae1.2201
+       - ae2.2118
+
 eqdfw:
    confed: 65002
    bgp_out:
@@ -43,6 +81,9 @@ eqdfw:
    bgp6_out:
      #- 2620:0:860::/46
      - 2620:0:860::/48
+   sampling:
+     enabled: false
+     collector: 10.192.0.148  # netflow2001.codfw.wmnet
 ulsfo:
    confed: 65004
    mgmt_gw: 10.128.128.1
@@ -52,6 +93,15 @@ ulsfo:
      - 198.35.26.0/23
    bgp6_out:
      - 2620:0:863::/48
+   sampling:
+     enabled: false
+     collector: 10.64.32.88  # netflow1001.eqiad.wmnet
+   dhcp_relay:
+     server: 208.80.153.53  # install2002.wikimedia.org
+     interfaces:
+      - et-0/0/1.1201
+      - et-0/0/1.1211
+      - et-0/0/1.1221
 eqsin:
    confed: 65005
    mgmt_gw: 10.132.128.1
@@ -59,6 +109,15 @@ eqsin:
      - 103.102.166.0/24
    bgp6_out:
      - 2001:df2:e500::/48
+   sampling:
+     enabled: false
+     collector: 10.192.0.148  # netflow2001.codfw.wmnet
+   dhcp_relay:
+     server: 208.80.153.53  # install2002.wikimedia.org
+     interfaces:
+      - ae1.510
+      - ae1.520
+      - ae1.530
 esams:
    confed:
    mgmt_gw: 10.21.0.1
@@ -74,6 +133,15 @@ esams:
      - 91.198.174.232/29
    lvs6:
      - 2620:0:862:ed1a::/64
+   sampling:
+     enabled: false
+     collector: 10.64.32.88  # netflow1001.eqiad.wmnet
+   dhcp_relay:
+     server: 208.80.154.22  #install1002.wikimedia.org
+     interfaces:
+      - ae1.100
+      - ae1.102
+      - ae1.103
 knams:
    confed:
    mgmt_gw: 10.21.0.1
@@ -89,3 +157,6 @@ knams:
      - 91.198.174.232/29
    lvs6:
      - 2620:0:862:ed1a::/64
+   sampling:
+     enabled: false
+     collector: 10.64.32.88  # netflow1001.eqiad.wmnet
