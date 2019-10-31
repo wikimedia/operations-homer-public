@@ -130,7 +130,7 @@ ospf:
         metric: 510
         bfd: True
       - cr4-ulsfo.wikimedia.org: gr-0/0/0.1
-        cr2-eqsin.wikimedia.org: gr-1/0/0.1
+        cr2-eqsin.wikimedia.org: gr-0/0/0.1
         metric: 4000
         bfd: True
       - cr4-ulsfo.wikimedia.org: gr-0/0/0.2
@@ -205,7 +205,7 @@ ospf:
         mr1-eqiad.wikimedia.org: ge-0/0/1.402
         metric: 20000
       - cr2-eqiad.wikimedia.org: gr-4/3/0.1
-        cr2-esams.wikimedia.org: gr-0/1/0.1
+        cr3-esams.wikimedia.org: gr-0/0/0.1
         bfd: True
         metric: 3000
       - cr1-eqiad.wikimedia.org: xe-4/2/2.13
@@ -217,6 +217,12 @@ ospf:
         bfd: True
       - cr2-esams.wikimedia.org: ae1.403
         cr2-knams.wikimedia.org: ae1.403
+        bfd: True
+      - cr2-esams.wikimedia.org: xe-0/1/8.0
+        cr2-knams.wikimedia.org: xe-0/0/0.0
+        bfd: True
+      - cr3-esams.wikimedia.org: xe-0/0/4.0
+        cr2-knams.wikimedia.org: xe-0/0/3.0
         bfd: True
       - cr3-esams.wikimedia.org: ae0.0
         cr2-esams.wikimedia.org: ae0.0
