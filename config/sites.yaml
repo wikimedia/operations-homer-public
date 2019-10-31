@@ -7,11 +7,11 @@ eqiad:
     - 64603  # k8s-staging-eqiad
     - 64700  # fundraising-eqiad
   bgp_out:
-    - 208.80.154.0/23  # eqiad
-    - 185.15.56.0/24  # WMCS eqiad
-    - 198.35.27.0/24  # Anycast
+    208.80.154.0/23: BGP_aggregate_contributors  # eqiad
+    185.15.56.0/24: BGP_aggregate_contributors  # WMCS eqiad
+    198.35.27.0/24: BGP_from_anycast  # Anycast
   bgp6_out:
-    - 2620:0:861::/48  # eqiad
+    2620:0:861::/48: BGP_aggregate_contributors  # eqiad
   lvs_neighbors:  # Routers PyBal neighbors
     lvs1013: 10.64.1.13
     lvs1014: 10.64.17.14
@@ -70,13 +70,13 @@ eqiad:
 eqord:
   confed: 65001
   bgp_out:
-    - 208.80.152.0/23  # codfw
-    - 208.80.154.0/23  # eqiad
-    - 185.15.56.0/24  # WMCS eqiad
-    - 198.35.27.0/24  # Anycast
+    208.80.152.0/23: BGP_from_LVS  # codfw
+    208.80.154.0/23: BGP_from_LVS  # eqiad
+    185.15.56.0/24: BGP_aggregate_contributors  # WMCS eqiad
+    198.35.27.0/24: BGP_from_anycast  # Anycast
   bgp6_out:
-    - 2620:0:860::/48  # codfw
-    - 2620:0:861::/48  # eqiad
+    2620:0:860::/48: BGP_from_LVS  # codfw
+    2620:0:861::/48: BGP_from_LVS  # eqiad
   sampling:
     collector: 10.64.32.88  # netflow1001.eqiad.wmnet
   tcp_mss_clamping: true
@@ -88,11 +88,11 @@ codfw:
     - 64602  # k8s-codfw
     - 64701  # fundraising-codfw
   bgp_out:
-    - 208.80.152.0/23  # codfw
-    - 185.15.57.0/24  # WMCS codfw
-    - 198.35.27.0/24  # Anycast
+    208.80.152.0/23: BGP_aggregate_contributors  # codfw
+    185.15.57.0/24: BGP_aggregate_contributors  # WMCS codfw
+    198.35.27.0/24: BGP_from_anycast  # Anycast
   bgp6_out:
-    - 2620:0:860::/48  # codfw
+    2620:0:860::/48: BGP_aggregate_contributors  # codfw
   lvs_neighbors:  # Routers PyBal neighbors
     lvs2007: 10.192.1.7
     lvs2008: 10.192.17.7
@@ -144,11 +144,11 @@ codfw:
 eqdfw:
   confed: 65002
   bgp_out:
-    - 208.80.152.0/23  # codfw
-    - 185.15.57.0/24  # WMCS codfw
-    - 198.35.27.0/24  # Anycast
+    198.35.27.0/24: BGP_from_anycast  # Anycast
+    208.80.152.0/23: BGP_from_LVS  # codfw
+    185.15.57.0/24: BGP_aggregate_contributors  # WMCS codfw
   bgp6_out:
-    - 2620:0:860::/48  # codfw
+    2620:0:860::/48: BGP_from_LVS  # codfw
   sampling:
     collector: 10.192.0.148  # netflow2001.codfw.wmnet
 
@@ -158,10 +158,10 @@ ulsfo:
   customers:
     - 11820  # WMF HQ
   bgp_out:
-    - 198.35.26.0/24  # ulsfo
-    - 198.35.27.0/24  # Anycast
+    198.35.26.0/24: BGP_aggregate_contributors  # ulsfo
+    198.35.27.0/24: BGP_from_anycast  # Anycast
   bgp6_out:
-    - 2620:0:863::/48  # ulsfo
+    2620:0:863::/48: BGP_aggregate_contributors  # ulsfo
   lvs_neighbors:  # Routers PyBal neighbors
     lvs4005: 10.128.0.15
     lvs4006: 10.128.0.16
@@ -182,10 +182,10 @@ eqsin:
   confed: 65005
   mgmt_gw: 10.132.128.1
   bgp_out:
-    - 103.102.166.0/24  # ulsfo
-    - 198.35.27.0/24  # Anycast
+    103.102.166.0/24: BGP_aggregate_contributors  # eqsin
+    198.35.27.0/24: BGP_from_anycast  # Anycast
   bgp6_out:
-    - 2001:df2:e500::/48  # ulsfo
+    2001:df2:e500::/48: BGP_aggregate_contributors  # eqsin
   lvs_neighbors:
     lvs5001: 10.132.0.11
     lvs5002: 10.132.0.12
@@ -207,19 +207,13 @@ esams:
   confed: 65003
   mgmt_gw: 10.21.0.1
   bgp_out:
-    - 91.198.174.0/24  # esams
-    - 185.15.58.0/23
-    - 198.35.27.0/24  # Anycast
-    - 185.71.138.0/24
+    91.198.174.0/24: BGP_aggregate_contributors  # esams
+    185.15.58.0/23: BGP_aggregate_contributors
+    198.35.27.0/24: BGP_from_anycast  # Anycast
+    185.71.138.0/24: ''  # Parked
   bgp6_out:
-    - 2620:0:862::/48  # esams
-    - 2a02:ec80::/32
-  lvs:
-    - 10.2.0.0/16
-    - 91.198.174.192/27
-    - 91.198.174.232/29
-  lvs6:
-    - 2620:0:862:ed1a::/64
+    2620:0:862::/48: BGP_aggregate_contributors  # esams
+    2a02:ec80::/32: BGP_aggregate_contributors
   lvs_neighbors:
     lvs3005: 10.20.0.15
     lvs3006: 10.20.0.16
@@ -242,19 +236,13 @@ esams:
 knams:
   confed: 65003
   bgp_out:
-    - 91.198.174.0/24  # esams
-    - 185.15.58.0/23
-    - 198.35.27.0/24  # Anycast
-    - 185.71.138.0/24
+    91.198.174.0/24: BGP_from_LVS  # esams
+    185.15.58.0/23: BGP_aggregate_contributors
+    198.35.27.0/24: BGP_from_anycast  # Anycast
+    185.71.138.0/24: ''  # Parked
   bgp6_out:
-    - 2620:0:862::/48  # esams
-    - 2a02:ec80::/32
-  lvs:
-    - 10.2.0.0/16
-    - 91.198.174.192/27
-    - 91.198.174.232/29
-  lvs6:
-    - 2620:0:862:ed1a::/64
+    2620:0:862::/48: BGP_from_LVS  # esams
+    2a02:ec80::/32: BGP_aggregate_contributors
   sampling:
     collector: 10.20.0.100  # netflow3001.esams.wmnet
   tcp_mss_clamping: true

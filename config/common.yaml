@@ -1,23 +1,31 @@
 ---
 asn: 14907
-lvs:
-  - 10.2.1.0/24
-  - 10.2.2.0/24
-  - 10.2.3.0/24
-  - 10.2.4.0/24
-  - 10.2.5.0/24
-  - 91.198.174.192/27
-  - 91.198.174.232/29
-  - 198.35.26.96/27
-  - 208.80.153.224/27
-  - 208.80.154.224/27
-  - 103.102.166.224/27
-lvs6:
-  - 2620:0:860:ed1a::/64
-  - 2620:0:861:ed1a::/64
-  - 2620:0:862:ed1a::/64
-  - 2620:0:863:ed1a::/64
-  - 2001:df2:e500:ed1a::/64
+
+lvs:  # In common as we need the full infra wide list as well
+  eqiad:
+    - 10.2.2.0/24
+    - 208.80.154.224/27
+    - 2620:0:861:ed1a::/64
+  eqord: []  # None
+  codfw:
+    - 10.2.1.0/24
+    - 208.80.153.224/27
+    - 2620:0:860:ed1a::/64
+  eqdfw: []  # None
+  esams:
+    - 10.2.3.0/24
+    - 91.198.174.192/27
+    - 91.198.174.232/29
+    - 2620:0:862:ed1a::/64
+  knams: []  # None
+  ulsfo:
+    - 10.2.4.0/24
+    - 198.35.26.96/27
+    - 2620:0:863:ed1a::/64
+  eqsin:
+    - 10.2.5.0/24
+    - 103.102.166.224/27
+    - 2001:df2:e500:ed1a::/64
 
 # Next available UID: 2032
 # When adding a new user, please make sure to update "next available UID" above
@@ -459,14 +467,6 @@ transit_providers:
 #     protocol: udp or sets between brackets, eg: [tcp udp] [Optional]
 #     source: 192.0.0.0/23 [Optional]
 #     destination: 192.0.0.0/23 [Optional]
-#
-# Configure uRPF loose mode
-# Feature rollout flag, can be removed when deployed everywhere
-# urpf: log
-# other possible options: syslog, discard (note that any string other than log/syslog will discard)
-#
-#
-
 
 asns_mapping:
   k8s:
