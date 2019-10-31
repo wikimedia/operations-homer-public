@@ -127,7 +127,7 @@ ospf:
         metric: 20000
       - cr4-ulsfo.wikimedia.org: xe-0/1/2.0
         cr1-codfw.wikimedia.org: xe-5/0/2.0
-        metric: 510
+        metric: 390
         bfd: True
       - cr4-ulsfo.wikimedia.org: gr-0/0/0.1
         cr2-eqsin.wikimedia.org: gr-0/0/0.1
@@ -143,7 +143,7 @@ ospf:
         bfd: True
       - cr2-eqord.wikimedia.org: xe-0/1/0.0
         cr2-codfw.wikimedia.org: xe-5/2/1.0
-        metric: 290
+        metric: 240
         bfd: True
       - cr2-eqord.wikimedia.org: gr-0/0/0.1
         cr1-eqiad.wikimedia.org: gr-4/3/0.1
