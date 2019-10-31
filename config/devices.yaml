@@ -253,18 +253,21 @@ asw2-esams.mgmt.esams.wmnet:
   site: esams
   config:
     lldp_disabled: ['ge-5/0/47']  # SRXs show L2 errors when receiving LLDP frames
+    netbox_driven_interfaces: true
 
 asw2-ulsfo.mgmt.ulsfo.wmnet:
   role: asw
   site: ulsfo
   config:
     lldp_disabled: ['ge-1/0/13']  # SRXs show L2 errors when receiving LLDP frames
+    netbox_driven_interfaces: true
 
 asw1-eqsin.mgmt.eqsin.wmnet:
   role: asw
   site: eqsin
   config:
     lldp_disabled: ['ge-0/0/23']  # SRXs show L2 errors when receiving LLDP frames
+    netbox_driven_interfaces: true
 
 # management switches/routers
 mr1-eqiad.wikimedia.org:
