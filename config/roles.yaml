@@ -12,6 +12,13 @@ mr:
     - name: access
       services:  ['ssh', 'ping', 'traceroute', 'dhcp']
       interfaces: ['ge-0/0/7.0']
+  screen:
+    icmp_flood_threshold: 500
+    tcp_syn_flood_alarm: 1000
+    tcp_syn_flood_attack: 2000
+    tcp_syn_flood_source: 1024
+    tcp_syn_flood_dest: 2048
+    udp_flood: 1000
 
 cr:
   lldp_disabled: ['external']
