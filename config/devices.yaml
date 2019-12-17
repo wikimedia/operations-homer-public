@@ -54,7 +54,7 @@ cr2-esams.wikimedia.org:
   config:
      mgmt_ip: [ 10.21.0.117/24, 10.21.0.118/24 ]
 
-cr2-knams.wikimedia.org:
+cr3-knams.wikimedia.org:
   role: cr
   site: knams
 
