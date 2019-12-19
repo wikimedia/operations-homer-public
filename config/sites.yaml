@@ -96,8 +96,7 @@ ulsfo:
    bgp6_out:
      - 2620:0:863::/48
    sampling:
-     enabled: false
-     collector: 10.64.32.88  # netflow1001.eqiad.wmnet
+     collector: 10.128.0.31  # netflow4001.ulsfo.wmnet
    dhcp_relay:
      server: 208.80.153.53  # install2002.wikimedia.org
      interfaces:
