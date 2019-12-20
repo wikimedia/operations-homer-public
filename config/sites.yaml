@@ -120,7 +120,7 @@ eqsin:
       - ae1.520
       - ae1.530
 esams:
-   confed:
+   confed: 65003
    mgmt_gw: 10.21.0.1
    bgp_out:
      - 91.198.174.0/24
@@ -143,7 +143,7 @@ esams:
       - ae1.102
       - ae1.103
 knams:
-   confed:
+   confed: 65003
    mgmt_gw: 10.21.0.1
    bgp_out:
      - 91.198.174.0/24
