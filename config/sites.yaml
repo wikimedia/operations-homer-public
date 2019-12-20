@@ -135,10 +135,9 @@ esams:
    lvs6:
      - 2620:0:862:ed1a::/64
    sampling:
-     enabled: false
-     collector: 10.64.32.88  # netflow1001.eqiad.wmnet
+     collector: 10.20.0.100  # netflow3001.esams.wmnet
    dhcp_relay:
-     server: 208.80.154.22  #install1002.wikimedia.org
+     server: 208.80.154.22  # install1002.wikimedia.org
      interfaces:
       - ae1.100
       - ae1.102
