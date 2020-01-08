@@ -111,7 +111,6 @@ eqsin:
    bgp6_out:
      - 2001:df2:e500::/48
    sampling:
-     enabled: true
      collector: 10.132.0.30  # netflow5001.eqsin.wmnet
    dhcp_relay:
      server: 208.80.153.53  # install2002.wikimedia.org
