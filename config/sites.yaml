@@ -133,6 +133,8 @@ esams:
      - 91.198.174.232/29
    lvs6:
      - 2620:0:862:ed1a::/64
+   ping_offload_vip: 91.198.174.192/32 # text-lb.esams.wikimedia.org
+   ping_offload_redirect: 10.20.0.103  # ping3001.esams.wmnet
    sampling:
      collector: 10.20.0.100  # netflow3001.esams.wmnet
    dhcp_relay:
