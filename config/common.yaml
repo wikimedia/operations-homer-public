@@ -413,3 +413,6 @@ ntp_servers:
 # # Prepends our AS# 3x to our peering and transits
 # # Usually applied per site
 # prepend_as_out: true
+# # Clamps outbound tcp-mss to 1436
+# # Usually applied per site
+# tcp_mss_clamping: true
