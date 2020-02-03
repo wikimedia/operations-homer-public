@@ -409,3 +409,7 @@ ntp_servers:
 #  - prefix: 192.0.0.0/23
 #    maxlen: 24
 #    asn: 12345
+
+# # Prepends our AS# 3x to our peering and transits
+# # Usually applied per site
+# prepend_as_out: true
