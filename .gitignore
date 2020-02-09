@@ -1,4 +1,5 @@
 .sw*
 .*.sw*
-build/*
-real/*
+/.tox/
+/build/
+/real/

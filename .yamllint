@@ -1,0 +1,17 @@
+---
+extends: default
+
+yaml-files:
+  - '*.yaml'
+
+rules:
+  empty-values: enable
+  indentation:
+    spaces: 2
+    indent-sequences: true
+    check-multi-line-strings: true
+  line-length:
+    max: 120
+    allow-non-breakable-words: true
+    allow-non-breakable-inline-mappings: true
+  octal-values: enable
