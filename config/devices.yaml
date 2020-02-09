@@ -1,14 +1,15 @@
+---
 cr1-eqiad.wikimedia.org:
   role: cr
   site: eqiad
   config:
-     mgmt_ip: [ 10.65.0.12/16, 10.65.0.13/16 ]
+    mgmt_ip: [10.65.0.12/16, 10.65.0.13/16]
 
 cr2-eqiad.wikimedia.org:
   role: cr
   site: eqiad
   config:
-     mgmt_ip: [ 10.65.0.14/16, 10.65.0.15/16 ]
+    mgmt_ip: [10.65.0.14/16, 10.65.0.15/16]
 
 cr2-eqord.wikimedia.org:
   role: cr
@@ -18,13 +19,13 @@ cr1-codfw.wikimedia.org:
   role: cr
   site: codfw
   config:
-     mgmt_ip: [ 10.193.0.10/16, 10.193.0.11/16 ]
+    mgmt_ip: [10.193.0.10/16, 10.193.0.11/16]
 
 cr2-codfw.wikimedia.org:
   role: cr
   site: codfw
   config:
-     mgmt_ip: [ 10.193.0.12/16, 10.193.0.13/16 ]
+    mgmt_ip: [10.193.0.12/16, 10.193.0.13/16]
 
 cr2-eqdfw.wikimedia.org:
   role: cr
@@ -34,25 +35,25 @@ cr3-ulsfo.wikimedia.org:
   role: cr
   site: ulsfo
   config:
-    mgmt_junos: True # Separate mgmt interface in special routing instance
+    mgmt_junos: true  # Separate mgmt interface in special routing instance
 
 cr4-ulsfo.wikimedia.org:
   role: cr
   site: ulsfo
   config:
-    mgmt_junos: True # Separate mgmt interface in special routing instance
+    mgmt_junos: true  # Separate mgmt interface in special routing instance
 
 cr3-esams.wikimedia.org:
   role: cr
   site: esams
   config:
-     mgmt_ip: [ 10.21.0.119/24, 10.21.0.120/24 ]
+    mgmt_ip: [10.21.0.119/24, 10.21.0.120/24]
 
 cr2-esams.wikimedia.org:
   role: cr
   site: esams
   config:
-     mgmt_ip: [ 10.21.0.117/24, 10.21.0.118/24 ]
+    mgmt_ip: [10.21.0.117/24, 10.21.0.118/24]
 
 cr3-knams.wikimedia.org:
   role: cr
@@ -62,13 +63,13 @@ cr1-eqsin.wikimedia.org:
   role: cr
   site: eqsin
   config:
-     mgmt_ip: [ 10.132.128.2/17, 10.132.128.3/17 ]
+    mgmt_ip: [10.132.128.2/17, 10.132.128.3/17]
 
 cr2-eqsin.wikimedia.org:
   role: cr
   site: eqsin
   config:
-     mgmt_junos: True # Separate mgmt interface in special routing instance
+    mgmt_junos: true  # Separate mgmt interface in special routing instance
 
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
@@ -81,19 +82,19 @@ asw2-b-eqiad.mgmt.eqiad.wmnet:
   role: asw
   site: eqiad
   config:
-    igmp_snooping: False #T201039
+    igmp_snooping: false  # T201039
 
 asw2-c-eqiad.mgmt.eqiad.wmnet:
   role: asw
   site: eqiad
   config:
-    igmp_snooping: False #T201039
+    igmp_snooping: false  # T201039
 
 asw2-d-eqiad.mgmt.eqiad.wmnet:
   role: asw
   site: eqiad
   config:
-    igmp_snooping: False #T201039
+    igmp_snooping: false  # T201039
 
 asw-a-codfw.mgmt.codfw.wmnet:
   role: asw
@@ -139,7 +140,7 @@ mr1-eqiad.wikimedia.org:
     security_zones:
       - name: production
         services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
-        interfaces:  ['lo0.0','ge-0/0/1.401','ge-0/0/1.402']
+        interfaces: ['lo0.0', 'ge-0/0/1.401', 'ge-0/0/1.402']
       - name: untrust
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['ge-0/0/5.0']
@@ -147,7 +148,7 @@ mr1-eqiad.wikimedia.org:
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['ge-0/0/0.0']
       - name: access
-        services:  ['ssh', 'ping', 'traceroute', 'dhcp']
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/2.0']
     dhcp_pool: 10.66.0.0/24
 
@@ -162,7 +163,7 @@ mr1-codfw.wikimedia.org:
     security_zones:
       - name: production
         services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
-        interfaces:  ['lo0.0','ge-0/0/1.401','ge-0/0/1.402']
+        interfaces: ['lo0.0', 'ge-0/0/1.401', 'ge-0/0/1.402']
       - name: untrust
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['ge-0/0/7']
@@ -170,7 +171,7 @@ mr1-codfw.wikimedia.org:
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['ge-0/0/0.0']
       - name: access
-        services:  ['ssh', 'ping', 'traceroute', 'dhcp']
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/2']
 
 mr1-eqsin.wikimedia.org:
@@ -181,7 +182,7 @@ msw1-codfw.mgmt.codfw.wmnet:
   role: msw
   site: codfw
   config:
-      lldp_disabled: ['ge-0/0/32']  # SRXs show L2 errors when receiving LLDP frames
+    lldp_disabled: ['ge-0/0/32']  # SRXs show L2 errors when receiving LLDP frames
 
 mr1-ulsfo.wikimedia.org:
   role: mr
@@ -194,7 +195,7 @@ mr1-esams.wikimedia.org:
     security_zones:
       - name: production
         services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
-        interfaces:  ['lo0.0','ge-0/0/1.402','ge-0/0/1.404']
+        interfaces: ['lo0.0', 'ge-0/0/1.402', 'ge-0/0/1.404']
       - name: untrust
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['ge-0/0/6.2484']
@@ -202,18 +203,18 @@ mr1-esams.wikimedia.org:
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['irb.900']
       - name: access
-        services:  ['ssh', 'ping', 'traceroute', 'dhcp']
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/2.0']
       - name: customers
-        services:  ['ping', 'traceroute']
+        services: ['ping', 'traceroute']
         interfaces: ['ge-0/0/6.2483']
         screen: untrust-screen
 
 # payments firewall
-#pfw-eqiad.wikimedia.org:
-#  role: pfw
-#  site: eqiad
+# pfw-eqiad.wikimedia.org:
+#   role: pfw
+#   site: eqiad
 
-#pfw-codfw.wikimedia.org:
-#  role: pfw
-#  site: codfw
+# pfw-codfw.wikimedia.org:
+#   role: pfw
+#   site: codfw

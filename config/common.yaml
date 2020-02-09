@@ -1,3 +1,4 @@
+---
 asn: 14907
 lvs:
   - 10.2.1.0/24
@@ -16,10 +17,9 @@ lvs6:
   - 2620:0:863:ed1a::/64
   - 2001:df2:e500:ed1a::/64
 
-
-
 # Next available UID: 2032
 # When adding a new user, please make sure to update "next available UID" above
+# yamllint disable rule:line-length
 users:
   - name: akosiaris
     uid: 2013
@@ -126,236 +126,284 @@ users:
     class: super-user
     sshkeys:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC6Gqh/8Dox0/1BDBqP5X9NLyUgQ6eNRFMb3un2hdUQF5g78UFiAz4twMbC7rVvrL6d/9ZLmZnTbFJdAwf1YjCySeOyYjvtyToRnXUUVb62hfrvpfF16fe5M9E5Yyss87dkGPMY8IWJ9hRqxBDJHPXdAi8foUwEe+AoabjmArd2jOUP80wCKl0hP54XM7MXKbuGWNjBmEuLDcHy/OwIlUO6c1OIGZO4nLJTzfL5/R9Q/lIt65MwLBkkegALiBBoGEYIKm324KAaOmP9bwYh7bn5GsIkcfsj4FxCHx1UH+qOyi6YcOKFEMt5DB0GYCCqDN1FfN2CSDRuzigY5wsmpDs6+g9i5dT23IzvGGkI4nADRBcJb5BMVEDjZRKEQfZbxKctiQQgkW3/YYY31pLRrRTmNlybf4t9dlYK3BuraA6ZtGCwkZ6195CuCA8biMHAGv1rMa9FK3hm5bUrDGUa+5/MzIldzB5nuhugiAzg5C+iz6oEp5cuoMB5rjK0Ni2T1dloaPOmrzQMmObghDaAnS8kDhzvXv69dIAJ+P1lrHiQLhmEnwuKb9/ueX++Nkfp+NXxjHynxmJkUwYXwzMtcvymPywtEoaYS84YBCkx9oVgNfEwQtvx+/9LsVukL/d7dcg1FA2D46No0h3Tgx/8/qAlHt1bQrnBrpgrLxEd6LXwLw== cdanis@yubikey-wmf"
+# yamllint enable rule:line-length
 # When adding a new user, please make sure to update the "next available UID"
 # comment at the beginning of the users block
 
 ospf:
   p2p:
-      - cr3-ulsfo.wikimedia.org: ae0.2
-        cr4-ulsfo.wikimedia.org: ae0.2
-      - cr3-ulsfo.wikimedia.org: et-0/0/1.401
-        mr1-ulsfo.wikimedia.org: ge-0/0/4.401
-        metric: 20000
-      - cr3-ulsfo.wikimedia.org: xe-0/1/1.0
-        cr2-eqord.wikimedia.org: xe-0/1/1.0
-        metric: 510
-        bfd: True
-      - cr4-ulsfo.wikimedia.org: et-0/0/1.402
-        mr1-ulsfo.wikimedia.org: ge-0/0/4.402
-        metric: 20000
-      - cr4-ulsfo.wikimedia.org: xe-0/1/2.0
-        cr1-codfw.wikimedia.org: xe-5/0/2.0
-        metric: 390
-        bfd: True
-      - cr4-ulsfo.wikimedia.org: gr-0/0/0.1
-        cr2-eqsin.wikimedia.org: gr-0/0/0.1
-        metric: 4000
-        bfd: True
-      - cr4-ulsfo.wikimedia.org: gr-0/0/0.2
-        cr2-eqdfw.wikimedia.org: gr-0/0/0.1
-        metric: 1390
-        bfd: True
-      - cr2-eqord.wikimedia.org: xe-0/1/5.0
-        cr2-eqiad.wikimedia.org: xe-4/2/0.0
-        metric: 240
-        bfd: True
-      - cr2-eqord.wikimedia.org: xe-0/1/0.0
-        cr2-codfw.wikimedia.org: xe-5/2/1.0
-        metric: 240
-        bfd: True
-      - cr2-eqord.wikimedia.org: gr-0/0/0.1
-        cr1-eqiad.wikimedia.org: gr-4/3/0.1
-        metric: 3000
-        bfd: True
-      - cr1-eqsin.wikimedia.org: ae0.0
-        cr2-eqsin.wikimedia.org: ae0.0
-      - cr1-eqsin.wikimedia.org: xe-0/1/0.0
-        cr1-codfw.wikimedia.org: xe-5/1/2.0
-        metric: 2000
-        bfd: True
-      - cr1-eqsin.wikimedia.org: ae1.401
-        mr1-eqsin.wikimedia.org: ge-0/0/4.401
-        metric: 20000
-      - cr2-eqsin.wikimedia.org: ae1.402
-        mr1-eqsin.wikimedia.org: ge-0/0/4.402
-        metric: 20000
-      - cr1-codfw.wikimedia.org: xe-5/2/1.0
-        cr1-eqiad.wikimedia.org: xe-4/2/0.0
-        metric: 340
-        bfd: True
-      - cr1-codfw.wikimedia.org: ae1.401
-        mr1-codfw.wikimedia.org: ge-0/0/1.401
-        metric: 20000
-      - cr2-codfw.wikimedia.org: ae1.402
-        mr1-codfw.wikimedia.org: ge-0/0/1.402
-        metric: 20000
-      - cr2-codfw.wikimedia.org: xe-5/0/0.0
-        cr2-eqdfw.wikimedia.org: xe-0/1/4.0
-        bfd: True
-      - cr1-codfw.wikimedia.org: xe-5/0/0.0
-        cr2-eqdfw.wikimedia.org: xe-0/1/0.0
-        bfd: True
-      - cr1-codfw.wikimedia.org: ae0.0
-        cr2-codfw.wikimedia.org: ae0.0
-        bfd: True
-      - cr2-eqdfw.wikimedia.org: xe-0/1/3.12
-        cr1-eqiad.wikimedia.org: xe-4/2/2.12
-        bfd: True
-        metric: 1390
-      - cr2-eqdfw.wikimedia.org: xe-0/1/3.23
-        cr3-knams.wikimedia.org: xe-0/1/5.23
-        bfd: True
-        metric: 1550
-      - cr2-eqiad.wikimedia.org: xe-3/2/3.0
-        cr2-codfw.wikimedia.org: xe-5/0/1.0
-        bfd: True
-        metric: 320
-      - cr1-eqiad.wikimedia.org: ae0.0
-        cr2-eqiad.wikimedia.org: ae0.0
-      - cr2-eqiad.wikimedia.org: xe-4/1/3.0
-        cr2-esams.wikimedia.org: xe-0/1/3.0
-        bfd: True
-        metric: 840
-      - cr1-eqiad.wikimedia.org: ae1.401
-        mr1-eqiad.wikimedia.org: ge-0/0/1.401
-        metric: 20000
-      - cr2-eqiad.wikimedia.org: ae1.402
-        mr1-eqiad.wikimedia.org: ge-0/0/1.402
-        metric: 20000
-      - cr2-eqiad.wikimedia.org: gr-4/3/0.1
-        cr3-esams.wikimedia.org: gr-0/0/0.1
-        bfd: True
-        metric: 3000
-      - cr1-eqiad.wikimedia.org: xe-4/2/2.13
-        cr3-knams.wikimedia.org: xe-0/1/5.13
-        bfd: True
-        metric: 1820
-      - cr3-esams.wikimedia.org: ae1.401
-        cr3-knams.wikimedia.org: ae1.401
-        bfd: True
-      - cr2-esams.wikimedia.org: ae1.403
-        cr3-knams.wikimedia.org: ae1.403
-        bfd: True
-      - cr3-esams.wikimedia.org: ae0.0
-        cr2-esams.wikimedia.org: ae0.0
-        bfd: True
-      - cr2-esams.wikimedia.org: ae1.404
-        mr1-esams.wikimedia.org: ge-0/0/1.404
-        metric: 20000
-      - cr3-esams.wikimedia.org: ae1.402
-        mr1-esams.wikimedia.org: ge-0/0/1.402
-        metric: 20000
+    - cr3-ulsfo.wikimedia.org: ae0.2
+      cr4-ulsfo.wikimedia.org: ae0.2
+    - cr3-ulsfo.wikimedia.org: et-0/0/1.401
+      mr1-ulsfo.wikimedia.org: ge-0/0/4.401
+      metric: 20000
+    - cr3-ulsfo.wikimedia.org: xe-0/1/1.0
+      cr2-eqord.wikimedia.org: xe-0/1/1.0
+      metric: 510
+      bfd: true
+    - cr4-ulsfo.wikimedia.org: et-0/0/1.402
+      mr1-ulsfo.wikimedia.org: ge-0/0/4.402
+      metric: 20000
+    - cr4-ulsfo.wikimedia.org: xe-0/1/2.0
+      cr1-codfw.wikimedia.org: xe-5/0/2.0
+      metric: 390
+      bfd: true
+    - cr4-ulsfo.wikimedia.org: gr-0/0/0.1
+      cr2-eqsin.wikimedia.org: gr-0/0/0.1
+      metric: 4000
+      bfd: true
+    - cr4-ulsfo.wikimedia.org: gr-0/0/0.2
+      cr2-eqdfw.wikimedia.org: gr-0/0/0.1
+      metric: 1390
+      bfd: true
+    - cr2-eqord.wikimedia.org: xe-0/1/5.0
+      cr2-eqiad.wikimedia.org: xe-4/2/0.0
+      metric: 240
+      bfd: true
+    - cr2-eqord.wikimedia.org: xe-0/1/0.0
+      cr2-codfw.wikimedia.org: xe-5/2/1.0
+      metric: 240
+      bfd: true
+    - cr2-eqord.wikimedia.org: gr-0/0/0.1
+      cr1-eqiad.wikimedia.org: gr-4/3/0.1
+      metric: 3000
+      bfd: true
+    - cr1-eqsin.wikimedia.org: ae0.0
+      cr2-eqsin.wikimedia.org: ae0.0
+    - cr1-eqsin.wikimedia.org: xe-0/1/0.0
+      cr1-codfw.wikimedia.org: xe-5/1/2.0
+      metric: 2000
+      bfd: true
+    - cr1-eqsin.wikimedia.org: ae1.401
+      mr1-eqsin.wikimedia.org: ge-0/0/4.401
+      metric: 20000
+    - cr2-eqsin.wikimedia.org: ae1.402
+      mr1-eqsin.wikimedia.org: ge-0/0/4.402
+      metric: 20000
+    - cr1-codfw.wikimedia.org: xe-5/2/1.0
+      cr1-eqiad.wikimedia.org: xe-4/2/0.0
+      metric: 340
+      bfd: true
+    - cr1-codfw.wikimedia.org: ae1.401
+      mr1-codfw.wikimedia.org: ge-0/0/1.401
+      metric: 20000
+    - cr2-codfw.wikimedia.org: ae1.402
+      mr1-codfw.wikimedia.org: ge-0/0/1.402
+      metric: 20000
+    - cr2-codfw.wikimedia.org: xe-5/0/0.0
+      cr2-eqdfw.wikimedia.org: xe-0/1/4.0
+      bfd: true
+    - cr1-codfw.wikimedia.org: xe-5/0/0.0
+      cr2-eqdfw.wikimedia.org: xe-0/1/0.0
+      bfd: true
+    - cr1-codfw.wikimedia.org: ae0.0
+      cr2-codfw.wikimedia.org: ae0.0
+      bfd: true
+    - cr2-eqdfw.wikimedia.org: xe-0/1/3.12
+      cr1-eqiad.wikimedia.org: xe-4/2/2.12
+      bfd: true
+      metric: 1390
+    - cr2-eqdfw.wikimedia.org: xe-0/1/3.23
+      cr3-knams.wikimedia.org: xe-0/1/5.23
+      bfd: true
+      metric: 1550
+    - cr2-eqiad.wikimedia.org: xe-3/2/3.0
+      cr2-codfw.wikimedia.org: xe-5/0/1.0
+      bfd: true
+      metric: 320
+    - cr1-eqiad.wikimedia.org: ae0.0
+      cr2-eqiad.wikimedia.org: ae0.0
+    - cr2-eqiad.wikimedia.org: xe-4/1/3.0
+      cr2-esams.wikimedia.org: xe-0/1/3.0
+      bfd: true
+      metric: 840
+    - cr1-eqiad.wikimedia.org: ae1.401
+      mr1-eqiad.wikimedia.org: ge-0/0/1.401
+      metric: 20000
+    - cr2-eqiad.wikimedia.org: ae1.402
+      mr1-eqiad.wikimedia.org: ge-0/0/1.402
+      metric: 20000
+    - cr2-eqiad.wikimedia.org: gr-4/3/0.1
+      cr3-esams.wikimedia.org: gr-0/0/0.1
+      bfd: true
+      metric: 3000
+    - cr1-eqiad.wikimedia.org: xe-4/2/2.13
+      cr3-knams.wikimedia.org: xe-0/1/5.13
+      bfd: true
+      metric: 1820
+    - cr3-esams.wikimedia.org: ae1.401
+      cr3-knams.wikimedia.org: ae1.401
+      bfd: true
+    - cr2-esams.wikimedia.org: ae1.403
+      cr3-knams.wikimedia.org: ae1.403
+      bfd: true
+    - cr3-esams.wikimedia.org: ae0.0
+      cr2-esams.wikimedia.org: ae0.0
+      bfd: true
+    - cr2-esams.wikimedia.org: ae1.404
+      mr1-esams.wikimedia.org: ge-0/0/1.404
+      metric: 20000
+    - cr3-esams.wikimedia.org: ae1.402
+      mr1-esams.wikimedia.org: ge-0/0/1.402
+      metric: 20000
   stub:
-      mr1-ulsfo.wikimedia.org:
-         - vlan.900
-      mr1-eqsin.wikimedia.org:
-         - vlan.900
-      mr1-codfw.wikimedia.org:
-         - ge-0/0/2.0
-         - ge-0/0/0.0
-      mr1-eqiad.wikimedia.org:
-         - ge-0/0/2.0
-         - ge-0/0/0.0
-      mr1-esams.wikimedia.org:
-         - ge-0/0/6.2483
-         - irb.900
-      cr3-ulsfo.wikimedia.org:
-         - et-0/0/1.1201
-         - et-0/0/1.1211
-         - et-0/0/1.1221
-      cr4-ulsfo.wikimedia.org:
-         - et-0/0/1.1201
-         - et-0/0/1.1211
-         - et-0/0/1.1221
-      cr1-eqsin.wikimedia.org:
-         - ae1.510
-         - ae1.520
-         - ae1.530
-      cr2-eqsin.wikimedia.org:
-         - ae1.510
-         - ae1.520
-         - ae1.530
-      cr1-codfw.wikimedia.org:
-         - ae1.2001
-         - ae2.2002
-         - ae3.2003
-         - ae4.2004
-         - ae1.2017
-         - ae2.2018
-         - ae3.2019
-         - ae4.2020
-         - ae2.2122
-         - ae1.2201
-         - ae2.2118
-         - ae2.2120
-      cr2-codfw.wikimedia.org:
-         - ae1.2001
-         - ae2.2002
-         - ae3.2003
-         - ae4.2004
-         - ae1.2017
-         - ae2.2018
-         - ae3.2019
-         - ae4.2020
-         - ae2.2122
-         - ae1.2201
-         - ae2.2118
-         - ae2.2120
-      cr1-eqiad.wikimedia.org:
-         - ae1.1001
-         - ae1.1017
-         - ae1.1117
-         - ae1.1030
-         - ae2.1002
-         - ae2.1018
-         - ae2.1118
-         - ae2.1021
-         - ae2.1120
-         - ae2.1202
-         - ae3.1003
-         - ae3.1019
-         - ae3.1022
-         - ae3.1119
-         - ae4.1020
-         - ae4.1004
-         - ae4.1023
-      cr2-eqiad.wikimedia.org:
-         - ae1.1001
-         - ae1.1017
-         - ae1.1117
-         - ae1.1030
-         - ae2.1002
-         - ae2.1018
-         - ae2.1118
-         - ae2.1021
-         - ae2.1120
-         - ae2.1202
-         - ae3.1003
-         - ae3.1019
-         - ae3.1022
-         - ae3.1119
-         - ae4.1020
-         - ae4.1004
-         - ae4.1023
-      cr3-esams.wikimedia.org:
-         - ae1.100
-         - ae1.102
-         - ae1.103
-      cr2-esams.wikimedia.org:
-         - ae1.100
-         - ae1.102
-         - ae1.103
+    mr1-ulsfo.wikimedia.org:
+      - vlan.900
+    mr1-eqsin.wikimedia.org:
+      - vlan.900
+    mr1-codfw.wikimedia.org:
+      - ge-0/0/2.0
+      - ge-0/0/0.0
+    mr1-eqiad.wikimedia.org:
+      - ge-0/0/2.0
+      - ge-0/0/0.0
+    mr1-esams.wikimedia.org:
+      - ge-0/0/6.2483
+      - irb.900
+    cr3-ulsfo.wikimedia.org:
+      - et-0/0/1.1201
+      - et-0/0/1.1211
+      - et-0/0/1.1221
+    cr4-ulsfo.wikimedia.org:
+      - et-0/0/1.1201
+      - et-0/0/1.1211
+      - et-0/0/1.1221
+    cr1-eqsin.wikimedia.org:
+      - ae1.510
+      - ae1.520
+      - ae1.530
+    cr2-eqsin.wikimedia.org:
+      - ae1.510
+      - ae1.520
+      - ae1.530
+    cr1-codfw.wikimedia.org:
+      - ae1.2001
+      - ae2.2002
+      - ae3.2003
+      - ae4.2004
+      - ae1.2017
+      - ae2.2018
+      - ae3.2019
+      - ae4.2020
+      - ae2.2122
+      - ae1.2201
+      - ae2.2118
+      - ae2.2120
+    cr2-codfw.wikimedia.org:
+      - ae1.2001
+      - ae2.2002
+      - ae3.2003
+      - ae4.2004
+      - ae1.2017
+      - ae2.2018
+      - ae3.2019
+      - ae4.2020
+      - ae2.2122
+      - ae1.2201
+      - ae2.2118
+      - ae2.2120
+    cr1-eqiad.wikimedia.org:
+      - ae1.1001
+      - ae1.1017
+      - ae1.1117
+      - ae1.1030
+      - ae2.1002
+      - ae2.1018
+      - ae2.1118
+      - ae2.1021
+      - ae2.1120
+      - ae2.1202
+      - ae3.1003
+      - ae3.1019
+      - ae3.1022
+      - ae3.1119
+      - ae4.1020
+      - ae4.1004
+      - ae4.1023
+    cr2-eqiad.wikimedia.org:
+      - ae1.1001
+      - ae1.1017
+      - ae1.1117
+      - ae1.1030
+      - ae2.1002
+      - ae2.1018
+      - ae2.1118
+      - ae2.1021
+      - ae2.1120
+      - ae2.1202
+      - ae3.1003
+      - ae3.1019
+      - ae3.1022
+      - ae3.1119
+      - ae4.1020
+      - ae4.1004
+      - ae4.1023
+    cr3-esams.wikimedia.org:
+      - ae1.100
+      - ae1.102
+      - ae1.103
+    cr2-esams.wikimedia.org:
+      - ae1.100
+      - ae1.102
+      - ae1.103
 
-juniper_protocols: ['bfd', 'bgp', 'dvmrp', 'igmp', 'ldp', 'msdp', 'nhrp', 'ospf', 'ospf3', 'pgm', 'pim', 'rip', 'ripng', 'router-discovery', 'rsvp', 'sap', 'vrrp']
-juniper_services: ['any-service', 'bootp', 'dhcp', 'dhcpv6', 'dns', 'finger', 'ftp', 'http', 'https', 'ident-reset', 'ike', 'lsping', 'netconf', 'ntp', 'ping', 'r2cp', 'reverse-ssh', 'reverse-telnet', 'rlogin', 'rpm', 'rsh', 'snmp', 'snmp-trap', 'ssh', 'telnet', 'tftp', 'traceroute', 'xnm-clear-text', 'xnm-ssl']
+juniper_protocols:
+  - bfd
+  - bgp
+  - dvmrp
+  - igmp
+  - ldp
+  - msdp
+  - nhrp
+  - ospf
+  - ospf3
+  - pgm
+  - pim
+  - rip
+  - ripng
+  - router-discovery
+  - rsvp
+  - sap
+  - vrrp
+
+juniper_services:
+  - any-service
+  - bootp
+  - dhcp
+  - dhcpv6
+  - dns
+  - finger
+  - ftp
+  - http
+  - https
+  - ident-reset
+  - ike
+  - lsping
+  - netconf
+  - ntp
+  - ping
+  - r2cp
+  - reverse-ssh
+  - reverse-telnet
+  - rlogin
+  - rpm
+  - rsh
+  - snmp
+  - snmp-trap
+  - ssh
+  - telnet
+  - tftp
+  - traceroute
+  - xnm-clear-text
+  - xnm-ssl
 
 ntp_servers:
-    - 208.80.154.10
-    - 208.80.155.108
-    - 208.80.153.77
-    - 208.80.153.111
-    - 91.198.174.61
-    - 91.198.174.62
+  - 208.80.154.10
+  - 208.80.155.108
+  - 208.80.153.77
+  - 208.80.153.111
+  - 91.198.174.61
+  - 91.198.174.62
 
 # rpki_whitelist:
 #  - prefix: 192.0.0.0/23
