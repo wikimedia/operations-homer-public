@@ -1,5 +1,7 @@
-.sw*
-.*.sw*
 /.tox/
 /build/
 /real/
+__pycache__/
+.sw*
+.*.sw*
+*.pyc
