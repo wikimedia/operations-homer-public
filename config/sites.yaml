@@ -33,6 +33,7 @@ eqiad:
       - ae4.1020
       - ae4.1004
       - ae2.1202
+  tcp_mss_clamping: true
 
 eqord:
   confed: 65001
@@ -43,6 +44,7 @@ eqord:
   sampling:
     enabled: false
     collector: 10.64.32.88  # netflow1001.eqiad.wmnet
+  tcp_mss_clamping: true
 
 codfw:
   confed: 65002
