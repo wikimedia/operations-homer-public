@@ -12,6 +12,11 @@ eqiad:
     - 185.15.56.0/24
   bgp6_out:
     - 2620:0:860::/46
+  lvs_neighbors:  # Routers PyBal neighbors
+    lvs1013: 10.64.1.13
+    lvs1014: 10.64.17.14
+    lvs1015: 10.64.33.15
+    lvs1016: 10.64.49.16
   ping_offload_vip: 208.80.154.224/32
   ping_offload_redirect: 10.64.32.31  # ping1001.eqiad.wmnet
   sampling:
@@ -59,6 +64,11 @@ codfw:
   bgp6_out:
     # - 2620:0:860::/46
     - 2620:0:860::/48
+  lvs_neighbors:  # Routers PyBal neighbors
+    lvs2007: 10.192.1.7
+    lvs2008: 10.192.17.7
+    lvs2009: 10.192.33.7
+    lvs2010: 10.192.49.7
   ping_offload_vip: 208.80.153.224/32
   ping_offload_redirect: 10.192.0.22  # ping2001.codfw.wmnet
   sampling:
@@ -100,6 +110,10 @@ ulsfo:
     - 198.35.26.0/23
   bgp6_out:
     - 2620:0:863::/48
+  lvs_neighbors:  # Routers PyBal neighbors
+    lvs4005: 10.128.0.15
+    lvs4006: 10.128.0.16
+    lvs4007: 10.128.0.17
   sampling:
     collector: 10.128.0.31  # netflow4001.ulsfo.wmnet
   dhcp_relay:
@@ -116,6 +130,10 @@ eqsin:
     - 103.102.166.0/24
   bgp6_out:
     - 2001:df2:e500::/48
+  lvs_neighbors:
+    lvs5001: 10.132.0.11
+    lvs5002: 10.132.0.12
+    lvs5003: 10.132.0.13
   sampling:
     collector: 10.132.0.30  # netflow5001.eqsin.wmnet
   dhcp_relay:
@@ -142,6 +160,10 @@ esams:
     - 91.198.174.232/29
   lvs6:
     - 2620:0:862:ed1a::/64
+  lvs_neighbors:
+    lvs3005: 10.20.0.15
+    lvs3006: 10.20.0.16
+    lvs3007: 10.20.0.17
   ping_offload_vip: 91.198.174.192/32  # text-lb.esams.wikimedia.org
   ping_offload_redirect: 10.20.0.103  # ping3001.esams.wmnet
   sampling:
