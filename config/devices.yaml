@@ -4,12 +4,14 @@ cr1-eqiad.wikimedia.org:
   site: eqiad
   config:
     mgmt_ip: [10.65.0.12/16, 10.65.0.13/16]
+    fpcs_to_sample: [4]
 
 cr2-eqiad.wikimedia.org:
   role: cr
   site: eqiad
   config:
     mgmt_ip: [10.65.0.14/16, 10.65.0.15/16]
+    fpcs_to_sample: [3]
 
 cr2-eqord.wikimedia.org:
   role: cr
@@ -20,12 +22,14 @@ cr1-codfw.wikimedia.org:
   site: codfw
   config:
     mgmt_ip: [10.193.0.10/16, 10.193.0.11/16]
+    fpcs_to_sample: [5]
 
 cr2-codfw.wikimedia.org:
   role: cr
   site: codfw
   config:
     mgmt_ip: [10.193.0.12/16, 10.193.0.13/16]
+    fpcs_to_sample: [5]
 
 cr2-eqdfw.wikimedia.org:
   role: cr
@@ -36,40 +40,48 @@ cr3-ulsfo.wikimedia.org:
   site: ulsfo
   config:
     mgmt_junos: true  # Separate mgmt interface in special routing instance
+    fpcs_to_sample: [0]
 
 cr4-ulsfo.wikimedia.org:
   role: cr
   site: ulsfo
   config:
     mgmt_junos: true  # Separate mgmt interface in special routing instance
+    fpcs_to_sample: [0]
 
 cr3-esams.wikimedia.org:
   role: cr
   site: esams
   config:
     mgmt_ip: [10.21.0.119/24, 10.21.0.120/24]
+    fpcs_to_sample: [0]
 
 cr2-esams.wikimedia.org:
   role: cr
   site: esams
   config:
     mgmt_ip: [10.21.0.117/24, 10.21.0.118/24]
+    fpcs_to_sample: [0]
 
 cr3-knams.wikimedia.org:
   role: cr
   site: knams
+  config:
+    fpcs_to_sample: [0]
 
 cr1-eqsin.wikimedia.org:
   role: cr
   site: eqsin
   config:
     mgmt_ip: [10.132.128.2/17, 10.132.128.3/17]
+    # TODO: on the MX104 sampling settings are part of the 'AFEB' rather than an FPC
 
 cr2-eqsin.wikimedia.org:
   role: cr
   site: eqsin
   config:
     mgmt_junos: true  # Separate mgmt interface in special routing instance
+    fpcs_to_sample: [0]
 
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
