@@ -138,7 +138,6 @@ eqsin:
       - ae1.510
       - ae1.520
       - ae1.530
-  prepend_as_out: true
   tcp_mss_clamping: true
 
 esams:
@@ -170,9 +169,7 @@ esams:
       - ae1.100
       - ae1.102
       - ae1.103
-  prepend_as_out: true
   tcp_mss_clamping: true
-
 
 knams:
   confed: 65003
@@ -191,5 +188,4 @@ knams:
     - 2620:0:862:ed1a::/64
   sampling:
     collector: 10.20.0.100  # netflow3001.esams.wmnet
-  prepend_as_out: true
   tcp_mss_clamping: true
