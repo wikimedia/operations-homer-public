@@ -21,7 +21,7 @@ eqiad:
   sampling:
     collector: 10.64.32.88  # netflow1001.eqiad.wmnet
   dhcp_relay:
-    server: 208.80.154.22  # install1002.wikimedia.org
+    server: 208.80.154.32  # install1003.wikimedia.org
     interfaces:
       - ae1.1001
       - ae1.1017
@@ -72,7 +72,7 @@ codfw:
   sampling:
     collector: 10.192.0.148  # netflow2001.codfw.wmnet
   dhcp_relay:
-    server: 208.80.153.53  # install2002.wikimedia.org
+    server: 208.80.153.51  # install2003.wikimedia.org
     interfaces:
       - ae1.2001
       - ae2.2002
@@ -113,7 +113,7 @@ ulsfo:
   sampling:
     collector: 10.128.0.31  # netflow4001.ulsfo.wmnet
   dhcp_relay:
-    server: 208.80.153.53  # install2002.wikimedia.org
+    server: 208.80.153.51  # install2003.wikimedia.org
     interfaces:
       - et-0/0/1.1201
       - et-0/0/1.1211
@@ -133,7 +133,7 @@ eqsin:
   sampling:
     collector: 10.132.0.30  # netflow5001.eqsin.wmnet
   dhcp_relay:
-    server: 208.80.153.53  # install2002.wikimedia.org
+    server: 208.80.153.51  # install2003.wikimedia.org
     interfaces:
       - ae1.510
       - ae1.520
@@ -165,7 +165,7 @@ esams:
   sampling:
     collector: 10.20.0.100  # netflow3001.esams.wmnet
   dhcp_relay:
-    server: 208.80.154.22  # install1002.wikimedia.org
+    server: 208.80.154.32  # install1003.wikimedia.org
     interfaces:
       - ae1.100
       - ae1.102
