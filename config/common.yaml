@@ -416,3 +416,11 @@ ntp_servers:
 # # Clamps outbound tcp-mss to 1436
 # # Usually applied per site
 # tcp_mss_clamping: true
+#
+# Add flowspec rule to the routers
+# flowspec_flows:
+#   name: [Unique]
+#     description: T123456 [Optional]
+#     protocol: udp or sets between brackets, eg: [tcp udp] [Optional]
+#     source: 192.0.0.0/23 [Optional]
+#     destination: 192.0.0.0/23 [Optional]

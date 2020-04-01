@@ -72,6 +72,11 @@ cr3-knams.wikimedia.org:
   site: knams
   config:
     fpcs_to_sample: [0]
+    flowspec_flows:
+      drop-udp-text-lb:
+        description: T243482
+        protocol: udp
+        destination: 91.198.174.192/32
 
 cr1-eqsin.wikimedia.org:
   role: cr
