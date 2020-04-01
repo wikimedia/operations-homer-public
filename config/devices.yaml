@@ -16,6 +16,8 @@ cr2-eqiad.wikimedia.org:
 cr2-eqord.wikimedia.org:
   role: cr
   site: eqord
+  config:
+    fpcs_to_sample: [0]
 
 cr1-codfw.wikimedia.org:
   role: cr
@@ -34,6 +36,8 @@ cr2-codfw.wikimedia.org:
 cr2-eqdfw.wikimedia.org:
   role: cr
   site: eqdfw
+  config:
+    fpcs_to_sample: [0]
 
 cr3-ulsfo.wikimedia.org:
   role: cr

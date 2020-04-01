@@ -47,7 +47,6 @@ eqord:
   bgp6_out:
     - 2620:0:861::/48  # eqiad
   sampling:
-    enabled: false
     collector: 10.64.32.88  # netflow1001.eqiad.wmnet
   tcp_mss_clamping: true
 
@@ -94,7 +93,6 @@ eqdfw:
   bgp6_out:
     - 2620:0:860::/48  # codfw
   sampling:
-    enabled: false
     collector: 10.192.0.148  # netflow2001.codfw.wmnet
 
 ulsfo:
