@@ -424,3 +424,8 @@ ntp_servers:
 #     protocol: udp or sets between brackets, eg: [tcp udp] [Optional]
 #     source: 192.0.0.0/23 [Optional]
 #     destination: 192.0.0.0/23 [Optional]
+#
+# Configure uRPF loose mode
+# Feature rollout flag, can be removed when deployed everywhere
+# urpf: log
+# other possible options: syslog, discard (note that any string other than log/syslog will discard)
