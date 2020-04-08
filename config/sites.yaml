@@ -116,7 +116,6 @@ ulsfo:
       - et-0/0/1.1201
       - et-0/0/1.1211
       - et-0/0/1.1221
-  urpf: log
 
 eqsin:
   confed: 65005
