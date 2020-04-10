@@ -407,6 +407,43 @@ ntp_servers:
   - 91.198.174.61
   - 91.198.174.62
 
+transit_providers:
+  # Name: [Unique]
+  #  AS: 1234 [Required]  # Peer AS number
+  #  flowspec: true [Optional]  # Adds flowspec address family
+  #  import_policy: true [Optional]  Generate the policy based on the peer ASN
+  #  export_policy: true [Optional]  Generate the policy based on the peer ASN
+  #  BFD: true [Optional] Enable BFD
+  #
+  #  See bgp_keys in homer-private/config/devices.yaml
+  Datahop:
+    AS: 6908
+  "Deutsche Telekom":
+    # CID in https://netbox.wikimedia.org/circuits/circuits/92/
+    AS: 3320
+    BFD: true
+  FiberRing:
+    AS: 38930
+  "Hurricane Electric":
+    AS: 6939
+  Init7:
+    AS: 13030
+  LibertyGlobal:
+    AS: 6830
+    flowspec: true
+  NTT:
+    AS: 2914
+  Tata:
+    AS: 6453
+    import_policy: true
+    export_policy: true
+  Tele2:
+    AS: 1257
+  Telia:
+    AS: 1299
+  Zayo:
+    AS: 6461
+
 # rpki_whitelist:
 #  - prefix: 192.0.0.0/23
 #    maxlen: 24
@@ -431,3 +468,5 @@ ntp_servers:
 # Feature rollout flag, can be removed when deployed everywhere
 # urpf: log
 # other possible options: syslog, discard (note that any string other than log/syslog will discard)
+#
+#

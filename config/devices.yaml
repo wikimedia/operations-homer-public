@@ -5,6 +5,17 @@ cr1-eqiad.wikimedia.org:
   config:
     mgmt_ip: [10.65.0.12/16, 10.65.0.13/16]
     fpcs_to_sample: [4]
+    transits:
+      129.250.204.189:
+        provider: NTT
+      2001:418:0:5000::7c4:
+        provider: NTT
+      64.125.192.141:
+        provider: Zayo
+      2001:438:fffd:58::1:
+        provider: Zayo
+      2001:470:0:1c0::1:
+        provider: "Hurricane Electric"
 
 cr2-eqiad.wikimedia.org:
   role: cr
@@ -12,12 +23,28 @@ cr2-eqiad.wikimedia.org:
   config:
     mgmt_ip: [10.65.0.14/16, 10.65.0.15/16]
     fpcs_to_sample: [3]
+    transits:
+      80.239.132.225:
+        provider: Telia
+      2001:2000:3080:0a98::1:
+        provider: Telia
 
 cr2-eqord.wikimedia.org:
   role: cr
   site: eqord
   config:
     fpcs_to_sample: [0]
+    transits:
+      128.241.2.53:
+        provider: NTT
+      2001:418:0:5000:0:0:0:a34:
+        provider: NTT
+      208.185.240.45:
+        provider: Zayo
+      2001:438:fffd:56::1:
+        provider: Zayo
+      2001:504:0:4::6939:1:
+        provider: "Hurricane Electric"
 
 cr1-codfw.wikimedia.org:
   role: cr
@@ -25,6 +52,11 @@ cr1-codfw.wikimedia.org:
   config:
     mgmt_ip: [10.193.0.10/16, 10.193.0.11/16]
     fpcs_to_sample: [5]
+    transits:
+      80.239.192.101:
+        provider: Telia
+      2001:2000:3080:af4::1:
+        provider: Telia
 
 cr2-codfw.wikimedia.org:
   role: cr
@@ -32,24 +64,52 @@ cr2-codfw.wikimedia.org:
   config:
     mgmt_ip: [10.193.0.12/16, 10.193.0.13/16]
     fpcs_to_sample: [5]
+    transits:
+      64.125.129.69:
+        provider: Zayo
+      2001:438:fffd:5c::1:
+        provider: Zayo
 
 cr2-eqdfw.wikimedia.org:
   role: cr
   site: eqdfw
   config:
     fpcs_to_sample: [0]
+    transits:
+      128.242.179.181:
+        provider: NTT
+      2001:418:0:5000:0:0:0:3b2:
+        provider: NTT
+      2001:504:0:5::6939:1:
+        provider: "Hurricane Electric"
 
 cr3-ulsfo.wikimedia.org:
   role: cr
   site: ulsfo
   config:
     fpcs_to_sample: [0]
+    transits:
+      80.239.192.65:
+        provider: Telia
+      2001:2000:3080:0a9a::1:
+        provider: Telia
+      209.133.4.57:
+        provider: Zayo
+      2001:438:fffd:57::1:
+        provider: Zayo
 
 cr4-ulsfo.wikimedia.org:
   role: cr
   site: ulsfo
   config:
     fpcs_to_sample: [0]
+    transits:
+      2001:504:d::10:
+        provider: "Hurricane Electric"
+      2001:418:0:5000::6fa:
+        provider: NTT
+      129.250.204.5:
+        provider: NTT
 
 cr3-esams.wikimedia.org:
   role: cr
@@ -57,6 +117,11 @@ cr3-esams.wikimedia.org:
   config:
     mgmt_ip: [10.21.0.119/24, 10.21.0.120/24]
     fpcs_to_sample: [0]
+    transits:
+      62.115.145.24:
+        provider: Telia
+      2001:2000:3080:0ee8::1:
+        provider: Telia
 
 cr2-esams.wikimedia.org:
   role: cr
@@ -64,6 +129,18 @@ cr2-esams.wikimedia.org:
   config:
     mgmt_ip: [10.21.0.117/24, 10.21.0.118/24]
     fpcs_to_sample: [0]
+    transits:
+      80.249.209.211:
+        provider: "Deutsche Telekom"
+      2001:7f8:1::a500:3320:1:
+        provider: "Deutsche Telekom"
+      87.255.35.65:
+        provider: FiberRing
+      2a00:ec8::21d:
+        provider: FiberRing
+      2001:7f8:1::a500:6939:1:
+        provider: "Hurricane Electric"
+
 
 cr3-knams.wikimedia.org:
   role: cr
@@ -75,6 +152,23 @@ cr3-knams.wikimedia.org:
         description: T243482
         protocol: udp
         destination: 91.198.174.192/32
+    transits:
+      130.244.6.249:
+        provider: Tele2
+      2a00:800:0:10::3:1:
+        provider: Tele2
+      77.109.134.113:
+        provider: Init7
+      2001:1620:1000::85:
+        provider: Init7
+      78.41.155.33:
+        provider: Datahop
+      2a01:450:2::1:1:
+        provider: Datahop
+      213.46.186.9:
+        provider: LibertyGlobal
+      2001:730:2209:1::d52e:ba09:
+        provider: LibertyGlobal
 
 cr1-eqsin.wikimedia.org:
   role: cr
@@ -82,12 +176,34 @@ cr1-eqsin.wikimedia.org:
   config:
     mgmt_ip: [10.132.128.2/17, 10.132.128.3/17]
     # TODO: on the MX104 sampling settings are part of the 'AFEB' rather than an FPC
+    transits:
+      62.115.148.76:
+        provider: Telia
+        import_policy: true
+        export_policy: true
+      2001:2000:3080:15b5::1:
+        provider: Telia
+        import_policy: true
+        export_policy: true
 
 cr2-eqsin.wikimedia.org:
   role: cr
   site: eqsin
   config:
     fpcs_to_sample: [0]
+    transits:
+      180.87.164.61:
+        provider: Tata
+      2405:2000:800::19:
+        provider: Tata
+      116.51.26.209:
+        provider: NTT
+        import_policy: true
+        export_policy: true
+      2001:218:4000:5000:0:0:0:149:
+        provider: NTT
+        import_policy: true
+        export_policy: true
 
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
@@ -236,3 +352,10 @@ mr1-esams.wikimedia.org:
 # pfw-codfw.wikimedia.org:
 #   role: pfw
 #   site: codfw
+
+# transits:
+#   192.0.0.1:  [Unique] (or v6) BGP peer IP
+#     provider: NTT  [Required] one of common.yaml transit_providers
+#     import_policy: true [Optional] Generate the policy based on the peer ASN
+#     export_policy: true [Optional] Generate the policy based on the peer ASN
+#     disabled: true [optional]
