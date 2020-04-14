@@ -23,4 +23,4 @@ mr:
 
 cr:
   lldp_disabled: ['external']
-  urpf: log
+  urpf: syslog
