@@ -23,4 +23,3 @@ mr:
 
 cr:
   lldp_disabled: ['external']
-  urpf: log
