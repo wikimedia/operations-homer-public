@@ -152,7 +152,7 @@ ospf:
       bfd: true
     - cr4-ulsfo.wikimedia.org: gr-0/0/0.1
       cr2-eqsin.wikimedia.org: gr-0/0/0.1
-      metric: 4000
+      metric: 1000
       bfd: true
     - cr4-ulsfo.wikimedia.org: gr-0/0/0.2
       cr2-eqdfw.wikimedia.org: gr-0/0/0.1
