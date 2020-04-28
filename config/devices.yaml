@@ -43,14 +43,12 @@ cr3-ulsfo.wikimedia.org:
   role: cr
   site: ulsfo
   config:
-    mgmt_junos: true  # Separate mgmt interface in special routing instance
     fpcs_to_sample: [0]
 
 cr4-ulsfo.wikimedia.org:
   role: cr
   site: ulsfo
   config:
-    mgmt_junos: true  # Separate mgmt interface in special routing instance
     fpcs_to_sample: [0]
 
 cr3-esams.wikimedia.org:
@@ -89,7 +87,6 @@ cr2-eqsin.wikimedia.org:
   role: cr
   site: eqsin
   config:
-    mgmt_junos: true  # Separate mgmt interface in special routing instance
     fpcs_to_sample: [0]
 
 # access switches
