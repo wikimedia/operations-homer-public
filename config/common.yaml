@@ -140,7 +140,7 @@ ospf:
       mr1-ulsfo.wikimedia.org: ge-0/0/4.401
       metric: 20000
     - cr3-ulsfo.wikimedia.org: xe-0/1/1.0
-      cr2-eqord.wikimedia.org: xe-0/1/1.0
+      cr2-eqord.wikimedia.org: xe-0/1/3.0
       metric: 510
       bfd: true
     - cr4-ulsfo.wikimedia.org: et-0/0/1.402
