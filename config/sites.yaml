@@ -9,6 +9,7 @@ eqiad:
   bgp_out:
     - 208.80.154.0/23  # eqiad
     - 185.15.56.0/24  # WMCS eqiad
+    - 198.35.27.0/24  # Anycast
   bgp6_out:
     - 2620:0:861::/48  # eqiad
   lvs_neighbors:  # Routers PyBal neighbors
@@ -44,6 +45,7 @@ eqord:
   bgp_out:
     - 208.80.154.0/23  # eqiad
     - 185.15.56.0/24  # WMCS eqiad
+    - 198.35.27.0/24  # Anycast
   bgp6_out:
     - 2620:0:861::/48  # eqiad
   sampling:
@@ -59,6 +61,7 @@ codfw:
   bgp_out:
     - 208.80.152.0/23  # codfw
     - 185.15.57.0/24  # WMCS codfw
+    - 198.35.27.0/24  # Anycast
   bgp6_out:
     - 2620:0:860::/48  # codfw
   lvs_neighbors:  # Routers PyBal neighbors
@@ -90,6 +93,7 @@ eqdfw:
   bgp_out:
     - 208.80.152.0/23  # codfw
     - 185.15.57.0/24  # WMCS codfw
+    - 198.35.27.0/24  # Anycast
   bgp6_out:
     - 2620:0:860::/48  # codfw
   sampling:
@@ -101,9 +105,10 @@ ulsfo:
   customers:
     - 11820  # WMF HQ
   bgp_out:
-    - 198.35.26.0/24
+    - 198.35.26.0/24  # ulsfo
+    - 198.35.27.0/24  # Anycast
   bgp6_out:
-    - 2620:0:863::/48
+    - 2620:0:863::/48  # ulsfo
   lvs_neighbors:  # Routers PyBal neighbors
     lvs4005: 10.128.0.15
     lvs4006: 10.128.0.16
@@ -121,9 +126,10 @@ eqsin:
   confed: 65005
   mgmt_gw: 10.132.128.1
   bgp_out:
-    - 103.102.166.0/24
+    - 103.102.166.0/24  # ulsfo
+    - 198.35.27.0/24  # Anycast
   bgp6_out:
-    - 2001:df2:e500::/48
+    - 2001:df2:e500::/48  # ulsfo
   lvs_neighbors:
     lvs5001: 10.132.0.11
     lvs5002: 10.132.0.12
@@ -142,10 +148,11 @@ esams:
   confed: 65003
   mgmt_gw: 10.21.0.1
   bgp_out:
-    - 91.198.174.0/24
+    - 91.198.174.0/24  # esams
     - 185.15.58.0/23
+    - 198.35.27.0/24  # Anycast
   bgp6_out:
-    - 2620:0:862::/48
+    - 2620:0:862::/48  # esams
     - 2a02:ec80::/32
   lvs:
     - 10.2.0.0/16
@@ -173,10 +180,11 @@ knams:
   confed: 65003
   mgmt_gw: 10.21.0.1
   bgp_out:
-    - 91.198.174.0/24
+    - 91.198.174.0/24  # esams
     - 185.15.58.0/23
+    - 198.35.27.0/24  # Anycast
   bgp6_out:
-    - 2620:0:862::/48
+    - 2620:0:862::/48  # esams
     - 2a02:ec80::/32
   lvs:
     - 10.2.0.0/16
