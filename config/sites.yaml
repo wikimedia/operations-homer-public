@@ -101,7 +101,7 @@ ulsfo:
   customers:
     - 11820  # WMF HQ
   bgp_out:
-    - 198.35.26.0/23
+    - 198.35.26.0/24
   bgp6_out:
     - 2620:0:863::/48
   lvs_neighbors:  # Routers PyBal neighbors
