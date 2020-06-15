@@ -470,3 +470,12 @@ transit_providers:
 # other possible options: syslog, discard (note that any string other than log/syslog will discard)
 #
 #
+
+
+asns_mapping:
+  k8s:
+    eqiad: 64601
+    codfw: 64602
+  frack:
+    eqiad: 64700
+    codfw: 64701
