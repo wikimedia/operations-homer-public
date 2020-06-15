@@ -24,6 +24,11 @@ eqiad:
     kubernetes1004: {4: 10.64.48.52, 6: 2620:0:861:107:10:64:48:52}
     kubernetes1005: {4: 10.64.0.145, 6: 2620:0:861:101:10:64:0:145}
     kubernetes1006: {4: 10.64.32.18, 6: 2620:0:861:103:10:64:32:18}
+  anycast_neighbors:
+    dns1001: 208.80.154.10
+    dns1002: 208.80.155.108
+    authdns1001: 208.80.154.134
+    centrallog1001: 10.64.48.113
   ping_offload_vip: 208.80.154.224/32
   ping_offload_redirect: 10.64.32.31  # ping1001.eqiad.wmnet
   sampling:
@@ -83,6 +88,11 @@ codfw:
     kubernetes2004: {4: 10.192.48.71, 6: 2620:0:860:104:10:192:48:71}
     kubernetes2005: {4: 10.192.0.117, 6: 2620:0:860:101:10:192:0:117}
     kubernetes2006: {4: 10.192.16.102, 6: 2620:0:860:102:10:192:16:102}
+  anycast_neighbors:
+    dns2001: 208.80.153.77
+    dns2002: 208.80.153.111
+    authdns2001: 208.80.153.17
+    centrallog2001: 10.192.48.64
   ping_offload_vip: 208.80.153.224/32
   ping_offload_redirect: 10.192.0.22  # ping2001.codfw.wmnet
   sampling:
@@ -127,6 +137,9 @@ ulsfo:
     lvs4005: 10.128.0.15
     lvs4006: 10.128.0.16
     lvs4007: 10.128.0.17
+  anycast_neighbors:
+    dns4001: 198.35.26.7
+    dns4002: 198.35.26.8
   sampling:
     collector: 10.128.0.31  # netflow4001.ulsfo.wmnet
   dhcp_relay:
@@ -148,6 +161,9 @@ eqsin:
     lvs5001: 10.132.0.11
     lvs5002: 10.132.0.12
     lvs5003: 10.132.0.13
+  anycast_neighbors:
+    dns5001: 103.102.166.8
+    dns5002: 103.102.166.9
   sampling:
     collector: 10.132.0.30  # netflow5001.eqsin.wmnet
   dhcp_relay:
@@ -178,6 +194,9 @@ esams:
     lvs3005: 10.20.0.15
     lvs3006: 10.20.0.16
     lvs3007: 10.20.0.17
+  anycast_neighbors:
+    dns3001: 91.198.174.61
+    dns3002: 91.198.174.62
   ping_offload_vip: 91.198.174.192/32  # text-lb.esams.wikimedia.org
   ping_offload_redirect: 10.20.0.103  # ping3001.esams.wmnet
   sampling:
