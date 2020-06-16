@@ -160,7 +160,7 @@ ospf:
       bfd: true
     - cr2-eqord.wikimedia.org: xe-0/1/5.0
       cr2-eqiad.wikimedia.org: xe-4/2/0.0
-      metric: 240
+      metric: 1240
       bfd: true
     - cr2-eqord.wikimedia.org: xe-0/1/0.0
       cr2-codfw.wikimedia.org: xe-5/2/1.0
@@ -212,13 +212,13 @@ ospf:
     - cr2-eqiad.wikimedia.org: xe-3/2/3.0
       cr2-codfw.wikimedia.org: xe-5/0/1.0
       bfd: true
-      metric: 320
+      metric: 1320
     - cr1-eqiad.wikimedia.org: ae0.0
       cr2-eqiad.wikimedia.org: ae0.0
     - cr2-eqiad.wikimedia.org: xe-4/1/3.0
       cr2-esams.wikimedia.org: xe-0/1/3.0
       bfd: true
-      metric: 840
+      metric: 1840
     - cr1-eqiad.wikimedia.org: ae1.401
       mr1-eqiad.wikimedia.org: ge-0/0/1.401
       metric: 20000
@@ -228,7 +228,7 @@ ospf:
     - cr2-eqiad.wikimedia.org: gr-4/3/0.1
       cr3-esams.wikimedia.org: gr-0/0/0.1
       bfd: true
-      metric: 3000
+      metric: 4000
     - cr1-eqiad.wikimedia.org: xe-4/2/2.13
       cr3-knams.wikimedia.org: xe-0/1/5.13
       bfd: true
