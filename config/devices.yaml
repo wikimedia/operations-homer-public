@@ -347,7 +347,7 @@ mr1-esams.wikimedia.org:
         interfaces: ['ge-0/0/6.2483']
         screen: untrust-screen
 
-# payments firewall
+# TODO: payments firewall
 # pfw-eqiad.wikimedia.org:
 #   role: pfw
 #   site: eqiad
@@ -356,9 +356,22 @@ mr1-esams.wikimedia.org:
 #   role: pfw
 #   site: codfw
 
-# transits:
-#   192.0.0.1:  [Unique] (or v6) BGP peer IP
-#     provider: NTT  [Required] one of common.yaml transit_providers
-#     import_policy: true [Optional] Generate the policy based on the peer ASN
-#     export_policy: true [Optional] Generate the policy based on the peer ASN
-#     disabled: true [optional]
+
+# Example core router configuration block:
+#
+# cr9-foobar.wikimedia.org:
+#   role: cr
+#   site: foobar
+#   config:
+#      fpcs_to_sample: [0] [Optional] List of FPC indices on which to enable jflow sampling
+#      mgmt_ip: [Optional] List of addr/netmask for mgmt interfaces; if specified, one per RE
+#        - 10.1.2.3/16
+#        - 10.1.2.4/16
+#      transits:
+#        192.0.0.1:  [Unique] (or v6) BGP peer IP
+#          provider: NTT  [Required] one of common.yaml transit_providers
+#          import_policy: true [Optional] Generate the policy based on the peer ASN
+#          export_policy: true [Optional] Generate the policy based on the peer ASN
+#          disabled: true [optional]
+#      vrrp_priority: 90 [Optional] Override priority for every VRRP, useful for forced failover/maintenance
+#                                   Highest number wins; default when unspecified is 100.
