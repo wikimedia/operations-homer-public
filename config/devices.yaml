@@ -170,12 +170,11 @@ cr3-knams.wikimedia.org:
       2001:730:2209:1::d52e:ba09:
         provider: LibertyGlobal
 
-cr1-eqsin.wikimedia.org:
+cr3-eqsin.wikimedia.org:
   role: cr
   site: eqsin
   config:
-    mgmt_ip: [10.132.128.2/17, 10.132.128.3/17]
-    # TODO: on the MX104 sampling settings are part of the 'AFEB' rather than an FPC
+    fpcs_to_sample: [0]
     transits:
       62.115.148.76:
         provider: Telia
