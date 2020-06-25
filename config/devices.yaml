@@ -303,7 +303,7 @@ mr1-codfw.wikimedia.org:
         interfaces: ['lo0.0', 'ge-0/0/1.401', 'ge-0/0/1.402']
       - name: untrust
         services: ['ssh', 'ping', 'traceroute']
-        interfaces: ['ge-0/0/7']
+        interfaces: ['ge-0/0/5']
       - name: mgmt
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['ge-0/0/0.0']
