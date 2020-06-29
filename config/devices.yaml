@@ -4,7 +4,7 @@ cr1-eqiad.wikimedia.org:
   site: eqiad
   config:
     mgmt_ip: [10.65.0.12/16, 10.65.0.13/16]
-    fpcs_to_sample: [4]
+    fpcs_to_sample: [3, 4]
     transits:
       129.250.204.189:
         provider: NTT
@@ -22,7 +22,7 @@ cr2-eqiad.wikimedia.org:
   site: eqiad
   config:
     mgmt_ip: [10.65.0.14/16, 10.65.0.15/16]
-    fpcs_to_sample: [3]
+    fpcs_to_sample: [3, 4]
     transits:
       80.239.132.225:
         provider: Telia
