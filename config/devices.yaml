@@ -330,6 +330,14 @@ asw2-d-eqiad.mgmt.eqiad.wmnet:
   role: asw
   site: eqiad
 
+cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
+  role: cloudsw
+  site: eqiad
+
+cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
+  role: cloudsw
+  site: eqiad
+
 asw-a-codfw.mgmt.codfw.wmnet:
   role: asw
   site: codfw
