@@ -166,10 +166,6 @@ ospf:
       cr2-codfw.wikimedia.org: xe-5/2/1.0
       metric: 240
       bfd: true
-    - cr2-eqord.wikimedia.org: gr-0/0/0.1
-      cr1-eqiad.wikimedia.org: gr-4/3/0.1
-      metric: 3000
-      bfd: true
     - cr3-eqsin.wikimedia.org: ae0.0
       cr2-eqsin.wikimedia.org: ae0.0
     - cr3-eqsin.wikimedia.org: xe-0/1/0.0
