@@ -291,6 +291,8 @@ mr1-eqiad.wikimedia.org:
 msw1-eqiad.mgmt.eqiad.wmnet:
   role: msw
   site: eqiad
+  config:
+    lldp_disabled: ['ge-0/0/32']  # SRXs show L2 errors when receiving LLDP frames
 
 mr1-codfw.wikimedia.org:
   role: mr
