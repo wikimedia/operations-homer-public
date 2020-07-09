@@ -23,3 +23,6 @@ mr:
 
 cr:
   lldp_disabled: ['external']
+
+msw:
+  igmp_snooping: false
