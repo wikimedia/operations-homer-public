@@ -26,3 +26,6 @@ cr:
 
 msw:
   igmp_snooping: false
+
+asw:
+  igmp_snooping: false

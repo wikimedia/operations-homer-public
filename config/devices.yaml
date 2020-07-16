@@ -214,20 +214,14 @@ asw2-a-eqiad.mgmt.eqiad.wmnet:
 asw2-b-eqiad.mgmt.eqiad.wmnet:
   role: asw
   site: eqiad
-  config:
-    igmp_snooping: false  # T201039
 
 asw2-c-eqiad.mgmt.eqiad.wmnet:
   role: asw
   site: eqiad
-  config:
-    igmp_snooping: false  # T201039
 
 asw2-d-eqiad.mgmt.eqiad.wmnet:
   role: asw
   site: eqiad
-  config:
-    igmp_snooping: false  # T201039
 
 asw-a-codfw.mgmt.codfw.wmnet:
   role: asw
