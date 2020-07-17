@@ -16,6 +16,7 @@ cr1-eqiad.wikimedia.org:
         provider: Zayo
       2001:470:0:1c0::1:
         provider: "Hurricane Electric"
+    netbox_driven_interfaces: false  # Not ready yet
 
 cr2-eqiad.wikimedia.org:
   role: cr
@@ -28,6 +29,7 @@ cr2-eqiad.wikimedia.org:
         provider: Telia
       2001:2000:3080:0a98::1:
         provider: Telia
+    netbox_driven_interfaces: false  # Not ready yet
 
 cr2-eqord.wikimedia.org:
   role: cr
@@ -45,6 +47,7 @@ cr2-eqord.wikimedia.org:
         provider: Zayo
       2001:504:0:4::6939:1:
         provider: "Hurricane Electric"
+    netbox_driven_interfaces: false  # Hopefully T258942
 
 cr1-codfw.wikimedia.org:
   role: cr
@@ -57,6 +60,15 @@ cr1-codfw.wikimedia.org:
         provider: Telia
       2001:2000:3080:af4::1:
         provider: Telia
+    filters:
+      xe-5/0/0.0-in4: transport-in
+      xe-5/0/2.0-in4: transport-in
+      xe-5/1/2.0-in4: transport-in
+      xe-5/2/1.0-in4: transport-in
+      ae2.2120-in: cloud-in
+      ae1.2201-in: sandbox
+    damping: [xe-5/0/2, xe-5/1/2]
+    netbox_driven_interfaces: false  # Hopefully T258942
 
 cr2-codfw.wikimedia.org:
   role: cr
@@ -69,6 +81,13 @@ cr2-codfw.wikimedia.org:
         provider: Zayo
       2001:438:fffd:5c::1:
         provider: Zayo
+    filters:
+      ae1.2201-in: sandbox
+      ae2.2120-in: cloud-in
+      xe-5/0/0.0-in4: transport-in
+      xe-5/0/1.0-in4: transport-in
+      xe-5/2/1.0-in4: transport-in
+    damping: [xe-5/0/1]
 
 cr2-eqdfw.wikimedia.org:
   role: cr
@@ -97,6 +116,9 @@ cr3-ulsfo.wikimedia.org:
         provider: Zayo
       2001:438:fffd:57::1:
         provider: Zayo
+    filters:
+      et-0/0/1.1221-in: sandbox
+    netbox_driven_interfaces: false  # Hopefully T258942
 
 cr4-ulsfo.wikimedia.org:
   role: cr
@@ -110,6 +132,9 @@ cr4-ulsfo.wikimedia.org:
         provider: NTT
       129.250.204.5:
         provider: NTT
+    filters:
+      et-0/0/1.1221-in: sandbox
+    damping: [xe-0/1/2]
 
 cr3-esams.wikimedia.org:
   role: cr
@@ -122,6 +147,10 @@ cr3-esams.wikimedia.org:
         provider: Telia
       2001:2000:3080:0ee8::1:
         provider: Telia
+    filters:
+      ae1.102-in: sandbox
+      ae1.401-in4: transport-in
+      gr-0/0/0.2-in: border-in
 
 cr2-esams.wikimedia.org:
   role: cr
@@ -140,7 +169,12 @@ cr2-esams.wikimedia.org:
         provider: FiberRing
       2001:7f8:1::a500:6939:1:
         provider: "Hurricane Electric"
-
+    filters:
+      ae1.102-in: sandbox
+      ae1.403-in4: transport-in
+      gr-0/1/0.2-in: border-in
+    minimum_links:
+      ae2: 2
 
 cr3-knams.wikimedia.org:
   role: cr
@@ -184,6 +218,11 @@ cr3-eqsin.wikimedia.org:
         provider: Telia
         import_policy: true
         export_policy: true
+    netbox_driven_interfaces: false  # Hopefully T258942
+    filters:
+      ae1.530-in: sandbox
+      gr-0/0/0.1-in: border-in
+    damping: [xe-0/1/0]
 
 cr2-eqsin.wikimedia.org:
   role: cr
@@ -203,6 +242,9 @@ cr2-eqsin.wikimedia.org:
         provider: NTT
         import_policy: true
         export_policy: true
+    filters:
+      ae1.530-in: sandbox
+      gr-0/0/0.2-in: border-in
 
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
@@ -370,3 +412,15 @@ mr1-esams.wikimedia.org:
 #          disabled: true [optional]
 #      vrrp_priority: 90 [Optional] Override priority for every VRRP, useful for forced failover/maintenance
 #                                   Highest number wins; default when unspecified is 100.
+#      damping: [xe-0/1/0] [Optional] Enable interface flap damping
+#      netbox_driven_interfaces: true [Optional] Generate interfaces config based on Netbox data
+#      tunnels:  [Optional]  GRE tunnels source/destination
+#        gr-0/0/0.1:  # description
+#          source: 10.1.2.3
+#          destination: 10.3.2.1
+#       filters:  [Optional] Extra firewall filters to apply to interfaces
+#         ae1.530-in: foo    Apply foo as input to both inet and inet6 (if any)
+#         ae1.530-in4: foo   Apply foo as input only to inet (even if inet6 exists)
+#         gr-0/0/0.2-out: bar   Apply bar as output to both inet and inet6
+#       minimum_links:  [Optional] For AE interfaces only
+#         ae2: 2   # Take the interface down if the bundle doesn't have at least 2 healthy members
