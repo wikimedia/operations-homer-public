@@ -323,6 +323,7 @@ mr1-eqiad.wikimedia.org:
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/2.0']
     dhcp_pool: 10.66.0.0/24
+    els: false  # Legacy Junos syntax
 
 msw1-eqiad.mgmt.eqiad.wmnet:
   role: msw
@@ -346,11 +347,13 @@ mr1-codfw.wikimedia.org:
         interfaces: ['ge-0/0/0.0']
       - name: access
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: ['ge-0/0/2']
+        interfaces: []  # Keeping the zone just in case to not delete policies, was ge-0/0/2.0
 
 mr1-eqsin.wikimedia.org:
   role: mr
   site: eqsin
+  config:
+    els: false  # Legacy Junos syntax
 
 msw1-codfw.mgmt.codfw.wmnet:
   role: msw
@@ -361,6 +364,8 @@ msw1-codfw.mgmt.codfw.wmnet:
 mr1-ulsfo.wikimedia.org:
   role: mr
   site: ulsfo
+  config:
+    els: false  # Legacy Junos syntax
 
 mr1-esams.wikimedia.org:
   role: mr
@@ -378,7 +383,7 @@ mr1-esams.wikimedia.org:
         interfaces: ['irb.900']
       - name: access
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: ['ge-0/0/2.0']
+        interfaces: []  # Keeping the zone just in case to not delete policies, was ge-0/0/2.0
       - name: customers
         services: ['ping', 'traceroute']
         interfaces: ['ge-0/0/6.2483']
