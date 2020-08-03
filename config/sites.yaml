@@ -72,7 +72,6 @@ eqord:
   bgp_out:
     208.80.152.0/23: BGP_from_LVS  # codfw
     208.80.154.0/23: BGP_from_LVS  # eqiad
-    185.15.56.0/24: BGP_aggregate_contributors  # WMCS eqiad
     198.35.27.0/24: BGP_from_anycast  # Anycast
   bgp6_out:
     2620:0:860::/48: BGP_from_LVS  # codfw
