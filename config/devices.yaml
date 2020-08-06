@@ -16,7 +16,18 @@ cr1-eqiad.wikimedia.org:
         provider: Zayo
       2001:470:0:1c0::1:
         provider: "Hurricane Electric"
-    netbox_driven_interfaces: false  # Not ready yet
+    filters:
+      xe-4/2/0.0-in4: transport-in
+      xe-4/2/2.12-in4: transport-in
+      xe-4/2/2.13-in4: transport-in
+      ae1.1030-in: analytics-in
+      ae2.1021-in: analytics-in
+      ae2.1118-in: labs-in
+      ae2.1120-in4: cloud-in
+      ae2.1202-in: sandbox
+      ae3.1022-in: analytics-in
+      ae4.1023-in: analytics-in
+      gr-3/3/0.1-in: border-in
 
 cr2-eqiad.wikimedia.org:
   role: cr
@@ -29,7 +40,19 @@ cr2-eqiad.wikimedia.org:
         provider: Telia
       2001:2000:3080:0a98::1:
         provider: Telia
-    netbox_driven_interfaces: false  # Not ready yet
+    filters:
+      xe-3/2/3.0-in4: transport-in
+      xe-4/1/3.0-in4: transport-in
+      xe-4/2/0.0-in4: transport-in
+      ae1.1030-in: analytics-in
+      ae2.1021-in: analytics-in
+      ae2.1118-in: labs-in
+      ae2.1120-in4: cloud-in
+      ae2.1202-in: sandbox
+      ae3.1022-in: analytics-in
+      ae4.1023-in: analytics-in
+      gr-4/3/0.2-in: border-in
+    damping: [xe-3/2/3, xe-4/1/3]
 
 cr2-eqord.wikimedia.org:
   role: cr

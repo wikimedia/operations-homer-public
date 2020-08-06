@@ -23,4 +23,3 @@ mr:
 
 cr:
   lldp_disabled: ['external']
-  netbox_driven_interfaces: true
