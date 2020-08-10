@@ -119,6 +119,7 @@ cr3-ulsfo.wikimedia.org:
     filters:
       et-0/0/1.1221-in: sandbox
     netbox_driven_interfaces: false  # Hopefully T258942
+    prioritize_peering: true  # T259614
 
 cr4-ulsfo.wikimedia.org:
   role: cr
@@ -135,6 +136,7 @@ cr4-ulsfo.wikimedia.org:
     filters:
       et-0/0/1.1221-in: sandbox
     damping: [xe-0/1/2]
+    prioritize_peering: true  # T259614
 
 cr3-esams.wikimedia.org:
   role: cr
