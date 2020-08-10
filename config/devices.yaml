@@ -250,6 +250,7 @@ cr3-eqsin.wikimedia.org:
       ae1.530-in: sandbox
       gr-0/0/0.1-in: border-in
     damping: [xe-0/1/0]
+    prioritize_peering: true  # T259614
 
 cr2-eqsin.wikimedia.org:
   role: cr
@@ -272,6 +273,7 @@ cr2-eqsin.wikimedia.org:
     filters:
       ae1.530-in: sandbox
       gr-0/0/0.2-in: border-in
+    prioritize_peering: true  # T259614
 
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
