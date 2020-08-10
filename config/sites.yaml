@@ -139,6 +139,7 @@ codfw:
       - ae2.2122
       - ae1.2201
       - ae2.2118
+  prioritize_peering: true  # T259614
 
 eqdfw:
   confed: 65002
@@ -150,6 +151,7 @@ eqdfw:
     2620:0:860::/48: BGP_from_LVS  # codfw
   sampling:
     collector: 10.192.0.148  # netflow2001.codfw.wmnet
+  prioritize_peering: true  # T259614
 
 ulsfo:
   confed: 65004
@@ -176,6 +178,7 @@ ulsfo:
       - et-0/0/1.1201
       - et-0/0/1.1211
       - et-0/0/1.1221
+  prioritize_peering: true  # T259614
 
 eqsin:
   confed: 65005
@@ -201,6 +204,7 @@ eqsin:
       - ae1.520
       - ae1.530
   tcp_mss_clamping: true
+  prioritize_peering: true  # T259614
 
 esams:
   confed: 65003
