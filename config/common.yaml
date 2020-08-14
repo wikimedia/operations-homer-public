@@ -419,11 +419,6 @@ transit_providers:
 #    maxlen: 24
 #    asn: 12345
 
-rpki_whitelist:
-  - prefix: 49.45.0.0/16
-    maxlen: 24
-    asn: 55836  # Jio still having ROA woes, check if can be removed on 2020-08-17  T260449
-
 # # Prepends our AS# 3x to our peering and transits
 # # Usually applied per site
 # prepend_as_out: true
