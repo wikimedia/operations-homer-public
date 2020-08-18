@@ -12,6 +12,8 @@ cr1-eqiad.wikimedia.org:
         provider: NTT
       64.125.192.141:
         provider: Zayo
+      216.66.30.89:
+        provider: "Hurricane Electric"  # Partial transit
       2001:438:fffd:58::1:
         provider: Zayo
       2001:470:0:1c0::1:
@@ -68,6 +70,8 @@ cr2-eqord.wikimedia.org:
         provider: NTT
       208.185.240.45:
         provider: Zayo
+      208.115.136.37:
+        provider: "Hurricane Electric"  # Partial transit
       2001:438:fffd:56::1:
         provider: Zayo
       2001:504:0:4::6939:1:
@@ -154,6 +158,8 @@ cr4-ulsfo.wikimedia.org:
         provider: NTT
       129.250.204.5:
         provider: NTT
+      198.32.176.20:
+        provider: "Hurricane Electric"  # Partial transit
     filters:
       et-0/0/1.1221-in: sandbox
     damping: [xe-0/1/2]
