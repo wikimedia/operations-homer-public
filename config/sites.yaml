@@ -68,7 +68,7 @@ eqiad:
   tcp_mss_clamping: true
 
 eqord:
-  confed: 65001
+  confed: 65020
   bgp_out:
     208.80.152.0/23: BGP_from_LVS  # codfw
     208.80.154.0/23: BGP_from_LVS  # eqiad
