@@ -148,6 +148,7 @@ cr3-ulsfo.wikimedia.org:
         provider: Zayo
     filters:
       et-0/0/1.1221-in: sandbox
+    primary_ixp: true
 
 cr4-ulsfo.wikimedia.org:
   role: cr
@@ -464,8 +465,9 @@ mr1-esams.wikimedia.org:
 #         gr-0/0/0.2-out: bar   Apply bar as output to both inet and inet6
 #       minimum_links:  [Optional] For AE interfaces only
 #         ae2: 2   # Take the interface down if the bundle doesn't have at least 2 healthy members
-#        security_log:  [Optional]  Configure Juniper's security logs
-#          source: 10.0.0.6   # local source IP
-#          streams:
-#            syslog-tls-stream: 10.0.0.1  # unique name and destination IP
-#            syslog-tls-stream-codfw: 10.0.0.2  # etc
+#       security_log:  [Optional]  Configure Juniper's security logs
+#         source: 10.0.0.6   # local source IP
+#         streams:
+#           syslog-tls-stream: 10.0.0.1  # unique name and destination IP
+#           syslog-tls-stream-codfw: 10.0.0.2  # etc
+#       primary_ixp: true [Optional] Set if the IXP terminating on that router should be prioritized
