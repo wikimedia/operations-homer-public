@@ -34,6 +34,9 @@ cr1-eqiad.wikimedia.org:
     cni:
       neighbor: 173.245.63.4
       endpoint: 185.212.145.2/32
+    vrrp_master_pinning:
+      - ae1  # Row A
+      - ae2  # Row B
 
 cr2-eqiad.wikimedia.org:
   role: cr
@@ -60,6 +63,9 @@ cr2-eqiad.wikimedia.org:
       gr-4/3/0.2-in: border-in
     damping: [xe-3/2/3, xe-4/1/3]
     vrrp_bandwidth_threshold: true
+    vrrp_master_pinning:
+      - ae3  # Row C
+      - ae4  # Row D
 
 cr2-eqord.wikimedia.org:
   role: cr
@@ -452,7 +458,12 @@ mr1-esams.wikimedia.org:
 #          disabled: true [optional]
 #      vrrp_priority: 90 [Optional] Override priority for every VRRP, useful for forced failover/maintenance
 #                                   Highest number wins; default when unspecified is 100.
-#      vrrp_bandwidth_threshold: true [Optional] Configure VRRP to failover on the loss of one link in a bundle
+#                                   Remove any vrrp_master_pinning config on both devices before using as it takes
+#                                   precedence.
+#      vrrp_bandwidth_threshold: true [Optional] In a LACP bundle, configure VRRP to failover on the loss of one link.
+#      vrrp_master_pinning: [Optional] Pin (sub)interfaces to a given device (sets its VRRP priority to 110)
+#        - ae1  # Interface and all sub-interfaces
+#        - xe-1/0/1.1234  # Specific sub-interface
 #      damping: [xe-0/1/0] [Optional] Enable interface flap damping
 #      netbox_driven_interfaces: true [Optional] Generate interfaces config based on Netbox data
 #      tunnels:  [Optional]  GRE tunnels source/destination
