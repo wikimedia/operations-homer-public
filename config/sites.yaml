@@ -6,6 +6,7 @@ eqiad:
     - 64601  # k8s-eqiad
     - 64603  # k8s-staging-eqiad
     - 64700  # fundraising-eqiad
+    - 64710  # WMCS-eqiad
   bgp_out:
     208.80.154.0/23: BGP_aggregate_contributors  # eqiad
     185.15.56.0/24: BGP_aggregate_contributors  # WMCS eqiad
