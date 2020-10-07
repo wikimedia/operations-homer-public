@@ -369,7 +369,7 @@ mr1-eqiad.wikimedia.org:
       - name: access
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/2.0']
-    dhcp_pool: 10.66.0.0/24
+    dhcp_pool: 10.66.1.0/24
     els: false  # Legacy Junos syntax
 
 msw1-eqiad.mgmt.eqiad.wmnet:
