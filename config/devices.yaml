@@ -292,6 +292,7 @@ cr2-eqsin.wikimedia.org:
     filters:
       ae1.530-in: sandbox
       gr-0/0/0.2-in: border-in
+    primary_ixp: true
 
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
