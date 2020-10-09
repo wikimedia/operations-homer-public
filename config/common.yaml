@@ -96,11 +96,6 @@ users:
     class: operations
     sshkeys:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAoDAuzkYEIeGVC10zh3i6WnyJjhWK/JpQbSFlWfb5t02kGPvmi8m+fdCPhvqiOpOCcQqTL1Knia6AeRNMx+dj3qxctsas/RnJtIUbACK5gH6aKg0OMmcG9LNiVLN5knx1UMHhQ7Ma6KSiDLeqsID009j7+Fj8qgGup7lKOQs7WYRpaXlAyR0hdKeyxcXWh+GPQEZAhl0DHrjFgdDcc5n2K8GBRESfdfCKm0SomHYGWPsTIpWrY13se0kUJzWXIafzr0U/czEdVDuSuil6P65d9cU7vypcUC3i5d2L4QiO4MBVNcXluFuFNZ8UY/QAlixz/5x/ARbgjcMvXwJQWjhh+w== rob@laptop"
-  - name: rush
-    uid: 2015
-    class: super-user
-    sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+IUUkFX0t/8UqTZJFRJ6JaDPvwIOTsGu2mIg7OGA0lDhJH8eRz2dCPSM7Z4IwKPh92mtct3+aZy8ziT6bb88TNESU9n92m4HdHogOLMz/ksJW07oY2fTjXs9DeaPZUP5Sf8uSrU0ip40wPn8fDuXIjEX2MhUgzafNk2nm0+VFqdU+p4vMf8PvTjtjDMqhq0r9mml0YH4T4kknibwAWlcJaM7O29FlRWoRsI2nIzde5fYASdvrstPN620EScBQo3vAlfbkQCvxvWpr/xO1DfkFDUcIOmrC5uWbOKrGCZRLfnOQTBaMCjHcKmEPJ5YzII692G3BTvbIZ+6AqnLSoA81 cpettet@wikimedia.org"
   - name: vgutierrez
     uid: 2024
     class: super-user
