@@ -289,9 +289,9 @@ cr2-eqsin.wikimedia.org:
         provider: NTT
         import_policy: true
         export_policy: true
-      103.16.102.187:
+      103.16.102.81:
         provider: "Hurricane Electric"
-      2001:de8:12:100::187:
+      2001:de8:12:100::81:
         provider: "Hurricane Electric"
     filters:
       ae1.530-in: sandbox
