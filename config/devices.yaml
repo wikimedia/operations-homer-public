@@ -24,6 +24,7 @@ cr1-eqiad.wikimedia.org:
       xe-4/2/2.13-in4: transport-in
       ae1.1030-in: analytics-in
       ae2.1021-in: analytics-in
+      xe-3/0/4.1102-in: cloud-in
       xe-3/0/4.1118-in: labs-in
       ae2.1120-in4: cloud-in
       ae2.1202-in: sandbox
@@ -55,6 +56,7 @@ cr2-eqiad.wikimedia.org:
       xe-4/2/0.0-in4: transport-in
       ae1.1030-in: analytics-in
       ae2.1021-in: analytics-in
+      xe-3/0/4.1103-in: cloud-in
       xe-3/0/4.1118-in: labs-in
       ae2.1120-in4: cloud-in
       ae2.1202-in: sandbox
