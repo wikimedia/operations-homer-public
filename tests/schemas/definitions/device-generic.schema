@@ -33,16 +33,6 @@
         }
       ]
     },
-    "fpcs_to_sample": {
-      "type": "array",
-      "description": "List of FPC indices on which to enable jflow sampling",
-      "minProperties": 1,
-      "items": [
-        {
-          "type": "integer"
-        }
-      ]
-    },
     "transits": {
       "type": "object",
       "format": ["ipv4", "ipv6"],

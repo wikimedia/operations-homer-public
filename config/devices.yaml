@@ -4,7 +4,6 @@ cr1-eqiad.wikimedia.org:
   site: eqiad
   config:
     mgmt_ip: [10.65.0.12/16, 10.65.0.13/16]
-    fpcs_to_sample: [3, 4]
     transits:
       192.80.17.185:
         provider: NTT
@@ -43,7 +42,6 @@ cr2-eqiad.wikimedia.org:
   site: eqiad
   config:
     mgmt_ip: [10.65.0.14/16, 10.65.0.15/16]
-    fpcs_to_sample: [3, 4]
     transits:
       80.239.132.225:
         provider: Telia
@@ -71,7 +69,6 @@ cr2-eqord.wikimedia.org:
   role: cr
   site: eqord
   config:
-    fpcs_to_sample: [0]
     transits:
       192.80.17.197:
         provider: NTT
@@ -91,7 +88,6 @@ cr1-codfw.wikimedia.org:
   site: codfw
   config:
     mgmt_ip: [10.193.0.10/16, 10.193.0.11/16]
-    fpcs_to_sample: [5]
     transits:
       80.239.192.101:
         provider: Telia
@@ -114,7 +110,6 @@ cr2-codfw.wikimedia.org:
   site: codfw
   config:
     mgmt_ip: [10.193.0.12/16, 10.193.0.13/16]
-    fpcs_to_sample: [5]
     transits:
       206.53.202.3:
         provider: "Hurricane Electric"  # Partial transit
@@ -140,7 +135,6 @@ cr2-eqdfw.wikimedia.org:
   role: cr
   site: eqdfw
   config:
-    fpcs_to_sample: [0]
     transits:
       128.242.179.181:
         provider: NTT
@@ -153,7 +147,6 @@ cr3-ulsfo.wikimedia.org:
   role: cr
   site: ulsfo
   config:
-    fpcs_to_sample: [0]
     transits:
       80.239.192.65:
         provider: Telia
@@ -175,7 +168,6 @@ cr4-ulsfo.wikimedia.org:
   role: cr
   site: ulsfo
   config:
-    fpcs_to_sample: [0]
     transits:
       2001:504:d::10:
         provider: "Hurricane Electric"
@@ -194,7 +186,6 @@ cr3-esams.wikimedia.org:
   site: esams
   config:
     mgmt_ip: [10.21.0.119/24, 10.21.0.120/24]
-    fpcs_to_sample: [0]
     transits:
       62.115.145.24:
         provider: Telia
@@ -210,7 +201,6 @@ cr2-esams.wikimedia.org:
   site: esams
   config:
     mgmt_ip: [10.21.0.117/24, 10.21.0.118/24]
-    fpcs_to_sample: [0]
     transits:
       80.249.209.211:
         provider: "Deutsche Telekom"
@@ -233,7 +223,6 @@ cr3-knams.wikimedia.org:
   role: cr
   site: knams
   config:
-    fpcs_to_sample: [0]
     flowspec_flows:
       drop-udp-text-lb:
         description: T243482
@@ -261,7 +250,6 @@ cr3-eqsin.wikimedia.org:
   role: cr
   site: eqsin
   config:
-    fpcs_to_sample: [0]
     transits:
       62.115.148.76:
         provider: Telia
@@ -284,7 +272,6 @@ cr2-eqsin.wikimedia.org:
   role: cr
   site: eqsin
   config:
-    fpcs_to_sample: [0]
     transits:
       180.87.164.61:
         provider: Tata
@@ -471,7 +458,6 @@ mr1-esams.wikimedia.org:
 #   role: cr
 #   site: foobar
 #   config:
-#      fpcs_to_sample: [0] [Optional] List of FPC indices on which to enable jflow sampling
 #      mgmt_ip: [Optional] List of addr/netmask for mgmt interfaces; if specified, one per RE
 #        - 10.1.2.3/16
 #        - 10.1.2.4/16
