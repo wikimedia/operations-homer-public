@@ -120,6 +120,10 @@ cr2-codfw.wikimedia.org:
         provider: Zayo
       2001:438:fffd:5c::1:
         provider: Zayo
+      206.53.202.3:
+        provider: "Hurricane Electric"  # Partial transit
+      2001:504:61::1b1b:0:1:
+        provider: "Hurricane Electric"
     filters:
       ae1.2201-in: sandbox
       ae2.2120-in: cloud-in
