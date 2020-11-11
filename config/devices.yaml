@@ -130,6 +130,7 @@ cr2-codfw.wikimedia.org:
     vrrp_master_pinning:
       - ae3  # Row C
       - ae4  # Row D
+    primary_ixp: true
 
 cr2-eqdfw.wikimedia.org:
   role: cr
