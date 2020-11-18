@@ -85,6 +85,7 @@ codfw:
   mgmt_gw: 10.193.0.1
   customers:
     - 64602  # k8s-codfw
+    - 64604  # k8s-staging-codfw
     - 64701  # fundraising-codfw
   bgp_out:
     208.80.152.0/23: BGP_aggregate_contributors  # codfw
@@ -115,6 +116,9 @@ codfw:
     kubernetes2014: {4: 10.192.48.29,  6: 2620:0:860:104:10:192:48:29}
     kubernetes2015: {4: 10.192.32.21,  6: 2620:0:860:103:10:192:32:21}
     kubernetes2016: {4: 10.192.48.30,  6: 2620:0:860:104:10:192:48:30}
+  k8s_stage_neighbors:
+    kubestage2001: {4: 10.192.0.195, 6: 2620:0:860:101:10:192:0:195}
+    kubestage2002: {4: 10.192.16.137, 6: 2620:0:860:102:10:64:16:137}
     # yamllint enable rule:commas
   anycast_neighbors:
     dns2001: 208.80.153.77
