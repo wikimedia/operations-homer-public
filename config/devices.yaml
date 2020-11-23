@@ -331,46 +331,36 @@ asw-a-codfw.mgmt.codfw.wmnet:
   site: codfw
   config:
     lldp_disabled: ['ge-1/0/47']  # SRXs show L2 errors when receiving LLDP frames
-    netbox_driven_interfaces: true
 
 asw-b-codfw.mgmt.codfw.wmnet:
   role: asw
   site: codfw
-  config:
-    netbox_driven_interfaces: true
 
 asw-c-codfw.mgmt.codfw.wmnet:
   role: asw
   site: codfw
-  config:
-    netbox_driven_interfaces: true
 
 asw-d-codfw.mgmt.codfw.wmnet:
   role: asw
   site: codfw
-  config:
-    netbox_driven_interfaces: true
 
 asw2-esams.mgmt.esams.wmnet:
   role: asw
   site: esams
   config:
     lldp_disabled: ['ge-5/0/47']  # SRXs show L2 errors when receiving LLDP frames
-    netbox_driven_interfaces: true
 
 asw2-ulsfo.mgmt.ulsfo.wmnet:
   role: asw
   site: ulsfo
   config:
     lldp_disabled: ['ge-1/0/13']  # SRXs show L2 errors when receiving LLDP frames
-    netbox_driven_interfaces: true
 
 asw1-eqsin.mgmt.eqsin.wmnet:
   role: asw
   site: eqsin
   config:
     lldp_disabled: ['ge-0/0/23']  # SRXs show L2 errors when receiving LLDP frames
-    netbox_driven_interfaces: true
 
 # management switches/routers
 mr1-eqiad.wikimedia.org:
@@ -492,7 +482,6 @@ mr1-esams.wikimedia.org:
 #        - ae1  # Interface and all sub-interfaces
 #        - xe-1/0/1.1234  # Specific sub-interface
 #      damping: [xe-0/1/0] [Optional] Enable interface flap damping
-#      netbox_driven_interfaces: true [Optional] Generate interfaces config based on Netbox data
 #      tunnels:  [Optional]  GRE tunnels source/destination
 #        gr-0/0/0.1:  # description
 #          source: 10.1.2.3
