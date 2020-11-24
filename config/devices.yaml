@@ -163,6 +163,10 @@ cr3-ulsfo.wikimedia.org:
         provider: Zayo
       2001:438:fffd:57::1:
         provider: Zayo
+      206.197.187.12:
+        provider: "Hurricane Electric"
+      2001:504:30::ba00:6939:1:
+        provider: "Hurricane Electric"
     filters:
       et-0/0/1.1221-in: sandbox
     primary_ixp: true
