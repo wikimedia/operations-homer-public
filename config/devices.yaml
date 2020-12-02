@@ -167,6 +167,10 @@ cr3-ulsfo.wikimedia.org:
         provider: "Hurricane Electric"
       2001:504:30::ba00:6939:1:
         provider: "Hurricane Electric"
+      4.15.72.113:
+        provider: Lumen
+      2001:1900:2100::a99:
+        provider: Lumen
     filters:
       et-0/0/1.1221-in: sandbox
     primary_ixp: true

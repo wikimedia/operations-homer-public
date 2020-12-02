@@ -408,6 +408,8 @@ transit_providers:
     AS: 1299
   Zayo:
     AS: 6461
+  Lumen:
+    AS: 3356
 
 # rpki_whitelist:
 #  - prefix: 192.0.0.0/23
