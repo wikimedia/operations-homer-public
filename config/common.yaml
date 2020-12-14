@@ -437,6 +437,7 @@ asns_mapping:
     codfw: 64602
   k8s-stage:
     eqiad: 64603
+    codfw: 64604
   frack:
     eqiad: 64700
     codfw: 64701
