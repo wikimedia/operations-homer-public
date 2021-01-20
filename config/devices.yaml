@@ -18,7 +18,7 @@ cr1-eqiad.wikimedia.org:
         provider: "Hurricane Electric"  # Partial transit
       2001:438:fffd:58::1:
         provider: Zayo
-      2001:1900:2100::a9e/126:
+      2001:1900:2100::a9d:
         provider: Lumen
       2001:470:0:1c0::1:
         provider: "Hurricane Electric"
