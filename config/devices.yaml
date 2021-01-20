@@ -12,10 +12,14 @@ cr1-eqiad.wikimedia.org:
         provider: NTT
       64.125.192.141:
         provider: Zayo
+      4.16.71.245:
+        provider: Lumen
       216.66.30.89:
         provider: "Hurricane Electric"  # Partial transit
       2001:438:fffd:58::1:
         provider: Zayo
+      2001:1900:2100::a9e/126:
+        provider: Lumen
       2001:470:0:1c0::1:
         provider: "Hurricane Electric"
     filters:
