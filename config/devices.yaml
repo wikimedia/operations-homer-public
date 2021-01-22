@@ -10,14 +10,10 @@ cr1-eqiad.wikimedia.org:
         provider: NTT
       2001:418:16::110:
         provider: NTT
-      64.125.192.141:
-        provider: Zayo
       4.16.71.245:
         provider: Lumen
       216.66.30.89:
         provider: "Hurricane Electric"  # Partial transit
-      2001:438:fffd:58::1:
-        provider: Zayo
       2001:1900:2100::a9d:
         provider: Lumen
       2001:470:0:1c0::1:
@@ -81,14 +77,10 @@ cr2-eqord.wikimedia.org:
         provider: NTT
       2001:418:16::118:
         provider: NTT
-      208.185.240.45:
-        provider: Zayo
       4.53.96.37:
         provider: Lumen
       208.115.136.37:
         provider: "Hurricane Electric"  # Partial transit
-      2001:438:fffd:56::1:
-        provider: Zayo
       2001:504:0:4::6939:1:
         provider: "Hurricane Electric"
       2001:1900:2100::999:
@@ -167,10 +159,6 @@ cr3-ulsfo.wikimedia.org:
         provider: Telia
       2001:2000:3080:0a9a::1:
         provider: Telia
-      209.133.4.57:
-        provider: Zayo
-      2001:438:fffd:57::1:
-        provider: Zayo
       206.197.187.12:
         provider: "Hurricane Electric"
       2001:504:30::ba00:6939:1:
