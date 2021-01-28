@@ -116,10 +116,6 @@ cr2-codfw.wikimedia.org:
     mgmt_ip: [10.193.0.12/16, 10.193.0.13/16]
     fpcs_to_sample: [5]
     transits:
-      64.125.129.69:
-        provider: Zayo
-      2001:438:fffd:5c::1:
-        provider: Zayo
       206.53.202.3:
         provider: "Hurricane Electric"  # Partial transit
       2001:504:61::1b1b:0:1:
