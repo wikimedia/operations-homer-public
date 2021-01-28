@@ -406,8 +406,6 @@ transit_providers:
     AS: 1257
   Telia:
     AS: 1299
-  Zayo:
-    AS: 6461
   Lumen:
     AS: 3356
 
