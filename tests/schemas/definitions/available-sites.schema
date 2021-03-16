@@ -1,0 +1,14 @@
+{
+  "$id": "available-sites.schema",
+  "type": "string",
+  "enum": [
+    "eqiad",
+    "eqord",
+    "codfw",
+    "eqdfw",
+    "esams",
+    "knams",
+    "ulsfo",
+    "eqsin"
+  ]
+}

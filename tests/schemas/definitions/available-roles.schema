@@ -1,0 +1,12 @@
+{
+  "$id": "available-roles.schema",
+  "type": "string",
+  "enum": [
+    "cr",
+    "asw",
+    "mr",
+    "msw",
+    "pfw",
+    "cloudsw"
+  ]
+}

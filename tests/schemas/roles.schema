@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "additionalProperties" : false,
+  "patternProperties": {
+    "^.+$": {
+      "$ref": "definitions/device-generic.schema"
+    }
+  }
+}

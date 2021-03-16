@@ -1,0 +1,215 @@
+{
+  "type": "object",
+  "additionalProperties" : false,
+  "properties": {
+    "asn": {
+      "type": "integer"
+    },
+    "lvs": {
+      "type": "object",
+      "additionalProperties" : false,
+      "patternProperties": {
+        "^(eqiad|eqord|codfw|eqdfw|esams|knams|ulsfo|eqsin)$": {
+          "type": "array",
+          "items": [
+            {
+               "type": "string",
+               "format": "ip_network",
+               "minProperties": 0
+            }
+          ]
+        }
+      },
+      "required": [
+        "eqiad",
+        "eqord",
+        "codfw",
+        "eqdfw",
+        "esams",
+        "knams",
+        "ulsfo",
+        "eqsin"
+      ]
+    },
+    "users": {
+      "type": "array",
+      "minProperties": 1,
+      "items": [
+        {
+          "type": "object",
+          "additionalProperties" : false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "uid": {
+              "type": "integer"
+            },
+            "class": {
+              "type": "string",
+              "enum": [
+                "super-user",
+                "operations",
+                "rancid",
+                "read-only"
+              ]
+            },
+            "sshkeys": {
+              "type": "array",
+              "minProperties": 1,
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "uid",
+            "class",
+            "sshkeys"
+          ]
+        }
+      ]
+    },
+    "ospf": {
+      "type": "object",
+      "additionalProperties" : false,
+      "properties": {
+        "p2p": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "additionalProperties" : false,
+              "minProperties": 2,
+              "properties": {
+                "metric": {
+                  "type": "integer"
+                },
+                "bfd": {
+                  "type": "boolean"
+                }
+              },
+              "patternProperties": {
+                "\\.wikimedia\\.org$": {
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        },
+        "stub": {
+          "type": "object",
+          "additionalProperties" : false,
+          "patternProperties": {
+            "\\.wikimedia\\.org$": {
+              "type": "array",
+              "minProperties": 1,
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "required": [
+        "p2p",
+        "stub"
+      ]
+    },
+    "juniper_protocols": {
+      "type": "array",
+      "minProperties": 1,
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "juniper_services": {
+      "type": "array",
+      "minProperties": 1,
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "ntp_servers": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string",
+          "format": "ipv4"
+        }
+      ]
+    },
+    "transit_providers": {
+      "type": "object",
+      "additionalProperties" : false,
+      "minProperties": 1,
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "additionalProperties" : false,
+          "properties": {
+            "AS": {
+              "type": "integer",
+              "description": "Peer AS number"
+            }
+          },
+          "patternProperties": {
+            "^(BFD|flowspec|import_policy|export_policy)$": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "AS"
+          ]
+        }
+      }
+    },
+    "asns_mapping": {
+      "type": "object",
+      "additionalProperties" : false,
+      "patternProperties": {
+        "^(k8s|k8s-(stage|mlserve)|frack)$": {
+          "type": "object",
+          "additionalProperties" : false,
+          "properties": {
+            "eqiad": {
+              "type": "integer"
+            },
+            "codfw": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "eqiad",
+            "codfw"
+          ]
+        }
+      },
+      "required": [
+        "k8s",
+        "k8s-stage",
+        "frack"
+      ]
+    }
+  },
+  "required": [
+    "asn",
+    "lvs",
+    "users",
+    "ospf",
+    "juniper_protocols",
+    "juniper_services",
+    "ntp_servers",
+    "transit_providers",
+    "asns_mapping"
+  ]
+}

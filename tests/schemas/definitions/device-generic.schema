@@ -1,0 +1,389 @@
+{
+  "$id": "device-generic.schema",
+  "definitions": {
+    "k8s_neighbors": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "4": {
+            "type": "string",
+            "format": "ipv4"
+          },
+          "6": {
+            "type": "string",
+            "format": "ipv6"
+          }
+        },
+        "required": [4, 6]
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties" : false,
+  "properties": {
+    "mgmt_ip": {
+      "type": "array",
+      "description": "List of addr/netmask for mgmt interfaces; if specified, one per RE",
+      "items": [
+        {
+          "type": "string",
+          "format": "ip_interface",
+          "minProperties": 2
+        }
+      ]
+    },
+    "fpcs_to_sample": {
+      "type": "array",
+      "description": "List of FPC indices on which to enable jflow sampling",
+      "minProperties": 1,
+      "items": [
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "transits": {
+      "type": "object",
+      "format": ["ipv4", "ipv6"],
+      "additionalProperties" : {
+        "type": "object",
+        "additionalProperties" : false,
+        "properties": {
+          "provider": {
+            "type": "string",
+            "description": "one of common.yaml transit_providers"
+          },
+          "import_policy": {
+            "type": "boolean",
+            "description": "Generate the policy based on the peer ASN."
+          },
+          "export_policy": {
+            "type": "boolean",
+            "description": "Generate the policy based on the peer ASN."
+          },
+          "disabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+           "provider"
+        ]
+      }
+    },
+    "filters": {
+      "type": "object",
+      "description": "Extra firewall filters to apply to interfaces.",
+      "additionalProperties" : false,
+      "patternProperties": {
+        "^.+$": {
+              "type": "string"
+        }
+      }
+    },
+    "vrrp_bandwidth_threshold": {
+      "type": "boolean",
+      "description": " In a LACP bundle, configure VRRP to failover on the loss of one link."
+    },
+    "vrrp_master_pinning": {
+      "type": "array",
+      "minProperties": 1,
+      "description": "Pin (sub)interfaces to a given device (sets its VRRP priority to 110)",
+      "items": [
+        {
+          "type": "string",
+          "description": "ae1  # Interface and all sub-interfaces; xe-1/0/1.1234  # Specific sub-interface"
+        }
+      ]
+    },
+    "cni": {
+      "type": "object",
+      "additionalProperties" : false,
+      "properties": {
+        "neighbor": {
+          "type": "string",
+          "format": ["ipv4", "ipv6"]
+        },
+        "endpoint": {
+          "type": "string",
+          "format": "ip_interface"
+        }
+      },
+      "required": [
+        "neighbor",
+        "endpoint"
+      ]
+    },
+    "damping": {
+      "type": "array",
+      "description": "Enable interface flap damping.",
+      "minProperties": 1,
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "primary_ixp": {
+      "type": "boolean",
+      "description": "Set if the IXP terminating on that router should be prioritized."
+    },
+    "els": {
+      "type": "boolean",
+      "description": "Legacy Junos syntax"
+    },
+    "tcp_mss_clamping": {
+      "type": "boolean",
+      "description": "Prepends our AS# 3x to our peering and transits. Usually applied per site."
+    },
+    "prepend_as_out": {
+      "type": "boolean",
+      "description": "Clamps outbound tcp-mss to 1436. Usually applied per site."
+    },
+    "dhcp_pool": {
+      "type": "string",
+      "format": "ip_network"
+    },
+    "minimum_links": {
+      "type": "object",
+      "additionalProperties": {
+          "type": "integer"
+      }
+    },
+    "lldp_disabled": {
+      "type": "array",
+      "minProperties": 1,
+      "description": "SRXs show L2 errors when receiving LLDP frames",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "flowspec_flows": {
+      "type": "object",
+      "additionalProperties" : false,
+      "description": "Add flowspec rule to the routers",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "additionalProperties" : false,
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "protocol": {
+              "type": "string",
+              "enum": [
+                "tcp",
+                "udp",
+                "ip",
+                "ah",
+                "egp",
+                "esp",
+                "gre",
+                "icmp",
+                "icmp6",
+                "igmp",
+                "ipip",
+                "ospf",
+                "pim",
+                "rsvp",
+                "sctp",
+                "[tcp udp]"
+              ]
+            },
+            "destination": {
+              "type": "string",
+              "format": "ip_interface"
+            },
+            "source": {
+              "type": "string",
+              "format": "ip_interface"
+            }
+          }
+        }
+      }
+    },
+    "security_zones": {
+      "type": "array",
+      "minProperties": 2,
+      "items": [
+        {
+          "type": "object",
+          "additionalProperties" : false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "services": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "interfaces": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "tunnels": {
+      "type": "object",
+      "description": "GRE tunnels source/destination",
+      "additionalProperties" : false,
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "additionalProperties" : false,
+          "properties": {
+            "source": {
+              "type": "string",
+              "format": ["ipv4", "ipv6"]
+            },
+            "destination": {
+              "type": "string",
+              "format": ["ipv4", "ipv6"]
+            }
+          }
+        }
+      }
+    },
+    "security_log": {
+      "type": "object",
+      "additionalProperties" : false,
+      "properties": {
+        "source": {
+          "type": "string",
+          "format": ["ipv4", "ipv6"]
+        },
+        "streams": {
+          "type": "object",
+          "additionalProperties" : false,
+          "patternProperties": {
+            "^.+$": {
+              "type": "string",
+              "format": ["ipv4", "ipv6"]
+            }
+          }
+        }
+      }
+    },
+    "screen": {
+      "type": "object",
+      "additionalProperties" : false,
+      "properties": {
+        "icmp_flood_threshold": {
+          "type": "integer"
+        },
+        "tcp_syn_flood_alarm": {
+          "type": "integer"
+        },
+        "tcp_syn_flood_attack": {
+          "type": "integer"
+        },
+        "tcp_syn_flood_source": {
+          "type": "integer"
+        },
+        "tcp_syn_flood_dest": {
+          "type": "integer"
+        },
+        "udp_flood": {
+          "type": "integer"
+        }
+      }
+    },
+    "confed": {
+      "type": "integer"
+    },
+    "mgmt_gw": {
+      "type": "string",
+      "format": ["ipv4", "ipv6"]
+    },
+    "customers": {
+      "type": "array",
+      "minProperties": 1,
+      "items": [
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "sampling": {
+      "type": "object",
+      "additionalProperties" : false,
+      "properties": {
+        "collector": {
+          "type": "string",
+          "format": ["ipv4", "ipv6"]
+        }
+      }
+    },
+    "bgp_out": {
+      "type": "object",
+      "format": "ip_network",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "bgp6_out": {
+      "type": "object",
+      "format": "ip_network",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "lvs_neighbors": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "format": ["ipv4", "ipv6"]
+      }
+    },
+    "anycast_neighbors": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "format": ["ipv4", "ipv6"]
+      }
+    },
+    "k8s_neighbors": { "$ref": "#/definitions/k8s_neighbors" },
+    "k8s_stage_neighbors": { "$ref": "#/definitions/k8s_neighbors" },
+    "k8s_mlserve_neighbors": { "$ref": "#/definitions/k8s_neighbors" },
+    "ping_offload_vip": {
+      "type": "string",
+      "format": "ip_interface"
+    },
+    "ping_offload_redirect": {
+      "type": "string",
+      "format": "ipv4"
+    },
+    "dhcp_relay": {
+      "type": "object",
+      "additionalProperties" : false,
+      "properties": {
+        "server": {
+          "type": "string",
+          "format": ["ipv4", "ipv6"]
+        },
+        "interfaces": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string",
+              "minProperties": 1
+            }
+          ]
+        }
+      }
+    }
+  }
+}
