@@ -1,5 +1,6 @@
 /.tox/
 /build/
+/doc/build/
 /real/
 __pycache__/
 .sw*
