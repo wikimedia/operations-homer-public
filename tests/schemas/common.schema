@@ -9,6 +9,7 @@
     "lvs": {
       "type": "object",
       "additionalProperties" : false,
+      "description": "In common as we need the full infra wide list as well.",
       "patternProperties": {
         "^(eqiad|eqord|codfw|eqdfw|esams|knams|ulsfo|eqsin)$": {
           "type": "array",
@@ -156,6 +157,7 @@
       "patternProperties": {
         "^.+$": {
           "type": "object",
+          "description": "Provider name",
           "additionalProperties" : false,
           "properties": {
             "AS": {

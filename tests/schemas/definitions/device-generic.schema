@@ -17,6 +17,29 @@
         },
         "required": [4, 6]
       }
+    },
+    "trusted_space": {
+      "type": "array",
+      "description": "Whitelisted networks with less restrictions",
+      "items": [
+        {
+          "type": "object",
+          "additionalProperties" : false,
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "network": {
+              "type": "string",
+              "format": "ip_interface"
+            }
+          },
+          "required": [
+            "description",
+            "network"
+          ]
+        }
+      ]
     }
   },
   "type": "object",
@@ -24,7 +47,7 @@
   "properties": {
     "mgmt_ip": {
       "type": "array",
-      "description": "List of addr/netmask for mgmt interfaces; if specified, one per RE",
+      "description": "List of addr/netmask for mgmt interfaces; if specified, one per RE.",
       "items": [
         {
           "type": "string",
@@ -33,9 +56,20 @@
         }
       ]
     },
+    "fpcs_to_sample": {
+      "type": "array",
+      "description": "List of FPC indices on which to enable jflow sampling.",
+      "minProperties": 1,
+      "items": [
+        {
+          "type": "integer"
+        }
+      ]
+    },
     "transits": {
       "type": "object",
       "format": ["ipv4", "ipv6"],
+      "description": "BGP peer IP",
       "additionalProperties" : {
         "type": "object",
         "additionalProperties" : false,
@@ -67,13 +101,18 @@
       "additionalProperties" : false,
       "patternProperties": {
         "^.+$": {
-              "type": "string"
+              "type": "string",
+              "desciption": "ae1.530-in: foo    Apply foo as input to both inet and inet6 (if any)\nae1.530-in4: foo   Apply foo as input only to inet (even if inet6 exists)\ngr-0/0/0.2-out: bar   Apply bar as output to both inet and inet6"
         }
       }
     },
     "vrrp_bandwidth_threshold": {
       "type": "boolean",
-      "description": " In a LACP bundle, configure VRRP to failover on the loss of one link."
+      "description": "In a LACP bundle, configure VRRP to failover on the loss of one link."
+    },
+    "vrrp_priority": {
+      "type": "integer",
+      "description": "Override priority for every VRRP, useful for forced failover/maintenance. Highest number wins; default when unspecified is 100. Remove any vrrp_master_pinning config on both devices before using as it takes precedence."
     },
     "vrrp_master_pinning": {
       "type": "array",
@@ -136,6 +175,7 @@
     },
     "minimum_links": {
       "type": "object",
+      "description": "For AE interfaces only, take the interface down if the bundle doesn't have at least X healthy members.",
       "additionalProperties": {
           "type": "integer"
       }
@@ -143,7 +183,7 @@
     "lldp_disabled": {
       "type": "array",
       "minProperties": 1,
-      "description": "SRXs show L2 errors when receiving LLDP frames",
+      "description": "Don't send LLDP frames on those interfaces as SRXs show L2 errors when receiving them.",
       "items": [
         {
           "type": "string"
@@ -185,11 +225,11 @@
             },
             "destination": {
               "type": "string",
-              "format": "ip_interface"
+              "format": "ip_network"
             },
             "source": {
               "type": "string",
-              "format": "ip_interface"
+              "format": "ip_network"
             }
           }
         }
@@ -250,9 +290,11 @@
     "security_log": {
       "type": "object",
       "additionalProperties" : false,
+      "description": "Configure Juniper's security logs",
       "properties": {
         "source": {
           "type": "string",
+          "description": "Local source IP.",
           "format": ["ipv4", "ipv6"]
         },
         "streams": {
@@ -261,7 +303,8 @@
           "patternProperties": {
             "^.+$": {
               "type": "string",
-              "format": ["ipv4", "ipv6"]
+              "format": ["ipv4", "ipv6"],
+              "description": "Unique name and destination IP."
             }
           }
         }
@@ -389,9 +432,94 @@
         }
       ]
     },
+    "bgp_keys": {
+      "type": "object",
+      "desription": "Per peer md5 auth key for BGP sessions.",
+      "format": ["ipv4", "ipv6"],
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "license_keys": {
+      "type": "array",
+      "minProperties": 1,
+      "description": "[Secret] some features require a license key.",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
     "optimize_qos_buffers": {
       "type": "boolean",
       "description": "Adds class-of-service config to allocate most of switch shared-buffer to best effort #T284592"
+    },
+    "snmp_communities": {
+      "type": "array",
+      "minProperties": 1,
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "netbox_driven_interfaces": {
+      "type": "boolean",
+      "description": "Configure interfaces using Netbox as the source of truth."
+    },
+    "vcp_snmp_statistics": {
+      "type": "boolean",
+      "description": "Don't try to enable the VCP stats (for Junos versions not compatible)."
+    },
+    "junos_root_password": {
+      "type": "string",
+      "description": "[Secret]"
+    },
+    "junos_ospf_md5_key": {
+      "type": "string",
+      "description": "[Secret]"
+    },
+    "junos_vrrp_key": {
+      "type": "string",
+      "description": "[Secret]"
+    },
+    "blackhole": {
+      "type": "array",
+      "description": "Network prefixes to ban, v4 and v6 with subnet",
+      "items": [
+        {
+          "type": "string",
+          "format": "ip_network"
+        }
+      ]
+    },
+    "trusted_space4": { "$ref": "#/definitions/trusted_space" },
+    "trusted_space6": { "$ref": "#/definitions/trusted_space" },
+    "rpki_whitelist": {
+      "type": "array",
+      "description": "Force router to accept a RPKI invalid prefix.",
+      "items": [
+        {
+          "type": "object",
+          "additionalProperties" : false,
+          "properties": {
+            "maxlen": {
+              "type": "int"
+            },
+            "asn": {
+              "type": "int"
+            },
+            "prefix": {
+              "type": "string",
+              "format": "ip_network"
+            }
+          },
+          "required": [
+            "description",
+            "network"
+          ]
+        }
+      ]
     }
   }
 }

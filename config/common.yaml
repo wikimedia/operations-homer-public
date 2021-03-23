@@ -1,7 +1,7 @@
 ---
 asn: 14907
 
-lvs:  # In common as we need the full infra wide list as well
+lvs:
   eqiad:
     - 10.2.2.0/24
     - 208.80.154.224/27
@@ -415,26 +415,6 @@ transit_providers:
     AS: 1299
   Lumen:
     AS: 3356
-
-# rpki_whitelist:
-#  - prefix: 192.0.0.0/23
-#    maxlen: 24
-#    asn: 12345
-
-# # Prepends our AS# 3x to our peering and transits
-# # Usually applied per site
-# prepend_as_out: true
-# # Clamps outbound tcp-mss to 1436
-# # Usually applied per site
-# tcp_mss_clamping: true
-#
-# Add flowspec rule to the routers
-# flowspec_flows:
-#   name: [Unique]
-#     description: T123456 [Optional]
-#     protocol: udp or sets between brackets, eg: [tcp udp] [Optional]
-#     source: 192.0.0.0/23 [Optional]
-#     destination: 192.0.0.0/23 [Optional]
 
 asns_mapping:
   k8s:
