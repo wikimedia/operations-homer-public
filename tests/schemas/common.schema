@@ -1,4 +1,5 @@
 {
+  "title": "common.yaml | Homer Public",
   "type": "object",
   "additionalProperties" : false,
   "properties": {

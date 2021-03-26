@@ -1,4 +1,5 @@
 {
+  "title": "roles.yaml | Homer Public",
   "type": "object",
   "additionalProperties" : false,
   "patternProperties": {

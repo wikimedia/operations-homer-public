@@ -1,11 +1,12 @@
 {
-    "type": "object",
-    "additionalProperties" : false,
-    "patternProperties": {
-      "^.+$": {
-        "type": "object",
-        "additionalProperties" : false,
-        "$ref": "definitions/device-generic.schema"
-      }
+  "title": "site.yaml | Homer Public",
+  "type": "object",
+  "additionalProperties" : false,
+  "patternProperties": {
+    "^.+$": {
+      "type": "object",
+      "additionalProperties" : false,
+      "$ref": "definitions/device-generic.schema"
     }
   }
+}
