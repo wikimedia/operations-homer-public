@@ -47,9 +47,16 @@ def get_configs():
 def test_valid_config(jsonschema_store, config_file):
     """All config files should comply to their related schema."""
     config = yaml.safe_load(config_file.read_text())
-    schema_file = SCHEMA_DIR / config_file.with_suffix('.schema').name
+    schema_name = config_file.with_suffix('.schema').name
+    schema_file = SCHEMA_DIR / schema_name
     with open(schema_file) as f:
         schema = json.load(f)
 
     resolver = jsonschema.RefResolver(base_uri=DEFINITIONS_PATH, referrer=schema, store=jsonschema_store)
-    jsonschema.validate(instance=config, schema=schema, resolver=resolver)  # Raises if invalid
+    try:
+        jsonschema.validate(instance=config, schema=schema, resolver=resolver)
+    except jsonschema.exceptions.ValidationError:
+        print(f'Configuration file {config_file} failed validation, see '
+              f'https://doc.wikimedia.org/homer-public/master/{schema_name}.html')
+        raise
+
