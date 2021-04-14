@@ -370,13 +370,16 @@ mr1-eqiad.wikimedia.org:
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['ge-0/0/5.0']
       - name: mgmt
-        services: ['ssh', 'ping', 'traceroute']
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/0.0']
       - name: access
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/2.0']
     dhcp_pool: 10.66.1.0/24
     els: false  # Legacy Junos syntax
+    dhcp_relay:  # T271583
+      interfaces:
+        - ge-0/0/0.0
 
 msw1-eqiad.mgmt.eqiad.wmnet:
   role: msw
@@ -388,6 +391,7 @@ mr1-codfw.wikimedia.org:
   role: mr
   site: codfw
   config:
+    dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
     security_zones:
       - name: production
         services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
@@ -396,7 +400,7 @@ mr1-codfw.wikimedia.org:
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['ge-0/0/5']
       - name: mgmt
-        services: ['ssh', 'ping', 'traceroute']
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/0.0']
       - name: access
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
@@ -407,6 +411,7 @@ mr1-eqsin.wikimedia.org:
   site: eqsin
   config:
     els: false  # Legacy Junos syntax
+    dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
 
 msw1-codfw.mgmt.codfw.wmnet:
   role: msw
@@ -419,6 +424,7 @@ mr1-ulsfo.wikimedia.org:
   site: ulsfo
   config:
     els: false  # Legacy Junos syntax
+    dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
 
 mr1-esams.wikimedia.org:
   role: mr
@@ -432,7 +438,7 @@ mr1-esams.wikimedia.org:
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['ge-0/0/6.2484']
       - name: mgmt
-        services: ['ssh', 'ping', 'traceroute']
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['irb.900']
       - name: access
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
@@ -441,6 +447,7 @@ mr1-esams.wikimedia.org:
         services: ['ping', 'traceroute']
         interfaces: ['ge-0/0/6.2483']
         screen: untrust-screen
+    dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
 
 # TODO: payments firewall
 # pfw-eqiad.wikimedia.org:

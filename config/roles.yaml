@@ -8,7 +8,7 @@ mr:
       services: ['ssh', 'ping', 'traceroute']
       interfaces: ['ge-0/0/0.0']
     - name: mgmt
-      services: ['ssh', 'ping', 'traceroute']
+      services: ['ssh', 'ping', 'traceroute', 'dhcp']
       interfaces: ['vlan.900']
     - name: access
       services: ['ssh', 'ping', 'traceroute', 'dhcp']

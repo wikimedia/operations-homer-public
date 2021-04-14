@@ -356,14 +356,14 @@
       "type": "string",
       "format": "ipv4"
     },
+    "dhcp_server": {
+      "type": "string",
+      "format": ["ipv4", "ipv6"]
+    },
     "dhcp_relay": {
       "type": "object",
       "additionalProperties" : false,
       "properties": {
-        "server": {
-          "type": "string",
-          "format": ["ipv4", "ipv6"]
-        },
         "interfaces": {
           "type": "array",
           "items": [
