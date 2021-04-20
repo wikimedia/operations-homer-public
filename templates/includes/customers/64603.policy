@@ -1,23 +1,25 @@
-prefix-list kubestage-pod-ips4 {
+prefix-list kubestage-ipv4 {
     10.64.75.0/24;
+    10.64.76.0/24;
 }
-prefix-list kubestage-pod-ips6 {
+prefix-list kubestage-ipv6 {
     2620:0:861:babe::/64;
+    2620:0:861:babf::/64;
 }
 policy-statement kubestage_import {
-    term pod_ips4 {
+    term ipv4 {
         from {
             family inet;
             protocol bgp;
-            prefix-list-filter kubestage-pod-ips4 longer;
+            prefix-list-filter kubestage-ipv4 orlonger;
         }
         then accept;
     }
-    term pod_ips6 {
+    term ipv6 {
         from {
             family inet6;
             protocol bgp;
-            prefix-list-filter kubestage-pod-ips6 longer;
+            prefix-list-filter kubestage-ipv6 orlonger;
         }
         then accept;
     }
