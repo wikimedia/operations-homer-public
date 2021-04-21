@@ -1,0 +1,7 @@
+wikimedia-private = 10.0.0.0/8 # private
+                    172.16.0.0/12 # CloudVPS VMs
+                    2001:df2:e500:100::/56 # eqsin private
+                    2620:0:860:100::/56 # codfw private
+                    2620:0:861:100::/56 # eqiad private
+                    2620:0:862:100::/56 # esams private
+                    2620:0:863:100::/56 # ulsfo private

@@ -20,6 +20,8 @@ mr:
     tcp_syn_flood_source: 1024
     tcp_syn_flood_dest: 2048
     udp_flood: 1000
+  capirca:
+    - mr-security-policies
 
 cr:
   lldp_disabled: ['external']

@@ -448,6 +448,8 @@ mr1-esams.wikimedia.org:
         interfaces: ['ge-0/0/6.2483']
         screen: untrust-screen
     dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
+    capirca:
+      - mr-security-policies-esams
 
 # TODO: payments firewall
 # pfw-eqiad.wikimedia.org:

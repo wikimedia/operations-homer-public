@@ -374,6 +374,16 @@
           ]
         }
       }
+    },
+    "capirca": {
+      "type": "array",
+      "minProperties": 1,
+      "description": "List of Capirca policy files to apply",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
     }
   }
 }
