@@ -213,6 +213,8 @@ ospf:
     - cr3-esams.wikimedia.org: ae1.402
       mr1-esams.wikimedia.org: ge-0/0/1.402
       metric: 20000
+    - cloudsw1-c8-eqiad.mgmt.eqiad.wmnet: irb.1104
+      cloudsw1-d5-eqiad.mgmt.eqiad.wmnet: irb.1104
   stub:
     mr1-ulsfo.wikimedia.org:
       - vlan.900
@@ -313,6 +315,11 @@ ospf:
       - ae1.100
       - ae1.102
       - ae1.103
+    cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
+      - irb.1120
+    cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
+      - irb.1120
+
 
 juniper_protocols:
   - bfd
