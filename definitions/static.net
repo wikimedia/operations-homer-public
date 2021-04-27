@@ -5,3 +5,10 @@ wikimedia-private = 10.0.0.0/8 # private
                     2620:0:861:100::/56 # eqiad private
                     2620:0:862:100::/56 # esams private
                     2620:0:863:100::/56 # ulsfo private
+
+VRRP = 224.0.0.18/32
+NO_IP = 0.0.0.0/32
+LIMITED_BROADCAST = 255.255.255.255/32
+vmhost = 192.168.1.0/24 # Junos internal subnet
+
+recdns = 10.3.0.1 # recdns
