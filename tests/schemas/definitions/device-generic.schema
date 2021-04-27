@@ -291,6 +291,10 @@
         }
       }
     },
+    "asn": {
+      "type": "integer",
+      "description": "Primary ASN of the device."
+    },
     "confed": {
       "type": "integer"
     },

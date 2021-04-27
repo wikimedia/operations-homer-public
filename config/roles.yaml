@@ -25,3 +25,6 @@ mr:
 
 cr:
   lldp_disabled: ['external']
+
+cloudsw:  # Will have to be split up once there is one in codfw
+  asn: 64710
