@@ -27,7 +27,7 @@ lvs:  # In common as we need the full infra wide list as well
     - 103.102.166.224/27
     - 2001:df2:e500:ed1a::/64
 
-# Next available UID: 2032
+# Next available UID: 2033
 # When adding a new user, please make sure to update "next available UID" above
 # yamllint disable rule:line-length
 users:
@@ -131,6 +131,11 @@ users:
     class: super-user
     sshkeys:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC6Gqh/8Dox0/1BDBqP5X9NLyUgQ6eNRFMb3un2hdUQF5g78UFiAz4twMbC7rVvrL6d/9ZLmZnTbFJdAwf1YjCySeOyYjvtyToRnXUUVb62hfrvpfF16fe5M9E5Yyss87dkGPMY8IWJ9hRqxBDJHPXdAi8foUwEe+AoabjmArd2jOUP80wCKl0hP54XM7MXKbuGWNjBmEuLDcHy/OwIlUO6c1OIGZO4nLJTzfL5/R9Q/lIt65MwLBkkegALiBBoGEYIKm324KAaOmP9bwYh7bn5GsIkcfsj4FxCHx1UH+qOyi6YcOKFEMt5DB0GYCCqDN1FfN2CSDRuzigY5wsmpDs6+g9i5dT23IzvGGkI4nADRBcJb5BMVEDjZRKEQfZbxKctiQQgkW3/YYY31pLRrRTmNlybf4t9dlYK3BuraA6ZtGCwkZ6195CuCA8biMHAGv1rMa9FK3hm5bUrDGUa+5/MzIldzB5nuhugiAzg5C+iz6oEp5cuoMB5rjK0Ni2T1dloaPOmrzQMmObghDaAnS8kDhzvXv69dIAJ+P1lrHiQLhmEnwuKb9/ueX++Nkfp+NXxjHynxmJkUwYXwzMtcvymPywtEoaYS84YBCkx9oVgNfEwQtvx+/9LsVukL/d7dcg1FA2D46No0h3Tgx/8/qAlHt1bQrnBrpgrLxEd6LXwLw== cdanis@yubikey-wmf"
+  - name: cmooney
+    uid: 2032
+    class: super-user
+    sshkeys:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDD66f+LlteiSb5GQCU3wnY/AMU2fKqlbEnUJLO9UVqPMUDBjxWSUc4OGnJznBsgz7Nq3GR7xgSHURw9egpDaXU3toVRXOOR7ts0inoxPBxZEXDZbaM+0KTV6IIOT0gjvD1wLo8j+V9tXW8sxExpiNLY0R2tXy396CPPTtxcTjK8S9PHLkrQHvWSp4+AyzsEw7P8OKLbNRXS+EB/+iOYpp5VFlJVD3C0pFeRFMzzdlAnkCqXhwBupJuZfnK/MJUYk6c8aPFExTFVB43UDNJyXwk+bDM85X/j87byl8hokUq8Qgn66U5tZkeDWFBEypUgNtrvMbt6+EVO2mXuwlI1MSN6JI0Y+P65qJ5DMDMJ6VP5pn6fxFCUaiZrN50RSfELzZ3va8L66Ao7We0qx9IVEnhNg72p8/rrJCqSfEhfr/tLAA1+KLhPDUYAQgq0+JvU0aTx3hoNnMWijr55ByWL6SR5nIhFc0ikUEe2YW0k/TF3oPF0zYsJ7FUdNux1FiJQesTjA0pd4PygFbUk56PbfN4VcOOQcCkaJVLGJzhMLHqWEzTR2eHo5E28vnsdj53u9CzqSVsWsAN3l/M3Xq1PFgC6b5Dn4+2Xd0M48gA4N5450usbG0x2tXt+Vb8w90G7GSDKL/k+SMtUwXOLTK4l3W5tg+DR+hi7S1sE3BaV6CPzQ== cmooney@wikilap"
 # yamllint enable rule:line-length
 # When adding a new user, please make sure to update the "next available UID"
 # comment at the beginning of the users block
