@@ -10,7 +10,7 @@ term allow_ssh4 {
 term allow_bgp4 {
   source-prefix:: bgp-sessions
   protocol:: tcp
-  port:: BGP
+  destination-port:: BGP
   action:: accept
 }
 term allow_ospf4 {
@@ -59,15 +59,14 @@ term allow_dhcp_reply4 {
 }
 term allow_bfd4 {
   comment:: "T209989"
-  source-prefix:: bgp-sessions
   protocol:: udp
-  port:: BFD
+  destination-port:: BFD
   action:: accept
 }
 term allow_mbfd4 {
   source-prefix:: bgp-sessions
   protocol:: udp
-  port:: mBFD
+  destination-port:: mBFD
   action:: accept
 }
 term allow_dns4 {
