@@ -245,6 +245,8 @@ esams:
   anycast_neighbors:
     dns3001: 91.198.174.61
     dns3002: 91.198.174.62
+    doh3001: 91.198.174.7
+    doh3002: 91.198.174.9
   ping_offload_vip: 91.198.174.192/32  # text-lb.esams.wikimedia.org
   ping_offload_redirect: 10.20.0.103  # ping3001.esams.wmnet
   sampling:
