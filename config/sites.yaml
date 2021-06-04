@@ -217,6 +217,7 @@ eqsin:
   anycast_neighbors:
     dns5001: 103.102.166.8
     dns5002: 103.102.166.9
+    doh5001: 103.102.166.14  # Wikidough
   sampling:
     collector: 10.132.0.30  # netflow5001.eqsin.wmnet
   dhcp_server: 103.102.166.13  # install5001.wikimedia.org
