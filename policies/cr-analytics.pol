@@ -1,0 +1,18 @@
+header {
+    comment:: "Applied to traffic going out of the analytics vlans"
+    comment:: "Last audit in T279429"
+    target:: juniper analytics-in4 inet no-interface-specific
+}
+term udp-frag {
+    fragment-offset:: 1-8191
+    protocol:: udp
+    action:: accept
+}
+#include 'cr-analytics.inc'
+
+header {
+    comment:: "Applied to traffic going out of the analytics vlans"
+    comment:: "Last audit in T279429"
+    target:: juniper analytics-in6 inet6 no-interface-specific
+}
+#include 'cr-analytics.inc'

@@ -1,3 +1,26 @@
+VRRP = 224.0.0.18/32
+NO_IP = 0.0.0.0/32
+LIMITED_BROADCAST = 255.255.255.255/32
+vmhost = 192.168.1.0/24 # Junos internal subnet
+neighbor_discovery = ff02::/123
+                     ff02::1:ff00:0/104
+
+
+#
+# VIPs
+#
+
+recdns = 10.3.0.1 # recdns
+ldap-ro.eqiad = 208.80.154.252 # ldap-ro.eqiad
+gerrit.wikimedia.org = 208.80.154.137 # gerrit.wikimedia.org
+                       2620:0:861:2:208:80:154:137 # gerrit.wikimedia.org
+gerrit-replica.wikimedia.org = 208.80.153.107 # gerrit-replica.wikimedia.org
+                               2620:0:860:4:208:80:153:107 # gerrit-replica.wikimedia.org
+
+#
+# Subnets
+#
+
 wikimedia-private = 10.0.0.0/8 # private
                     172.16.0.0/12 # CloudVPS VMs
                     2001:df2:e500:100::/56 # eqsin private
@@ -6,9 +29,33 @@ wikimedia-private = 10.0.0.0/8 # private
                     2620:0:862:100::/56 # esams private
                     2620:0:863:100::/56 # ulsfo private
 
-VRRP = 224.0.0.18/32
-NO_IP = 0.0.0.0/32
-LIMITED_BROADCAST = 255.255.255.255/32
-vmhost = 192.168.1.0/24 # Junos internal subnet
+analytics-subnets = 10.64.5.0/24 #analytics1-a-eqiad
+                    2620:0:861:104::/64 #analytics1-a-eqiad
+                    10.64.21.0/24 #analytics1-b-eqiad
+                    2620:0:861:105::/64 #analytics1-c-eqiad
+                    10.64.36.0/24 #analytics1-c-eqiad
+                    2620:0:861:106::/64 #analytics1-c-eqiad
+                    10.64.53.0/24 #analytics1-d-eqiad
+                    2620:0:861:108::/64 #analytics1-d-eqiad
 
-recdns = 10.3.0.1 # recdns
+#
+# SVC
+#
+
+api.svc.eqiad = 10.2.2.22 # api.svc.eqiad.wmnet
+api.svc.codfw = 10.2.1.22 # api.svc.codfw.wmnet
+eventgate-analytics.svc.eqiad = 10.2.2.42 # eventgate-analytics.svc.eqiad.wmnet
+eventgate-analytics.svc.codfw = 10.2.1.42 # eventgate-analytics.svc.codfw.wmnet
+eventgate-analytics-external.svc.eqiad = 10.2.2.52 # eventgate-analytics-external.svc.eqiad.wmnet
+eventgate-analytics-external.svc.codfw = 10.2.1.52 # eventgate-analytics-external.svc.codfw.wmnet
+eventgate-logging-external.svc.eqiad = 10.2.2.50 # eventgate-logging-external.svc.eqiad.wmnet
+eventgate-logging-external.svc.codfw = 10.2.1.50 # eventgate-logging-external.svc.codfw.wmnet
+eventgate-main.svc.eqiad = 10.2.2.45 # eventgate-main.svc.eqiad.wmnet
+eventgate-main.svc.codfw = 10.2.1.45 # eventgate-main.svc.codfw.wmnet
+ms-fe.svc.codfw = 10.2.1.27 # ms-fe.svc.codfw.wmnet
+ms-fe.svc.eqiad = 10.2.2.27 # ms-fe.svc.eqiad.wmnet
+schema.svc.codfw = 10.2.1.43 # schema.svc.codfw.wmnet
+schema.svc.eqiad = 10.2.2.43 # schema.svc.eqiad.wmnet
+thanos-swift.svc.codfw = 10.2.1.54 # thanos-swift.svc.codfw.wmnet
+thanos-swift.svc.eqiad = 10.2.2.54 # thanos-swift.svc.eqiad.wmnet
+wdqs.svc.eqiad = 10.2.2.32 # wdqs.svc.eqiad.wmnet

@@ -36,6 +36,8 @@ cr1-eqiad.wikimedia.org:
     vrrp_master_pinning:
       - ae1  # Row A
       - ae2  # Row B
+    capirca:
+      - cr-analytics
 
 cr2-eqiad.wikimedia.org:
   role: cr
@@ -64,6 +66,8 @@ cr2-eqiad.wikimedia.org:
     vrrp_master_pinning:
       - ae3  # Row C
       - ae4  # Row D
+    capirca:
+      - cr-analytics
 
 cr2-eqord.wikimedia.org:
   role: cr
