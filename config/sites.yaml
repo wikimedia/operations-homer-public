@@ -50,6 +50,8 @@ eqiad:
   anycast_neighbors:
     dns1001: 208.80.154.10
     dns1002: 208.80.155.108
+    doh1001: 208.80.154.70   # Wikidough
+    doh1002: 208.80.155.112  # Wikidough
     authdns1001: 208.80.154.134
     centrallog1001: 10.64.48.113
   ping_offload_vip: 208.80.154.224/32
