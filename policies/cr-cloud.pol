@@ -1,0 +1,159 @@
+header {
+    comment:: "Applied to cloud instance traffic going out of the cloud-instance-transport vlan"
+    comment:: "Last audit in T264993"
+    target:: juniper cloud-in4 inet no-interface-specific
+}
+term allow-icmp {
+    source-address:: cloud-transports
+    protocol:: icmp
+    action:: accept
+}
+term vrrp {
+    destination-address:: VRRP
+    protocol:: vrrp ah
+    action:: accept
+}
+term labstore {
+    comment:: "Flows from WMCS to private IPs 10/8"
+    destination-address:: labstore1004
+                          labstore1005
+    destination-port:: NFS sunRPC NFS_RPC_mountd
+    protocol:: tcp udp
+    action:: accept
+}
+term wiki-replicas {
+    destination-address:: dbproxy1018 dbproxy1019
+    destination-port:: SSH RSYNC mySQL postgreSQL
+    protocol:: tcp
+    action:: accept
+}
+term clouddb_return {
+    comment:: "account creation in toolsdb etc"
+    destination-address:: labstore1004
+                          labstore1005
+    source-port:: mySQL
+    protocol:: tcp
+    action:: accept
+}
+term cloudmetrics-http {
+    destination-address:: cloudmetrics_group
+    destination-port:: HTTP
+    protocol:: tcp
+    action:: accept
+}
+term cloudmetrics-statsd {
+    comment:: "To be removed with T207543"
+    destination-address:: cloudmetrics_group
+    destination-port:: STATSD
+    protocol:: udp
+    action:: accept
+}
+term cloudmetrics-graphite {
+    comment:: "To be removed with T207543"
+    destination-address:: cloudmetrics_group
+    destination-port:: graphite
+    protocol:: tcp udp
+    action:: accept
+}
+term deny-to-private-subnets {
+    comment:: "Deny any communication with private subnets"
+    destination-address:: RFC1918
+    action:: reject
+}
+term wiki--HTTP-S {
+    comment:: "All specific flows from 172.16/12 to public IPs - T209082"
+    comment:: "Bellow To be removed with T209011"
+    destination-address:: text-lb.eqiad
+                          upload-lb.eqiad
+                          text-lb.codfw
+                          upload-lb.codfw
+                          text-lb.ulsfo
+                          upload-lb.ulsfo
+                          text-lb.esams
+                          upload-lb.esams
+                          text-lb.eqsin
+                          upload-lb.eqsin
+    protocol:: tcp
+    destination-port:: WEB
+    action:: accept
+}
+term misc--HTTP-S {
+    destination-address:: sodium apt_group
+    protocol:: tcp
+    destination-port:: WEB
+    action:: accept
+}
+term gerrit {
+    destination-address:: gerrit.wikimedia.org
+                          gerrit-replica.wikimedia.org
+    protocol:: tcp
+    destination-port:: WEB gerritSSH
+    action:: accept
+}
+term DNS {
+    comment:: "To be removed with T207533"
+    destination-address:: ns-recursor0.openstack.eqiad1
+                          ns-recursor1.openstack.eqiad1
+                          ns-recursor0.openstack.codfw1dev
+                          ns-recursor1.openstack.codfw1dev
+    destination-port:: DNS
+    protocol:: tcp udp
+    action:: accept
+}
+term NFS {
+    comment:: "To be removed with T216422"
+    destination-address:: cloudstore_group nfs-maps.wikimedia.org
+    protocol:: tcp
+    destination-port:: NFS
+    action:: accept
+}
+term dumps {
+    destination-address:: labstore1006 labstore1007
+    protocol:: tcp
+    destination-port:: WEB NFS
+    action:: accept
+}
+term LDAP {
+    destination-address:: ldap-ro.codfw.wikimedia.org
+                          ldap-ro.eqiad.wikimedia.org
+    protocol:: tcp
+    destination-port:: LDAP
+    action:: accept
+}
+term contint-ssh {
+    destination-address:: contint_group
+    protocol:: tcp
+    source-port:: SSH
+    action:: accept
+}
+term contint-gerrit {
+    destination-address:: contint_group
+    protocol:: tcp
+    destination-port:: GIT
+    action:: accept
+}
+term cloudcontrol-apis {
+    destination-address:: cloudcontrol_group cloudcontrol-dev_group
+    protocol:: tcp
+    destination-port:: cloud_api_proxy
+                       cloud_api_keystone
+                       cloud_api_nova
+                       cloud_api_cinder
+                       cloud_api_placement
+                       cloud_api_trove
+                       cloud_api_designate
+                       cloud_api_glance
+                       cloud_api_neutron
+                       cloud_api_barbican
+                       rabbitMQ
+    action:: accept
+}
+term deny-from-private {
+    comment:: "No more legit traffic from 172.16/12"
+    source-address:: CLOUD_VMs
+    action:: deny
+}
+term default {
+    comment:: "Allow communication to public subnets and the Internet"
+    action:: accept
+}

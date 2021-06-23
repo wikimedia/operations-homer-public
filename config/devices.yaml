@@ -38,6 +38,7 @@ cr1-eqiad.wikimedia.org:
       - ae2  # Row B
     capirca:
       - cr-analytics
+      - cr-cloud
 
 cr2-eqiad.wikimedia.org:
   role: cr
@@ -68,6 +69,7 @@ cr2-eqiad.wikimedia.org:
       - ae4  # Row D
     capirca:
       - cr-analytics
+      - cr-cloud
 
 cr2-eqord.wikimedia.org:
   role: cr
@@ -108,6 +110,8 @@ cr1-codfw.wikimedia.org:
     vrrp_master_pinning:
       - ae1  # Row A
       - ae2  # Row B
+    capirca:
+      - cr-cloud
 
 cr2-codfw.wikimedia.org:
   role: cr
@@ -134,6 +138,8 @@ cr2-codfw.wikimedia.org:
       - ae3  # Row C
       - ae4  # Row D
     primary_ixp: true
+    capirca:
+      - cr-cloud
 
 cr2-eqdfw.wikimedia.org:
   role: cr
