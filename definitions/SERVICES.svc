@@ -27,6 +27,7 @@ POP_SSL = 995/tcp
 graphite = 2003/tcp 2003/udp
 NFS = 2049/tcp 2049/udp
 NETFLOW = 2056/udp
+ceph_monitor = 3300/tcp
 mySQL = 3306/tcp
 mysql-wiki-replicas = 3311-3320/tcp
 mysql-analytics-staging = 3350/tcp
@@ -45,6 +46,7 @@ rabbitMQ_tls = 5671/tcp
 rabbitMQ = 5672/tcp
 IDRAC_KVM = 5900/tcp
 SYSLOGTLS = 6514/tcp
+ceph_monitor_legacy = 6789/tcp
 SQUID_PROXY = 8080/tcp
 druid = 8081/tcp 8082/tcp 8090/tcp
 STATSD = 8125/udp
@@ -61,6 +63,7 @@ kafka = 9092/tcp
 kafkaTLS = 9093/tcp
 Prometheus = 9100/tcp
 bacula = 9103/tcp 9103/udp
+prometheus_rsyslog = 9105/tcp
 cloud_api_glance = 9292/tcp
 cloud_api_barbican = 9311/tcp
 GIT = 9418/tcp
@@ -83,6 +86,7 @@ NFS_RPC_mountd = 38466/tcp 38466/udp
 #
 # Wide ranges
 #
+ceph_OSD = 6800-7100/tcp
 TRACEROUTE = 33434-33534/udp
 linux_high_ports = 32768-61000/tcp 32768-61000/udp
 high_ports = 1024-65535/tcp 1024-65535/udp
