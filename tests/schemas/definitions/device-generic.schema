@@ -388,6 +388,10 @@
           "type": "string"
         }
       ]
+    },
+    "optimize_qos_buffers": {
+      "type": "boolean",
+      "description": "Adds class-of-service config to allocate most of switch shared-buffer to best effort #T284592"
     }
   }
 }

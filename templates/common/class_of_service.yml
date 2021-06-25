@@ -1,0 +1,31 @@
+replace: class-of-service {
+{% if optimize_qos_buffers | d(false) -%}
+    /* T284592 */
+    shared-buffer {
+        ingress {
+            percent 100;
+            buffer-partition lossless {
+                percent 5;
+            }
+            buffer-partition lossless-headroom {
+                percent 10;
+            }
+            buffer-partition lossy {
+                percent 85;
+            }
+        }
+        egress {
+            percent 100;
+            buffer-partition lossless {
+                percent 5;
+            }
+            buffer-partition lossy {
+                percent 85;
+            }
+            buffer-partition multicast {
+                percent 10;
+            }
+        }
+    }
+{% endif -%}
+}
