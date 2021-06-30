@@ -123,6 +123,17 @@
         }
       }
     },
+    "urpf_strict": {
+      "type": "array",
+      "minProperties": 1,
+      "description": "Enable uRPF filtering in strict mode for any interfaces in this list.",
+      "prefixItems": [
+        {
+          "type": "string",
+          "description": "Interface with sub interface (eg. xe-1/0/1.1234 or xe-1/0/1.0)"
+        }
+      ]
+    },
     "vrrp_bandwidth_threshold": {
       "type": "boolean",
       "description": "In a LACP bundle, configure VRRP to failover on the loss of one link."
