@@ -148,7 +148,6 @@ codfw:
     centrallog2001: 10.192.48.64
     doh2001: 208.80.153.6
     doh2002: 208.80.153.38
-    malmok: 208.80.153.43  # Wikidough
   ping_offload_vip: 208.80.153.224/32
   ping_offload_redirect: 10.192.0.22  # ping2001.codfw.wmnet
   sampling:
