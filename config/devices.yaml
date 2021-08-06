@@ -333,10 +333,20 @@ asw2-d-eqiad.mgmt.eqiad.wmnet:
 cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
   role: cloudsw
   site: eqiad
+  config:
+    capirca:
+      - cloudsw-loopback
+
+cloudsw2-c8-eqiad.mgmt.eqiad.wmnet:
+  role: cloudsw
+  site: eqiad
 
 cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
   role: cloudsw
   site: eqiad
+  config:
+    capirca:
+      - cloudsw-loopback
 
 asw-a-codfw.mgmt.codfw.wmnet:
   role: asw
