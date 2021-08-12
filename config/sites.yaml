@@ -198,6 +198,7 @@ ulsfo:
     dns4001: 198.35.26.7
     dns4002: 198.35.26.8
     doh4001: 198.35.26.14   # Wikidough
+    doh4002: 198.35.26.6    # Wikidough
   sampling:
     collector: 10.128.0.31  # netflow4001.ulsfo.wmnet
   dhcp_server: 198.35.26.12  # install4001.wikimedia.org
