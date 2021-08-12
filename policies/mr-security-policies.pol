@@ -72,7 +72,7 @@ term any--icmp {
 
 term apt--web {
     comment:: "To allow fetching Junos images"
-    source-address:: apt_group
+    destination-address:: apt_group
     destination-port:: WEB
     protocol:: tcp
     action:: accept
