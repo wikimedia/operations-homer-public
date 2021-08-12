@@ -348,6 +348,10 @@ cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
     capirca:
       - cloudsw-loopback
 
+cloudsw2-d5-eqiad.mgmt.eqiad.wmnet:
+  role: cloudsw
+  site: eqiad
+
 asw-a-codfw.mgmt.codfw.wmnet:
   role: asw
   site: codfw
