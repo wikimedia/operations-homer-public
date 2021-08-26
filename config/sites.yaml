@@ -56,6 +56,7 @@ eqiad:
     doh1002: 208.80.155.112  # Wikidough
     authdns1001: 208.80.154.134
     centrallog1001: 10.64.48.113
+    durum1001: 10.64.48.95  # Wikidough check
   ping_offload_vip: 208.80.154.224/32
   ping_offload_redirect: 10.64.32.31  # ping1001.eqiad.wmnet
   sampling:
