@@ -189,7 +189,6 @@ cr4-ulsfo.wikimedia.org:
         provider: "Hurricane Electric"  # Partial transit
     filters:
       et-0/0/1.1221-in: sandbox
-    damping: [xe-0/1/2]
 
 cr3-esams.wikimedia.org:
   role: cr
