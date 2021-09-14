@@ -57,6 +57,7 @@ eqiad:
     authdns1001: 208.80.154.134
     centrallog1001: 10.64.48.113
     durum1001: 10.64.48.95  # Wikidough check
+    durum1002: 10.64.16.20  # Wikidough check
   ping_offload_vip: 208.80.154.224/32
   ping_offload_redirect: 10.64.32.31  # ping1001.eqiad.wmnet
   sampling:
@@ -149,6 +150,8 @@ codfw:
     centrallog2001: 10.192.48.64
     doh2001: 208.80.153.6
     doh2002: 208.80.153.38
+    durum2001: 10.192.32.58   # Wikidough check
+    durum2002: 10.192.48.14   # Wikidough check
   ping_offload_vip: 208.80.153.224/32
   ping_offload_redirect: 10.192.0.22  # ping2001.codfw.wmnet
   sampling:
@@ -200,6 +203,8 @@ ulsfo:
     dns4002: 198.35.26.8
     doh4001: 198.35.26.14   # Wikidough
     doh4002: 198.35.26.6    # Wikidough
+    durum4001: 10.128.0.6   # Wikidough check
+    durum4002: 10.128.0.7   # Wikidough check
   sampling:
     collector: 10.128.0.31  # netflow4001.ulsfo.wmnet
   dhcp_server: 198.35.26.12  # install4001.wikimedia.org
@@ -227,6 +232,8 @@ eqsin:
     dns5002: 103.102.166.9
     doh5001: 103.102.166.14  # Wikidough
     doh5002: 103.102.166.5   # Wikidough
+    durum5001: 10.132.0.10   # Wikidough check
+    durum5002: 10.132.0.14   # Wikidough check
   sampling:
     collector: 10.132.0.30  # netflow5001.eqsin.wmnet
   dhcp_server: 103.102.166.13  # install5001.wikimedia.org
@@ -257,6 +264,8 @@ esams:
     dns3002: 91.198.174.62
     doh3001: 91.198.174.7
     doh3002: 91.198.174.8
+    durum3001: 10.20.0.6  # Wikidough check
+    durum3002: 10.20.0.7  # Wikidough check
   ping_offload_vip: 91.198.174.192/32  # text-lb.esams.wikimedia.org
   ping_offload_redirect: 10.20.0.103  # ping3001.esams.wmnet
   sampling:
