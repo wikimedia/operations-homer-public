@@ -21,7 +21,7 @@
     "trusted_space": {
       "type": "array",
       "description": "Whitelisted networks with less restrictions",
-      "items": [
+      "prefixItems": [
         {
           "type": "object",
           "additionalProperties" : false,
@@ -48,7 +48,7 @@
     "mgmt_ip": {
       "type": "array",
       "description": "List of addr/netmask for mgmt interfaces; if specified, one per RE.",
-      "items": [
+      "prefixItems": [
         {
           "type": "string",
           "format": "ip_interface",
@@ -60,7 +60,7 @@
       "type": "array",
       "description": "List of FPC indices on which to enable jflow sampling.",
       "minProperties": 1,
-      "items": [
+      "prefixItems": [
         {
           "type": "integer"
         }
@@ -118,7 +118,7 @@
       "type": "array",
       "minProperties": 1,
       "description": "Pin (sub)interfaces to a given device (sets its VRRP priority to 110)",
-      "items": [
+      "prefixItems": [
         {
           "type": "string",
           "description": "ae1  # Interface and all sub-interfaces; xe-1/0/1.1234  # Specific sub-interface"
@@ -147,7 +147,7 @@
       "type": "array",
       "description": "Enable interface flap damping.",
       "minProperties": 1,
-      "items": [
+      "prefixItems": [
         {
           "type": "string"
         }
@@ -184,7 +184,7 @@
       "type": "array",
       "minProperties": 1,
       "description": "Don't send LLDP frames on those interfaces as SRXs show L2 errors when receiving them.",
-      "items": [
+      "prefixItems": [
         {
           "type": "string"
         }
@@ -238,7 +238,7 @@
     "security_zones": {
       "type": "array",
       "minProperties": 2,
-      "items": [
+      "prefixItems": [
         {
           "type": "object",
           "additionalProperties" : false,
@@ -248,7 +248,7 @@
             },
             "services": {
               "type": "array",
-              "items": [
+              "prefixItems": [
                 {
                   "type": "string"
                 }
@@ -256,7 +256,7 @@
             },
             "interfaces": {
               "type": "array",
-              "items": [
+              "prefixItems": [
                 {
                   "type": "string"
                 }
@@ -348,7 +348,7 @@
     "customers": {
       "type": "array",
       "minProperties": 1,
-      "items": [
+      "prefixItems": [
         {
           "type": "integer"
         }
@@ -413,7 +413,7 @@
       "properties": {
         "interfaces": {
           "type": "array",
-          "items": [
+          "prefixItems": [
             {
               "type": "string",
               "minProperties": 1
@@ -426,7 +426,7 @@
       "type": "array",
       "minProperties": 1,
       "description": "List of Capirca policy files to apply",
-      "items": [
+      "prefixItems": [
         {
           "type": "string"
         }
@@ -444,7 +444,7 @@
       "type": "array",
       "minProperties": 1,
       "description": "[Secret] some features require a license key.",
-      "items": [
+      "prefixItems": [
         {
           "type": "string"
         }
@@ -457,7 +457,7 @@
     "snmp_communities": {
       "type": "array",
       "minProperties": 1,
-      "items": [
+      "prefixItems": [
         {
           "type": "string"
         }
@@ -486,7 +486,7 @@
     "blackhole": {
       "type": "array",
       "description": "Network prefixes to ban, v4 and v6 with subnet",
-      "items": [
+      "prefixItems": [
         {
           "type": "string",
           "format": "ip_network"
@@ -498,7 +498,7 @@
     "rpki_whitelist": {
       "type": "array",
       "description": "Force router to accept a RPKI invalid prefix.",
-      "items": [
+      "prefixItems": [
         {
           "type": "object",
           "additionalProperties" : false,

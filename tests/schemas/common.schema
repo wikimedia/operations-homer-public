@@ -13,7 +13,7 @@
       "patternProperties": {
         "^(eqiad|eqord|codfw|eqdfw|esams|knams|ulsfo|eqsin)$": {
           "type": "array",
-          "items": [
+          "prefixItems": [
             {
                "type": "string",
                "format": "ip_network",
@@ -36,7 +36,7 @@
     "users": {
       "type": "array",
       "minProperties": 1,
-      "items": [
+      "prefixItems": [
         {
           "type": "object",
           "additionalProperties" : false,
@@ -59,7 +59,7 @@
             "sshkeys": {
               "type": "array",
               "minProperties": 1,
-              "items": [
+              "prefixItems": [
                 {
                   "type": "string"
                 }
@@ -81,7 +81,7 @@
       "properties": {
         "p2p": {
           "type": "array",
-          "items": [
+          "prefixItems": [
             {
               "type": "object",
               "additionalProperties" : false,
@@ -109,7 +109,7 @@
             "^.+$": {
               "type": "array",
               "minProperties": 1,
-              "items": [
+              "prefixItems": [
                 {
                   "type": "string"
                 }
@@ -126,7 +126,7 @@
     "juniper_protocols": {
       "type": "array",
       "minProperties": 1,
-      "items": [
+      "prefixItems": [
         {
           "type": "string"
         }
@@ -135,7 +135,7 @@
     "juniper_services": {
       "type": "array",
       "minProperties": 1,
-      "items": [
+      "prefixItems": [
         {
           "type": "string"
         }
@@ -143,7 +143,7 @@
     },
     "ntp_servers": {
       "type": "array",
-      "items": [
+      "prefixItems": [
         {
           "type": "string",
           "format": "ipv4"

@@ -4,8 +4,6 @@
   "additionalProperties" : false,
   "patternProperties": {
     "^.+$": {
-      "type": "object",
-      "additionalProperties" : false,
       "$ref": "definitions/device-generic.schema"
     }
   }
