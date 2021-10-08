@@ -33,6 +33,16 @@
         "eqsin"
       ]
     },
+    "anycast_prefixes": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "string",
+          "format": "ip_network",
+          "minProperties": 0
+        }
+      ]
+    },
     "users": {
       "type": "array",
       "minProperties": 1,

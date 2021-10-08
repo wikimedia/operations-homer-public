@@ -27,6 +27,11 @@ lvs:
     - 103.102.166.224/27
     - 2001:df2:e500:ed1a::/64
 
+anycast_prefixes:
+  - 10.3.0.0/24  # Internal
+  - 198.35.27.0/24  # Test
+  - 185.71.138.0/24  # Wikidough
+
 # Next available UID: 2033
 # When adding a new user, please make sure to update "next available UID" above
 # yamllint disable rule:line-length
