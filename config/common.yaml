@@ -399,27 +399,33 @@ transit_providers:
     # CID in https://netbox.wikimedia.org/circuits/circuits/92/
     AS: 3320
     BFD: true
+    export_policy: true
   FiberRing:
     AS: 38930
   "Hurricane Electric":
     AS: 6939
   Init7:
     AS: 13030
+    export_policy: true
   LibertyGlobal:
     AS: 6830
     flowspec: true
   NTT:
     AS: 2914
+    export_policy: true
   Tata:
     AS: 6453
     import_policy: true
     export_policy: true
   Tele2:
     AS: 1257
+    export_policy: true
   Telia:
     AS: 1299
+    export_policy: true
   Lumen:
     AS: 3356
+    export_policy: true
 
 asns_mapping:
   k8s:
