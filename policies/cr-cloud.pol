@@ -145,6 +145,16 @@ term cloudcontrol-apis {
                        cloud_api_glance
                        cloud_api_neutron
                        cloud_api_barbican
+                       cloud_api_proxy_https
+                       cloud_api_keystone_https
+                       cloud_api_nova_https
+                       cloud_api_cinder_https
+                       cloud_api_placement_https
+                       cloud_api_trove_https
+                       cloud_api_designate_https
+                       cloud_api_glance_https
+                       cloud_api_neutron_https
+                       cloud_api_barbican_https
                        rabbitMQ
     action:: accept
 }

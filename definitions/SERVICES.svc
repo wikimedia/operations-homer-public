@@ -65,7 +65,17 @@ cloud_api_barbican = 9311/tcp
 GIT = 9418/tcp
 cloud_api_neutron = 9696/tcp
 SYSLOG_LOGSTASH = 10514/udp
+cloud_api_keystone_https = 25000/tcp
+cloud_api_proxy_https = 25668/tcp
+cloud_api_nova_https = 28774/tcp
+cloud_api_cinder_https = 28776/tcp
+cloud_api_placement_https = 28778/tcp
+cloud_api_trove_https = 28779/tcp
+cloud_api_designate_https = 29001/tcp
+cloud_api_glance_https = 29292/tcp
+cloud_api_barbican_https = 29311/tcp
 gerritSSH = 29418/tcp
+cloud_api_neutron_https = 29696/tcp
 NFS_RPC_mountd = 38466/tcp 38466/udp
 
 #
