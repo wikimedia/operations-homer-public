@@ -21,12 +21,6 @@ term labstore {
     protocol:: tcp udp
     action:: accept
 }
-term wiki-replicas {
-    destination-address:: dbproxy1018 dbproxy1019
-    destination-port:: SSH RSYNC mySQL postgreSQL
-    protocol:: tcp
-    action:: accept
-}
 term clouddb_return {
     comment:: "account creation in toolsdb etc"
     destination-address:: labstore1004
