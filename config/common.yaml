@@ -150,10 +150,6 @@ ospf:
     - cr4-ulsfo.wikimedia.org: et-0/0/1.402
       mr1-ulsfo.wikimedia.org: ge-0/0/4.402
       metric: 20000
-    - cr4-ulsfo.wikimedia.org: gr-0/0/0.1
-      cr2-eqsin.wikimedia.org: gr-0/0/0.1
-      metric: 4000
-      bfd: true
     - cr4-ulsfo.wikimedia.org: gr-0/0/0.2
       cr2-eqdfw.wikimedia.org: gr-0/0/0.1
       metric: 1390
