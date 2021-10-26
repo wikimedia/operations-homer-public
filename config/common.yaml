@@ -220,6 +220,9 @@ ospf:
       metric: 20000
     - cloudsw1-c8-eqiad.mgmt.eqiad.wmnet: irb.1104
       cloudsw1-d5-eqiad.mgmt.eqiad.wmnet: irb.1104
+    - cr3-esams.wikimedia.org: gr-0/0/0.3
+      asw1-b12-drmrs.wikimedia.org: gr-0/0/0.1
+      metric: 10000
   stub:
     mr1-ulsfo.wikimedia.org:
       - vlan.900
