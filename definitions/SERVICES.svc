@@ -54,7 +54,8 @@ cloud_api_placement = 8778/tcp
 cloud_api_trove = 8779/tcp
 WDQS = 8888/tcp
 cloud_api_designate = 9001/tcp
-AQS = 9042/tcp
+# Temporarily added 7000/tcp to the AQS rule below
+AQS = 9042/tcp 7000/tcp
 PyBal = 9090/tcp
 kafka = 9092/tcp
 kafkaTLS = 9093/tcp
