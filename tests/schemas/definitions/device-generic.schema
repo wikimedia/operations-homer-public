@@ -163,11 +163,11 @@
     },
     "tcp_mss_clamping": {
       "type": "boolean",
-      "description": "Prepends our AS# 3x to our peering and transits. Usually applied per site."
+      "description": "Clamps outbound tcp-mss to 1436. Usually applied per site."
     },
     "prepend_as_out": {
       "type": "boolean",
-      "description": "Clamps outbound tcp-mss to 1436. Usually applied per site."
+      "description": "Prepends our AS# 3x to our peering and transits. Usually applied per site."
     },
     "dhcp_pool": {
       "type": "string",
