@@ -480,3 +480,24 @@ mr1-esams.wikimedia.org:
     dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
     capirca:
       - mr-security-policies-esams
+
+mr1-drmrs.wikimedia.org:
+  role: mr
+  site: drmrs
+  config:
+    security_zones:
+      - name: production
+        services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
+        interfaces: ['lo0.0', 'ge-0/0/3', 'ge-0/0/4']
+      - name: untrust
+        services: ['ssh', 'ping', 'traceroute']
+        interfaces: ['ge-0/0/7']
+      - name: mgmt
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
+        interfaces: ['irb.900']
+      - name: access
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
+        interfaces: []  # Keeping the zone just in case to not delete policies
+    dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
+    capirca:
+      - mr-security-policies
