@@ -169,6 +169,12 @@ term any--bfd {
     protocol:: udp
     action:: accept
 }
+term infra--bgp {
+    source-address:: network-infra
+    destination-port:: BGP
+    protocol:: tcp
+    action:: accept
+}
 term any--traceroute {
     destination-port:: TRACEROUTE
     protocol:: udp
