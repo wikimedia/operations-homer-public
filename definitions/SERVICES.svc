@@ -33,6 +33,9 @@ mysql-analytics-staging = 3350/tcp
 mysql-analytics-replicas = 3351-3352/tcp
 BFD = 3784-3785/udp
 eventgate-logging-external = 4392/tcp
+# Temporarily adding a single port for use with transfer.py: T295312
+# Likely to be removed by 2021/11/30
+transferpy = 4400/tcp
 eventgate-main = 4492/tcp
 eventgate-analytics = 4592/tcp
 eventgate-analytics-external = 4692/tcp
@@ -55,6 +58,7 @@ cloud_api_trove = 8779/tcp
 WDQS = 8888/tcp
 cloud_api_designate = 9001/tcp
 # Temporarily added 7000/tcp to the AQS rule below
+# Likely to be removed by 2021/12/31
 AQS = 9042/tcp 7000/tcp
 PyBal = 9090/tcp
 kafka = 9092/tcp
@@ -78,6 +82,7 @@ cloud_api_barbican_https = 29311/tcp
 gerritSSH = 29418/tcp
 cloud_api_neutron_https = 29696/tcp
 NFS_RPC_mountd = 38466/tcp 38466/udp
+
 
 #
 # Wide ranges

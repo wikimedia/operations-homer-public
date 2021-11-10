@@ -34,10 +34,12 @@ term mysql-sqoop {
     destination-port:: mysql-wiki-replicas
     action:: accept
 }
+# Temporarily added transferpy to the term below
+# in order to to facilitate a transfer.py operation: T295312
 term mysql-replica {
     destination-address:: db1108
     protocol:: tcp
-    destination-port:: mysql-analytics-replicas
+    destination-port:: mysql-analytics-replicas transferpy
     action:: accept
 }
 term mysql-dbproxy {
