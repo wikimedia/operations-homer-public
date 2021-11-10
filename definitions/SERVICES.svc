@@ -33,9 +33,6 @@ mysql-analytics-staging = 3350/tcp
 mysql-analytics-replicas = 3351-3352/tcp
 BFD = 3784-3785/udp
 eventgate-logging-external = 4392/tcp
-# Temporarily adding a single port for use with transfer.py: T295312
-# Likely to be removed by 2021/11/30
-transferpy = 4400/tcp
 eventgate-main = 4492/tcp
 eventgate-analytics = 4592/tcp
 eventgate-analytics-external = 4692/tcp
