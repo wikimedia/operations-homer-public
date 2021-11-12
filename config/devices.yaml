@@ -501,3 +501,21 @@ mr1-drmrs.wikimedia.org:
     dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
     capirca:
       - mr-security-policies
+
+asw1-b12-drmrs.wikimedia.org:
+  role: asw
+  site: drmrs
+  config:
+    l3_switch: true
+    optimize_qos_buffers: true
+    lldp_disabled: ['xe-0/0/44']
+    filters:
+      xe-0/0/45.0-in: border-tmp-in
+
+asw1-b13-drmrs.wikimedia.org:
+  role: asw
+  site: drmrs
+  config:
+    l3_switch: true
+    optimize_qos_buffers: true
+    lldp_disabled: ['xe-0/0/44']
