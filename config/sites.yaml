@@ -280,6 +280,7 @@ esams:
       - ae1.102
       - ae1.103
   tcp_mss_clamping: true
+  prepend_as_out: true
 
 knams:
   confed: 65003
@@ -296,6 +297,7 @@ knams:
   sampling:
     collector: 10.20.0.100  # netflow3001.esams.wmnet
   tcp_mss_clamping: true
+  prepend_as_out: true
 
 drmrs:
   confed: 65006
