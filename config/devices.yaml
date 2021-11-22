@@ -252,7 +252,6 @@ cr3-knams.wikimedia.org:
         provider: Datahop
       213.46.186.9:
         provider: LibertyGlobal
-        disabled: true
       2001:730:2209:1::d52e:ba09:
         provider: LibertyGlobal
 
