@@ -61,7 +61,7 @@ eqiad:
     durum1001: 10.64.48.95  # Wikidough check
     durum1002: 10.64.16.20  # Wikidough check
   ping_offload_vip: 208.80.154.224/32
-  ping_offload_redirect: 10.64.32.31  # ping1001.eqiad.wmnet
+  ping_offload_redirect: 10.64.32.170  # ping1002.eqiad.wmnet
   sampling:
     collector: 10.64.32.88  # netflow1001.eqiad.wmnet
   dhcp_server: 208.80.154.32  # install1003.wikimedia.org
@@ -156,7 +156,7 @@ codfw:
     durum2001: 10.192.32.58   # Wikidough check
     durum2002: 10.192.48.14   # Wikidough check
   ping_offload_vip: 208.80.153.224/32
-  ping_offload_redirect: 10.192.0.22  # ping2001.codfw.wmnet
+  ping_offload_redirect: 10.192.0.199  # ping2002.codfw.wmnet
   sampling:
     collector: 10.192.0.148  # netflow2001.codfw.wmnet
   dhcp_server: 208.80.153.51  # install2003.wikimedia.org
@@ -272,7 +272,7 @@ esams:
     durum3001: 10.20.0.6  # Wikidough check
     durum3002: 10.20.0.7  # Wikidough check
   ping_offload_vip: 91.198.174.192/32  # text-lb.esams.wikimedia.org
-  ping_offload_redirect: 10.20.0.103  # ping3001.esams.wmnet
+  ping_offload_redirect: 10.20.0.8  # ping3002.esams.wmnet
   sampling:
     collector: 10.20.0.100  # netflow3001.esams.wmnet
   dhcp_server: 91.198.174.63  # install3001.wikimedia.org
