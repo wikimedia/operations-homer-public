@@ -421,7 +421,9 @@ mr1-codfw.wikimedia.org:
   role: mr
   site: codfw
   config:
-    dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
+    dhcp_relay:  # T271583
+      interfaces:
+        - ge-0/0/0.0
     security_zones:
       - name: production
         services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
