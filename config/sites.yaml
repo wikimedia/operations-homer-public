@@ -82,6 +82,7 @@ eqiad:
       - ae4.1004
       - ae2.1202
   tcp_mss_clamping: true
+  prepend_as_out: true
 
 eqord:
   confed: 65020
@@ -94,6 +95,7 @@ eqord:
   sampling:
     collector: 10.64.32.88  # netflow1001.eqiad.wmnet
   tcp_mss_clamping: true
+  prepend_as_out: true
 
 codfw:
   confed: 65002
@@ -282,6 +284,7 @@ esams:
       - ae1.102
       - ae1.103
   tcp_mss_clamping: true
+  prepend_as_out: true
 
 knams:
   confed: 65003
@@ -298,6 +301,7 @@ knams:
   sampling:
     collector: 10.20.0.100  # netflow3001.esams.wmnet
   tcp_mss_clamping: true
+  prepend_as_out: true
 
 drmrs:
   confed: 65006
