@@ -27,6 +27,12 @@ term ssh {
     destination-port:: SSH
     action:: accept
 }
+term dhcp {
+    source-address:: install_group
+    protocol:: udp
+    destination-port:: DHCP
+    action:: accept
+}
 term ipmitool {
     source-address:: cumin_group
     protocol:: udp
