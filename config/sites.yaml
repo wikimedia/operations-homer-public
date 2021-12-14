@@ -63,7 +63,7 @@ eqiad:
   ping_offload_vip: 208.80.154.224/32
   ping_offload_redirect: 10.64.32.170  # ping1002.eqiad.wmnet
   sampling:
-    collector: 10.64.32.88  # netflow1001.eqiad.wmnet
+    collector: 10.64.32.31  # netflow1002.eqiad.wmnet
   dhcp_server: 208.80.154.32  # install1003.wikimedia.org
   dhcp_relay:
     interfaces:
@@ -92,7 +92,7 @@ eqord:
     2620:0:860::/48: BGP_from_LVS  # codfw
     2620:0:861::/48: BGP_from_LVS  # eqiad
   sampling:
-    collector: 10.64.32.88  # netflow1001.eqiad.wmnet
+    collector: 10.64.32.31  # netflow1002.eqiad.wmnet
   tcp_mss_clamping: true
 
 codfw:
@@ -209,7 +209,7 @@ ulsfo:
     durum4001: 10.128.0.6   # Wikidough check
     durum4002: 10.128.0.7   # Wikidough check
   sampling:
-    collector: 10.128.0.31  # netflow4001.ulsfo.wmnet
+    collector: 10.128.0.13  # netflow4002.ulsfo.wmnet
   dhcp_server: 198.35.26.12  # install4001.wikimedia.org
   dhcp_relay:
     interfaces:
@@ -238,7 +238,7 @@ eqsin:
     durum5001: 10.132.0.10   # Wikidough check
     durum5002: 10.132.0.14   # Wikidough check
   sampling:
-    collector: 10.132.0.30  # netflow5001.eqsin.wmnet
+    collector: 10.132.0.15  # netflow5002.eqsin.wmnet
   dhcp_server: 103.102.166.13  # install5001.wikimedia.org
   dhcp_relay:
     interfaces:
@@ -274,7 +274,7 @@ esams:
   ping_offload_vip: 91.198.174.192/32  # text-lb.esams.wikimedia.org
   ping_offload_redirect: 10.20.0.8  # ping3002.esams.wmnet
   sampling:
-    collector: 10.20.0.100  # netflow3001.esams.wmnet
+    collector: 10.20.0.9  # netflow3002.esams.wmnet
   dhcp_server: 91.198.174.63  # install3001.wikimedia.org
   dhcp_relay:
     interfaces:
@@ -296,7 +296,7 @@ knams:
     2a02:ec80:500::/48: BGP_aggregate_contributors  # esams OOB swap
     2a02:ec80:600::/48: BGP_aggregate_contributors  # drmrs
   sampling:
-    collector: 10.20.0.100  # netflow3001.esams.wmnet
+    collector: 10.20.0.9  # netflow3002.esams.wmnet
   tcp_mss_clamping: true
 
 drmrs:
