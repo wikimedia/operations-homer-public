@@ -19,8 +19,6 @@ cr1-eqiad.wikimedia.org:
         provider: "Hurricane Electric"
     filters:
       xe-4/2/0.0-in4: transport-in
-      xe-4/2/2.12-in4: transport-in
-      xe-4/2/2.13-in4: transport-in
       ae1.1030-in: analytics-in
       ae2.1021-in: analytics-in
       xe-3/0/4.1102-in: cloud-in
@@ -57,9 +55,7 @@ cr2-eqiad.wikimedia.org:
       2001:2000:3080:0a98::1:
         provider: Telia
     filters:
-      xe-3/2/2.0-in4: transport-in
-      xe-4/1/3.0-in4: transport-in
-      xe-4/2/0.0-in4: transport-in
+      xe-4/2/0.0-in4: transport-in  # to eqord
       ae1.1030-in: analytics-in
       ae2.1021-in: analytics-in
       xe-3/0/4.1103-in: cloud-in
@@ -68,7 +64,7 @@ cr2-eqiad.wikimedia.org:
       ae3.1022-in: analytics-in
       ae4.1023-in: analytics-in
       gr-4/3/0.2-in: border-in
-    damping: [xe-3/2/3, xe-4/1/3]
+    damping: [xe-4/1/3]
     vrrp_bandwidth_threshold: true
     vrrp_master_pinning:
       - ae3  # Row C
@@ -113,14 +109,11 @@ cr1-codfw.wikimedia.org:
       2001:2000:3080:af4::1:
         provider: Telia
     filters:
-      xe-5/0/0.0-in4: transport-in
-      xe-5/0/2.0-in4: transport-in
-      xe-1/0/1:2.0-in4: transport-in
-      xe-5/2/1.0-in4: transport-in
       ae1.2201-in: sandbox
       ae2.2118-in: labs-in
       ae2.2120-in: cloud-in
-    damping: [xe-5/0/2, xe-1/0/1:2]
+      xe-1/1/1:2.0-in4: transport-in  # to eqdfw
+    damping: [xe-1/0/1:2]
     vrrp_master_pinning:
       - ae1  # Row A
       - ae2  # Row B
@@ -149,10 +142,8 @@ cr2-codfw.wikimedia.org:
       ae1.2201-in: sandbox
       ae2.2118-in: labs-in
       ae2.2120-in: cloud-in
-      xe-5/0/0.0-in4: transport-in
-      xe-5/0/1.0-in4: transport-in
-      xe-5/2/1.0-in4: transport-in
-    damping: [xe-5/0/1]
+      xe-5/0/0.0-in4: transport-in  # to eqdfw
+      xe-1/0/1:1.0-in4: transport-in  # to eqord
     vrrp_master_pinning:
       - ae3  # Row C
       - ae4  # Row D
