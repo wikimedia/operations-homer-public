@@ -21,6 +21,16 @@ gerrit.wikimedia.org = 208.80.154.137 # gerrit.wikimedia.org
 gerrit-replica.wikimedia.org = 208.80.153.107 # gerrit-replica.wikimedia.org
                                2620:0:860:4:208:80:153:107 # gerrit-replica.wikimedia.org
 
+git-ssh.eqiad = 208.80.154.250 # git-ssh.eqiad.wikimedia.org
+                2620:0:861:ed1a::3:16 # git-ssh.eqiad.wikimedia.org
+git-ssh.codfw = 208.80.153.250 # git-ssh.codfw.wikimedia.org
+                2620:0:860:ed1a::3:fa # git-ssh.codfw.wikimedia.org
+
+ns0.wikimedia.org = 208.80.154.238 # ns0
+ns1.wikimedia.org = 208.80.153.231 # ns1
+ns2.wikimedia.org = 91.198.174.239 # ns2
+nsa.wikimedia.org = 198.35.27.27 # nsa
+
 #
 # Subnets
 #
@@ -97,3 +107,12 @@ text-lb.eqsin = 103.102.166.224 # text-lb.eqsin
 upload-lb.eqsin = 103.102.166.240 # upload-lb.eqsin
 text-lb.drmrs = 185.15.58.224 # text-lb.drmrs
 upload-lb.drmrs = 185.15.58.240 # upload-lb.drmrs
+
+#
+# Groups
+#
+
+ns_group = ns0.wikimedia.org
+           ns1.wikimedia.org
+           ns2.wikimedia.org
+           nsa.wikimedia.org

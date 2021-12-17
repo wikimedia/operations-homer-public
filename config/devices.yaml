@@ -41,6 +41,7 @@ cr1-eqiad.wikimedia.org:
       - cr-cloud
       - cr-sandbox
       - cr-loopback
+      - cr-border-in
     switch_neighbors:
       lsw1-e1-eqiad: {4: 10.66.0.9, 6: 2620:0:861:fe07::2}
 
@@ -76,8 +77,10 @@ cr2-eqiad.wikimedia.org:
       - cr-cloud
       - cr-sandbox
       - cr-loopback
+      - cr-border-in
     switch_neighbors:
       lsw1-f1-eqiad: {4: 10.66.0.11, 6: 2620:0:861:fe08::2}
+
 
 cr2-eqord.wikimedia.org:
   role: cr
@@ -122,6 +125,7 @@ cr1-codfw.wikimedia.org:
       - cr-cloud
       - cr-sandbox
       - cr-loopback
+      - cr-border-in
 
 
 cr2-codfw.wikimedia.org:
@@ -153,6 +157,7 @@ cr2-codfw.wikimedia.org:
       - cr-cloud
       - cr-sandbox
       - cr-loopback
+      - cr-border-in
 
 cr2-eqdfw.wikimedia.org:
   role: cr

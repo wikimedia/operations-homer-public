@@ -27,6 +27,7 @@ cr:
   capirca:
     - cr-sandbox
     - cr-loopback
+    - cr-border-in
 
 cloudsw:  # Will have to be split up once there is one in codfw
   asn: 64710
