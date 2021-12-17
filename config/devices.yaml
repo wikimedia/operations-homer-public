@@ -39,6 +39,7 @@ cr1-eqiad.wikimedia.org:
     capirca:
       - cr-analytics
       - cr-cloud
+      - cr-sandbox
 
 cr2-eqiad.wikimedia.org:
   role: cr
@@ -70,6 +71,7 @@ cr2-eqiad.wikimedia.org:
     capirca:
       - cr-analytics
       - cr-cloud
+      - cr-sandbox
 
 cr2-eqord.wikimedia.org:
   role: cr
@@ -112,6 +114,7 @@ cr1-codfw.wikimedia.org:
       - ae2  # Row B
     capirca:
       - cr-cloud
+      - cr-sandbox
 
 cr2-codfw.wikimedia.org:
   role: cr
@@ -140,6 +143,7 @@ cr2-codfw.wikimedia.org:
     primary_ixp: true
     capirca:
       - cr-cloud
+      - cr-sandbox
 
 cr2-eqdfw.wikimedia.org:
   role: cr
@@ -173,6 +177,7 @@ cr3-ulsfo.wikimedia.org:
     filters:
       et-0/0/1.1221-in: sandbox
     primary_ixp: true
+
 
 cr4-ulsfo.wikimedia.org:
   role: cr
