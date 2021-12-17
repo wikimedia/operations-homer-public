@@ -40,6 +40,7 @@ cr1-eqiad.wikimedia.org:
       - cr-analytics
       - cr-cloud
       - cr-sandbox
+      - cr-loopback
 
 cr2-eqiad.wikimedia.org:
   role: cr
@@ -72,6 +73,8 @@ cr2-eqiad.wikimedia.org:
       - cr-analytics
       - cr-cloud
       - cr-sandbox
+      - cr-loopback
+
 
 cr2-eqord.wikimedia.org:
   role: cr
@@ -115,6 +118,8 @@ cr1-codfw.wikimedia.org:
     capirca:
       - cr-cloud
       - cr-sandbox
+      - cr-loopback
+
 
 cr2-codfw.wikimedia.org:
   role: cr
@@ -144,6 +149,7 @@ cr2-codfw.wikimedia.org:
     capirca:
       - cr-cloud
       - cr-sandbox
+      - cr-loopback
 
 cr2-eqdfw.wikimedia.org:
   role: cr
