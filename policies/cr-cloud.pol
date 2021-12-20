@@ -73,12 +73,6 @@ term wiki--HTTP-S {
     destination-port:: WEB
     action:: accept
 }
-term misc--HTTP-S {
-    destination-address:: sodium apt_group
-    protocol:: tcp
-    destination-port:: WEB
-    action:: accept
-}
 term gerrit {
     destination-address:: gerrit.wikimedia.org
                           gerrit-replica.wikimedia.org
