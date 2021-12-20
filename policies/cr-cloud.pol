@@ -67,6 +67,8 @@ term wiki--HTTP-S {
                           upload-lb.esams
                           text-lb.eqsin
                           upload-lb.eqsin
+                          text-lb.drmrs
+                          upload-lb.drmrs
     protocol:: tcp
     destination-port:: WEB
     action:: accept
