@@ -59,6 +59,13 @@ term rsync-http-https {
     destination-port:: RSYNC HTTP HTTPS
     action:: accept
 }
+term mirror {
+    comment:: "Allow analytics to pull packages from mirror"
+    destination-address:: mirror1001
+    protocol:: tcp
+    destination-port:: HTTP HTTPS
+    action:: accept
+}
 term return-tcp {
     protocol:: tcp
     option:: tcp-established
