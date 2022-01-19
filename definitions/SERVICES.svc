@@ -41,6 +41,7 @@ cloud_api_keystone = 5000/tcp
 postgreSQL = 5432/tcp
 NRPE = 5666/tcp
 cloud_api_proxy = 5668/tcp
+rabbitMQ_tls = 5671/tcp
 rabbitMQ = 5672/tcp
 IDRAC_KVM = 5900/tcp
 SYSLOGTLS = 6514/tcp

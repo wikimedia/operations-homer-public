@@ -146,6 +146,7 @@ term cloudcontrol-apis {
                        cloud_api_neutron_https
                        cloud_api_barbican_https
                        rabbitMQ
+                       rabbitMQ_tls
     action:: accept
 }
 term deny-from-private {
