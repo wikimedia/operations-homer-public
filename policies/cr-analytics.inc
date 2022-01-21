@@ -46,15 +46,8 @@ term mysql-dbproxy {
     destination-port:: mySQL
     action:: accept
 }
-term ssh {
-    destination-address:: sodium
-    protocol:: tcp
-    destination-port:: SSH
-    action:: accept
-}
 term rsync-http-https {
-    destination-address:: sodium
-                          mwlog_group
+    destination-address:: mwlog_group
     protocol:: tcp
     destination-port:: RSYNC HTTP HTTPS
     action:: accept
