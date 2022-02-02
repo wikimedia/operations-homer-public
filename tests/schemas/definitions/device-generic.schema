@@ -524,6 +524,27 @@
           ]
         }
       ]
+    },
+    "spine_asn": {
+      "type": "integer",
+      "description": "BGP ASN used by datacenter switches or spine layer site-wide."
+    },
+    "switch_neighbors": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "4": {
+            "type": "string",
+            "format": "ipv4"
+          },
+          "6": {
+            "type": "string",
+            "format": "ipv6"
+          }
+        },
+        "required": [4, 6]
+      }
     }
   }
 }

@@ -41,6 +41,8 @@ cr1-eqiad.wikimedia.org:
       - cr-cloud
       - cr-sandbox
       - cr-loopback
+    switch_neighbors:
+      lsw1-e1-eqiad: {4: 10.66.0.9, 6: 2620:0:861:fe07::2}
 
 cr2-eqiad.wikimedia.org:
   role: cr
@@ -74,7 +76,8 @@ cr2-eqiad.wikimedia.org:
       - cr-cloud
       - cr-sandbox
       - cr-loopback
-
+    switch_neighbors:
+      lsw1-f1-eqiad: {4: 10.66.0.11, 6: 2620:0:861:fe08::2}
 
 cr2-eqord.wikimedia.org:
   role: cr
