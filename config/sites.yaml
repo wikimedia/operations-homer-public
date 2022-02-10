@@ -18,6 +18,7 @@ eqiad:
     lvs1013: 10.64.1.13
     lvs1014: 10.64.17.14
     lvs1015: 10.64.33.15
+    lvs1017: 10.64.0.80
     lvs1020: 10.64.48.72
   k8s_neighbors:  # Routers k8s neighbors
     # yamllint disable rule:commas
