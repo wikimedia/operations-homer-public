@@ -15,7 +15,6 @@ eqiad:
   bgp6_out:
     2620:0:861::/48: BGP_aggregate_contributors  # eqiad
   lvs_neighbors:  # Routers PyBal neighbors
-    lvs1013: 10.64.1.13
     lvs1014: 10.64.17.14
     lvs1015: 10.64.33.15
     lvs1017: 10.64.0.80
