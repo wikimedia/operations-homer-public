@@ -18,6 +18,23 @@
         "required": [4, 6]
       }
     },
+    "bgp_neighbor_opt_v6": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "4": {
+            "type": "string",
+            "format": "ipv4"
+          },
+          "6": {
+            "type": "string",
+            "format": "ipv6"
+          }
+        },
+        "required": [4]
+      }
+    },
     "trusted_space": {
       "type": "array",
       "description": "Whitelisted networks with less restrictions",
@@ -385,13 +402,7 @@
         "format": ["ipv4", "ipv6"]
       }
     },
-    "anycast_neighbors": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "string",
-        "format": ["ipv4", "ipv6"]
-      }
-    },
+    "anycast_neighbors": { "$ref": "#/definitions/bgp_neighbor_opt_v6" },
     "k8s_neighbors": { "$ref": "#/definitions/k8s_neighbors" },
     "k8s_stage_neighbors": { "$ref": "#/definitions/k8s_neighbors" },
     "k8s_mlserve_neighbors": { "$ref": "#/definitions/k8s_neighbors" },

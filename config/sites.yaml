@@ -53,14 +53,14 @@ eqiad:
     ml-serve1004: {4: 10.64.48.50,  6: 2620:0:861:107:10:64:48:50}
     # yamllint enable rule:commas
   anycast_neighbors:
-    dns1001: 208.80.154.10
-    dns1002: 208.80.155.108
-    doh1001: 208.80.154.70   # Wikidough
-    doh1002: 208.80.155.112  # Wikidough
-    authdns1001: 208.80.154.134
-    centrallog1001: 10.64.48.113
-    durum1001: 10.64.48.95  # Wikidough check
-    durum1002: 10.64.16.20  # Wikidough check
+    dns1001: {4: 208.80.154.10}
+    dns1002: {4: 208.80.155.108}
+    doh1001: {4: 208.80.154.70}   # Wikidough
+    doh1002: {4: 208.80.155.112}  # Wikidough
+    authdns1001: {4: 208.80.154.134}
+    centrallog1001: {4: 10.64.48.113}
+    durum1001: {4: 10.64.48.95}   # Wikidough check
+    durum1002: {4: 10.64.16.20}   # Wikidough check
   ping_offload_vip: 208.80.154.224/32
   ping_offload_redirect: 10.64.32.170  # ping1002.eqiad.wmnet
   sampling:
@@ -155,14 +155,14 @@ codfw:
     ml-serve2008: {4: 10.192.48.175, 6: 2620:0:860:104:10:192:48:175}
     # yamllint enable rule:commas
   anycast_neighbors:
-    dns2001: 208.80.153.77
-    dns2002: 208.80.153.111
-    authdns2001: 208.80.153.17
-    centrallog2002: 10.192.16.35
-    doh2001: 208.80.153.6
-    doh2002: 208.80.153.38
-    durum2001: 10.192.32.58   # Wikidough check
-    durum2002: 10.192.48.14   # Wikidough check
+    dns2001: {4: 208.80.153.77}
+    dns2002: {4: 208.80.153.111}
+    authdns2001: {4: 208.80.153.17}
+    centrallog2002: {4: 10.192.16.35}
+    doh2001: {4: 208.80.153.6}
+    doh2002: {4: 208.80.153.38}
+    durum2001: {4: 10.192.32.58}  # Wikidough check
+    durum2002: {4: 10.192.48.14}  # Wikidough check
   ping_offload_vip: 208.80.153.224/32
   ping_offload_redirect: 10.192.0.199  # ping2002.codfw.wmnet
   sampling:
@@ -210,12 +210,12 @@ ulsfo:
     lvs4006: 10.128.0.16
     lvs4007: 10.128.0.17
   anycast_neighbors:
-    dns4001: 198.35.26.7
-    dns4002: 198.35.26.8
-    doh4001: 198.35.26.14   # Wikidough
-    doh4002: 198.35.26.6    # Wikidough
-    durum4001: 10.128.0.6   # Wikidough check
-    durum4002: 10.128.0.7   # Wikidough check
+    dns4001: {4: 198.35.26.7}
+    dns4002: {4: 198.35.26.8}
+    doh4001: {4: 198.35.26.14}  # Wikidough
+    doh4002: {4: 198.35.26.6}   # Wikidough
+    durum4001: {4: 10.128.0.6}  # Wikidough check
+    durum4002: {4: 10.128.0.7}  # Wikidough check
   sampling:
     collector: 10.128.0.13  # netflow4002.ulsfo.wmnet
   dhcp_server: 198.35.26.12  # install4001.wikimedia.org
@@ -239,12 +239,12 @@ eqsin:
     lvs5002: 10.132.0.12
     lvs5003: 10.132.0.13
   anycast_neighbors:
-    dns5001: 103.102.166.8
-    dns5002: 103.102.166.9
-    doh5001: 103.102.166.14  # Wikidough
-    doh5002: 103.102.166.5   # Wikidough
-    durum5001: 10.132.0.10   # Wikidough check
-    durum5002: 10.132.0.14   # Wikidough check
+    dns5001: {4: 103.102.166.8}
+    dns5002: {4: 103.102.166.9}
+    doh5001: {4: 103.102.166.14}  # Wikidough
+    doh5002: {4: 103.102.166.5}   # Wikidough
+    durum5001: {4: 10.132.0.10}   # Wikidough check
+    durum5002: {4: 10.132.0.14}   # Wikidough check
   sampling:
     collector: 10.132.0.15  # netflow5002.eqsin.wmnet
   dhcp_server: 103.102.166.13  # install5001.wikimedia.org
@@ -268,18 +268,17 @@ esams:
     2620:0:862::/48: BGP_aggregate_contributors  # esams
     2a02:ec80:500::/48: BGP_aggregate_contributors  # esams OOB swap
     2a02:ec80:600::/48: BGP_aggregate_contributors  # drmrs
-    2001:67c:930::/48: BGP_from_anycast   # Wikidough Anycast
   lvs_neighbors:
     lvs3005: 10.20.0.15
     lvs3006: 10.20.0.16
     lvs3007: 10.20.0.17
   anycast_neighbors:
-    dns3001: 91.198.174.61
-    dns3002: 91.198.174.62
-    doh3001: 91.198.174.7
-    doh3002: 91.198.174.8
-    durum3001: 10.20.0.6  # Wikidough check
-    durum3002: 10.20.0.7  # Wikidough check
+    dns3001: {4: 91.198.174.61}
+    dns3002: {4: 91.198.174.62}
+    doh3001: {4: 91.198.174.7}
+    doh3002: {4: 91.198.174.8}
+    durum3001: {4: 10.20.0.6}  # Wikidough check
+    durum3002: {4: 10.20.0.7}  # Wikidough check
   ping_offload_vip: 91.198.174.192/32  # text-lb.esams.wikimedia.org
   ping_offload_redirect: 10.20.0.8  # ping3002.esams.wmnet
   sampling:
