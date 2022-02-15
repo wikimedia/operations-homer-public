@@ -268,6 +268,7 @@ esams:
     2620:0:862::/48: BGP_aggregate_contributors  # esams
     2a02:ec80:500::/48: BGP_aggregate_contributors  # esams OOB swap
     2a02:ec80:600::/48: BGP_aggregate_contributors  # drmrs
+    2001:67c:930::/48: BGP_from_anycast   # Wikidough Anycast
   lvs_neighbors:
     lvs3005: 10.20.0.15
     lvs3006: 10.20.0.16
