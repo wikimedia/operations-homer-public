@@ -35,7 +35,7 @@ anycast_prefixes:
   - 10.3.0.0/24        # Internal
   - 198.35.27.0/24     # Test
   - 185.71.138.0/24    # Wikidough
-  - 2001:67c:930::/64  # Wikidough IPv6
+  - 2001:67c:930::/48  # IPv6 Anycast
 
 # Next available UID: 2034
 # When adding a new user, please make sure to update "next available UID" above
