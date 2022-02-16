@@ -304,6 +304,7 @@ knams:
     2620:0:862::/48: BGP_from_LVS  # esams
     2a02:ec80:500::/48: BGP_aggregate_contributors  # esams OOB swap
     2a02:ec80:600::/48: BGP_aggregate_contributors  # drmrs
+    2001:67c:930::/48: BGP_from_anycast  # Anycast v6
   sampling:
     collector: 10.20.0.9  # netflow3002.esams.wmnet
   tcp_mss_clamping: true
