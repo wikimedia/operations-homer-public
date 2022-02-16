@@ -14,6 +14,7 @@ eqiad:
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
     2620:0:861::/48: BGP_aggregate_contributors  # eqiad
+    2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   lvs_neighbors:  # Routers PyBal neighbors
     lvs1017: 10.64.0.80
     lvs1018: 10.64.16.60
@@ -55,12 +56,12 @@ eqiad:
   anycast_neighbors:
     dns1001: {4: 208.80.154.10}
     dns1002: {4: 208.80.155.108}
-    doh1001: {4: 208.80.154.70}   # Wikidough
-    doh1002: {4: 208.80.155.112}  # Wikidough
+    doh1001: {4: 208.80.154.70, 6: 2620:0:861:3:208:80:154:70}
+    doh1002: {4: 208.80.155.112, 6: 2620:0:861:4:208:80:155:112}
     authdns1001: {4: 208.80.154.134}
     centrallog1001: {4: 10.64.48.113}
-    durum1001: {4: 10.64.48.95}   # Wikidough check
-    durum1002: {4: 10.64.16.20}   # Wikidough check
+    durum1001: {4: 10.64.48.95, 6: 2620:0:861:107:10:64:48:95}   # Wikidough check
+    durum1002: {4: 10.64.16.20, 6: 2620:0:861:102:10:64:16:20}   # Wikidough check
   ping_offload_vip: 208.80.154.224/32
   ping_offload_redirect: 10.64.32.170  # ping1002.eqiad.wmnet
   sampling:
@@ -112,6 +113,7 @@ codfw:
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
     2620:0:860::/48: BGP_aggregate_contributors  # codfw
+    2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   lvs_neighbors:  # Routers PyBal neighbors
     lvs2007: 10.192.1.7
     lvs2008: 10.192.17.7
@@ -159,10 +161,10 @@ codfw:
     dns2002: {4: 208.80.153.111}
     authdns2001: {4: 208.80.153.17}
     centrallog2002: {4: 10.192.16.35}
-    doh2001: {4: 208.80.153.6}
-    doh2002: {4: 208.80.153.38}
-    durum2001: {4: 10.192.32.58}  # Wikidough check
-    durum2002: {4: 10.192.48.14}  # Wikidough check
+    doh2001: {4: 208.80.153.6, 6: 2620:0:860:1:208:80:153:6}
+    doh2002: {4: 208.80.153.38, 6: 2620:0:860:2:208:80:153:38}
+    durum2001: {4: 10.192.32.58, 6: 2620:0:860:103:10:192:32:58}  # Wikidough check
+    durum2002: {4: 10.192.48.14, 6: 2620:0:860:104:10:192:48:14}  # Wikidough check
   ping_offload_vip: 208.80.153.224/32
   ping_offload_redirect: 10.192.0.199  # ping2002.codfw.wmnet
   sampling:
@@ -205,6 +207,7 @@ ulsfo:
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
     2620:0:863::/48: BGP_aggregate_contributors  # ulsfo
+    2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   lvs_neighbors:  # Routers PyBal neighbors
     lvs4005: 10.128.0.15
     lvs4006: 10.128.0.16
@@ -212,10 +215,10 @@ ulsfo:
   anycast_neighbors:
     dns4001: {4: 198.35.26.7}
     dns4002: {4: 198.35.26.8}
-    doh4001: {4: 198.35.26.14}  # Wikidough
-    doh4002: {4: 198.35.26.6}   # Wikidough
-    durum4001: {4: 10.128.0.6}  # Wikidough check
-    durum4002: {4: 10.128.0.7}  # Wikidough check
+    doh4001: {4: 198.35.26.14, 6: 2620:0:863:1:198:35:26:14}
+    doh4002: {4: 198.35.26.6, 6: 2620:0:863:1:198:35:26:6}
+    durum4001: {4: 10.128.0.6, 6: 2620:0:863:101:10:128:0:6}  # Wikidough check
+    durum4002: {4: 10.128.0.7, 6: 2620:0:863:101:10:128:0:7}  # Wikidough check
   sampling:
     collector: 10.128.0.13  # netflow4002.ulsfo.wmnet
   dhcp_server: 198.35.26.12  # install4001.wikimedia.org
@@ -234,6 +237,7 @@ eqsin:
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
     2001:df2:e500::/48: BGP_aggregate_contributors  # eqsin
+    2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   lvs_neighbors:
     lvs5001: 10.132.0.11
     lvs5002: 10.132.0.12
@@ -241,10 +245,10 @@ eqsin:
   anycast_neighbors:
     dns5001: {4: 103.102.166.8}
     dns5002: {4: 103.102.166.9}
-    doh5001: {4: 103.102.166.14}  # Wikidough
-    doh5002: {4: 103.102.166.5}   # Wikidough
-    durum5001: {4: 10.132.0.10}   # Wikidough check
-    durum5002: {4: 10.132.0.14}   # Wikidough check
+    doh5001: {4: 103.102.166.14, 6: 2001:df2:e500:1:103:102:166:14}
+    doh5002: {4: 103.102.166.5, 6: 2001:df2:e500:1:103:102:166:5}
+    durum5001: {4: 10.132.0.10, 6: 2001:df2:e500:101:10:132:0:10}   # Wikidough check
+    durum5002: {4: 10.132.0.14, 6: 2001:df2:e500:101:10:132:0:14}   # Wikidough check
   sampling:
     collector: 10.132.0.15  # netflow5002.eqsin.wmnet
   dhcp_server: 103.102.166.13  # install5001.wikimedia.org
@@ -268,7 +272,7 @@ esams:
     2620:0:862::/48: BGP_aggregate_contributors  # esams
     2a02:ec80:500::/48: BGP_aggregate_contributors  # esams OOB swap
     2a02:ec80:600::/48: BGP_aggregate_contributors  # drmrs
-    2001:67c:930::/48: BGP_from_anycast  # Anycast v6
+    2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   lvs_neighbors:
     lvs3005: 10.20.0.15
     lvs3006: 10.20.0.16
