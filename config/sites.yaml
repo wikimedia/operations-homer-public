@@ -275,10 +275,10 @@ esams:
   anycast_neighbors:
     dns3001: {4: 91.198.174.61}
     dns3002: {4: 91.198.174.62}
-    doh3001: {4: 91.198.174.7}
-    doh3002: {4: 91.198.174.8}
-    durum3001: {4: 10.20.0.6}  # Wikidough check
-    durum3002: {4: 10.20.0.7}  # Wikidough check
+    doh3001: {4: 91.198.174.7, 6: 2620:0:862:1:91:198:174:7}
+    doh3002: {4: 91.198.174.8, 6: 2620:0:862:1:91:198:174:8}
+    durum3001: {4: 10.20.0.6, 6: 2620:0:862:102:10:20:0:6}  # Wikidough check
+    durum3002: {4: 10.20.0.7, 6: 2620:0:862:102:10:20:0:7}  # Wikidough check
   ping_offload_vip: 91.198.174.192/32  # text-lb.esams.wikimedia.org
   ping_offload_redirect: 10.20.0.8  # ping3002.esams.wmnet
   sampling:
