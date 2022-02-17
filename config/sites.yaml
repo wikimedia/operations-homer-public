@@ -264,14 +264,12 @@ esams:
   mgmt_gw: 10.21.0.1
   bgp_out:
     91.198.174.0/24: BGP_aggregate_contributors  # esams
-    185.15.58.0/24: BGP_aggregate_contributors  # drmrs
     185.15.59.0/24: BGP_aggregate_contributors  # esams OOB swap
     198.35.27.0/24: BGP_from_anycast  # Anycast
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
     2620:0:862::/48: BGP_aggregate_contributors  # esams
     2a02:ec80:500::/48: BGP_aggregate_contributors  # esams OOB swap
-    2a02:ec80:600::/48: BGP_aggregate_contributors  # drmrs
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   lvs_neighbors:
     lvs3005: 10.20.0.15
@@ -300,14 +298,12 @@ knams:
   confed: 65003
   bgp_out:
     91.198.174.0/24: BGP_from_LVS  # esams
-    185.15.58.0/24: BGP_aggregate_contributors  # drmrs
     185.15.59.0/24: BGP_aggregate_contributors  # esams OOB swap
     198.35.27.0/24: BGP_from_anycast  # Anycast
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
     2620:0:862::/48: BGP_from_LVS  # esams
     2a02:ec80:500::/48: BGP_aggregate_contributors  # esams OOB swap
-    2a02:ec80:600::/48: BGP_aggregate_contributors  # drmrs
     2001:67c:930::/48: BGP_from_anycast  # Anycast v6
   sampling:
     collector: 10.20.0.9  # netflow3002.esams.wmnet
@@ -317,7 +313,9 @@ drmrs:
   confed: 65006
   mgmt_gw: 10.136.128.1
   bgp_out:
-    185.15.58.0/24: BGP_aggregate_contributors  # drmrs
+    185.15.58.0/24: BGP_from_LVS  # drmrs
   bgp6_out:
-    2a02:ec80:600::/48: BGP_aggregate_contributors  # drmrs
-  sampling: {}
+    2a02:ec80:600::/48: BGP_from_LVS  # drmrs
+  sampling:
+    collector: 10.136.1.22  # netflow6001.drmrs.wmnet
+  tcp_mss_clamping: true

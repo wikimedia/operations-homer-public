@@ -322,6 +322,36 @@ cr2-eqsin.wikimedia.org:
       gr-0/0/0.2-in: border-in
     primary_ixp: true
 
+cr1-drmrs.wikimedia.org:
+  role: cr
+  site: drmrs
+  config:
+    transits:
+      62.115.147.132:
+        provider: Telia
+      2001:2035:0:cf1::1:
+        provider: Telia
+      80.231.165.54:
+        provider: Tata
+      2a01:3e0:ff50::3d:
+        provider: Tata
+    capirca:
+      - cr-loopback
+      - cr-border-in
+
+cr2-drmrs.wikimedia.org:
+  role: cr
+  site: drmrs
+  config:
+    transits:
+      2001:688:0:4::2d1:
+        provider: Orange
+      193.251.154.145:
+        provider: Orange
+    capirca:
+      - cr-loopback
+      - cr-border-in
+
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
   role: asw

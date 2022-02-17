@@ -222,9 +222,9 @@ ospf:
       metric: 20000
     - cloudsw1-c8-eqiad.mgmt.eqiad.wmnet: irb.1104
       cloudsw1-d5-eqiad.mgmt.eqiad.wmnet: irb.1104
-    - cr3-esams.wikimedia.org: gr-0/0/0.3
-      asw1-b12-drmrs.wikimedia.org: gr-0/0/0.1
-      metric: 1210  # 21ms + 1000 as it's a tunnel, still preferred over drmrs-eqiad-esams
+    - cr1-drmrs.wikimedia.org: et-0/0/0.0
+      cr2-drmrs.wikimedia.org: et-0/0/0.0
+
   stub:
     mr1-ulsfo.wikimedia.org:
       - vlan.900
@@ -431,6 +431,8 @@ transit_providers:
   Lumen:
     AS: 3356
     export_policy: true
+  Orange:
+    AS: 5511
 
 asns_mapping:
   k8s:
