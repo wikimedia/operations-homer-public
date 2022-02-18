@@ -303,8 +303,10 @@ cr2-eqsin.wikimedia.org:
     transits:
       180.87.164.61:
         provider: Tata
+        import_policy: true
       2405:2000:800::19:
         provider: Tata
+        import_policy: true
       116.51.26.209:
         provider: NTT
         import_policy: true

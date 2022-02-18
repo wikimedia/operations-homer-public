@@ -420,7 +420,6 @@ transit_providers:
     export_policy: true
   Tata:
     AS: 6453
-    import_policy: true
     export_policy: true
   Tele2:
     AS: 1257
