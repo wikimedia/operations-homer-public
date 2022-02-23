@@ -337,6 +337,10 @@ cr1-drmrs.wikimedia.org:
         provider: Tata
       2a01:3e0:ff50::3d:
         provider: Tata
+      185.1.47.125:
+        provider: "Hurricane Electric"
+      2001:7f8:36::3a3b:0:1:
+        provider: "Hurricane Electric"
     capirca:
       - cr-loopback
       - cr-border-in
@@ -350,6 +354,10 @@ cr2-drmrs.wikimedia.org:
         provider: Orange
       193.251.154.145:
         provider: Orange
+      37.49.232.11:
+        provider: "Hurricane Electric"
+      2001:7f8:54:5::11:
+        provider: "Hurricane Electric"
     capirca:
       - cr-loopback
       - cr-border-in
