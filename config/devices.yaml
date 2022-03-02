@@ -117,8 +117,9 @@ cr1-codfw.wikimedia.org:
       xe-5/0/2.0-in4: transport-in
       xe-1/0/1:2.0-in4: transport-in
       xe-5/2/1.0-in4: transport-in
-      ae2.2120-in: cloud-in
       ae1.2201-in: sandbox
+      ae2.2118-in: labs-in
+      ae2.2120-in: cloud-in
     damping: [xe-5/0/2, xe-1/0/1:2]
     vrrp_master_pinning:
       - ae1  # Row A
@@ -128,7 +129,7 @@ cr1-codfw.wikimedia.org:
       - cr-sandbox
       - cr-loopback
       - cr-border-in
-
+      - cr-labs  # For cloud-hosts servers
 
 cr2-codfw.wikimedia.org:
   role: cr
@@ -146,6 +147,7 @@ cr2-codfw.wikimedia.org:
         provider: Lumen
     filters:
       ae1.2201-in: sandbox
+      ae2.2118-in: labs-in
       ae2.2120-in: cloud-in
       xe-5/0/0.0-in4: transport-in
       xe-5/0/1.0-in4: transport-in
@@ -160,6 +162,7 @@ cr2-codfw.wikimedia.org:
       - cr-sandbox
       - cr-loopback
       - cr-border-in
+      - cr-labs  # For cloud-hosts servers
 
 cr2-eqdfw.wikimedia.org:
   role: cr
