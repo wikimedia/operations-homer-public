@@ -83,7 +83,7 @@ term pki {
 }
 term cloudbackup {
     comment:: "Return traffic"
-    destination-address:: cloudbackup_group
+    destination-address:: cloudbackup_group cloudbackup-dev_group
     protocol:: tcp
     source-port:: ceph_monitor ceph_monitor_legacy ceph_OSD
     action:: accept
