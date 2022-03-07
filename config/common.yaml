@@ -78,7 +78,7 @@ users:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDt7HkyaZeIe7L8CuWE1+N47+wDT/4cUmEcrPA1xgdA4By/jesf+1oOTvusbIyXFuCssvspgGmwwNMD+PzNF3xAEo+Yn2aqH4OBhRiF0U8jeaJL1EhzKnT8KKG4fOzzerbKFlE5K9LnYhMXp2i6MoAN9xB3Z350dBwqhspf0OKqZ8AGbsc9RdcEr2pBT7RPRlcKXRTrd47keV+PUazpDVSr2MCdmErknROpcBh5IS27DrKHpma3UcNUGIeMsvsV6nyt8Tz2+EMGkd+P+whij0YzlKDkqB2ppoD+gCPAki277wobiocea79fvPm1/Na+tpXJT7gU+YErld4VRvUclyR/ fgiunchedi@wikimedia.org"
   - name: jgreen
     uid: 2019
-    class: read-only
+    class: operations
     sshkeys:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtlXCYUGn23LVRlgDM9T1onBsTuD20QEbVAplIakTAE55hN1ko1kY09Qb01l4VoAqDPapx0ROYd1on9oYYwSOGgSHKIOrB0OGg+3KX66Pjlr5ohpii20WSHS/NEI1gT76nQX7RN7tHq5/3ciNmCeQZ81YsDwCbmr7DRB5XiHUCaaCp/GIb6GXTliqtSL5oC+Rrzw4cqMeG/M7yExohVetjEK/AMOjgzMZEBHjZczvZiNpijHQ4WAIzl2KzuRDcqLKnOi48Wp+ANaKZmQngJdu8pAI51vqFIEhEwNpQrrUi1JXY2gXmYudRrvg/BvXgPJUDMmm9TOHNnBwwX8xafUgD jgreen@wertyukio.trouser.org"
   - name: mark
@@ -123,7 +123,7 @@ users:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC9nYMQxRkgW32JhMGLjHEotFvNQwrtCZh35MH2ugerQNITDHvaFIrmlfkk/fe2AgXjxKwyzMHgzONb9OqNC/ZJU59RFMLB2ATnsTLq/PahohjdkB/G8MPIJ0gqmG72HFaEARavk4daSGKWIfIRYbKz8fou+HZcxxJTM2YaTK1sMx51UYpft8uFkjrhP5YFl2EkB7b2B7PWMIKxFAsI9BFn1hoMUoRGUJ72YXNDANAtuDTf8lPKIntLS0+VlXiuoYgcQSKC8ZmUi0xI/5XQjUUD03vas3UuHNUQnkA8TlDkVCXlvZNxcf4KWgpQoVR/0gsC/L3GLeqXtSJsh63WeBaegSPtbVlrZsrkuwwczawaDyIiOdczjmz5Dhv2Axdv6Og6Iez9Zbc+chVilenQTyolaXso7us18vrYlQbgf83qfVndzNIGERNdXTFjD2eN9yhVZLw3GK6ob5Q6Pn9RhjLSMeWbmI8ffZ85o7Z2ySKExevRnOjvrPg3dS+KNfFBiDz3/r6ji/KbUVmcCMx/lU/bDfrTL3MDn7v1tjCQ0ieE5oyJygmXvEmMX7PQdUhKZ/9uE+TIYIX7bwdbf3CvA2Zutn0CarFoeTpKgzTNd3q71M93OiYIVouu+h0wKN1TnvmXitPKyvkDSBScJiStakVh7i8OqIe1Af02i2OSXHsxiQ== homer"
   - name: dwisehaupt
     uid: 2030
-    class: read-only
+    class: operations
     sshkeys:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDv6wl/8CF2O/YFL5MFtoA7/MxVzhoC+TLSF1uacpMaGzqryGi0rKI9h3Ed5uZWVKIbBvZqtzfI4/0LYFi6wLRfWclRNbe8lWAFGQOPFCp2Prz+MH0IQA8Nzw/sYpWX/6NnOufuGKOmq7HB4pAVoYPuGfcmxvcMa6LiGFpCfyKSewu2f+1ms55474/EXLFHAb1ONgwfoRmY8W/aPxOryLMEXUlGoTplQThxfRpz1ZV4Nz5848SCWHNGtmWVII4EM7UZrTHtMYO9CmQqK6cFxtvF0MSB4UNOAl1rgFiuxrNQ5vyfK7MXAKpOi1BYm/w0D1eZ1TRKxaAeWqSvzm4rfBrn dwisehaupt@wikimedia.org"
   - name: cdanis
