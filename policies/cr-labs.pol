@@ -7,6 +7,12 @@ term vrrp {
     protocol:: vrrp ah
     action:: accept
 }
+term dhcp-responses {
+    comment:: "T296906"
+    protocol:: udp
+    port:: DHCP
+    action:: accept
+}
 term elk-kafka-logstash {
     comment:: "T268176"
     destination-address:: kafka-logging_group
