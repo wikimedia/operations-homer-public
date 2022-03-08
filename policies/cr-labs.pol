@@ -88,6 +88,14 @@ term cloudbackup {
     source-port:: ceph_monitor ceph_monitor_legacy ceph_OSD
     action:: accept
 }
+term labtestwikitech-mysql {
+    comment:: "Return traffic"
+    destination-address:: mwmaint_group
+    protocol:: tcp
+    source-address:: clouddb-dev_group
+    source-port:: mysql
+    action:: accept
+}
 term deny-private-subnets {
     destination-prefix:: private4 private6
     action:: deny
