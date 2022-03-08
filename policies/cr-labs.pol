@@ -93,7 +93,7 @@ term labtestwikitech-mysql {
     destination-address:: mwmaint_group
     protocol:: tcp
     source-address:: clouddb-dev_group
-    source-port:: mysql
+    source-port:: mySQL
     action:: accept
 }
 term deny-private-subnets {
