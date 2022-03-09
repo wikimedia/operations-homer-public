@@ -384,6 +384,54 @@ asw2-d-eqiad.mgmt.eqiad.wmnet:
   config:
     optimize_qos_buffers: true
 
+lsw1-e1-eqiad.mgmt.eqiad.wmnet:
+  role: asw
+  site: eqiad
+  config:
+    evpn: true
+    l3_switch: true
+    optimize_qos_buffers: true
+
+lsw1-e2-eqiad.mgmt.eqiad.wmnet:
+  role: asw
+  site: eqiad
+  config:
+    evpn: true
+    l3_switch: true
+    optimize_qos_buffers: true
+
+lsw1-e3-eqiad.mgmt.eqiad.wmnet:
+  role: asw
+  site: eqiad
+  config:
+    evpn: true
+    l3_switch: true
+    optimize_qos_buffers: true
+
+lsw1-f1-eqiad.mgmt.eqiad.wmnet:
+  role: asw
+  site: eqiad
+  config:
+    evpn: true
+    l3_switch: true
+    optimize_qos_buffers: true
+
+lsw1-f2-eqiad.mgmt.eqiad.wmnet:
+  role: asw
+  site: eqiad
+  config:
+    evpn: true
+    l3_switch: true
+    optimize_qos_buffers: true
+
+lsw1-f3-eqiad.mgmt.eqiad.wmnet:
+  role: asw
+  site: eqiad
+  config:
+    evpn: true
+    l3_switch: true
+    optimize_qos_buffers: true
+
 cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
   role: cloudsw
   site: eqiad

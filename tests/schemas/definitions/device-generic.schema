@@ -486,6 +486,10 @@
       "type": "boolean",
       "description": "The switch also does L3 routing."
     },
+    "evpn": {
+      "type": "boolean",
+      "description": "The switch uses BGP EVPN and VXLAN transport."
+    },
     "junos_root_password": {
       "type": "string",
       "description": "[Secret]"
