@@ -20,13 +20,6 @@ term elk-kafka-logstash {
     destination-port:: kafkaTLS
     action:: accept
 }
-term pxeboot--http {
-    comment:: "T190424"
-    destination-address:: install_group
-    protocol:: tcp
-    destination-port:: HTTP
-    action:: accept
-}
 term allow-labs {
     destination-address:: cloud-support
     action:: accept
