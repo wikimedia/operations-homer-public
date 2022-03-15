@@ -230,7 +230,7 @@ ospf:
 
   stub:
     mr1-ulsfo.wikimedia.org:
-      - vlan.900
+      - irb.900
     mr1-eqsin.wikimedia.org:
       - vlan.900
     mr1-codfw.wikimedia.org:

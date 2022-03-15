@@ -558,8 +558,20 @@ mr1-ulsfo.wikimedia.org:
   role: mr
   site: ulsfo
   config:
-    els: false  # Legacy Junos syntax
     dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
+    security_zones:
+      - name: production
+        services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
+        interfaces: ['lo0.0', 'ge-0/0/4.401', 'ge-0/0/4.402']
+      - name: untrust
+        services: ['ssh', 'ping', 'traceroute']
+        interfaces: ['ge-0/0/0.0']
+      - name: mgmt
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
+        interfaces: ['irb.900']
+      - name: access
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
+        interfaces: []  # Keeping the zone just in case to not delete policies, was ge-0/0/7.0
 
 mr1-esams.wikimedia.org:
   role: mr
