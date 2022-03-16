@@ -42,6 +42,7 @@ wikimedia-private = 10.0.0.0/8 # private
                     2620:0:861:100::/56 # eqiad private
                     2620:0:862:100::/56 # esams private
                     2620:0:863:100::/56 # ulsfo private
+                    2a02:ec80:600:100::/56 # drmrs private
 
 network-infra = 10.136.127.0/24 # drmrs
                 185.15.58.128/27 # drmrs
