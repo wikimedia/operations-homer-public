@@ -319,8 +319,10 @@ drmrs:
   mgmt_gw: 10.136.128.1
   bgp_out:
     185.15.58.0/24: BGP_aggregate_contributors  # drmrs
+    185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
     2a02:ec80:600::/48: BGP_aggregate_contributors  # drmrs
+    2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   sampling:
     collector: 10.136.1.22  # netflow6001.drmrs.wmnet
   tcp_mss_clamping: true
