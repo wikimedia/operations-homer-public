@@ -225,6 +225,13 @@ term pki {
     destination-port:: HTTP HTTPS
     action:: accept
 }
+term prometheus {
+    comment:: "T304001"
+    destination-address:: prometheus_group
+    protocol:: tcp
+    destination-port:: HTTP HTTPS
+    action:: accept
+}
 term default {
     action:: deny
 }
