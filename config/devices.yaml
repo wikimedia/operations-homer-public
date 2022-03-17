@@ -391,6 +391,8 @@ lsw1-e1-eqiad.mgmt.eqiad.wmnet:
     evpn: true
     l3_switch: true
     optimize_qos_buffers: true
+    filters:
+      et-0/0/48.100-in: ssw-cr-in
 
 lsw1-e2-eqiad.mgmt.eqiad.wmnet:
   role: asw
@@ -415,6 +417,8 @@ lsw1-f1-eqiad.mgmt.eqiad.wmnet:
     evpn: true
     l3_switch: true
     optimize_qos_buffers: true
+    filters:
+      et-0/0/48.100-in: ssw-cr-in
 
 lsw1-f2-eqiad.mgmt.eqiad.wmnet:
   role: asw
