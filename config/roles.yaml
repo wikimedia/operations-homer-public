@@ -9,7 +9,7 @@ mr:
       interfaces: ['ge-0/0/0.0']
     - name: mgmt
       services: ['ssh', 'ping', 'traceroute', 'dhcp']
-      interfaces: ['vlan.900']
+      interfaces: ['irb.900']
     - name: access
       services: ['ssh', 'ping', 'traceroute', 'dhcp']
       interfaces: []  # Keeping the zone just in case to not delete policies, was ge-0/0/7.0
