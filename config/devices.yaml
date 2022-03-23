@@ -660,6 +660,8 @@ asw1-b12-drmrs.wikimedia.org:
     lldp_disabled: ['xe-0/0/44']
     filters:
       xe-0/0/45.0-in: border-tmp-in
+    capirca:
+      - cr-loopback
 
 asw1-b13-drmrs.wikimedia.org:
   role: asw
@@ -668,3 +670,5 @@ asw1-b13-drmrs.wikimedia.org:
     l3_switch: true
     optimize_qos_buffers: true
     lldp_disabled: ['xe-0/0/44']
+    capirca:
+      - cr-loopback

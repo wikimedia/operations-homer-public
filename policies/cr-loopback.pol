@@ -15,10 +15,16 @@ term allow_ssh6 {
   restrict-address-family:: inet6
   action:: accept
 }
-term allow_bgp {
+term allow_bgp_src {
   source-prefix:: bgp-sessions
   protocol:: tcp
-  port:: BGP
+  source-port:: BGP
+  action:: accept
+}
+term allow_bgp_dst {
+  source-prefix:: bgp-sessions
+  protocol:: tcp
+  destination-port:: BGP
   action:: accept
 }
 term allow_ospf {
@@ -39,17 +45,31 @@ term allow_snmp6 {
   restrict-address-family:: inet6
   action:: accept
 }
-term allow_ntp4 {
+term allow_ntp_src4 {
   source-prefix:: production4
   protocol:: udp
-  port:: NTP
+  source-port:: NTP
   restrict-address-family:: inet
   action:: accept
 }
-term allow_ntp6 {
+term allow_ntp_dst4 {
+  source-prefix:: production4
+  protocol:: udp
+  destination-port:: NTP
+  restrict-address-family:: inet
+  action:: accept
+}
+term allow_ntp_src6 {
   source-prefix:: production6
   protocol:: udp
-  port:: NTP
+  source-port:: NTP
+  restrict-address-family:: inet6
+  action:: accept
+}
+term allow_ntp_dst6 {
+  source-prefix:: production6
+  protocol:: udp
+  destination-port:: NTP
   restrict-address-family:: inet6
   action:: accept
 }
@@ -73,7 +93,7 @@ term allow_dhcp_request4 {
   destination-address:: LIMITED_BROADCAST
   protocol:: udp
   source-port:: BOOTPC
-  destination-port:: BOOTPS
+  destination-port:: BOOTPC BOOTPS
   action:: accept
 }
 term allow_dhcp_reply4 {
@@ -81,20 +101,20 @@ term allow_dhcp_reply4 {
   source-prefix:: production4
   protocol:: udp
   source-port:: BOOTPS
-  destination-port:: BOOTPS
+  destination-port:: BOOTPC BOOTPS
   restrict-address-family:: inet
   action:: accept
 }
 term allow_bfd {
   protocol:: udp
-  port:: BFD
+  destination-port:: BFD
   action:: accept
 }
 term allow_mbfd {
   comment:: "T209989"
   protocol:: udp
   source-prefix:: bgp-sessions
-  port:: mBFD
+  destination-port:: mBFD
   action:: accept
 }
 term allow_dns {
