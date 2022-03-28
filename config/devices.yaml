@@ -27,6 +27,8 @@ cr1-eqiad.wikimedia.org:
       ae3.1022-in: analytics-in
       ae4.1023-in: analytics-in
       gr-3/3/0.1-in: border-in
+    urpf_strict:
+      - xe-3/0/4.1118  # Cloud-hosts
     vrrp_bandwidth_threshold: true
     cni:
       neighbor: 173.245.63.4
@@ -64,6 +66,8 @@ cr2-eqiad.wikimedia.org:
       ae3.1022-in: analytics-in
       ae4.1023-in: analytics-in
       gr-4/3/0.2-in: border-in
+    urpf_strict:
+      - xe-3/0/4.1118  # Cloud-hosts
     damping: [xe-4/1/3]
     vrrp_bandwidth_threshold: true
     vrrp_master_pinning:
