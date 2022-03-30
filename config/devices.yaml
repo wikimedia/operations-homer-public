@@ -19,7 +19,6 @@ cr1-eqiad.wikimedia.org:
         provider: "Hurricane Electric"
     filters:
       xe-4/2/0.0-in4: transport-in
-      ae1.1030-in: analytics-in
       ae2.1021-in: analytics-in
       xe-3/0/4.1102-in: cloud-in
       xe-3/0/4.1118-in: labs-in
@@ -29,6 +28,7 @@ cr1-eqiad.wikimedia.org:
       gr-3/3/0.1-in: border-in
     urpf_strict:
       - xe-3/0/4.1118  # Cloud-hosts
+      - ae1.1030  # analytics1-a-eqiad
     vrrp_bandwidth_threshold: true
     cni:
       neighbor: 173.245.63.4
@@ -58,7 +58,6 @@ cr2-eqiad.wikimedia.org:
         provider: Telia
     filters:
       xe-4/2/0.0-in4: transport-in  # to eqord
-      ae1.1030-in: analytics-in
       ae2.1021-in: analytics-in
       xe-3/0/4.1103-in: cloud-in
       xe-3/0/4.1118-in: labs-in
@@ -68,6 +67,7 @@ cr2-eqiad.wikimedia.org:
       gr-4/3/0.2-in: border-in
     urpf_strict:
       - xe-3/0/4.1118  # Cloud-hosts
+      - ae1.1030  # analytics1-a-eqiad
     damping: [xe-4/1/3]
     vrrp_bandwidth_threshold: true
     vrrp_master_pinning:
