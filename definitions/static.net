@@ -2,8 +2,6 @@ VRRP = 224.0.0.18/32
 NO_IP = 0.0.0.0/32
 LIMITED_BROADCAST = 255.255.255.255/32
 vmhost = 192.168.1.0/24 # Junos internal subnet
-neighbor_discovery = ff02::/123
-                     ff02::1:ff00:0/104
 
 CLOUD_VMs = 172.16.0.0/12 # Cloud VMs
 RFC1918 = 10.0.0.0/8
@@ -48,27 +46,6 @@ network-infra = 10.136.127.0/24 # drmrs
                 185.15.58.128/27 # drmrs
                 2a02:ec80:600:fe00::/55 # drmrs
 
-analytics-subnets = 10.64.5.0/24 #analytics1-a-eqiad
-                    2620:0:861:104::/64 #analytics1-a-eqiad
-                    10.64.21.0/24 #analytics1-b-eqiad
-                    2620:0:861:105::/64 #analytics1-c-eqiad
-                    10.64.36.0/24 #analytics1-c-eqiad
-                    2620:0:861:106::/64 #analytics1-c-eqiad
-                    10.64.53.0/24 #analytics1-d-eqiad
-                    2620:0:861:108::/64 #analytics1-d-eqiad
-                    10.64.138.0/24 #analytics1-e1-eqiad
-                    2620:0:861:100::/64 #analytics1-e1-eqiad
-                    10.64.139.0/24 #analytics1-e2-eqiad
-                    2620:0:861:111::/64 #analytics1-e2-eqiad
-                    10.64.140.0/24 #analytics1-e3-eqiad
-                    2620:0:861:112::/64 #analytics1-e3-eqiad
-                    10.64.142.0/24 #analytics1-f1-eqiad
-                    2620:0:861:114::/64 #analytics1-f1-eqiad
-                    10.64.143.0/24 #analytics1-f2-eqiad
-                    2620:0:861:115::/64 #analytics1-f2-eqiad
-                    10.64.144.0/24 #analytics1-f3-eqiad
-                    2620:0:861:116::/64 #analytics1-f3-eqiad
-
 cloud-transports = 185.15.57.16/29 # cloud-instance-transport1-b-codfw (next)
                    208.80.153.184/29 # cloud-instance-transport1-b-codfw (in use)
                    185.15.57.8/30 # cloud-gw-transport-codfw
@@ -78,28 +55,6 @@ cloud-hosts = 10.64.20.0/24 # cloud-hosts1-b-eqiad
               10.192.20.0/24 # cloud-hosts1-b-codfw
 cloud-support = 10.64.4.0/24 # cloud-support1-a-eqiad
                 10.64.37.0/24 # cloud-support1-c-eqiad
-
-#
-# SVC
-#
-
-api.svc.eqiad = 10.2.2.22 # api.svc.eqiad.wmnet
-api.svc.codfw = 10.2.1.22 # api.svc.codfw.wmnet
-eventgate-analytics.svc.eqiad = 10.2.2.42 # eventgate-analytics.svc.eqiad.wmnet
-eventgate-analytics.svc.codfw = 10.2.1.42 # eventgate-analytics.svc.codfw.wmnet
-eventgate-analytics-external.svc.eqiad = 10.2.2.52 # eventgate-analytics-external.svc.eqiad.wmnet
-eventgate-analytics-external.svc.codfw = 10.2.1.52 # eventgate-analytics-external.svc.codfw.wmnet
-eventgate-logging-external.svc.eqiad = 10.2.2.50 # eventgate-logging-external.svc.eqiad.wmnet
-eventgate-logging-external.svc.codfw = 10.2.1.50 # eventgate-logging-external.svc.codfw.wmnet
-eventgate-main.svc.eqiad = 10.2.2.45 # eventgate-main.svc.eqiad.wmnet
-eventgate-main.svc.codfw = 10.2.1.45 # eventgate-main.svc.codfw.wmnet
-ms-fe.svc.codfw = 10.2.1.27 # ms-fe.svc.codfw.wmnet
-ms-fe.svc.eqiad = 10.2.2.27 # ms-fe.svc.eqiad.wmnet
-schema.svc.codfw = 10.2.1.43 # schema.svc.codfw.wmnet
-schema.svc.eqiad = 10.2.2.43 # schema.svc.eqiad.wmnet
-thanos-swift.svc.codfw = 10.2.1.54 # thanos-swift.svc.codfw.wmnet
-thanos-swift.svc.eqiad = 10.2.2.54 # thanos-swift.svc.eqiad.wmnet
-wdqs.svc.eqiad = 10.2.2.32 # wdqs.svc.eqiad.wmnet
 
 #
 # WMCS VIPs
