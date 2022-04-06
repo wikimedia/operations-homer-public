@@ -1,0 +1,18 @@
+header {
+    comment:: "Applied to traffic ingress on IRB interfaces from analytics hosts"
+    target:: juniper analytics-in mixed
+}
+term allow_dhcp4 {
+    comment:: "Specific rule as source is 0.0.0.0"
+    source-address:: NO_IP
+    destination-address:: LIMITED_BROADCAST
+    action:: accept
+}
+term allow_private {
+    comment:: "Only allow traffic from private source IPs"
+    source-address:: wikimedia-private
+    action:: accept
+}
+term default {
+    action:: deny
+}
