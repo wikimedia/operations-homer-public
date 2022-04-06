@@ -1,5 +1,5 @@
 prefix-list kubemlserve-pod-ips4 {
-    10.64.78.0/23;
+    10.67.16.0/21;
 }
 prefix-list kubemlserve-pod-ips6 {
     2620:0:861:300::/64;
