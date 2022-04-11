@@ -559,7 +559,7 @@
       "type": "array",
       "description": "List of additional interfaces to enable IPv6 RA advertisements on.",
       "prefixItems": [
-        { 
+        {
           "type": "string"
         }
       ]

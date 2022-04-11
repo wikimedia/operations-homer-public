@@ -365,8 +365,6 @@ cr2-drmrs.wikimedia.org:
     capirca:
       - cr-loopback
       - cr-border-in
-    ip6_ra:
-      - fxp0.0
 
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
