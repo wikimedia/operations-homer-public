@@ -555,6 +555,15 @@
       "type": "integer",
       "description": "BGP ASN used by datacenter switches or spine layer site-wide."
     },
+    "ip6_ra": {
+      "type": "array",
+      "description": "List of additional interfaces to enable IPv6 RA advertisements on.",
+      "prefixItems": [
+        { 
+          "type": "string"
+        }
+      ]
+    },
     "switch_neighbors": {
       "type": "object",
       "additionalProperties": {
