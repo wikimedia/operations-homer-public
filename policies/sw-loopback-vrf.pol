@@ -1,0 +1,60 @@
+header {
+  target:: juniper loopback-vrf mixed
+}
+term allow_bgp_src {
+  source-prefix:: bgp-sessions bgp-sessions-overlay
+  protocol:: tcp
+  source-port:: BGP
+  action:: accept
+}
+term allow_bgp_dst {
+  source-prefix:: bgp-sessions bgp-sessions-overlay
+  protocol:: tcp
+  destination-port:: BGP
+  action:: accept
+}
+term allow_ospf {
+  protocol:: ospf
+  action:: accept
+}
+term allow_ok_icmp4 {
+  protocol:: icmp
+  action:: accept
+}
+term allow_ok_icmp6 {
+  protocol:: icmpv6
+  action:: accept
+}
+term allow_dhcp_request4 {
+  comment:: "discovery from the host to the relay"
+  source-address:: NO_IP
+  destination-address:: LIMITED_BROADCAST
+  protocol:: udp
+  source-port:: BOOTPC
+  destination-port:: BOOTPC BOOTPS
+  action:: accept
+}
+term allow_dhcp_reply4 {
+  comment:: "reply from the DHCP server back to the relay"
+  source-prefix:: production4
+  protocol:: udp
+  source-port:: BOOTPS
+  destination-port:: BOOTPC BOOTPS
+  restrict-address-family:: inet
+  action:: accept
+}
+term allow_bfd {
+  protocol:: udp
+  destination-port:: BFD
+  action:: accept
+}
+term allow_mbfd {
+  comment:: "T209989"
+  protocol:: udp
+  source-prefix:: bgp-sessions bgp-sessions-overlay
+  destination-port:: mBFD
+  action:: accept
+}
+term deny_all {
+  action:: deny
+}

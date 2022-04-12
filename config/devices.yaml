@@ -400,10 +400,11 @@ lsw1-e1-eqiad.mgmt.eqiad.wmnet:
     l3_switch: true
     optimize_qos_buffers: true
     capirca:
+      - cr-loopback
+      - sw-loopback-vrf
       - sw-analytics
     filters:
       irb.1039-in: analytics-in
-      et-0/0/48.100-in: ssw-cr-in
 
 lsw1-e2-eqiad.mgmt.eqiad.wmnet:
   role: asw
@@ -413,6 +414,8 @@ lsw1-e2-eqiad.mgmt.eqiad.wmnet:
     l3_switch: true
     optimize_qos_buffers: true
     capirca:
+      - cr-loopback
+      - sw-loopback-vrf
       - sw-analytics
     filters:
       irb.1040-in: analytics-in
@@ -425,6 +428,8 @@ lsw1-e3-eqiad.mgmt.eqiad.wmnet:
     l3_switch: true
     optimize_qos_buffers: true
     capirca:
+      - cr-loopback
+      - sw-loopback-vrf
       - sw-analytics
     filters:
       irb.1041-in: analytics-in
@@ -437,10 +442,11 @@ lsw1-f1-eqiad.mgmt.eqiad.wmnet:
     l3_switch: true
     optimize_qos_buffers: true
     capirca:
+      - cr-loopback
+      - sw-loopback-vrf
       - sw-analytics
     filters:
       irb.1043-in: analytics-in
-      et-0/0/48.100-in: ssw-cr-in
 
 lsw1-f2-eqiad.mgmt.eqiad.wmnet:
   role: asw
@@ -450,6 +456,8 @@ lsw1-f2-eqiad.mgmt.eqiad.wmnet:
     l3_switch: true
     optimize_qos_buffers: true
     capirca:
+      - cr-loopback
+      - sw-loopback-vrf
       - sw-analytics
     filters:
       irb.1044-in: analytics-in
@@ -462,6 +470,8 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
     l3_switch: true
     optimize_qos_buffers: true
     capirca:
+      - cr-loopback
+      - sw-loopback-vrf
       - sw-analytics
     filters:
       irb.1045-in: analytics-in

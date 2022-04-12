@@ -16,13 +16,13 @@ term allow_ssh6 {
   action:: accept
 }
 term allow_bgp_src {
-  source-prefix:: bgp-sessions
+  source-prefix:: bgp-sessions bgp-sessions-overlay
   protocol:: tcp
   source-port:: BGP
   action:: accept
 }
 term allow_bgp_dst {
-  source-prefix:: bgp-sessions
+  source-prefix:: bgp-sessions bgp-sessions-overlay
   protocol:: tcp
   destination-port:: BGP
   action:: accept
@@ -46,28 +46,28 @@ term allow_snmp6 {
   action:: accept
 }
 term allow_ntp_src4 {
-  source-prefix:: production4
+  source-prefix:: production4 loopback4
   protocol:: udp
   source-port:: NTP
   restrict-address-family:: inet
   action:: accept
 }
 term allow_ntp_dst4 {
-  source-prefix:: production4
+  source-prefix:: production4 loopback4
   protocol:: udp
   destination-port:: NTP
   restrict-address-family:: inet
   action:: accept
 }
 term allow_ntp_src6 {
-  source-prefix:: production6
+  source-prefix:: production6 loopback6
   protocol:: udp
   source-port:: NTP
   restrict-address-family:: inet6
   action:: accept
 }
 term allow_ntp_dst6 {
-  source-prefix:: production6
+  source-prefix:: production6 loopback6
   protocol:: udp
   destination-port:: NTP
   restrict-address-family:: inet6
@@ -113,7 +113,7 @@ term allow_bfd {
 term allow_mbfd {
   comment:: "T209989"
   protocol:: udp
-  source-prefix:: bgp-sessions
+  source-prefix:: bgp-sessions bgp-sessions-overlay
   destination-port:: mBFD
   action:: accept
 }
