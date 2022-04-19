@@ -346,6 +346,8 @@ cr1-drmrs.wikimedia.org:
     capirca:
       - cr-loopback
       - cr-border-in
+    filters:
+      gr-0/0/0.1-in: border-in
 
 cr2-drmrs.wikimedia.org:
   role: cr
@@ -363,6 +365,8 @@ cr2-drmrs.wikimedia.org:
     capirca:
       - cr-loopback
       - cr-border-in
+    filters:
+      gr-0/0/0.1-in: border-in
 
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
