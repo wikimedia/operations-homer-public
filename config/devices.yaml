@@ -424,6 +424,9 @@ lsw1-e2-eqiad.mgmt.eqiad.wmnet:
       - sw-analytics
     filters:
       irb.1040-in: analytics-in
+    device_bgp:
+      k8s_mlserve_neighbors:
+        ml-serve1005: {4: 10.64.131.3, 6: 2620:0:861:10a:10:64:131:3}
 
 lsw1-e3-eqiad.mgmt.eqiad.wmnet:
   role: asw
@@ -438,6 +441,9 @@ lsw1-e3-eqiad.mgmt.eqiad.wmnet:
       - sw-analytics
     filters:
       irb.1041-in: analytics-in
+    device_bgp:
+      k8s_mlserve_neighbors:
+        ml-serve1006: {4: 10.64.132.3, 6: 2620:0:861:10b:10:64:132:3}
 
 lsw1-f1-eqiad.mgmt.eqiad.wmnet:
   role: asw
@@ -469,6 +475,9 @@ lsw1-f2-eqiad.mgmt.eqiad.wmnet:
       - sw-analytics
     filters:
       irb.1044-in: analytics-in
+    device_bgp:
+      k8s_mlserve_neighbors:
+        ml-serve1007: {4: 10.64.135.3, 6: 2620:0:861:10e:10:64:135:3}
 
 lsw1-f3-eqiad.mgmt.eqiad.wmnet:
   role: asw
@@ -483,6 +492,9 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
       - sw-analytics
     filters:
       irb.1045-in: analytics-in
+    device_bgp:
+      k8s_mlserve_neighbors:
+        ml-serve1008: {4: 10.64.136.2, 6: 2620:0:861:10f:10:64:136:2}
 
 cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
   role: cloudsw
