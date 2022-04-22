@@ -194,10 +194,6 @@
       "type": "boolean",
       "description": "Set if the IXP terminating on that router should be prioritized."
     },
-    "els": {
-      "type": "boolean",
-      "description": "Legacy Junos syntax"
-    },
     "tcp_mss_clamping": {
       "type": "boolean",
       "description": "Clamps outbound tcp-mss to 1436. Usually applied per site."
