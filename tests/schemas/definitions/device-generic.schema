@@ -1,8 +1,17 @@
 {
   "$id": "device-generic.schema",
   "definitions": {
-    "k8s_neighbors": {
+    "bgp_neighbor_single_af": {
       "type": "object",
+      "description": "Used to define BGP peering to a single IP.",
+      "additionalProperties": {
+        "type": "string",
+        "format": ["ipv4", "ipv6"]
+      }
+    },
+    "bgp_neighbor_dual_af": {
+      "type": "object",
+      "description": "Used to define BGP peerings to a pair of IPs, one for v4 one for v6",
       "additionalProperties": {
         "type": "object",
         "properties": {
@@ -406,17 +415,11 @@
         "type": "string"
       }
     },
-    "lvs_neighbors": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "string",
-        "format": ["ipv4", "ipv6"]
-      }
-    },
+    "lvs_neighbors": { "$ref": "#/definitions/bgp_neighbor_single_af" },
     "anycast_neighbors": { "$ref": "#/definitions/bgp_neighbor_opt_v6" },
-    "k8s_neighbors": { "$ref": "#/definitions/k8s_neighbors" },
-    "k8s_stage_neighbors": { "$ref": "#/definitions/k8s_neighbors" },
-    "k8s_mlserve_neighbors": { "$ref": "#/definitions/k8s_neighbors" },
+    "k8s_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+    "k8s_stage_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+    "k8s_mlserve_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
     "ping_offload_vip": {
       "type": "string",
       "format": "ip_interface"
@@ -555,22 +558,19 @@
       "type": "integer",
       "description": "BGP ASN used by datacenter switches or spine layer site-wide."
     },
-    "switch_neighbors": {
+    "switch_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+    "device_bgp": {
       "type": "object",
-      "additionalProperties": {
-        "type": "object",
-        "properties": {
-          "4": {
-            "type": "string",
-            "format": "ipv4"
-          },
-          "6": {
-            "type": "string",
-            "format": "ipv6"
-          }
-        },
-        "required": [4, 6]
-      }
+      "description": "Device-specific BGP peerings, nested to avoid namespace collision.",
+      "properties": {
+        "anycast_neighbors": { "$ref": "#/definitions/bgp_neighbor_opt_v6" },
+        "lvs_neighbors": { "$ref": "#/definitions/bgp_neighbor_single_af" },
+        "k8s_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "k8s_stage_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "k8s_mlserve_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "cr_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" }
+      },
+      "additionalProperties": false
     }
   }
 }

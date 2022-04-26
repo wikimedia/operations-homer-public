@@ -407,6 +407,9 @@ lsw1-e1-eqiad.mgmt.eqiad.wmnet:
       - sw-analytics
     filters:
       irb.1039-in: analytics-in
+    device_bgp:
+      cr_neighbors:
+        cr1-eqiad: {4: 10.66.0.8, 6: 2620:0:861:fe07::1}
 
 lsw1-e2-eqiad.mgmt.eqiad.wmnet:
   role: asw
@@ -449,6 +452,9 @@ lsw1-f1-eqiad.mgmt.eqiad.wmnet:
       - sw-analytics
     filters:
       irb.1043-in: analytics-in
+    device_bgp:
+      cr_neighbors:
+        cr1-eqiad: {4: 10.66.0.10, 6: 2620:0:861:fe08::1}
 
 lsw1-f2-eqiad.mgmt.eqiad.wmnet:
   role: asw
