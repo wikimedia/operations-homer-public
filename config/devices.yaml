@@ -343,6 +343,10 @@ cr1-drmrs.wikimedia.org:
         provider: "Hurricane Electric"
       2001:7f8:36::1b1b:0:1:
         provider: "Hurricane Electric"
+      185.1.47.85:
+        provider: Init7
+      2001:7f8:36::32e6:0:1:
+        provider: Init7
     capirca:
       - cr-loopback
       - cr-border-in
@@ -362,6 +366,10 @@ cr2-drmrs.wikimedia.org:
         provider: "Hurricane Electric"
       2001:7f8:54:5::13:
         provider: "Hurricane Electric"
+      37.49.232.66:
+        provider: Init7
+      2001:7f8:54:5::66:
+        provider: Init7
     capirca:
       - cr-loopback
       - cr-border-in
