@@ -213,6 +213,16 @@
         "k8s-stage",
         "frack"
       ]
+    },
+    "vrf_ids": {
+      "type": "object",
+      "description": "Global VRF identifiers for generating RD, RTs etc.",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^.+$": {
+          "type": "integer"
+        }
+      }
     }
   },
   "required": [

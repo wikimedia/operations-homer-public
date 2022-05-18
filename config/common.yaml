@@ -449,3 +449,6 @@ asns_mapping:
   frack:
     eqiad: 64700
     codfw: 64701
+
+vrf_ids:
+  cloud: 5001
