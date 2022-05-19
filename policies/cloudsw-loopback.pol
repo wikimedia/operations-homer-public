@@ -7,8 +7,14 @@ term allow_ssh4 {
   destination-port:: SSH
   action:: accept
 }
-term allow_bgp4 {
-  source-prefix:: bgp-sessions
+term allow_bgp_src {
+  source-prefix:: bgp-sessions bgp-sessions-overlay
+  protocol:: tcp
+  source-port:: BGP
+  action:: accept
+}
+term allow_bgp_dst {
+  source-prefix:: bgp-sessions bgp-sessions-overlay
   protocol:: tcp
   destination-port:: BGP
   action:: accept
