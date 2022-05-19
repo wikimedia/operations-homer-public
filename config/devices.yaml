@@ -534,6 +534,7 @@ cloudsw1-e4-eqiad.mgmt.eqiad.wmnet:
   role: cloudsw
   site: eqiad
   config:
+    asn: 4264710003
     capirca:
       - cloudsw-loopback
     vrf_ints:
@@ -546,6 +547,7 @@ cloudsw1-f4-eqiad.mgmt.eqiad.wmnet:
   role: cloudsw
   site: eqiad
   config:
+    asn: 4264710004
     capirca:
       - cloudsw-loopback
     vrf_ints:
@@ -709,6 +711,7 @@ asw1-b12-drmrs.wikimedia.org:
   site: drmrs
   config:
     l3_switch: true
+    asn: 4265006001
     optimize_qos_buffers: true
     lldp_disabled: ['xe-0/0/44']
     filters:
@@ -721,6 +724,7 @@ asw1-b13-drmrs.wikimedia.org:
   site: drmrs
   config:
     l3_switch: true
+    asn: 4265006002
     optimize_qos_buffers: true
     lldp_disabled: ['xe-0/0/44']
     capirca:
