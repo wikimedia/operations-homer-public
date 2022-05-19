@@ -39,7 +39,7 @@ cr1-eqiad.wikimedia.org:
     capirca:
       - cr-cloud  # For VM traffic
       - cr-sandbox
-      - cr-loopback
+      - common-loopback
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
     switch_neighbors:
@@ -75,7 +75,7 @@ cr2-eqiad.wikimedia.org:
     capirca:
       - cr-cloud  # For VM traffic
       - cr-sandbox
-      - cr-loopback
+      - common-loopback
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
     switch_neighbors:
@@ -124,7 +124,7 @@ cr1-codfw.wikimedia.org:
     capirca:
       - cr-cloud
       - cr-sandbox
-      - cr-loopback
+      - common-loopback
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
 
@@ -157,7 +157,7 @@ cr2-codfw.wikimedia.org:
     capirca:
       - cr-cloud
       - cr-sandbox
-      - cr-loopback
+      - common-loopback
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
 
@@ -344,7 +344,7 @@ cr1-drmrs.wikimedia.org:
       2001:7f8:36::1b1b:0:1:
         provider: "Hurricane Electric"
     capirca:
-      - cr-loopback
+      - common-loopback
       - cr-border-in
     filters:
       gr-0/0/0.1-in: border-in
@@ -363,7 +363,7 @@ cr2-drmrs.wikimedia.org:
       2001:7f8:54:5::13:
         provider: "Hurricane Electric"
     capirca:
-      - cr-loopback
+      - common-loopback
       - cr-border-in
     filters:
       gr-0/0/0.1-in: border-in
@@ -402,7 +402,7 @@ lsw1-e1-eqiad.mgmt.eqiad.wmnet:
     l3_switch: true
     optimize_qos_buffers: true
     capirca:
-      - cr-loopback
+      - common-loopback
       - sw-loopback-vrf
       - sw-analytics
     filters:
@@ -420,7 +420,7 @@ lsw1-e2-eqiad.mgmt.eqiad.wmnet:
     l3_switch: true
     optimize_qos_buffers: true
     capirca:
-      - cr-loopback
+      - common-loopback
       - sw-loopback-vrf
       - sw-analytics
     filters:
@@ -438,7 +438,7 @@ lsw1-e3-eqiad.mgmt.eqiad.wmnet:
     l3_switch: true
     optimize_qos_buffers: true
     capirca:
-      - cr-loopback
+      - common-loopback
       - sw-loopback-vrf
       - sw-analytics
     filters:
@@ -456,7 +456,7 @@ lsw1-f1-eqiad.mgmt.eqiad.wmnet:
     l3_switch: true
     optimize_qos_buffers: true
     capirca:
-      - cr-loopback
+      - common-loopback
       - sw-loopback-vrf
       - sw-analytics
     filters:
@@ -474,7 +474,7 @@ lsw1-f2-eqiad.mgmt.eqiad.wmnet:
     l3_switch: true
     optimize_qos_buffers: true
     capirca:
-      - cr-loopback
+      - common-loopback
       - sw-loopback-vrf
       - sw-analytics
     filters:
@@ -492,7 +492,7 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
     l3_switch: true
     optimize_qos_buffers: true
     capirca:
-      - cr-loopback
+      - common-loopback
       - sw-loopback-vrf
       - sw-analytics
     filters:
@@ -717,7 +717,7 @@ asw1-b12-drmrs.wikimedia.org:
     filters:
       xe-0/0/45.0-in: border-tmp-in
     capirca:
-      - cr-loopback
+      - common-loopback
 
 asw1-b13-drmrs.wikimedia.org:
   role: asw
@@ -728,4 +728,4 @@ asw1-b13-drmrs.wikimedia.org:
     optimize_qos_buffers: true
     lldp_disabled: ['xe-0/0/44']
     capirca:
-      - cr-loopback
+      - common-loopback

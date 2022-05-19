@@ -26,7 +26,7 @@ mr:
 cr:
   capirca:
     - cr-sandbox
-    - cr-loopback
+    - common-loopback
     - cr-border-in
 
 cloudsw:  # Will have to be split up once there is one in codfw
