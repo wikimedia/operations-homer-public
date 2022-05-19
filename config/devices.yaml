@@ -536,7 +536,7 @@ cloudsw1-e4-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 4264710003
     capirca:
-      - cloudsw-loopback
+      - common-loopback
     vrf_ints:
       lo0.5001: cloud
       irb.1112: cloud
@@ -549,7 +549,7 @@ cloudsw1-f4-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 4264710004
     capirca:
-      - cloudsw-loopback
+      - common-loopback
     vrf_ints:
       lo0.5001: cloud
       irb.1113: cloud
