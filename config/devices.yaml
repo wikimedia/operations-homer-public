@@ -509,8 +509,13 @@ cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
     capirca:
       - cloudsw-loopback
     vrf_ints:
+      lo0.5001: cloud
+      irb.1102: cloud
+      irb.1104: cloud
+      irb.1106: cloud
       irb.1112: cloud
       irb.1113: cloud
+      irb.1120: cloud
 
 cloudsw2-c8-eqiad.mgmt.eqiad.wmnet:
   role: cloudsw
@@ -523,8 +528,13 @@ cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
     capirca:
       - cloudsw-loopback
     vrf_ints:
+      lo0.5001: cloud
+      irb.1103: cloud
+      irb.1104: cloud
+      irb.1106: cloud
       irb.1114: cloud
       irb.1115: cloud
+      irb.1120: cloud
 
 cloudsw2-d5-eqiad.mgmt.eqiad.wmnet:
   role: cloudsw
