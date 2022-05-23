@@ -43,7 +43,8 @@ cr1-eqiad.wikimedia.org:
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
     switch_neighbors:
-      lsw1-e1-eqiad: {4: 10.66.0.9, 6: 2620:0:861:fe07::2}
+      lsw1-e1-eqiad: {4: 10.66.0.9, 6: 2620:0:861:fe07::2, peer_as: 64810}
+      cloudsw1-c8-eqiad: {4: 10.64.147.17, 6: 2620:0:861:fe09::2, peer_as: 64710}
 
 cr2-eqiad.wikimedia.org:
   role: cr
@@ -79,8 +80,8 @@ cr2-eqiad.wikimedia.org:
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
     switch_neighbors:
-      lsw1-f1-eqiad: {4: 10.66.0.11, 6: 2620:0:861:fe08::2}
-
+      lsw1-f1-eqiad: {4: 10.66.0.11, 6: 2620:0:861:fe08::2, peer_as: 64810}
+      cloudsw-d5-eqiad: {4: 10.64.147.15, 6: 2620:0:861:fe0a::2, peer_as: 64710}
 
 cr2-eqord.wikimedia.org:
   role: cr

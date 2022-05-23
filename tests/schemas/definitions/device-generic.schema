@@ -22,6 +22,9 @@
           "6": {
             "type": "string",
             "format": "ipv6"
+          },
+          "peer_as": {
+            "type": "integer"
           }
         },
         "required": [4, 6]
