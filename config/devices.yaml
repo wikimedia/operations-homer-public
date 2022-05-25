@@ -18,11 +18,9 @@ cr1-eqiad.wikimedia.org:
     filters:
       xe-4/2/0.0-in4: transport-in
       xe-3/0/4.1102-in: cloud-in
-      xe-3/0/4.1118-in: labs-in
       ae2.1202-in: sandbox
       gr-3/3/0.1-in: border-in
     urpf_strict:
-      - xe-3/0/4.1118  # Cloud-hosts
       - ae1.1030  # analytics1-a-eqiad
       - ae2.1021  # analytics1-b-eqiad
       - ae3.1022  # analytics1-c-eqiad
@@ -55,11 +53,9 @@ cr2-eqiad.wikimedia.org:
     filters:
       xe-4/2/0.0-in4: transport-in  # to eqord
       xe-3/0/4.1103-in: cloud-in
-      xe-3/0/4.1118-in: labs-in
       ae2.1202-in: sandbox
       gr-4/3/0.2-in: border-in
     urpf_strict:
-      - xe-3/0/4.1118  # Cloud-hosts
       - ae1.1030  # analytics1-a-eqiad
       - ae2.1021  # analytics1-b-eqiad
       - ae3.1022  # analytics1-c-eqiad
