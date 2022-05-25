@@ -455,8 +455,7 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
 
 cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
   config:
-    capirca:
-      - common-loopback
+    asn: 64710
     vrf_ints:
       lo0.5001: cloud
       irb.1102: cloud
@@ -466,10 +465,13 @@ cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
       irb.1113: cloud
       irb.1120: cloud
 
+cloudsw2-c8-eqiad.mgmt.eqiad.wmnet:
+  config:
+    asn: 4264710001
+
 cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
   config:
-    capirca:
-      - common-loopback
+    asn: 64710
     vrf_ints:
       lo0.5001: cloud
       irb.1103: cloud
@@ -479,11 +481,13 @@ cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
       irb.1115: cloud
       irb.1120: cloud
 
+cloudsw2-d5-eqiad.mgmt.eqiad.wmnet:
+  config:
+    asn: 4264710002
+
 cloudsw1-e4-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 4264710003
-    capirca:
-      - common-loopback
     vrf_ints:
       lo0.5001: cloud
       irb.1112: cloud
@@ -493,8 +497,6 @@ cloudsw1-e4-eqiad.mgmt.eqiad.wmnet:
 cloudsw1-f4-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 4264710004
-    capirca:
-      - common-loopback
     vrf_ints:
       lo0.5001: cloud
       irb.1113: cloud

@@ -30,6 +30,7 @@ cr:
     - cr-border-in
 
 cloudsw:  # Will have to be split up once there is one in codfw
-  asn: 64710
   l3_switch: true
   optimize_qos_buffers: true
+  capirca:
+    - common-loopback
