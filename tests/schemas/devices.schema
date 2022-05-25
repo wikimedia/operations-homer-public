@@ -7,19 +7,12 @@
       "type": "object",
       "additionalProperties" : false,
       "properties": {
-        "role": {
-          "$ref": "definitions/available-roles.schema"
-        },
-        "site": {
-          "$ref": "definitions/available-sites.schema"
-        },
         "config": {
           "$ref": "definitions/device-generic.schema"
         }
       },
       "required": [
-        "site",
-        "role"
+        "config"
       ]
     }
   }

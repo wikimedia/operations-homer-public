@@ -1,7 +1,5 @@
 ---
 cr1-eqiad.wikimedia.org:
-  role: cr
-  site: eqiad
   config:
     mgmt_ip: [10.65.0.12/16, 10.65.0.13/16]
     transits:
@@ -47,8 +45,6 @@ cr1-eqiad.wikimedia.org:
       cloudsw1-c8-eqiad: {4: 10.64.147.17, 6: 2620:0:861:fe09::2, peer_as: 64710}
 
 cr2-eqiad.wikimedia.org:
-  role: cr
-  site: eqiad
   config:
     mgmt_ip: [10.65.0.14/16, 10.65.0.15/16]
     transits:
@@ -84,8 +80,6 @@ cr2-eqiad.wikimedia.org:
       cloudsw-d5-eqiad: {4: 10.64.147.15, 6: 2620:0:861:fe0a::2, peer_as: 64710}
 
 cr2-eqord.wikimedia.org:
-  role: cr
-  site: eqord
   config:
     transits:
       192.80.17.197:
@@ -102,8 +96,6 @@ cr2-eqord.wikimedia.org:
         provider: Lumen
 
 cr1-codfw.wikimedia.org:
-  role: cr
-  site: codfw
   config:
     mgmt_ip: [10.193.0.10/16, 10.193.0.11/16]
     transits:
@@ -130,8 +122,6 @@ cr1-codfw.wikimedia.org:
       - cr-labs  # For cloud-hosts servers
 
 cr2-codfw.wikimedia.org:
-  role: cr
-  site: codfw
   config:
     mgmt_ip: [10.193.0.12/16, 10.193.0.13/16]
     transits:
@@ -163,8 +153,6 @@ cr2-codfw.wikimedia.org:
       - cr-labs  # For cloud-hosts servers
 
 cr2-eqdfw.wikimedia.org:
-  role: cr
-  site: eqdfw
   config:
     transits:
       128.242.179.181:
@@ -175,8 +163,6 @@ cr2-eqdfw.wikimedia.org:
         provider: "Hurricane Electric"
 
 cr3-ulsfo.wikimedia.org:
-  role: cr
-  site: ulsfo
   config:
     transits:
       80.239.192.65:
@@ -197,8 +183,6 @@ cr3-ulsfo.wikimedia.org:
 
 
 cr4-ulsfo.wikimedia.org:
-  role: cr
-  site: ulsfo
   config:
     transits:
       2001:504:d::10:
@@ -213,8 +197,6 @@ cr4-ulsfo.wikimedia.org:
       et-0/0/1.1221-in: sandbox
 
 cr3-esams.wikimedia.org:
-  role: cr
-  site: esams
   config:
     mgmt_ip: [10.21.0.119/24, 10.21.0.120/24]
     transits:
@@ -228,8 +210,6 @@ cr3-esams.wikimedia.org:
       gr-0/0/0.2-in: border-in
 
 cr2-esams.wikimedia.org:
-  role: cr
-  site: esams
   config:
     mgmt_ip: [10.21.0.117/24, 10.21.0.118/24]
     transits:
@@ -251,8 +231,6 @@ cr2-esams.wikimedia.org:
       ae2: 2
 
 cr3-knams.wikimedia.org:
-  role: cr
-  site: knams
   config:
     flowspec_flows:
       drop-udp-text-lb:
@@ -278,8 +256,6 @@ cr3-knams.wikimedia.org:
         provider: LibertyGlobal
 
 cr3-eqsin.wikimedia.org:
-  role: cr
-  site: eqsin
   config:
     transits:
       62.115.148.76:
@@ -300,8 +276,6 @@ cr3-eqsin.wikimedia.org:
     damping: [xe-0/1/0]
 
 cr2-eqsin.wikimedia.org:
-  role: cr
-  site: eqsin
   config:
     transits:
       180.87.164.61:
@@ -328,8 +302,6 @@ cr2-eqsin.wikimedia.org:
     primary_ixp: true
 
 cr1-drmrs.wikimedia.org:
-  role: cr
-  site: drmrs
   config:
     transits:
       62.115.147.132:
@@ -351,8 +323,6 @@ cr1-drmrs.wikimedia.org:
       gr-0/0/0.1-in: border-in
 
 cr2-drmrs.wikimedia.org:
-  role: cr
-  site: drmrs
   config:
     transits:
       2001:688:0:4::2d1:
@@ -371,33 +341,23 @@ cr2-drmrs.wikimedia.org:
 
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
-  role: asw
-  site: eqiad
   config:
     optimize_qos_buffers: true
     lldp_disabled: ['ge-8/0/10']
 
 asw2-b-eqiad.mgmt.eqiad.wmnet:
-  role: asw
-  site: eqiad
   config:
     optimize_qos_buffers: true
 
 asw2-c-eqiad.mgmt.eqiad.wmnet:
-  role: asw
-  site: eqiad
   config:
     optimize_qos_buffers: true
 
 asw2-d-eqiad.mgmt.eqiad.wmnet:
-  role: asw
-  site: eqiad
   config:
     optimize_qos_buffers: true
 
 lsw1-e1-eqiad.mgmt.eqiad.wmnet:
-  role: asw
-  site: eqiad
   config:
     evpn: true
     l3_switch: true
@@ -414,8 +374,6 @@ lsw1-e1-eqiad.mgmt.eqiad.wmnet:
         cr1-eqiad: {4: 10.66.0.8, 6: 2620:0:861:fe07::1}
 
 lsw1-e2-eqiad.mgmt.eqiad.wmnet:
-  role: asw
-  site: eqiad
   config:
     evpn: true
     l3_switch: true
@@ -432,8 +390,6 @@ lsw1-e2-eqiad.mgmt.eqiad.wmnet:
         ml-serve1005: {4: 10.64.131.3, 6: 2620:0:861:10a:10:64:131:3}
 
 lsw1-e3-eqiad.mgmt.eqiad.wmnet:
-  role: asw
-  site: eqiad
   config:
     evpn: true
     l3_switch: true
@@ -450,8 +406,6 @@ lsw1-e3-eqiad.mgmt.eqiad.wmnet:
         ml-serve1006: {4: 10.64.132.3, 6: 2620:0:861:10b:10:64:132:3}
 
 lsw1-f1-eqiad.mgmt.eqiad.wmnet:
-  role: asw
-  site: eqiad
   config:
     evpn: true
     l3_switch: true
@@ -468,8 +422,6 @@ lsw1-f1-eqiad.mgmt.eqiad.wmnet:
         cr1-eqiad: {4: 10.66.0.10, 6: 2620:0:861:fe08::1}
 
 lsw1-f2-eqiad.mgmt.eqiad.wmnet:
-  role: asw
-  site: eqiad
   config:
     evpn: true
     l3_switch: true
@@ -486,8 +438,6 @@ lsw1-f2-eqiad.mgmt.eqiad.wmnet:
         ml-serve1007: {4: 10.64.135.3, 6: 2620:0:861:10e:10:64:135:3}
 
 lsw1-f3-eqiad.mgmt.eqiad.wmnet:
-  role: asw
-  site: eqiad
   config:
     evpn: true
     l3_switch: true
@@ -504,8 +454,6 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
         ml-serve1008: {4: 10.64.136.2, 6: 2620:0:861:10f:10:64:136:2}
 
 cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
-  role: cloudsw
-  site: eqiad
   config:
     capirca:
       - common-loopback
@@ -518,13 +466,7 @@ cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
       irb.1113: cloud
       irb.1120: cloud
 
-cloudsw2-c8-eqiad.mgmt.eqiad.wmnet:
-  role: cloudsw
-  site: eqiad
-
 cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
-  role: cloudsw
-  site: eqiad
   config:
     capirca:
       - common-loopback
@@ -537,13 +479,7 @@ cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
       irb.1115: cloud
       irb.1120: cloud
 
-cloudsw2-d5-eqiad.mgmt.eqiad.wmnet:
-  role: cloudsw
-  site: eqiad
-
 cloudsw1-e4-eqiad.mgmt.eqiad.wmnet:
-  role: cloudsw
-  site: eqiad
   config:
     asn: 4264710003
     capirca:
@@ -555,8 +491,6 @@ cloudsw1-e4-eqiad.mgmt.eqiad.wmnet:
       irb.1121: cloud
 
 cloudsw1-f4-eqiad.mgmt.eqiad.wmnet:
-  role: cloudsw
-  site: eqiad
   config:
     asn: 4264710004
     capirca:
@@ -568,45 +502,23 @@ cloudsw1-f4-eqiad.mgmt.eqiad.wmnet:
       irb.1122: cloud
 
 asw-a-codfw.mgmt.codfw.wmnet:
-  role: asw
-  site: codfw
   config:
     lldp_disabled: ['ge-1/0/47']  # SRXs show L2 errors when receiving LLDP frames
 
-asw-b-codfw.mgmt.codfw.wmnet:
-  role: asw
-  site: codfw
-
-asw-c-codfw.mgmt.codfw.wmnet:
-  role: asw
-  site: codfw
-
-asw-d-codfw.mgmt.codfw.wmnet:
-  role: asw
-  site: codfw
-
 asw2-esams.mgmt.esams.wmnet:
-  role: asw
-  site: esams
   config:
     lldp_disabled: ['ge-5/0/47']  # SRXs show L2 errors when receiving LLDP frames
 
 asw2-ulsfo.mgmt.ulsfo.wmnet:
-  role: asw
-  site: ulsfo
   config:
     lldp_disabled: ['ge-1/0/13']  # SRXs show L2 errors when receiving LLDP frames
 
 asw1-eqsin.mgmt.eqsin.wmnet:
-  role: asw
-  site: eqsin
   config:
     lldp_disabled: ['ge-0/0/23']  # SRXs show L2 errors when receiving LLDP frames
 
 # management switches/routers
 mr1-eqiad.wikimedia.org:
-  role: mr
-  site: eqiad
   config:
     security_zones:
       - name: production
@@ -627,14 +539,10 @@ mr1-eqiad.wikimedia.org:
         - ge-0/0/0.0
 
 msw1-eqiad.mgmt.eqiad.wmnet:
-  role: msw
-  site: eqiad
   config:
     lldp_disabled: ['ge-0/0/32']  # SRXs show L2 errors when receiving LLDP frames
 
 mr1-codfw.wikimedia.org:
-  role: mr
-  site: codfw
   config:
     dhcp_relay:  # T271583
       interfaces:
@@ -654,26 +562,18 @@ mr1-codfw.wikimedia.org:
         interfaces: []  # Keeping the zone just in case to not delete policies, was ge-0/0/2.0
 
 mr1-eqsin.wikimedia.org:
-  role: mr
-  site: eqsin
   config:
     dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
 
 msw1-codfw.mgmt.codfw.wmnet:
-  role: msw
-  site: codfw
   config:
     lldp_disabled: ['ge-0/0/32']  # SRXs show L2 errors when receiving LLDP frames
 
 mr1-ulsfo.wikimedia.org:
-  role: mr
-  site: ulsfo
   config:
     dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
 
 mr1-esams.wikimedia.org:
-  role: mr
-  site: esams
   config:
     security_zones:
       - name: production
@@ -697,8 +597,6 @@ mr1-esams.wikimedia.org:
       - mr-security-policies-esams
 
 mr1-drmrs.wikimedia.org:
-  role: mr
-  site: drmrs
   config:
     security_zones:
       - name: production
@@ -718,8 +616,6 @@ mr1-drmrs.wikimedia.org:
       - mr-security-policies
 
 asw1-b12-drmrs.wikimedia.org:
-  role: asw
-  site: drmrs
   config:
     l3_switch: true
     asn: 4265006001
@@ -731,8 +627,6 @@ asw1-b12-drmrs.wikimedia.org:
       - common-loopback
 
 asw1-b13-drmrs.wikimedia.org:
-  role: asw
-  site: drmrs
   config:
     l3_switch: true
     asn: 4265006002
