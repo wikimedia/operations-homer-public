@@ -521,6 +521,7 @@ asw1-eqsin.mgmt.eqsin.wmnet:
 
 # management switches/routers
 mr1-eqiad.wikimedia.org:
+  timeout: 120
   config:
     security_zones:
       - name: production
@@ -545,6 +546,7 @@ msw1-eqiad.mgmt.eqiad.wmnet:
     lldp_disabled: ['ge-0/0/32']  # SRXs show L2 errors when receiving LLDP frames
 
 mr1-codfw.wikimedia.org:
+  timeout: 120
   config:
     dhcp_relay:  # T271583
       interfaces:
@@ -564,6 +566,7 @@ mr1-codfw.wikimedia.org:
         interfaces: []  # Keeping the zone just in case to not delete policies, was ge-0/0/2.0
 
 mr1-eqsin.wikimedia.org:
+  timeout: 120
   config:
     dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
 
@@ -572,10 +575,12 @@ msw1-codfw.mgmt.codfw.wmnet:
     lldp_disabled: ['ge-0/0/32']  # SRXs show L2 errors when receiving LLDP frames
 
 mr1-ulsfo.wikimedia.org:
+  timeout: 120
   config:
     dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
 
 mr1-esams.wikimedia.org:
+  timeout: 120
   config:
     security_zones:
       - name: production
@@ -599,6 +604,7 @@ mr1-esams.wikimedia.org:
       - mr-security-policies-esams
 
 mr1-drmrs.wikimedia.org:
+  timeout: 120
   config:
     security_zones:
       - name: production
