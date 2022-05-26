@@ -2,10 +2,17 @@ header {
     comment:: "Applied to traffic going out of the cloud-hosts vlans"
     target:: juniper labs-in mixed no-interface-specific
 }
-
-term vrrp {
-    protocol:: vrrp ah
-    action:: accept
+term allow_bgp_src {
+  source-prefix:: bgp-sessions
+  protocol:: tcp
+  source-port:: BGP
+  action:: accept
+}
+term allow_bgp_dst {
+  source-prefix:: bgp-sessions
+  protocol:: tcp
+  destination-port:: BGP
+  action:: accept
 }
 term dhcp-responses {
     comment:: "T296906"
@@ -94,6 +101,15 @@ term labtestwikitech-mysql {
     source-address:: clouddb-dev_group
     source-port:: mySQL
     action:: accept
+}
+term allow_ok_icmp4 {
+  protocol:: icmp
+  icmp-type:: echo-request echo-reply unreachable time-exceeded source-quench
+  action:: accept
+}
+term allow_ok_icmp6 {
+  protocol:: icmpv6
+  action:: accept
 }
 term deny-private-subnets {
     destination-prefix:: private4 private6
