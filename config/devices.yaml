@@ -21,6 +21,7 @@ cr1-eqiad.wikimedia.org:
       ae2.1202-in: sandbox
       gr-3/3/0.1-in: border-in
     urpf_strict:
+      - xe-3/0/4.1000  # cloud-hosts networks
       - ae1.1030  # analytics1-a-eqiad
       - ae2.1021  # analytics1-b-eqiad
       - ae3.1022  # analytics1-c-eqiad
@@ -56,6 +57,7 @@ cr2-eqiad.wikimedia.org:
       ae2.1202-in: sandbox
       gr-4/3/0.2-in: border-in
     urpf_strict:
+      - xe-3/0/4.1100  # cloud-hosts networks
       - ae1.1030  # analytics1-a-eqiad
       - ae2.1021  # analytics1-b-eqiad
       - ae3.1022  # analytics1-c-eqiad
