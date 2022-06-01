@@ -191,7 +191,7 @@
       "type": "object",
       "additionalProperties" : false,
       "patternProperties": {
-        "^(k8s|k8s-(stage|mlserve)|frack)$": {
+        "^(k8s|k8s-(stage|mlserve|mlstaging)|frack)$": {
           "type": "object",
           "additionalProperties" : false,
           "properties": {
@@ -202,9 +202,9 @@
               "type": "integer"
             }
           },
-          "required": [
-            "eqiad",
-            "codfw"
+          "anyOf": [
+            { "required": ["eqiad"] } ,
+            { "required": ["codfw"] }
           ]
         }
       },

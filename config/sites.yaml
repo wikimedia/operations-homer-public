@@ -105,6 +105,7 @@ codfw:
     - 64602  # k8s-codfw
     - 64604  # k8s-staging-codfw
     - 64607  # k8s-mlserve-codfw
+    - 64608  # k8s-mlstaging-codfw
     - 64701  # fundraising-codfw
   bgp_out:
     208.80.152.0/23: BGP_aggregate_contributors  # codfw
@@ -156,6 +157,11 @@ codfw:
     ml-serve2006: {4: 10.192.16.115, 6: 2620:0:860:102:10:192:16:115}
     ml-serve2007: {4: 10.192.32.78, 6: 2620:0:860:103:10:192:32:78}
     ml-serve2008: {4: 10.192.48.175, 6: 2620:0:860:104:10:192:48:175}
+  k8s_mlstaging_neighbors:
+    ml-staging-ctrl2001: {4: 10.192.16.93, 6: 2620:0:860:102:10:192:16:93}
+    ml-staging-ctrl2002: {4: 10.192.48.64, 6: 2620:0:860:104:10:192:48:64}
+    ml-staging2001: {4: 10.192.0.201,  6: 2620:0:860:101:10:192:0:201}
+    ml-staging2002: {4: 10.192.48.174, 6: 2620:0:860:104:10:192:48:174}
     # yamllint enable rule:commas
   anycast_neighbors:
     dns2001: {4: 208.80.153.77}

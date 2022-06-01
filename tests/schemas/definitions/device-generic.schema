@@ -419,6 +419,7 @@
     "k8s_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
     "k8s_stage_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
     "k8s_mlserve_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+    "k8s_mlstaging_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
     "ping_offload_vip": {
       "type": "string",
       "format": "ip_interface"

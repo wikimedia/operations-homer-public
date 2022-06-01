@@ -444,6 +444,8 @@ asns_mapping:
   k8s-mlserve:
     eqiad: 64606
     codfw: 64607
+  k8s-mlstaging:
+    codfw: 64608
   frack:
     eqiad: 64700
     codfw: 64701
