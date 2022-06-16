@@ -92,7 +92,9 @@ term DNS {
 }
 term NFS {
     comment:: "To be removed with T216422"
-    destination-address:: clouddumps_group nfs-maps.wikimedia.org
+    destination-address:: cloudstore_group
+                          clouddumps_group
+                          nfs-maps.wikimedia.org
     protocol:: tcp
     destination-port:: NFS
     action:: accept
