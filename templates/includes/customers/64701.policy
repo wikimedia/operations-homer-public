@@ -1,7 +1,7 @@
 prefix-list fundraising-codfw4 {
     10.195.0.0/24;
     208.80.152.224/28;
-    208.80.153.197/32
+    208.80.153.197/32;
 }
 policy-statement BGP_fundraising_in {
     term address {
