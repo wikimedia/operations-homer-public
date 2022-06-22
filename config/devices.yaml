@@ -262,10 +262,12 @@ cr3-eqsin.wikimedia.org:
         provider: Telia
         import_policy: true
         export_policy: true
+        disabled: true
       2001:2000:3080:15b5::1:
         provider: Telia
         import_policy: true
         export_policy: true
+        disabled: true
       27.111.228.81:
         provider: "Hurricane Electric"
       2001:de8:4::6939:1:
