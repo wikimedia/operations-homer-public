@@ -37,7 +37,7 @@ anycast_prefixes:
   - 185.71.138.0/24    # Wikidough
   - 2001:67c:930::/48  # IPv6 Anycast
 
-# Next available UID: 2034
+# Next available UID: 2035
 # When adding a new user, please make sure to update "next available UID" above
 # yamllint disable rule:line-length
 users:
@@ -141,6 +141,11 @@ users:
     class: read-only
     sshkeys:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDBG1Uu07Qsd1W5pjO62rHc2Epau5ANr24zXqTEjNyOMhmCpvQdvrR0JUynyMEoQVqS0uzUJJpjySIiBnjthHSy6g4ATBAwXAiZ4tWnCkt8jHbL5rCVC/qBIn6CcafdN68nYdzwM/Vpab0av54VCF/V9WmrO+GP5Lar4EEu83CNEnJvq5bd+H1kYLpkgBpxuHh0G7AEL2bgfklEw7XoVKpeIOM9sNveRsmfR+ZHqbZ/2zxQClwMXWTgaChw0qB947R+cVJpi/XQqJXOx5BHaDiEpqIRKaoa1hIty8dcqRJtfYAOEFwBmooReR4tdFSkJ4ghGa5XnKwAzrDAKYistLyRAdHYWhqIV6OMEGKg86OXdDgj3STtQbqRu8Pgg7PUfWZ0zZQrnKRw8NokzYxPDlc4lBhpqzjnyWSZmyWJuWGVppIyZ5dpHFn3gYcFnsxsdxPFi4vOd5nEOJQo+Gf2iv9DQGuGPTvkLvcBTwd5i7KVp7Gp4BB1hTW/M4EIGglUK+0PQWpzD+bUtl4xbMTp8BVz3FPj6sxpknYXtD1dD7Hs3WucMnwtui1RHjYMqUHzw8raIvNt/tcLsSFBw72h2EgmU2ZNRy7cnW7yCBfARzjThHTMyjTWUqTlXtuJjYAFckGHZM1+7VLKdniGXp2VryxaMKvTu+cP/YIiRWrlUIYCLQ=="
+  - name: sukhe
+    uid: 2034
+    class: super-user
+    sshkeys:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCVvZRh01fZJA6684S4GB1dFRstSgdpDHcEL8J4PNik1vznRxErz10tVRxLaQLoXCYThn5Ubb3wpaBVixI6KWOofB9RhOjQ12OIcI+Uc4gHp59jwFsft5WrJV9t7v/n8gXOHPfjG1GHmK2QQFtfiBCtmTBfLnEYj/YjPb3D3qNxq8uxAKkQyvrWn0zHxD4UBeK8d/ARF7f1BdbjlNtps9jjRHhPhAIbCK2LxoBjZ9p1f2CHRc6YKFzh2lhReIp6chBss0w87tBpmLQDt6utDEjkvTPGPfWcbVNNNgPuCBwY1MFVpUUvwTae4crHNSncbiK2CCkCNoyHqKblRK4ir5surH+0Ign5/iigzbdGgIntEA/K7sAKB9EhvSpPQ7wi9kV6J1WtyeQ/8tPRM5U1COpbRx6PR9hS7SFMfVVfXerMj+kSs+TCpeH30xwRkF83u90NwxqXcBiPfpLWNnRm83gQ+mdKBxjZcwD5q/H4OVgZW2CaP9IVpSFcllC/03wb8blRAiWf+tR+fiNGezJiMDuFGxwDMUE2LdGnR5aGYuNgCjMvOPS8ONgqY/7rA4h1jLNpO8c4FJe4J/AJN9N4xs9Jg1vBO3tMe/yogL+wTnxfGAe0DDCT4F5NjGe4STKWMKGkQAxT3w0zt5/XX+jSiphDZkaVbjrxZaKTMuWGNTY4oQ== sukhe@core-routers"
 # yamllint enable rule:line-length
 # When adding a new user, please make sure to update the "next available UID"
 # comment at the beginning of the users block
