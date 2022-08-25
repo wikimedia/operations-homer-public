@@ -372,6 +372,8 @@ lsw1-e1-eqiad.mgmt.eqiad.wmnet:
     device_bgp:
       cr_neighbors:
         cr1-eqiad: {4: 10.66.0.8, 6: 2620:0:861:fe07::1}
+      k8s_dse_neighbors:
+        dse-k8s-worker1005: {4: 10.64.130.6, 6: 2620:0:861:109:10:64:130:6}
 
 lsw1-e2-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -404,6 +406,8 @@ lsw1-e3-eqiad.mgmt.eqiad.wmnet:
     device_bgp:
       k8s_mlserve_neighbors:
         ml-serve1006: {4: 10.64.132.3, 6: 2620:0:861:10b:10:64:132:3}
+      k8s_dse_neighbors:
+        dse-k8s-worker1006: {4: 10.64.132.8, 6: 2620:0:861:10b:10:64:132:8}
 
 lsw1-f1-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -420,6 +424,8 @@ lsw1-f1-eqiad.mgmt.eqiad.wmnet:
     device_bgp:
       cr_neighbors:
         cr1-eqiad: {4: 10.66.0.10, 6: 2620:0:861:fe08::1}
+      k8s_dse_neighbors:
+        dse-k8s-worker1007: {4: 10.64.134.5, 6: 2620:0:861:10d:10:64:134:5}
 
 lsw1-f2-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -452,6 +458,8 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
     device_bgp:
       k8s_mlserve_neighbors:
         ml-serve1008: {4: 10.64.136.2, 6: 2620:0:861:10f:10:64:136:2}
+      k8s_dse_neighbors:
+        dse-k8s-worker1008: {4: 10.64.136.7, 6: 2620:0:861:10f:10:64:136:7}
 
 cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
   config:
