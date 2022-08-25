@@ -37,7 +37,7 @@ anycast_prefixes:
   - 185.71.138.0/24    # Wikidough
   - 2001:67c:930::/48  # IPv6 Anycast
 
-# Next available UID: 2035
+# Next available UID: 2036
 # When adding a new user, please make sure to update "next available UID" above
 # yamllint disable rule:line-length
 users:
@@ -146,6 +146,11 @@ users:
     class: super-user
     sshkeys:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCVvZRh01fZJA6684S4GB1dFRstSgdpDHcEL8J4PNik1vznRxErz10tVRxLaQLoXCYThn5Ubb3wpaBVixI6KWOofB9RhOjQ12OIcI+Uc4gHp59jwFsft5WrJV9t7v/n8gXOHPfjG1GHmK2QQFtfiBCtmTBfLnEYj/YjPb3D3qNxq8uxAKkQyvrWn0zHxD4UBeK8d/ARF7f1BdbjlNtps9jjRHhPhAIbCK2LxoBjZ9p1f2CHRc6YKFzh2lhReIp6chBss0w87tBpmLQDt6utDEjkvTPGPfWcbVNNNgPuCBwY1MFVpUUvwTae4crHNSncbiK2CCkCNoyHqKblRK4ir5surH+0Ign5/iigzbdGgIntEA/K7sAKB9EhvSpPQ7wi9kV6J1WtyeQ/8tPRM5U1COpbRx6PR9hS7SFMfVVfXerMj+kSs+TCpeH30xwRkF83u90NwxqXcBiPfpLWNnRm83gQ+mdKBxjZcwD5q/H4OVgZW2CaP9IVpSFcllC/03wb8blRAiWf+tR+fiNGezJiMDuFGxwDMUE2LdGnR5aGYuNgCjMvOPS8ONgqY/7rA4h1jLNpO8c4FJe4J/AJN9N4xs9Jg1vBO3tMe/yogL+wTnxfGAe0DDCT4F5NjGe4STKWMKGkQAxT3w0zt5/XX+jSiphDZkaVbjrxZaKTMuWGNTY4oQ== sukhe@core-routers"
+  - name: btullis
+    uid: 2035
+    class: super-user
+    sshkeys:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDGSQWBV0pv+o8rl3D+B7wT4HL9AWVHFko76tjkaVSxDCJWl9puJ5YH0hQuh1PdpbDLH8rUDun9ZFsX3RPdBYIOm0ivESfva65Bhs682cljjMYnfBZPaQqTcw03dNTa2WofQ5bkVyb4620l/JqBWpljAA3AXTD0Fqubt6/iRBiQ2hqONPhk25kY1/x+yp6YFJ5AVoYQtJAoQo3jE4ivkEBQsUVGGjSbtouweRTu7hECDII76IDqZieytCB8GzJEaDFJYBQGCm3oVwg+PnHRJaXSWhXtXZ1M8Ti4cufg5xqTzbctvfsM5znbKptFys2p/0tzTHhrVoac6Gy70q2T+8NjQ3rCZrbEX79DCCR/uGpjtZk3ksjCpxdH+GHUOhawWDx4QUTkamprjuWXrnwBTNgGmIKiWOPP3keMRkGyWANrVSTpGOYzZ/6Zp4R9mcCg4RBEPC7eXZw/eGm9ciobsSRbldV9Ay0Oz8PeDZhZHNqW+B+jw62zYSVVlwxRYY+DxdM= btullis@wmf-network"
 # yamllint enable rule:line-length
 # When adding a new user, please make sure to update the "next available UID"
 # comment at the beginning of the users block
