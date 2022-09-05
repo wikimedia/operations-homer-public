@@ -404,6 +404,9 @@ transit_providers:
   #  BFD: true [Optional] Enable BFD
   #
   #  See bgp_keys in homer-private/config/devices.yaml
+  Arelion:
+    AS: 1299
+    export_policy: true
   Datahop:
     AS: 6908
   "Deutsche Telekom":
@@ -429,9 +432,6 @@ transit_providers:
     export_policy: true
   Tele2:
     AS: 1257
-    export_policy: true
-  Telia:
-    AS: 1299
     export_policy: true
   Lumen:
     AS: 3356

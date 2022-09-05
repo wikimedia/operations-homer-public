@@ -46,9 +46,9 @@ cr2-eqiad.wikimedia.org:
     mgmt_ip: [10.65.0.14/16, 10.65.0.15/16]
     transits:
       80.239.132.225:
-        provider: Telia
+        provider: Arelion
       2001:2000:3080:0a98::1:
-        provider: Telia
+        provider: Arelion
     filters:
       xe-4/2/0.0-in4: transport-in  # to eqord
       xe-3/0/4.1100-in: labs-in
@@ -97,9 +97,9 @@ cr1-codfw.wikimedia.org:
     mgmt_ip: [10.193.0.10/16, 10.193.0.11/16]
     transits:
       80.239.192.101:
-        provider: Telia
+        provider: Arelion
       2001:2000:3080:af4::1:
-        provider: Telia
+        provider: Arelion
     filters:
       ae1.2201-in: sandbox
       ae2.2118-in: labs-in
@@ -163,9 +163,9 @@ cr3-ulsfo.wikimedia.org:
   config:
     transits:
       80.239.192.65:
-        provider: Telia
+        provider: Arelion
       2001:2000:3080:0a9a::1:
-        provider: Telia
+        provider: Arelion
       206.197.187.12:
         provider: "Hurricane Electric"
       2001:504:30::ba00:6939:1:
@@ -198,9 +198,9 @@ cr3-esams.wikimedia.org:
     mgmt_ip: [10.21.0.119/24, 10.21.0.120/24]
     transits:
       62.115.145.24:
-        provider: Telia
+        provider: Arelion
       2001:2000:3080:0ee8::1:
-        provider: Telia
+        provider: Arelion
     filters:
       ae1.102-in: sandbox
       ae1.401-in4: transport-in
@@ -256,11 +256,11 @@ cr3-eqsin.wikimedia.org:
   config:
     transits:
       62.115.148.76:
-        provider: Telia
+        provider: Arelion
         import_policy: true
         export_policy: true
       2001:2000:3080:15b5::1:
-        provider: Telia
+        provider: Arelion
         import_policy: true
         export_policy: true
       27.111.228.81:
@@ -302,9 +302,9 @@ cr1-drmrs.wikimedia.org:
   config:
     transits:
       62.115.147.132:
-        provider: Telia
+        provider: Arelion
       2001:2035:0:cf1::1:
-        provider: Telia
+        provider: Arelion
       80.231.165.54:
         provider: Tata
       2a01:3e0:ff50::3d:
