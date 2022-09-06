@@ -150,6 +150,10 @@
       "type": "boolean",
       "description": "In a LACP bundle, configure VRRP to failover on the loss of one link."
     },
+    "vrrp_auth": {
+      "type": "boolean",
+      "description": "If true, allows configure a MD5 key (from the privae repo) for the v4 VRRP adjacency (transition variable, default true)"
+    },
     "vrrp_priority": {
       "type": "integer",
       "description": "Override priority for every VRRP, useful for forced failover/maintenance. Highest number wins; default when unspecified is 100. Remove any vrrp_master_pinning config on both devices before using as it takes precedence."
