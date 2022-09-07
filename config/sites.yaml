@@ -282,6 +282,7 @@ eqsin:
       - ae1.520
       - ae1.530
   tcp_mss_clamping: true
+  vrrp_auth: false
 
 esams:
   confed: 65003
