@@ -201,6 +201,7 @@ codfw:
       - ae2.2122
       - ae1.2201
       - ae2.2118
+  vrrp_auth: false
 
 eqdfw:
   confed: 65002
