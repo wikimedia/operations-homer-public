@@ -201,7 +201,6 @@ codfw:
       - ae2.2122
       - ae1.2201
       - ae2.2118
-  vrrp_auth: false
 
 eqdfw:
   confed: 65002
@@ -249,8 +248,6 @@ ulsfo:
       - et-0/0/1.1201
       - et-0/0/1.1211
       - et-0/0/1.1221
-  vrrp_auth: false
-
 
 eqsin:
   confed: 65005
@@ -283,7 +280,6 @@ eqsin:
       - ae1.520
       - ae1.530
   tcp_mss_clamping: true
-  vrrp_auth: false
 
 esams:
   confed: 65003
@@ -320,7 +316,6 @@ esams:
       - ae1.102
       - ae1.103
   tcp_mss_clamping: true
-  vrrp_auth: false
 
 knams:
   confed: 65003
