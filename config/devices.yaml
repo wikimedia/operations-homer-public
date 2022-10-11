@@ -545,9 +545,6 @@ mr1-eqiad.wikimedia.org:
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/2.0']
     dhcp_pool: 10.66.1.0/24
-    dhcp_relay:  # T271583
-      interfaces:
-        - ge-0/0/0.0
 
 msw1-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -556,9 +553,6 @@ msw1-eqiad.mgmt.eqiad.wmnet:
 mr1-codfw.wikimedia.org:
   timeout: 120
   config:
-    dhcp_relay:  # T271583
-      interfaces:
-        - ge-0/0/0.0
     security_zones:
       - name: production
         services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
@@ -575,8 +569,6 @@ mr1-codfw.wikimedia.org:
 
 mr1-eqsin.wikimedia.org:
   timeout: 120
-  config:
-    dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
 
 msw1-codfw.mgmt.codfw.wmnet:
   config:
@@ -584,8 +576,6 @@ msw1-codfw.mgmt.codfw.wmnet:
 
 mr1-ulsfo.wikimedia.org:
   timeout: 120
-  config:
-    dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
 
 mr1-esams.wikimedia.org:
   timeout: 120
@@ -607,7 +597,6 @@ mr1-esams.wikimedia.org:
         services: ['ping', 'traceroute']
         interfaces: ['ge-0/0/6.2483']
         screen: untrust-screen
-    dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
     capirca:
       - mr-security-policies-esams
 
@@ -627,7 +616,6 @@ mr1-drmrs.wikimedia.org:
       - name: access
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: []  # Keeping the zone just in case to not delete policies
-    dhcp_relay: {}  # Keeping empty for progressive rollout - T271583
     capirca:
       - mr-security-policies
 
