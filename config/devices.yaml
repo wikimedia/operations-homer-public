@@ -31,9 +31,6 @@ cr1-eqiad.wikimedia.org:
     cni:
       neighbor: 173.245.63.4
       endpoint: 185.212.145.2/32
-    vrrp_master_pinning:
-      - ae1  # Row A
-      - ae2  # Row B
     capirca:
       - cr-cloud  # For VM traffic
       - cr-sandbox
@@ -67,6 +64,8 @@ cr2-eqiad.wikimedia.org:
     damping: [xe-4/1/3]
     vrrp_bandwidth_threshold: true
     vrrp_master_pinning:
+      - ae1  # Row A - until T320566 is solved
+      - ae2  # Row B - until T320566 is solved
       - ae3  # Row C
       - ae4  # Row D
     capirca:
