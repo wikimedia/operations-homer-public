@@ -10,9 +10,6 @@ mr:
     - name: mgmt
       services: ['ssh', 'ping', 'traceroute', 'dhcp']
       interfaces: ['irb.900']
-    - name: access
-      services: ['ssh', 'ping', 'traceroute', 'dhcp']
-      interfaces: []  # Keeping the zone just in case to not delete policies, was ge-0/0/7.0
   screen:
     icmp_flood_threshold: 500
     tcp_syn_flood_alarm: 1000

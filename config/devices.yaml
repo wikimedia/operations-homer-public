@@ -541,10 +541,6 @@ mr1-eqiad.wikimedia.org:
       - name: mgmt
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/0.0']
-      - name: access
-        services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: ['ge-0/0/2.0']
-    dhcp_pool: 10.66.1.0/24
 
 msw1-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -563,9 +559,6 @@ mr1-codfw.wikimedia.org:
       - name: mgmt
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/0.0']
-      - name: access
-        services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: []  # Keeping the zone just in case to not delete policies, was ge-0/0/2.0
 
 mr1-eqsin.wikimedia.org:
   timeout: 120
@@ -590,9 +583,6 @@ mr1-esams.wikimedia.org:
       - name: mgmt
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['irb.900']
-      - name: access
-        services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: []  # Keeping the zone just in case to not delete policies, was ge-0/0/2.0
       - name: customers
         services: ['ping', 'traceroute']
         interfaces: ['ge-0/0/6.2483']
@@ -613,9 +603,6 @@ mr1-drmrs.wikimedia.org:
       - name: mgmt
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['irb.900']
-      - name: access
-        services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: []  # Keeping the zone just in case to not delete policies
     capirca:
       - mr-security-policies
 
