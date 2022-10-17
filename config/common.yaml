@@ -235,7 +235,7 @@ ospf:
       bfd: true
     - cr1-eqiad.wikimedia.org: xe-3/0/7.16
       cr2-drmrs.wikimedia.org: xe-0/1/1.16
-      metric: 5000  # de-pref until T320566 is fixed
+      metric: 968  # 88ms + 10% (backup link)
       bfd: true
 
   stub:
