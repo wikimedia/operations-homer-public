@@ -185,13 +185,13 @@ cr3-ulsfo.wikimedia.org:
 cr4-ulsfo.wikimedia.org:
   config:
     transits:
-      2001:504:d::10:
+      2001:504:0:1::6939:1:
         provider: "Hurricane Electric"
       2001:418:0:5000::6fa:
         provider: NTT
       129.250.204.5:
         provider: NTT
-      198.32.176.20:
+      206.223.116.37:
         provider: "Hurricane Electric"  # Partial transit
     filters:
       et-0/0/1.1221-in: sandbox
