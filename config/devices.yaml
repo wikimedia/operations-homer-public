@@ -28,9 +28,6 @@ cr1-eqiad.wikimedia.org:
       - ae3.1022  # analytics1-c-eqiad
       - ae4.1023  # analytics1-d-eqiad
     vrrp_bandwidth_threshold: true
-    cni:
-      neighbor: 173.245.63.4
-      endpoint: 185.212.145.2/32
     vrrp_master_pinning:
       - ae1  # Row A
       - ae2  # Row B

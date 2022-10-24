@@ -165,24 +165,6 @@
         }
       ]
     },
-    "cni": {
-      "type": "object",
-      "additionalProperties" : false,
-      "properties": {
-        "neighbor": {
-          "type": "string",
-          "format": ["ipv4", "ipv6"]
-        },
-        "endpoint": {
-          "type": "string",
-          "format": "ip_interface"
-        }
-      },
-      "required": [
-        "neighbor",
-        "endpoint"
-      ]
-    },
     "damping": {
       "type": "array",
       "description": "Enable interface flap damping.",
