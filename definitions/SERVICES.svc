@@ -53,6 +53,7 @@ cloud_api_neutron = 9696/tcp
 SYSLOG_LOGSTASH = 10514/udp
 cloud_api_keystone_https = 25000/tcp
 cloud_api_proxy_https = 25668/tcp
+cloud_api_heat_https = 28004/tcp
 cloud_api_nova_https = 28774/tcp
 cloud_api_cinder_https = 28776/tcp
 cloud_api_placement_https = 28778/tcp

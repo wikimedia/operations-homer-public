@@ -136,6 +136,7 @@ term cloudcontrol-apis {
                        cloud_api_glance
                        cloud_api_neutron
                        cloud_api_barbican
+                       cloud_api_heat_https
                        cloud_api_proxy_https
                        cloud_api_keystone_https
                        cloud_api_nova_https
