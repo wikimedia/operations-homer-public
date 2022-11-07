@@ -62,6 +62,7 @@ cloud_api_designate_https = 29001/tcp
 cloud_api_glance_https = 29292/tcp
 cloud_api_barbican_https = 29311/tcp
 gerritSSH = 29418/tcp
+cloud_api_magnum_https = 29511/tcp
 cloud_api_neutron_https = 29696/tcp
 NFS_RPC_mountd = 38466/tcp 38466/udp
 
