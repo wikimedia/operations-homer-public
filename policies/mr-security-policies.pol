@@ -22,7 +22,7 @@ term icmp {
     action:: accept
 }
 term ssh {
-    source-address:: netmon_group alert_group cumin_group bast_group
+    source-address:: netmon_group alert_group cumin_group bast_group prometheus_group
     protocol:: tcp
     destination-port:: SSH
     action:: accept
