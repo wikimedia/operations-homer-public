@@ -1,0 +1,25 @@
+prefix-list k8s-aux-pods-ipv4 {
+    10.67.80.0/21;
+}
+prefix-list k8s-aux-pods-ipv6 {
+    2620:0:861:305::/64;
+}
+policy-statement k8s_aux_import {
+    term pods_ipv4 {
+        from {
+            family inet;
+            protocol bgp;
+            prefix-list-filter k8s-aux-pods-ipv4 longer;
+        }
+        then accept;
+    }
+    term pods_ipv6 {
+        from {
+            family inet6;
+            protocol bgp;
+            prefix-list-filter k8s-aux-pods-ipv6 longer;
+        }
+        then accept;
+    }
+    then reject;
+}

@@ -7,6 +7,7 @@ eqiad:
     - 64603  # k8s-staging-eqiad
     - 64606  # k8s-mlserve-eqiad
     - 64609  # k8s-dse-eqiad
+    - 64610  # k8s-aux-eqiad
     - 64700  # fundraising-eqiad
     - 64710  # WMCS-eqiad
   bgp_out:
@@ -61,6 +62,11 @@ eqiad:
     dse-k8s-worker1002: {4: 10.64.16.47,  6: 2620:0:861:102:10:64:16:47}
     dse-k8s-worker1003: {4: 10.64.32.178, 6: 2620:0:861:103:10:64:32:178}
     dse-k8s-worker1004: {4: 10.64.48.52,  6: 2620:0:861:107:10:64:48:52}
+  k8s_aux_neighbors:
+    aux-k8s-ctrl1001: {4: 10.64.0.42, 6: 2620:0:861:101:10:64:0:42}
+    aux-k8s-ctrl1002: {4: 10.64.0.107, 6: 2620:0:861:101:10:64:0:107}
+    aux-k8s-worker1001: {4: 10.64.0.126, 6: 2620:0:861:101:10:64:0:126}
+    aux-k8s-worker1002: {4: 10.64.0.127, 6: 2620:0:861:101:10:64:0:127}
     # yamllint enable rule:commas
   anycast_neighbors:
     dns1001: {4: 208.80.154.10}

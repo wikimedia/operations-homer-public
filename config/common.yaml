@@ -453,6 +453,8 @@ asns_mapping:
     codfw: 64608
   k8s-dse:
     eqiad: 64609
+  k8s-aux:
+    eqiad: 64610
   frack:
     eqiad: 64700
     codfw: 64701

@@ -191,7 +191,7 @@
       "type": "object",
       "additionalProperties" : false,
       "patternProperties": {
-        "^(k8s|k8s-(stage|mlserve|mlstaging|dse)|frack)$": {
+        "^(k8s|k8s-(stage|mlserve|mlstaging|dse|aux)|frack)$": {
           "type": "object",
           "additionalProperties" : false,
           "properties": {
