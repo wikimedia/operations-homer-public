@@ -54,6 +54,7 @@ term blackhole {
 term block80 {
   comment:: "T322774"
   source-prefix:: block80_4
+  protocol:: tcp
   destination-port:: HTTP
   restrict-address-family:: inet
   action:: deny
@@ -61,6 +62,7 @@ term block80 {
 term block80 {
   comment:: "T322774"
   source-prefix:: block80_6
+  protocol:: tcp
   destination-port:: HTTP
   restrict-address-family:: inet6
   action:: deny
