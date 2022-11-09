@@ -506,6 +506,16 @@
         }
       ]
     },
+    "block80": {
+      "type": "array",
+      "description": "Network prefixes to ban port80 traffic, v4 and v6 with subnet",
+      "prefixItems": [
+        {
+          "type": "string",
+          "format": "ip_network"
+        }
+      ]
+    },
     "trusted_space4": { "$ref": "#/definitions/trusted_space" },
     "trusted_space6": { "$ref": "#/definitions/trusted_space" },
     "rpki_whitelist": {

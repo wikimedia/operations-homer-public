@@ -51,6 +51,20 @@ term blackhole {
   counter:: blackhole
   action:: deny
 }
+term block80 {
+  comment:: "T322774"
+  source-prefix: block80_4
+  destination-port:: HTTP
+  restrict-address-family:: inet
+  action:: deny
+}
+term block80 {
+  comment:: "T322774"
+  source-prefix: block80_6
+  destination-port:: HTTP
+  restrict-address-family:: inet6
+  action:: deny
+}
 term our-private {
   comment:: "Discard outside traffic to our private ranges"
   destination-prefix:: private6
