@@ -356,6 +356,7 @@ asw2-d-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-e1-eqiad.mgmt.eqiad.wmnet:
   config:
+    asn: 64810
     evpn: true
     l3_switch: true
     optimize_qos_buffers: true
@@ -374,6 +375,7 @@ lsw1-e1-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-e2-eqiad.mgmt.eqiad.wmnet:
   config:
+    asn: 64810
     evpn: true
     l3_switch: true
     optimize_qos_buffers: true
@@ -390,6 +392,7 @@ lsw1-e2-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-e3-eqiad.mgmt.eqiad.wmnet:
   config:
+    asn: 64810
     evpn: true
     l3_switch: true
     optimize_qos_buffers: true
@@ -408,6 +411,7 @@ lsw1-e3-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-f1-eqiad.mgmt.eqiad.wmnet:
   config:
+    asn: 64810
     evpn: true
     l3_switch: true
     optimize_qos_buffers: true
@@ -426,6 +430,7 @@ lsw1-f1-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-f2-eqiad.mgmt.eqiad.wmnet:
   config:
+    asn: 64810
     evpn: true
     l3_switch: true
     optimize_qos_buffers: true
@@ -442,6 +447,7 @@ lsw1-f2-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-f3-eqiad.mgmt.eqiad.wmnet:
   config:
+    asn: 64810
     evpn: true
     l3_switch: true
     optimize_qos_buffers: true
@@ -461,14 +467,6 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
 cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 64710
-    vrf_ints:
-      lo0.5001: cloud
-      xe-0/0/0.1102: cloud
-      irb.1104: cloud
-      irb.1106: cloud
-      irb.1112: cloud
-      irb.1113: cloud
-      irb.1120: cloud
 
 cloudsw2-c8-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -477,14 +475,6 @@ cloudsw2-c8-eqiad.mgmt.eqiad.wmnet:
 cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 64710
-    vrf_ints:
-      lo0.5001: cloud
-      xe-0/0/0.1103: cloud
-      irb.1104: cloud
-      irb.1106: cloud
-      irb.1114: cloud
-      irb.1115: cloud
-      irb.1120: cloud
 
 cloudsw2-d5-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -493,20 +483,10 @@ cloudsw2-d5-eqiad.mgmt.eqiad.wmnet:
 cloudsw1-e4-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 4264710003
-    vrf_ints:
-      lo0.5001: cloud
-      irb.1112: cloud
-      irb.1114: cloud
-      irb.1121: cloud
 
 cloudsw1-f4-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 4264710004
-    vrf_ints:
-      lo0.5001: cloud
-      irb.1113: cloud
-      irb.1115: cloud
-      irb.1122: cloud
 
 asw-a-codfw.mgmt.codfw.wmnet:
   config:
