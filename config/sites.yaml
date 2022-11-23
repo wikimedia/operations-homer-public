@@ -234,7 +234,6 @@ ulsfo:
     2620:0:863::/48: BGP_aggregate_contributors  # ulsfo
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   lvs_neighbors:  # Routers PyBal neighbors
-    lvs4007: 10.128.0.17
     lvs4008: 10.128.0.18
     lvs4009: 10.128.0.9
     lvs4010: 10.128.0.11
