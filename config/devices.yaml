@@ -362,10 +362,8 @@ lsw1-e1-eqiad.mgmt.eqiad.wmnet:
     optimize_qos_buffers: true
     capirca:
       - common-loopback
-      - sw-loopback-vrf
       - sw-analytics
     filters:
-      lo0.5000-in: loopback-vrf
       irb.1039-in: analytics-in
     device_bgp:
       cr_neighbors:
@@ -381,10 +379,8 @@ lsw1-e2-eqiad.mgmt.eqiad.wmnet:
     optimize_qos_buffers: true
     capirca:
       - common-loopback
-      - sw-loopback-vrf
       - sw-analytics
     filters:
-      lo0.5000-in: loopback-vrf
       irb.1040-in: analytics-in
     device_bgp:
       k8s_mlserve_neighbors:
@@ -398,10 +394,8 @@ lsw1-e3-eqiad.mgmt.eqiad.wmnet:
     optimize_qos_buffers: true
     capirca:
       - common-loopback
-      - sw-loopback-vrf
       - sw-analytics
     filters:
-      lo0.5000-in: loopback-vrf
       irb.1041-in: analytics-in
     device_bgp:
       k8s_mlserve_neighbors:
@@ -417,10 +411,8 @@ lsw1-f1-eqiad.mgmt.eqiad.wmnet:
     optimize_qos_buffers: true
     capirca:
       - common-loopback
-      - sw-loopback-vrf
       - sw-analytics
     filters:
-      lo0.5000-in: loopback-vrf
       irb.1043-in: analytics-in
     device_bgp:
       cr_neighbors:
@@ -436,10 +428,8 @@ lsw1-f2-eqiad.mgmt.eqiad.wmnet:
     optimize_qos_buffers: true
     capirca:
       - common-loopback
-      - sw-loopback-vrf
       - sw-analytics
     filters:
-      lo0.5000-in: loopback-vrf
       irb.1044-in: analytics-in
     device_bgp:
       k8s_mlserve_neighbors:
@@ -453,10 +443,8 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
     optimize_qos_buffers: true
     capirca:
       - common-loopback
-      - sw-loopback-vrf
       - sw-analytics
     filters:
-      lo0.5000-in: loopback-vrf
       irb.1045-in: analytics-in
     device_bgp:
       k8s_mlserve_neighbors:
