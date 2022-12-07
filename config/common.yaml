@@ -225,11 +225,11 @@ ospf:
     - cr1-drmrs.wikimedia.org: et-0/0/0.0
       cr2-drmrs.wikimedia.org: et-0/0/0.0
     - cr2-eqdfw.wikimedia.org: xe-0/1/3.26
-      cr2-drmrs.wikimedia.org: xe-0/1/1.26
+      cr2-drmrs.wikimedia.org: xe-0/1/4.26
       metric: 1180  # 118ms
       bfd: true
     - cr1-eqiad.wikimedia.org: xe-3/0/7.16
-      cr2-drmrs.wikimedia.org: xe-0/1/1.16
+      cr2-drmrs.wikimedia.org: xe-0/1/4.16
       metric: 968  # 88ms + 10% (backup link)
       bfd: true
 
