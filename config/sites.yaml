@@ -265,7 +265,6 @@ eqsin:
     2001:df2:e500::/48: BGP_aggregate_contributors  # eqsin
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   lvs_neighbors:
-    lvs5002: 10.132.0.12
     lvs5003: 10.132.0.13
     lvs5004: 10.132.0.39
     lvs5005: 10.132.0.6
