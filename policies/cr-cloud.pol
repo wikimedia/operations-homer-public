@@ -98,12 +98,6 @@ term NFS {
     destination-port:: NFS
     action:: accept
 }
-term dumps {
-    destination-address:: labstore1006 labstore1007
-    protocol:: tcp
-    destination-port:: WEB NFS
-    action:: accept
-}
 term LDAP {
     destination-address:: ldap-ro.codfw.wikimedia.org
                           ldap-ro.eqiad.wikimedia.org
