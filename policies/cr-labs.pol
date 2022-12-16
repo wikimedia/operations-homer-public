@@ -47,6 +47,12 @@ term puppetmaster {
     destination-port:: puppet
     action:: accept
 }
+term acmechief {
+    destination-address:: acmechief_group
+    protocol:: tcp
+    destination-port:: puppet
+    action:: accept
+}
 term prometheus {
     comment:: "Return traffic"
     destination-address:: prometheus_group
