@@ -56,7 +56,7 @@ term prometheus {
 }
 term cumin {
     comment:: "Return traffic"
-    destination-address:: cumin_group
+    destination-address:: cumin_group cloudcumin_group
     source-port:: SSH
     protocol:: tcp
     action:: accept
