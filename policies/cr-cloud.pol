@@ -102,7 +102,7 @@ term LDAP {
     destination-address:: ldap-ro.codfw.wikimedia.org
                           ldap-ro.eqiad.wikimedia.org
     protocol:: tcp
-    destination-port:: LDAP
+    destination-port:: LDAP LDAPS
     action:: accept
 }
 term contint-ssh {
