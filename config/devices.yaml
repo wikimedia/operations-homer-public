@@ -322,6 +322,10 @@ cr1-drmrs.wikimedia.org:
 cr2-drmrs.wikimedia.org:
   config:
     transits:
+      81.93.217.52:
+        provider: NTT
+      2001:728:0:5000:0:0:0:164c:
+        provider: NTT
       2001:688:0:4::2d1:
         provider: Orange
       193.251.154.145:
