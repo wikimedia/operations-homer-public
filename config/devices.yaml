@@ -16,7 +16,6 @@ cr1-eqiad.wikimedia.org:
       2001:470:0:1c0::1:
         provider: "Hurricane Electric"
     filters:
-      xe-3/2/2.0-in4: transport-in
       xe-3/0/4.1000-in: labs-in
       xe-3/0/4.1102-in: cloud-in
       ae2.1202-in: sandbox
