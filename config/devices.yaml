@@ -16,7 +16,7 @@ cr1-eqiad.wikimedia.org:
       2001:470:0:1c0::1:
         provider: "Hurricane Electric"
     filters:
-      xe-4/2/0.0-in4: transport-in
+      xe-3/2/2.0-in4: transport-in
       xe-3/0/4.1000-in: labs-in
       xe-3/0/4.1102-in: cloud-in
       ae2.1202-in: sandbox
@@ -50,18 +50,18 @@ cr2-eqiad.wikimedia.org:
       2001:2000:3080:0a98::1:
         provider: Arelion
     filters:
-      xe-4/2/0.0-in4: transport-in  # to eqord
+      xe-1/0/1:0-in4: transport-in  # to eqord
       xe-3/0/4.1100-in: labs-in
       xe-3/0/4.1103-in: cloud-in
       ae2.1202-in: sandbox
-      gr-4/3/0.2-in: border-in
+      gr-3/3/0.2-in: border-in
     urpf_strict:
       - xe-3/0/4.1100  # cloud-hosts networks
       - ae1.1030  # analytics1-a-eqiad
       - ae2.1021  # analytics1-b-eqiad
       - ae3.1022  # analytics1-c-eqiad
       - ae4.1023  # analytics1-d-eqiad
-    damping: [xe-4/1/3]
+    damping: [xe-3/2/1]
     vrrp_bandwidth_threshold: true
     vrrp_master_pinning:
       - ae3  # Row C
