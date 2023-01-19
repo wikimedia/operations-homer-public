@@ -310,7 +310,7 @@ esams:
     durum3001: {4: 10.20.0.6, 6: 2620:0:862:102:10:20:0:6}  # Wikidough check
     durum3002: {4: 10.20.0.7, 6: 2620:0:862:102:10:20:0:7}  # Wikidough check
   ping_offload_vip: 91.198.174.192/32  # text-lb.esams.wikimedia.org
-  ping_offload_redirect: 10.20.0.8  # ping3002.esams.wmnet
+  ping_offload_redirect: 10.20.0.10  # ping3003.esams.wmnet
   sampling:
     collectors:
       netflow3002: 10.20.0.9
