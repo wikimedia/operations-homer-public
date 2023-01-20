@@ -188,7 +188,7 @@ codfw:
     durum2001: {4: 10.192.32.58, 6: 2620:0:860:103:10:192:32:58}  # Wikidough check
     durum2002: {4: 10.192.48.14, 6: 2620:0:860:104:10:192:48:14}  # Wikidough check
   ping_offload_vip: 208.80.153.224/32
-  ping_offload_redirect: 10.192.0.199  # ping2002.codfw.wmnet
+  ping_offload_redirect: 10.192.48.31  # ping2003.codfw.wmnet
   sampling:
     collectors:
       netflow2002: 10.192.32.76
