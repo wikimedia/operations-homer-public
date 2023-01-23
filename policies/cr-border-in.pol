@@ -127,7 +127,7 @@ term protect-lvs {
 }
 term ripe-atlas {
   comment:: "RIPE Atlas wants access to 5666 which we block below"
-  destination-address:: atlas-esams atlas-eqsin atlas-ulsfo atlas-eqiad atlas-codfw
+  destination-address:: atlas-esams atlas-eqsin atlas-eqiad atlas-codfw
   action:: accept
 }
 term webproxy {
