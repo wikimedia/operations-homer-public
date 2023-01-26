@@ -25,6 +25,7 @@ NETFLOW = 2056/udp
 ceph_monitor = 3300/tcp
 mySQL = 3306/tcp
 BFD = 3784-3785/udp
+confd_client = 4001/tcp
 mBFD = 4784/udp
 cloud_api_keystone = 5000/tcp
 postgreSQL = 5432/tcp
