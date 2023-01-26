@@ -112,6 +112,12 @@ term labtestwikitech-mysql {
     source-port:: mySQL
     action:: accept
 }
+term confd {
+    destination-address:: conf_group
+    protocol:: tcp
+    destination-port:: confd_client
+    action:: accept
+}
 term allow_ok_icmp4 {
   protocol:: icmp
   icmp-type:: echo-request echo-reply unreachable time-exceeded source-quench

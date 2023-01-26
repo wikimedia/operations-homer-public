@@ -105,12 +105,6 @@ term LDAP {
     destination-port:: LDAP LDAPS
     action:: accept
 }
-term confd {
-    destination-address:: conf_group
-    protocol:: tcp
-    destination-port:: confd_client
-    action:: accept
-}
 term contint-ssh {
     destination-address:: contint_group
     protocol:: tcp
