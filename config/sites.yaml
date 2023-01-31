@@ -193,7 +193,7 @@ codfw:
   sampling:
     collectors:
       netflow2002: 10.192.32.76
-  dhcp_server: 208.80.153.51  # install2003.wikimedia.org
+  dhcp_server: 208.80.153.105  # install2004.wikimedia.org
   dhcp_relay:
     interfaces:
       - ae1.2001
