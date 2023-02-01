@@ -248,7 +248,7 @@ ulsfo:
   sampling:
     collectors:
       netflow4002: 10.128.0.13
-  dhcp_server: 198.35.26.12  # install4001.wikimedia.org
+  dhcp_server: 198.35.26.13  # install4002.wikimedia.org
   dhcp_relay:
     interfaces:
       - et-0/0/1.1201
