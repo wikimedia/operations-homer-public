@@ -315,7 +315,7 @@ esams:
   sampling:
     collectors:
       netflow3002: 10.20.0.9
-  dhcp_server: 91.198.174.63  # install3001.wikimedia.org
+  dhcp_server: 91.198.174.10  # install3002.wikimedia.org
   dhcp_relay:
     interfaces:
       - ae1.100
