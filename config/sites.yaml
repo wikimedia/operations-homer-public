@@ -279,7 +279,7 @@ eqsin:
   sampling:
     collectors:
       netflow5002: 10.132.0.15
-  dhcp_server: 103.102.166.13  # install5001.wikimedia.org
+  dhcp_server: 103.102.166.12  # install5002.wikimedia.org
   dhcp_relay:
     interfaces:
       - ae1.510
