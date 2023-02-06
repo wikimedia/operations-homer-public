@@ -83,7 +83,7 @@ eqiad:
   sampling:
     collectors:
       netflow1002: 10.64.16.82
-  dhcp_server: 208.80.154.32  # install1003.wikimedia.org
+  dhcp_server: 208.80.154.74  # install1004.wikimedia.org
   dhcp_relay:
     interfaces:
       - ae1.1001
