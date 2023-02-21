@@ -1,7 +1,6 @@
 prefix-list kubernetes-ipv4 {
-    10.194.128.0/18;
-    10.192.64.0/21;
     10.192.72.0/24;
+    10.194.128.0/18;
 }
 prefix-list kubernetes-ipv6 {
     2620:0:860:cabe::/64;
