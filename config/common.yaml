@@ -37,7 +37,7 @@ anycast_prefixes:
   - 185.71.138.0/24    # Wikidough
   - 2001:67c:930::/48  # IPv6 Anycast
 
-# Next available UID: 2036
+# Next available UID: 2037
 # When adding a new user, please make sure to update "next available UID" above
 # yamllint disable rule:line-length
 users:
@@ -146,6 +146,11 @@ users:
     class: super-user
     sshkeys:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDGSQWBV0pv+o8rl3D+B7wT4HL9AWVHFko76tjkaVSxDCJWl9puJ5YH0hQuh1PdpbDLH8rUDun9ZFsX3RPdBYIOm0ivESfva65Bhs682cljjMYnfBZPaQqTcw03dNTa2WofQ5bkVyb4620l/JqBWpljAA3AXTD0Fqubt6/iRBiQ2hqONPhk25kY1/x+yp6YFJ5AVoYQtJAoQo3jE4ivkEBQsUVGGjSbtouweRTu7hECDII76IDqZieytCB8GzJEaDFJYBQGCm3oVwg+PnHRJaXSWhXtXZ1M8Ti4cufg5xqTzbctvfsM5znbKptFys2p/0tzTHhrVoac6Gy70q2T+8NjQ3rCZrbEX79DCCR/uGpjtZk3ksjCpxdH+GHUOhawWDx4QUTkamprjuWXrnwBTNgGmIKiWOPP3keMRkGyWANrVSTpGOYzZ/6Zp4R9mcCg4RBEPC7eXZw/eGm9ciobsSRbldV9Ay0Oz8PeDZhZHNqW+B+jw62zYSVVlwxRYY+DxdM= btullis@wmf-network"
+  - name: brett
+    uid: 2036
+    class: super-user
+    sshkeys:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaymoa2pAfTiwJNP+bXSSi4dI5Y4s/IjB7DvgaL2Cbl+q6eNmNIXrksUA29kQrh38qnbb8nUhB8/nY+zfCoA+h4Y3CkqlxuiPYpVrqRpiUieWw/RbskbgoMiLZqyjlekDAZQG1z/sFXYKPfrzUcka7QrdzTmFvSpOLcDPgqwMyDKhmvrYfpDgyDTngkPmWVd03K7H4MW9ZTP0/sahOIuaPQfrOgxK4XMLqmawAVVfjrAKTzScz/TkXeWwKqquVIE7DbzBem90Weu2IHLLU/I1B2MVePaIT8uokD0xMPicSGh79CgpIM4LdrXQKNx/nJQXoeF00azr/1+xaRaxdnuNB"
 # yamllint enable rule:line-length
 # When adding a new user, please make sure to update the "next available UID"
 # comment at the beginning of the users block
