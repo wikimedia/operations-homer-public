@@ -105,6 +105,16 @@ eqiad:
   wmcs_prefixes:
     - 172.16.0.0/21
     - 185.15.56.0/24
+  evpn_bgp:
+    cluster_id: 10.64.128.0
+    rr:
+      lsw1-e1-eqiad: 10.64.128.3
+      lsw1-f1-eqiad: 10.64.128.7
+    clients:
+      lsw1-e2-eqiad: 10.64.128.4
+      lsw1-e3-eqiad: 10.64.128.5
+      lsw1-f2-eqiad: 10.64.128.8
+      lsw1-f3-eqiad: 10.64.128.9
 
 eqord:
   confed: 65020
