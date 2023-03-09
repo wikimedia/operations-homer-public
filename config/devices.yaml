@@ -108,7 +108,6 @@ cr1-codfw.wikimedia.org:
       xe-1/1/1:2.0-in4: transport-in  # to eqdfw
     urpf_strict:
       - xe-1/0/4:0.1000  # cloud-hosts networks
-      - ae2.2118  # Cloud-hosts
     damping: [xe-1/0/1:2]
     vrrp_master_pinning:
       - ae1  # Row A
@@ -142,7 +141,6 @@ cr2-codfw.wikimedia.org:
       xe-1/0/1:1.0-in4: transport-in  # to eqord
     urpf_strict:
       - xe-1/0/4:0.1000  # cloud-hosts networks
-      - ae2.2118  # Cloud-hosts
     vrrp_master_pinning:
       - ae3  # Row C
       - ae4  # Row D
