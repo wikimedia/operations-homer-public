@@ -103,6 +103,8 @@ cr1-codfw.wikimedia.org:
       ae1.2201-in: sandbox
       ae2.2118-in: labs-in
       ae2.2120-in: cloud-in
+      xe-1/0/4:0.1000-in: labs-in
+      xe-1/0/4:0.1001-in: cloud-in
       xe-1/1/1:2.0-in4: transport-in  # to eqdfw
     urpf_strict:
       - ae2.2118  # Cloud-hosts
@@ -133,6 +135,8 @@ cr2-codfw.wikimedia.org:
       ae1.2201-in: sandbox
       ae2.2118-in: labs-in
       ae2.2120-in: cloud-in
+      xe-1/0/4:0.1000-in: labs-in
+      xe-1/0/4:0.1001-in: cloud-in
       xe-5/0/0.0-in4: transport-in  # to eqdfw
       xe-1/0/1:1.0-in4: transport-in  # to eqord
     urpf_strict:
