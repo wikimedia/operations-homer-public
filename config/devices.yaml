@@ -483,6 +483,10 @@ cloudsw1-f4-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 4264710004
 
+cloudsw1-b1-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64711
+
 asw-a-codfw.mgmt.codfw.wmnet:
   config:
     lldp_disabled: ['ge-1/0/47']  # SRXs show L2 errors when receiving LLDP frames
