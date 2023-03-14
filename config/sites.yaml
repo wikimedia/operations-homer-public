@@ -128,7 +128,7 @@ codfw:
     - 64711  # WMCS-codfw
   bgp_out:
     208.80.152.0/23: BGP_aggregate_contributors  # codfw
-    185.15.57.0/24: BGP_aggregate_bgp_contributers  # WMCS codfw
+    185.15.57.0/24: BGP_from_customers  # customers/wmcs
     198.35.27.0/24: BGP_from_anycast  # Anycast
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
