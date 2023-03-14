@@ -565,6 +565,16 @@
       },
       "additionalProperties": false
     },
+    "wmcs_prefixes": {
+      "type": "array",
+      "description": "List of prefixes announced by cloudsw to core at given site.",
+      "prefixItems": [
+        {
+          "type": "string",
+          "format": "ip_network"
+        }
+      ]
+    },
     "vrf_ints": {
       "type": "object",
       "description": "Dictionary keyed by interface name with values representing vrf each belongs to.",
