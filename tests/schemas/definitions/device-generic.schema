@@ -473,10 +473,6 @@
       "type": "boolean",
       "description": "Configure interfaces using Netbox as the source of truth."
     },
-    "vcp_snmp_statistics": {
-      "type": "boolean",
-      "description": "Don't try to enable the VCP stats (for Junos versions not compatible)."
-    },
     "l3_switch": {
       "type": "boolean",
       "description": "The switch also does L3 routing."
