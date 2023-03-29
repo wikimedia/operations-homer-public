@@ -115,7 +115,7 @@
             "type": "boolean",
             "description": "Generate the policy based on the peer ASN."
           },
-          "disabled": {
+          "shutdown": {
             "type": "boolean"
           }
         },
