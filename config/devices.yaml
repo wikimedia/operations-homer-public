@@ -638,6 +638,14 @@ asw1-b12-drmrs.wikimedia.org:
       xe-0/0/45.0-in: border-tmp-in
     capirca:
       - common-loopback
+    device_bgp:
+      anycast_neighbors:
+        doh6001: {4: 185.15.58.11, 6: 2a02:ec80:600:1:185:15:58:11}
+        dns6001: {4: 185.15.58.5}
+        durum6001: {4: 10.136.0.21, 6: 2a02:ec80:600:101:10:136:0:21}
+      lvs_neighbors:
+        lvs6001: 10.136.0.16
+        lvs6003: 10.136.0.17
 
 asw1-b13-drmrs.wikimedia.org:
   config:
@@ -647,3 +655,10 @@ asw1-b13-drmrs.wikimedia.org:
     lldp_disabled: ['xe-0/0/44']
     capirca:
       - common-loopback
+    device_bgp:
+      anycast_neighbors:
+        doh6002: {4: 185.15.58.41, 6: 2a02:ec80:600:2:185:15:58:41}
+        dns6002: {4: 185.15.58.37}
+        durum6002: {4: 10.136.1.23, 6: 2a02:ec80:600:102:10:136:1:23}
+      lvs_neighbors:
+        lvs6002: 10.136.1.15
