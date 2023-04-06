@@ -361,6 +361,15 @@ asw2-d-eqiad.mgmt.eqiad.wmnet:
   config:
     optimize_qos_buffers: true
 
+ssw1-e1-eqiad.mgmt.eqiad.wmnet:
+  config:
+    asn: 64810
+    evpn: true
+    l3_switch: true
+    optimize_qos_buffers: true
+    capirca:
+      - common-loopback
+
 lsw1-e1-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 64810
@@ -409,6 +418,15 @@ lsw1-e3-eqiad.mgmt.eqiad.wmnet:
         ml-serve1006: {4: 10.64.132.3, 6: 2620:0:861:10b:10:64:132:3}
       k8s_dse_neighbors:
         dse-k8s-worker1006: {4: 10.64.132.8, 6: 2620:0:861:10b:10:64:132:8}
+
+ssw1-f1-eqiad.mgmt.eqiad.wmnet:
+  config:
+    asn: 64810
+    evpn: true
+    l3_switch: true
+    optimize_qos_buffers: true
+    capirca:
+      - common-loopback
 
 lsw1-f1-eqiad.mgmt.eqiad.wmnet:
   config:

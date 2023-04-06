@@ -107,6 +107,8 @@ eqiad:
   evpn_bgp:
     cluster_id: 10.64.128.0
     rr:
+      ssw1-e1-eqiad: 10.64.128.1
+      ssw1-f1-eqiad: 10.64.128.2
       lsw1-e1-eqiad: 10.64.128.3
       lsw1-f1-eqiad: 10.64.128.7
     clients:
