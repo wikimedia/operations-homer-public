@@ -600,6 +600,24 @@
           }
         }
       }
+    },
+    "static_routes": {
+      "type": "object",
+      "description": "Static routes to be added to a device.",
+      "format": "ip_network",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "next_hop": {
+            "type": "string",
+            "format": ["ipv4", "ipv6"]
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
     }
   }
 }

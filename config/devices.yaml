@@ -480,18 +480,46 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
 cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 64710
+    static_routes:
+      10.64.146.250/32:
+        next_hop: 10.64.147.9
+        description: "cloudsw2-c8-eqiad loopback"
+      2620:0:861:11b::250/128:
+        next_hop: 2620:0:861:fe10::2
+        description: "cloudsw2-c8-eqiad loopback"
 
 cloudsw2-c8-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 4264710001
+    static_routes:
+      0.0.0.0/0:
+        next_hop: 10.64.147.8
+        description: "default via cloudsw1-c8-eqiad"
+      ::/0:
+        next_hop: 10.64.147.8
+        description: "default via cloudsw1-c8-eqiad"
 
 cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 64710
+    static_routes:
+      10.64.146.251/32:
+        next_hop: 10.64.147.11
+        description: "cloudsw2-d5-eqiad loopback"
+      2620:0:861:11b::251/128:
+        next_hop: 2620:0:861:fe11::2
+        description: "cloudsw2-d5-eqiad loopback"
 
 cloudsw2-d5-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 4264710002
+    static_routes:
+      0.0.0.0/0:
+        next_hop: 10.64.147.10
+        description: "default via cloudsw1-d5-eqiad"
+      ::/0:
+        next_hop: 2620:0:861:fe11::1
+        description: "default via cloudsw1-d5-eqiad"
 
 cloudsw1-e4-eqiad.mgmt.eqiad.wmnet:
   config:
