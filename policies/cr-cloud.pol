@@ -21,14 +21,6 @@ term labstore {
     protocol:: tcp udp
     action:: accept
 }
-term clouddb_return {
-    comment:: "account creation in toolsdb etc"
-    destination-address:: labstore1004
-                          labstore1005
-    source-port:: mySQL
-    protocol:: tcp
-    action:: accept
-}
 term cloudmetrics-http {
     destination-address:: cloudmetrics_group
     destination-port:: HTTP
