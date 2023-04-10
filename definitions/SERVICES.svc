@@ -8,7 +8,6 @@ BOOTPS = 67/udp   # BOOTP server
 BOOTPC = 68/udp   # BOOTP client
 DHCP = BOOTPS BOOTPC
 HTTP = 80/tcp
-sunRPC = 111/tcp 111/udp
 NTP = 123/tcp 123/udp
 SNMP = 161/udp
 BGP = 179/tcp
@@ -66,7 +65,6 @@ cloud_api_barbican_https = 29311/tcp
 gerritSSH = 29418/tcp
 cloud_api_magnum_https = 29511/tcp
 cloud_api_neutron_https = 29696/tcp
-NFS_RPC_mountd = 38466/tcp 38466/udp
 
 
 #

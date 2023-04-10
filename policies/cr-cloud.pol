@@ -13,14 +13,6 @@ term vrrp {
     protocol:: vrrp ah
     action:: accept
 }
-term labstore {
-    comment:: "Flows from WMCS to private IPs 10/8"
-    destination-address:: labstore1004
-                          labstore1005
-    destination-port:: NFS sunRPC NFS_RPC_mountd
-    protocol:: tcp udp
-    action:: accept
-}
 term cloudmetrics-http {
     destination-address:: cloudmetrics_group
     destination-port:: HTTP
