@@ -35,6 +35,7 @@ rabbitMQ = 5672/tcp
 IDRAC_KVM = 5900/tcp
 SYSLOGTLS = 6514/tcp
 ceph_monitor_legacy = 6789/tcp
+SONIC_GNMI = 8080/tcp
 SQUID_PROXY = 8080/tcp
 STATSD = 8125/udp
 puppet = 8140/tcp
