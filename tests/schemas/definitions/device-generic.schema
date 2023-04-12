@@ -410,8 +410,17 @@
       "format": "ipv4"
     },
     "dhcp_server": {
-      "type": "string",
-      "format": ["ipv4", "ipv6"]
+      "type": "object",
+      "additionalProperties" : false,                                                          
+      "properties": {
+        "name": {                                                                              
+          "type": "string"                                                                     
+        },
+        "ip": {
+          "type": "string",
+          "format": "ipv4"
+        }
+      }
     },
     "dhcp_relay": {
       "type": "object",

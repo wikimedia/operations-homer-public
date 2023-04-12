@@ -84,7 +84,9 @@ eqiad:
   sampling:
     collectors:
       netflow1002: 10.64.16.82
-  dhcp_server: 208.80.154.74  # install1004.wikimedia.org
+  dhcp_server:
+    name: install1004
+    ip: 208.80.154.74
   dhcp_relay:
     interfaces:
       - ae1.1001
@@ -212,7 +214,9 @@ codfw:
   sampling:
     collectors:
       netflow2002: 10.192.32.76
-  dhcp_server: 208.80.153.105  # install2004.wikimedia.org
+  dhcp_server:
+    name: install2004
+    ip: 208.80.153.105
   dhcp_relay:
     interfaces:
       - ae1.2001
@@ -271,7 +275,9 @@ ulsfo:
   sampling:
     collectors:
       netflow4002: 10.128.0.13
-  dhcp_server: 198.35.26.13  # install4002.wikimedia.org
+  dhcp_server:
+    name: install4002
+    ip: 198.35.26.13
   dhcp_relay:
     interfaces:
       - et-0/0/1.1201
@@ -302,7 +308,9 @@ eqsin:
   sampling:
     collectors:
       netflow5002: 10.132.0.15
-  dhcp_server: 103.102.166.12  # install5002.wikimedia.org
+  dhcp_server:
+    name: install5002
+    ip: 103.102.166.12
   dhcp_relay:
     interfaces:
       - ae1.510
@@ -338,7 +346,9 @@ esams:
   sampling:
     collectors:
       netflow3002: 10.20.0.9
-  dhcp_server: 91.198.174.10  # install3002.wikimedia.org
+  dhcp_server:
+    name: install3002
+    ip: 91.198.174.10
   dhcp_relay:
     interfaces:
       - ae1.100
@@ -375,3 +385,6 @@ drmrs:
     collectors:
       netflow6001: 10.136.1.22
   tcp_mss_clamping: true
+  dhcp_server:
+    name: install6002
+    ip: 185.15.58.12
