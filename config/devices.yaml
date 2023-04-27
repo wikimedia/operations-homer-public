@@ -296,6 +296,10 @@ cr2-eqsin.wikimedia.org:
         provider: "Hurricane Electric"
       2001:de8:12:100::81:
         provider: "Hurricane Electric"
+      103.231.152.47:
+        provider: "Hurricane Electric"
+      2001:df5:b800:bb00::6939:1:
+        provider: "Hurricane Electric"
     filters:
       ae1.530-in: sandbox
       gr-0/0/0.2-in: border-in
