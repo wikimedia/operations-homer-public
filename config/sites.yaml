@@ -152,6 +152,7 @@ codfw:
     lvs2009: 10.192.33.7
     lvs2010: 10.192.49.7
     lvs2011: 10.192.0.29
+    lvs2012: 10.192.16.140
   k8s_neighbors:  # Routers k8s neighbors
     # yamllint disable rule:commas
     kubemaster2001: {4: 10.192.0.56,   6: 2620:0:860:101:10:192:0:56}
