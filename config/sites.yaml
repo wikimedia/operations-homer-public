@@ -149,7 +149,6 @@ codfw:
     2620:0:860::/48: BGP_aggregate_contributors  # codfw
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   lvs_neighbors:  # Routers PyBal neighbors
-    lvs2008: 10.192.17.7
     lvs2009: 10.192.33.7
     lvs2010: 10.192.49.7
     lvs2011: 10.192.0.29
