@@ -70,7 +70,7 @@ users:
     uid: 2019
     class: operations
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtlXCYUGn23LVRlgDM9T1onBsTuD20QEbVAplIakTAE55hN1ko1kY09Qb01l4VoAqDPapx0ROYd1on9oYYwSOGgSHKIOrB0OGg+3KX66Pjlr5ohpii20WSHS/NEI1gT76nQX7RN7tHq5/3ciNmCeQZ81YsDwCbmr7DRB5XiHUCaaCp/GIb6GXTliqtSL5oC+Rrzw4cqMeG/M7yExohVetjEK/AMOjgzMZEBHjZczvZiNpijHQ4WAIzl2KzuRDcqLKnOi48Wp+ANaKZmQngJdu8pAI51vqFIEhEwNpQrrUi1JXY2gXmYudRrvg/BvXgPJUDMmm9TOHNnBwwX8xafUgD jgreen@wertyukio.trouser.org"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBk63ADdfLN11agYkHXd2QWA8baRm52kEhb4aFOdPMsW Jeff Green <jgreen@wikimedia.org>"
   - name: mark
     uid: 2000
     class: super-user
