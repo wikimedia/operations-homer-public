@@ -135,7 +135,7 @@ users:
     uid: 2034
     class: super-user
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCVvZRh01fZJA6684S4GB1dFRstSgdpDHcEL8J4PNik1vznRxErz10tVRxLaQLoXCYThn5Ubb3wpaBVixI6KWOofB9RhOjQ12OIcI+Uc4gHp59jwFsft5WrJV9t7v/n8gXOHPfjG1GHmK2QQFtfiBCtmTBfLnEYj/YjPb3D3qNxq8uxAKkQyvrWn0zHxD4UBeK8d/ARF7f1BdbjlNtps9jjRHhPhAIbCK2LxoBjZ9p1f2CHRc6YKFzh2lhReIp6chBss0w87tBpmLQDt6utDEjkvTPGPfWcbVNNNgPuCBwY1MFVpUUvwTae4crHNSncbiK2CCkCNoyHqKblRK4ir5surH+0Ign5/iigzbdGgIntEA/K7sAKB9EhvSpPQ7wi9kV6J1WtyeQ/8tPRM5U1COpbRx6PR9hS7SFMfVVfXerMj+kSs+TCpeH30xwRkF83u90NwxqXcBiPfpLWNnRm83gQ+mdKBxjZcwD5q/H4OVgZW2CaP9IVpSFcllC/03wb8blRAiWf+tR+fiNGezJiMDuFGxwDMUE2LdGnR5aGYuNgCjMvOPS8ONgqY/7rA4h1jLNpO8c4FJe4J/AJN9N4xs9Jg1vBO3tMe/yogL+wTnxfGAe0DDCT4F5NjGe4STKWMKGkQAxT3w0zt5/XX+jSiphDZkaVbjrxZaKTMuWGNTY4oQ== sukhe@core-routers"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAPE0Y9KGVkwRR1edkEe2/5LShc9s6nynwFQg+v9Uemd sukhe@sukhe"
   - name: btullis
     uid: 2035
     class: super-user
