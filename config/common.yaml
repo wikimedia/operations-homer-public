@@ -130,7 +130,7 @@ users:
     uid: 2033
     class: read-only
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDBG1Uu07Qsd1W5pjO62rHc2Epau5ANr24zXqTEjNyOMhmCpvQdvrR0JUynyMEoQVqS0uzUJJpjySIiBnjthHSy6g4ATBAwXAiZ4tWnCkt8jHbL5rCVC/qBIn6CcafdN68nYdzwM/Vpab0av54VCF/V9WmrO+GP5Lar4EEu83CNEnJvq5bd+H1kYLpkgBpxuHh0G7AEL2bgfklEw7XoVKpeIOM9sNveRsmfR+ZHqbZ/2zxQClwMXWTgaChw0qB947R+cVJpi/XQqJXOx5BHaDiEpqIRKaoa1hIty8dcqRJtfYAOEFwBmooReR4tdFSkJ4ghGa5XnKwAzrDAKYistLyRAdHYWhqIV6OMEGKg86OXdDgj3STtQbqRu8Pgg7PUfWZ0zZQrnKRw8NokzYxPDlc4lBhpqzjnyWSZmyWJuWGVppIyZ5dpHFn3gYcFnsxsdxPFi4vOd5nEOJQo+Gf2iv9DQGuGPTvkLvcBTwd5i7KVp7Gp4BB1hTW/M4EIGglUK+0PQWpzD+bUtl4xbMTp8BVz3FPj6sxpknYXtD1dD7Hs3WucMnwtui1RHjYMqUHzw8raIvNt/tcLsSFBw72h2EgmU2ZNRy7cnW7yCBfARzjThHTMyjTWUqTlXtuJjYAFckGHZM1+7VLKdniGXp2VryxaMKvTu+cP/YIiRWrlUIYCLQ=="
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF2TjL7xYqQjY286d/CV+PjmE2vTd9FfoLZZRDkf38XH janis@norna"
   - name: sukhe
     uid: 2034
     class: super-user
