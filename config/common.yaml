@@ -115,7 +115,7 @@ users:
     uid: 2030
     class: operations
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDv6wl/8CF2O/YFL5MFtoA7/MxVzhoC+TLSF1uacpMaGzqryGi0rKI9h3Ed5uZWVKIbBvZqtzfI4/0LYFi6wLRfWclRNbe8lWAFGQOPFCp2Prz+MH0IQA8Nzw/sYpWX/6NnOufuGKOmq7HB4pAVoYPuGfcmxvcMa6LiGFpCfyKSewu2f+1ms55474/EXLFHAb1ONgwfoRmY8W/aPxOryLMEXUlGoTplQThxfRpz1ZV4Nz5848SCWHNGtmWVII4EM7UZrTHtMYO9CmQqK6cFxtvF0MSB4UNOAl1rgFiuxrNQ5vyfK7MXAKpOi1BYm/w0D1eZ1TRKxaAeWqSvzm4rfBrn dwisehaupt@wikimedia.org"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAbsOh0AybdeFJP2JBw2LcN0MsJEvQThEpni1+c9sRnG dwisehaupt@wikimedia.org"
   - name: cdanis
     uid: 2031
     class: super-user
