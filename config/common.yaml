@@ -140,7 +140,7 @@ users:
     uid: 2035
     class: super-user
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDGSQWBV0pv+o8rl3D+B7wT4HL9AWVHFko76tjkaVSxDCJWl9puJ5YH0hQuh1PdpbDLH8rUDun9ZFsX3RPdBYIOm0ivESfva65Bhs682cljjMYnfBZPaQqTcw03dNTa2WofQ5bkVyb4620l/JqBWpljAA3AXTD0Fqubt6/iRBiQ2hqONPhk25kY1/x+yp6YFJ5AVoYQtJAoQo3jE4ivkEBQsUVGGjSbtouweRTu7hECDII76IDqZieytCB8GzJEaDFJYBQGCm3oVwg+PnHRJaXSWhXtXZ1M8Ti4cufg5xqTzbctvfsM5znbKptFys2p/0tzTHhrVoac6Gy70q2T+8NjQ3rCZrbEX79DCCR/uGpjtZk3ksjCpxdH+GHUOhawWDx4QUTkamprjuWXrnwBTNgGmIKiWOPP3keMRkGyWANrVSTpGOYzZ/6Zp4R9mcCg4RBEPC7eXZw/eGm9ciobsSRbldV9Ay0Oz8PeDZhZHNqW+B+jw62zYSVVlwxRYY+DxdM= btullis@wmf-network"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL7CKsdTGflNxDWXHPr9aAzabpbYE0dJhgljrxAWGJid btullis@wmf-network"
   - name: brett
     uid: 2036
     class: super-user
