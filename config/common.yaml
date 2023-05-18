@@ -145,7 +145,7 @@ users:
     uid: 2036
     class: super-user
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaymoa2pAfTiwJNP+bXSSi4dI5Y4s/IjB7DvgaL2Cbl+q6eNmNIXrksUA29kQrh38qnbb8nUhB8/nY+zfCoA+h4Y3CkqlxuiPYpVrqRpiUieWw/RbskbgoMiLZqyjlekDAZQG1z/sFXYKPfrzUcka7QrdzTmFvSpOLcDPgqwMyDKhmvrYfpDgyDTngkPmWVd03K7H4MW9ZTP0/sahOIuaPQfrOgxK4XMLqmawAVVfjrAKTzScz/TkXeWwKqquVIE7DbzBem90Weu2IHLLU/I1B2MVePaIT8uokD0xMPicSGh79CgpIM4LdrXQKNx/nJQXoeF00azr/1+xaRaxdnuNB"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFRwFepdKx09yNGYrpt/qra4NJBF0AjjdE8RZ5cFeGwR cardno:18 551 449"
 # yamllint enable rule:line-length
 # When adding a new user, please make sure to update the "next available UID"
 # comment at the beginning of the users block
