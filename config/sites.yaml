@@ -213,7 +213,7 @@ codfw:
   ping_offload_redirect: 10.192.48.31  # ping2003.codfw.wmnet
   sampling:
     collectors:
-      netflow2002: 10.192.32.76
+      netflow2003: 10.192.32.159
   dhcp_server:
     name: install2004
     ip: 208.80.153.105
@@ -246,7 +246,7 @@ eqdfw:
     2620:0:860::/48: BGP_from_LVS  # codfw
   sampling:
     collectors:
-      netflow2002: 10.192.32.76
+      netflow2003: 10.192.32.159
 
 
 ulsfo:
