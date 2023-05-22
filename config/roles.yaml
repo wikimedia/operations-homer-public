@@ -19,6 +19,7 @@ mr:
     udp_flood: 1000
   capirca:
     - mr-security-policies
+  mgmt_junos: false  # they don't have a mgmt port
 
 cr:
   capirca:

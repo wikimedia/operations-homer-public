@@ -363,6 +363,10 @@
       "type": "string",
       "format": ["ipv4", "ipv6"]
     },
+    "mgmt_junos": {
+      "type": "boolean",
+      "description": "Configure the mgmt_junos routing instance (default: true)"
+    },
     "customers": {
       "type": "array",
       "minProperties": 1,
