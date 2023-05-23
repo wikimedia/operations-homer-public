@@ -115,14 +115,14 @@ term protect-lvs {
   destination-prefix:: LVS-service-ips
   restrict-address-family:: inet
   protocol:: tcp
-  destination-port:: SSH BGP PyBal Prometheus
+  destination-port:: SSH BGP PyBal Prometheus cadvisor
   action:: deny
 }
 term protect-lvs {
   destination-prefix:: LVS-service-ips6
   restrict-address-family:: inet6
   protocol:: tcp
-  destination-port:: SSH BGP PyBal Prometheus
+  destination-port:: SSH BGP PyBal Prometheus cadvisor
   action:: deny
 }
 term ripe-atlas {
