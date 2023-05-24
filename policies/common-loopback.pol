@@ -105,6 +105,15 @@ term allow_dhcp_reply4 {
   restrict-address-family:: inet
   action:: accept
 }
+term allow_dhcp_transit4 {
+  comment:: "In-transit DHCP from 3rd party relays - T337345"
+  source-prefix:: private4
+  protocol:: udp
+  source-port:: BOOTPS
+  destination-port:: BOOTPC BOOTPS
+  restrict-address-family:: inet
+  action:: accept
+}
 term allow_bfd {
   protocol:: udp
   destination-port:: BFD
