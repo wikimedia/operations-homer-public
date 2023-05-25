@@ -37,7 +37,7 @@ cr1-eqiad.wikimedia.org:
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
     switch_neighbors:
-      lsw1-e1-eqiad: {4: 10.66.0.9, 6: 2620:0:861:fe07::2, peer_as: 64810}
+      ssw1-e1-eqiad: {4: 10.66.0.9, 6: 2620:0:861:fe07::2, peer_as: 64810}
       cloudsw1-c8-eqiad: {4: 10.64.147.17, 6: 2620:0:861:fe09::2, peer_as: 64710}
 
 cr2-eqiad.wikimedia.org:
@@ -72,7 +72,7 @@ cr2-eqiad.wikimedia.org:
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
     switch_neighbors:
-      lsw1-f1-eqiad: {4: 10.66.0.11, 6: 2620:0:861:fe08::2, peer_as: 64810}
+      ssw1-f1-eqiad: {4: 10.66.0.11, 6: 2620:0:861:fe08::2, peer_as: 64810}
       cloudsw-d5-eqiad: {4: 10.64.147.15, 6: 2620:0:861:fe0a::2, peer_as: 64710}
 
 cr2-eqord.wikimedia.org:
@@ -373,6 +373,10 @@ ssw1-e1-eqiad.mgmt.eqiad.wmnet:
     optimize_qos_buffers: true
     capirca:
       - common-loopback
+    device_bgp:
+      cr_neighbors:
+        cr1-eqiad: {4: 10.66.0.8, 6: 2620:0:861:fe07::1}
+
 
 lsw1-e1-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -386,8 +390,6 @@ lsw1-e1-eqiad.mgmt.eqiad.wmnet:
     filters:
       irb.1039-in: analytics-in
     device_bgp:
-      cr_neighbors:
-        cr1-eqiad: {4: 10.66.0.8, 6: 2620:0:861:fe07::1}
       k8s_dse_neighbors:
         dse-k8s-worker1005: {4: 10.64.130.6, 6: 2620:0:861:109:10:64:130:6}
 
@@ -431,6 +433,9 @@ ssw1-f1-eqiad.mgmt.eqiad.wmnet:
     optimize_qos_buffers: true
     capirca:
       - common-loopback
+    device_bgp:
+      cr_neighbors:
+        cr1-eqiad: {4: 10.66.0.10, 6: 2620:0:861:fe08::1}
 
 lsw1-f1-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -444,8 +449,6 @@ lsw1-f1-eqiad.mgmt.eqiad.wmnet:
     filters:
       irb.1043-in: analytics-in
     device_bgp:
-      cr_neighbors:
-        cr1-eqiad: {4: 10.66.0.10, 6: 2620:0:861:fe08::1}
       k8s_dse_neighbors:
         dse-k8s-worker1007: {4: 10.64.134.5, 6: 2620:0:861:10d:10:64:134:5}
 
