@@ -1,0 +1,154 @@
+filters:
+  - header:
+      targets:
+        juniper: border-in mixed
+    terms:
+      - name: sample
+        comment: |-
+          T246618
+        option:
+          - sample
+        action: next
+      - name: special-ranges
+        source-prefix: special-ranges4
+        restrict-address-family: inet
+        counter: special-ranges-in
+        action: deny
+      - name: special-ranges
+        source-prefix: special-ranges6
+        restrict-address-family: inet6
+        counter: special-ranges-in
+        action: deny
+      - name: allow_peers
+        comment: |-
+          Allow traffic from configured BGP peers
+        source-prefix: bgp-sessions
+        action: accept
+      - name: own-space
+        comment: |-
+          Discard traffic spoofed with our own source addresses
+        source-prefix: wikimedia4
+        restrict-address-family: inet
+        counter: own-space
+        action: deny
+      - name: own-space
+        comment: |-
+          Discard traffic spoofed with our own source addresses
+        source-prefix: wikimedia6
+        restrict-address-family: inet6
+        counter: own-space
+        action: deny
+      - name: blackhole
+        comment: |-
+          T226742
+        source-prefix: blackhole4
+        restrict-address-family: inet
+        counter: blackhole
+        action: deny
+      - name: blackhole
+        comment: |-
+          T226742
+        source-prefix: blackhole6
+        restrict-address-family: inet6
+        counter: blackhole
+        action: deny
+      - name: block80
+        comment: |-
+          T322774
+        source-prefix: block80_4
+        protocol: tcp
+        destination-port: HTTP
+        restrict-address-family: inet
+        action: deny
+      - name: block80
+        comment: |-
+          T322774
+        source-prefix: block80_6
+        protocol: tcp
+        destination-port: HTTP
+        restrict-address-family: inet6
+        action: deny
+      - name: our-private
+        comment: |-
+          Discard outside traffic to our private ranges
+        destination-prefix: private6
+        restrict-address-family: inet6
+        action: deny
+      - name: authdns
+        comment: |-
+          explicitly allow Auth DNS traffic; would normally be discarded by the DDoS UDP term below
+        destination-address: ns_group
+        protocol: tcp udp
+        port: DNS
+        action: accept
+      - name: phab-git-ssh
+        comment: |-
+          explicitly allow SSH traffic; would normally be discarded by the protect-lvs term below
+        destination-address: git-ssh.eqiad git-ssh.codfw
+        protocol: tcp
+        destination-port: SSH
+        action: accept
+      - name: gre-lvs-ddos
+        destination-prefix: LVS-service-ips
+        restrict-address-family: inet
+        protocol: gre
+        action: deny
+      - name: gre-lvs-ddos
+        destination-prefix: LVS-service-ips6
+        restrict-address-family: inet6
+        protocol: gre
+        action: deny
+      - name: udp-lvs-ddos
+        destination-prefix: LVS-service-ips
+        restrict-address-family: inet
+        protocol: udp
+        action: deny
+      - name: udp-lvs-ddos
+        destination-prefix: LVS-service-ips6
+        restrict-address-family: inet6
+        protocol: udp
+        action: deny
+      - name: protect-lvs
+        destination-prefix: LVS-service-ips
+        restrict-address-family: inet
+        protocol: tcp
+        destination-port: SSH BGP PyBal Prometheus cadvisor
+        action: deny
+      - name: protect-lvs
+        destination-prefix: LVS-service-ips6
+        restrict-address-family: inet6
+        protocol: tcp
+        destination-port: SSH BGP PyBal Prometheus cadvisor
+        action: deny
+      - name: ripe-atlas
+        comment: |-
+          RIPE Atlas wants access to 5666 which we block below
+        destination-address: atlas-esams atlas-eqsin atlas-eqiad atlas-codfw
+        action: accept
+      - name: webproxy
+        comment: |-
+          Discard webproxy for extra protection, as it's a gateway to prod - T122368
+        destination-address: install_group
+        protocol: tcp
+        destination-port: SQUID_PROXY
+        action: deny
+      - name: nrpe
+        protocol: tcp
+        destination-port: NRPE
+        action: deny
+      - name: icmp-first-frag
+        comment: |-
+          T224186
+        option:
+          - first-fragment
+        protocol: icmp
+        action: deny
+      - name: icmp-is-frag
+        fragment-offset: 1-8191
+        protocol: icmp
+        action: deny
+      - name: offload-ping4
+        filter-term: offload-ping4
+        restrict-address-family: inet
+      - name: default
+        action: accept

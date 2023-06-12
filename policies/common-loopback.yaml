@@ -1,0 +1,147 @@
+filters:
+  - header:
+      targets:
+        juniper: loopback mixed
+    terms:
+      - name: allow_ssh4
+        source-prefix: production4 private4
+        protocol: tcp
+        destination-port: SSH
+        restrict-address-family: inet
+        action: accept
+      - name: allow_ssh6
+        source-prefix: production6 private6
+        protocol: tcp
+        destination-port: SSH
+        restrict-address-family: inet6
+        action: accept
+      - name: allow_bgp_src
+        source-prefix: bgp-sessions bgp-sessions-overlay
+        protocol: tcp
+        source-port: BGP
+        action: accept
+      - name: allow_bgp_dst
+        source-prefix: bgp-sessions bgp-sessions-overlay
+        protocol: tcp
+        destination-port: BGP
+        action: accept
+      - name: allow_ospf
+        protocol: ospf
+        action: accept
+      - name: allow_snmp4
+        source-prefix: production4 private4
+        protocol: udp
+        destination-port: SNMP
+        restrict-address-family: inet
+        action: accept
+      - name: allow_snmp6
+        source-prefix: production6 private6
+        protocol: udp
+        destination-port: SNMP
+        restrict-address-family: inet6
+        action: accept
+      - name: allow_ntp_src4
+        source-prefix: production4 loopback4
+        protocol: udp
+        source-port: NTP
+        restrict-address-family: inet
+        action: accept
+      - name: allow_ntp_dst4
+        source-prefix: production4 loopback4
+        protocol: udp
+        destination-port: NTP
+        restrict-address-family: inet
+        action: accept
+      - name: allow_ntp_src6
+        source-prefix: production6 loopback6
+        protocol: udp
+        source-port: NTP
+        restrict-address-family: inet6
+        action: accept
+      - name: allow_ntp_dst6
+        source-prefix: production6 loopback6
+        protocol: udp
+        destination-port: NTP
+        restrict-address-family: inet6
+        action: accept
+      - name: allow_ok_icmp4
+        protocol: icmp
+        icmp-type: echo-request echo-reply unreachable time-exceeded source-quench
+        policer: policer-2m
+        action: accept
+      - name: allow_ok_icmp6
+        protocol: icmpv6
+        action: accept
+      - name: allow_vrrp
+        protocol: vrrp ah
+        action: accept
+      - name: allow_dhcp_request4
+        comment: |-
+          discovery from the host to the relay
+        source-address: NO_IP
+        destination-address: LIMITED_BROADCAST
+        protocol: udp
+        source-port: BOOTPC
+        destination-port: BOOTPC BOOTPS
+        action: accept
+      - name: allow_dhcp_reply4
+        comment: |-
+          reply from the DHCP server back to the relay
+        source-prefix: production4
+        protocol: udp
+        source-port: BOOTPS
+        destination-port: BOOTPC BOOTPS
+        restrict-address-family: inet
+        action: accept
+      - name: allow_dhcp_transit4
+        comment: |-
+          In-transit DHCP from 3rd party relays - T337345
+        source-prefix: private4
+        protocol: udp
+        source-port: BOOTPS
+        destination-port: BOOTPC BOOTPS
+        restrict-address-family: inet
+        action: accept
+      - name: allow_bfd
+        protocol: udp
+        destination-port: BFD
+        action: accept
+      - name: allow_mbfd
+        comment: |-
+          T209989
+        protocol: udp
+        source-prefix: bgp-sessions bgp-sessions-overlay
+        destination-port: mBFD
+        action: accept
+      - name: allow_dns
+        protocol: udp
+        source-port: DNS
+        source-address: recdns
+        action: accept
+      - name: allow_junos_upgrades
+        source-address: install_group
+        protocol: tcp
+        source-port: HTTP HTTPS
+        action: accept
+      - name: allow_vmhost
+        comment: |-
+          T236598, PR1179822
+        source-address: vmhost
+        destination-address: vmhost
+        action: accept
+      - name: return-tcp
+        source-prefix: production4
+        option:
+          - tcp-established
+        protocol: tcp
+        restrict-address-family: inet
+        action: accept
+      - name: return-tcp
+        source-prefix: production6
+        option:
+          - tcp-established
+        protocol: tcp
+        restrict-address-family: inet6
+        action: accept
+      - name: deny_all
+        action: deny

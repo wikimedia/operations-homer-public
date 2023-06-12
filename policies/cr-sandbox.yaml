@@ -1,0 +1,42 @@
+filters:
+  - header:
+      comment: |-
+        Applied to traffic going out of the sandbox vlans
+      targets:
+        juniper: sandbox mixed
+    terms:
+      - name: no-private
+        destination-prefix: private4
+        restrict-address-family: inet
+        action: deny
+      - name: no-private
+        destination-prefix: private6
+        restrict-address-family: inet6
+        action: deny
+      - name: dns
+        protocol: udp
+        destination-port: DNS
+        action: accept
+      - name: vrrp
+        protocol: vrrp ah
+        action: accept
+      - name: dhcp
+        protocol: udp
+        destination-port: DHCP
+        action: accept
+      - name: icmp
+        protocol: icmp
+        action: accept
+      - name: icmp6
+        protocol: icmpv6
+        action: accept
+      - name: reject_other_WMF_space
+        destination-prefix: wikimedia4
+        restrict-address-family: inet
+        action: deny
+      - name: reject_other_WMF_space
+        destination-prefix: wikimedia6
+        restrict-address-family: inet6
+        action: deny
+      - name: allow_rest
+        action: accept

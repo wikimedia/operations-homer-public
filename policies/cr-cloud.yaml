@@ -1,0 +1,106 @@
+filters:
+  - header:
+      comment: |-
+        Applied to cloud instance traffic going out of the cloud-instance-transport vlan
+        Last audit in T264993
+      targets:
+        juniper: cloud-in4 inet no-interface-specific
+    terms:
+      - name: allow-icmp
+        source-address: cloud-transports
+        protocol: icmp
+        action: accept
+      - name: vrrp
+        destination-address: VRRP
+        protocol: vrrp ah
+        action: accept
+      - name: cloudmetrics-http
+        destination-address: cloudmetrics_group
+        destination-port: HTTP
+        protocol: tcp
+        action: accept
+      - name: cloudmetrics-statsd
+        comment: |-
+          To be removed with T207543
+        destination-address: cloudmetrics_group
+        destination-port: STATSD
+        protocol: udp
+        action: accept
+      - name: cloudmetrics-graphite
+        comment: |-
+          To be removed with T207543
+        destination-address: cloudmetrics_group
+        destination-port: graphite
+        protocol: tcp udp
+        action: accept
+      - name: deny-to-private-subnets
+        comment: |-
+          Deny any communication with private subnets
+        destination-address: RFC1918
+        action: reject
+      - name: wiki--HTTP-S
+        comment: |-
+          All specific flows from 172.16/12 to public IPs - T209082
+          Bellow To be removed with T209011
+        destination-address: text-lb.eqiad upload-lb.eqiad text-lb.codfw upload-lb.codfw
+          text-lb.ulsfo upload-lb.ulsfo text-lb.esams upload-lb.esams
+          text-lb.eqsin upload-lb.eqsin text-lb.drmrs upload-lb.drmrs
+        protocol: tcp
+        destination-port: WEB
+        action: accept
+      - name: gerrit
+        destination-address: gerrit.wikimedia.org gerrit-replica.wikimedia.org
+        protocol: tcp
+        destination-port: WEB gerritSSH
+        action: accept
+      - name: DNS
+        comment: |-
+          To be removed with T207533
+        destination-address: ns-recursor0.openstack.eqiad1 ns-recursor1.openstack.eqiad1
+          ns-recursor0.openstack.codfw1dev ns-recursor1.openstack.codfw1dev
+        destination-port: DNS
+        protocol: tcp udp
+        action: accept
+      - name: NFS
+        comment: |-
+          To be removed with T216422
+        destination-address: clouddumps_group nfs-maps.wikimedia.org
+        protocol: tcp
+        destination-port: NFS
+        action: accept
+      - name: LDAP
+        destination-address: ldap-ro.codfw.wikimedia.org ldap-ro.eqiad.wikimedia.org
+        protocol: tcp
+        destination-port: LDAP LDAPS
+        action: accept
+      - name: contint-ssh
+        destination-address: contint_group
+        protocol: tcp
+        source-port: SSH
+        action: accept
+      - name: contint-gerrit
+        destination-address: contint_group
+        protocol: tcp
+        destination-port: GIT
+        action: accept
+      - name: cloudcontrol-apis
+        destination-address: cloudcontrol_group cloudcontrol-dev_group
+        protocol: tcp
+        destination-port: cloud_api_proxy cloud_api_keystone cloud_api_nova
+          cloud_api_cinder cloud_api_placement cloud_api_trove
+          cloud_api_designate cloud_api_glance cloud_api_neutron
+          cloud_api_barbican cloud_api_heat_https cloud_api_magnum_https
+          cloud_api_proxy_https cloud_api_keystone_https cloud_api_nova_https
+          cloud_api_cinder_https cloud_api_placement_https cloud_api_trove_https
+          cloud_api_designate_https cloud_api_glance_https
+          cloud_api_neutron_https cloud_api_barbican_https rabbitMQ rabbitMQ_tls
+        action: accept
+      - name: deny-from-private
+        comment: |-
+          No more legit traffic from 172.16/12
+        source-address: CLOUD_VMs
+        action: deny
+      - name: default
+        comment: |-
+          Allow communication to public subnets and the Internet
+        action: accept
