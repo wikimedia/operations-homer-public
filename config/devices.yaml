@@ -350,40 +350,24 @@ cr2-drmrs.wikimedia.org:
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
   config:
-    optimize_qos_buffers: true
     lldp_disabled: ['ge-8/0/10']
-
-asw2-b-eqiad.mgmt.eqiad.wmnet:
-  config:
-    optimize_qos_buffers: true
-
-asw2-c-eqiad.mgmt.eqiad.wmnet:
-  config:
-    optimize_qos_buffers: true
-
-asw2-d-eqiad.mgmt.eqiad.wmnet:
-  config:
-    optimize_qos_buffers: true
 
 ssw1-e1-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 64810
     evpn: true
     l3_switch: true
-    optimize_qos_buffers: true
     capirca:
       - common-loopback
     device_bgp:
       cr_neighbors:
         cr1-eqiad: {4: 10.66.0.8, 6: 2620:0:861:fe07::1}
 
-
 lsw1-e1-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 64810
     evpn: true
     l3_switch: true
-    optimize_qos_buffers: true
     capirca:
       - common-loopback
       - sw-analytics
@@ -398,7 +382,6 @@ lsw1-e2-eqiad.mgmt.eqiad.wmnet:
     asn: 64810
     evpn: true
     l3_switch: true
-    optimize_qos_buffers: true
     capirca:
       - common-loopback
       - sw-analytics
@@ -413,7 +396,6 @@ lsw1-e3-eqiad.mgmt.eqiad.wmnet:
     asn: 64810
     evpn: true
     l3_switch: true
-    optimize_qos_buffers: true
     capirca:
       - common-loopback
       - sw-analytics
@@ -430,7 +412,6 @@ ssw1-f1-eqiad.mgmt.eqiad.wmnet:
     asn: 64810
     evpn: true
     l3_switch: true
-    optimize_qos_buffers: true
     capirca:
       - common-loopback
     device_bgp:
@@ -442,7 +423,6 @@ lsw1-f1-eqiad.mgmt.eqiad.wmnet:
     asn: 64810
     evpn: true
     l3_switch: true
-    optimize_qos_buffers: true
     capirca:
       - common-loopback
       - sw-analytics
@@ -457,7 +437,6 @@ lsw1-f2-eqiad.mgmt.eqiad.wmnet:
     asn: 64810
     evpn: true
     l3_switch: true
-    optimize_qos_buffers: true
     capirca:
       - common-loopback
       - sw-analytics
@@ -472,7 +451,6 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
     asn: 64810
     evpn: true
     l3_switch: true
-    optimize_qos_buffers: true
     capirca:
       - common-loopback
       - sw-analytics
@@ -640,7 +618,6 @@ asw1-b12-drmrs.wikimedia.org:
   config:
     l3_switch: true
     asn: 4265006001
-    optimize_qos_buffers: true
     lldp_disabled: ['xe-0/0/44']
     filters:
       xe-0/0/45.0-in: border-tmp-in
@@ -659,7 +636,6 @@ asw1-b13-drmrs.wikimedia.org:
   config:
     l3_switch: true
     asn: 4265006002
-    optimize_qos_buffers: true
     lldp_disabled: ['xe-0/0/44']
     capirca:
       - common-loopback
