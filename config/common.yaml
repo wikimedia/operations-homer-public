@@ -80,7 +80,7 @@ users:
     uid: 2002
     class: rancid
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC2/Azrat1AIk5J4QCQs8YOMeNyaemkrw4BocRORlnR4yN9XnhcSK42Vbr+iH6P0d9CRfTlZ6HkA5C0p4IHdDNcAS7+XQ6Uaq6aqZuJ4TGHv9H/kXze9IxxAIaELHJHUh1v2jTQjD7II9ClBJOLaTvN8e1i9q3rtMAmWtnAwL5TbV6uaBIuxqFWw6+NxAfsf5a+7TbRT0T5zaMDGJQ+XrLn/I+bpr3wN3L1bfhqBAk50YJpOVZNtvGQ6xw8vqZUTM69xIwqDPnYd3pm4y+X/cUSLmnBOvIIY+gI3Opc/IoXBtqMboDp767rTmFIp1fnXI0KP8dr/UXr4eBi4hX2d0Q7jCcFkJk/pL2NCgn+BM2mZhnLGjhNo+lpyzkLLDvj1TO8FLXoGzERQuuW2V4oARPlJjuP36p2WzZMJsdgywb66zt9yVpOxImUBAt2+CmqjjJIpcCE1NETZYSGz5MWjAX9eoTPWU4/y18fw+JqwteSjpTym5WE/QGKZco7EpoInMhvjyriWiey/7mLKQN7+GFhOe2b8m1Bmm5rDO5EBO71NFFAubHPZsbmXmfIf+7BG/+f+DHCHWVex7m+qFQ3XjGwbjDUvplnQy6osMHWnzePe8q9nJelRzyOtsGD+MgUrKKF+kjH3/yaxhqZjoIbzvxwQRABMzhityBRdf3RgpnTAQ== rancid"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIG6+zGenRPRSzxvsnfyTeRXbnBhxyN41o6xTzAWSlOK"
   - name: robh
     uid: 2011
     class: operations
@@ -110,7 +110,7 @@ users:
     uid: 2029
     class: super-user
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC9nYMQxRkgW32JhMGLjHEotFvNQwrtCZh35MH2ugerQNITDHvaFIrmlfkk/fe2AgXjxKwyzMHgzONb9OqNC/ZJU59RFMLB2ATnsTLq/PahohjdkB/G8MPIJ0gqmG72HFaEARavk4daSGKWIfIRYbKz8fou+HZcxxJTM2YaTK1sMx51UYpft8uFkjrhP5YFl2EkB7b2B7PWMIKxFAsI9BFn1hoMUoRGUJ72YXNDANAtuDTf8lPKIntLS0+VlXiuoYgcQSKC8ZmUi0xI/5XQjUUD03vas3UuHNUQnkA8TlDkVCXlvZNxcf4KWgpQoVR/0gsC/L3GLeqXtSJsh63WeBaegSPtbVlrZsrkuwwczawaDyIiOdczjmz5Dhv2Axdv6Og6Iez9Zbc+chVilenQTyolaXso7us18vrYlQbgf83qfVndzNIGERNdXTFjD2eN9yhVZLw3GK6ob5Q6Pn9RhjLSMeWbmI8ffZ85o7Z2ySKExevRnOjvrPg3dS+KNfFBiDz3/r6ji/KbUVmcCMx/lU/bDfrTL3MDn7v1tjCQ0ieE5oyJygmXvEmMX7PQdUhKZ/9uE+TIYIX7bwdbf3CvA2Zutn0CarFoeTpKgzTNd3q71M93OiYIVouu+h0wKN1TnvmXitPKyvkDSBScJiStakVh7i8OqIe1Af02i2OSXHsxiQ== homer"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIESO36OH9RJD/YwgTv0PRQzivYEC4RzfC7m+K5unFtS6"
   - name: dwisehaupt
     uid: 2030
     class: operations
