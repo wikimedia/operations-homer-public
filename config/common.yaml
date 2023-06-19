@@ -86,7 +86,7 @@ users:
     uid: 2011
     class: operations
     sshkeys:
-      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBTrNNRvKsT4O1N/2OzjiaQ72wq0rYP+cnIH81hn9tow network_key"
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAoDAuzkYEIeGVC10zh3i6WnyJjhWK/JpQbSFlWfb5t02kGPvmi8m+fdCPhvqiOpOCcQqTL1Knia6AeRNMx+dj3qxctsas/RnJtIUbACK5gH6aKg0OMmcG9LNiVLN5knx1UMHhQ7Ma6KSiDLeqsID009j7+Fj8qgGup7lKOQs7WYRpaXlAyR0hdKeyxcXWh+GPQEZAhl0DHrjFgdDcc5n2K8GBRESfdfCKm0SomHYGWPsTIpWrY13se0kUJzWXIafzr0U/czEdVDuSuil6P65d9cU7vypcUC3i5d2L4QiO4MBVNcXluFuFNZ8UY/QAlixz/5x/ARbgjcMvXwJQWjhh+w== rob@laptop"
   - name: vgutierrez
     uid: 2024
     class: super-user
@@ -96,7 +96,7 @@ users:
     uid: 2026
     class: super-user
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCmlt2EID9N7s/YwZ91Ma4t+/M4aQEGx6Qzzwz+pFOC/CNiz43fw89fHsMmrrU+e6T9hI9nTz899EVaxM8CG9kmGtpYOtcpoFkcMhFlnP9JZpuUzmE/DVVDXBFnrjnXQzNisKjpPOe+NEu4v4NDwPv+cOQpJ8uXqikg+pd0ZYWxbdFIp+7dokhk1+1ltxTCDDrMkiZEBbfYEcXmw2Kt0KU2hdq9IRg1o/YFJSYVmIXkkN3Ayr238vYLi03946ReyKm/czGq+0UFh+Lp+TuDwrVa/kOqBko6aAJgVvYLofKF6CgfTHmMPfA01EbCDUtPxmg6nUF0fHweQsGKMHKFxFSF productionwiki"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBTrNNRvKsT4O1N/2OzjiaQ72wq0rYP+cnIH81hn9tow network_key"
   - name: volans
     uid: 2027
     class: super-user
