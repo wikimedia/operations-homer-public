@@ -61,7 +61,7 @@ users:
     uid: 2021
     class: super-user
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCh+IoexcknxIddmHolsQ9VCUE0Yiw93JxA7QoyGkazj6NHGwaFivu1y69PubjWmWy98hk0MW5uVRKdrWwz5Ue91w6iXqvXm7f9mTvhpy0KrEMFLpWqYyL+E/aQ9Edh4hZXyh+aHi5+EPNWl7RfzaIz1SmcBake+dV32d9k/6wh1AySffpAC8t/EEjiKfZR5Gw4zLgrOGRVIi0kzXrm975PaqTVHRWGVo9QHuy5ir3dN+MIfUEL02H9diB6wV6UuvJfQxWIDkNAmVYXIOZDTmy7BGB3ANQjZ8Li6zHJ/6vJweExgLh47BkZ3dkcKBqNstDTGq9l4jJjiji6WDgFwDxpOYSsVtXxgJb5WvZ5KskczQmHhY/pyPZMqzlefjFQQHdbS1+Sd0vvN1yvQ+d4Jy6M2mVPPQHgtihv1De28IL3BMtc/hcknVrL5KQslvR4aFiMX9dPM4eHfo2j5ItDqN/vIG5INTyvrGA4kYLpbCbHjvMaLQlqoFC72ydv0rKNJOe968q4Rx5BkWKl8H4tpucv9RpnSpZhUnwsSFmufCqRrJipmDikNswIH0leAoKO1MMvEWSYF0DLHSO4M5U7EwPLGJFaKtJ0MZ8c0URYskiTI+7pVt1+TreBatLPjKqFv0KyqQFUD9pitw5yUb4vKI9F0D10JxESHgSdRMV+vXsC9Q== ltoscano@wikimedia.org"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKnio9xxcmPlCm6nopqtSflVBliGUzjQnmKJsBLcoo4c ltoscano@wikimedia.org"
   - name: filippo
     uid: 2018
     class: super-user
