@@ -106,7 +106,7 @@ users:
     uid: 2028
     class: super-user
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCi/LkcJBJgIlAOTwEbw0odvXJEQf5+T+RQnQgvl3xA5AufYTU/0rGSV5GiVD1RPmaH+oCPi1dTI/pKSpl1sPFUNFAgQM42y5cUuXcAX3qfh4pu7zs4fa8xxD+AATnOt6B07OZeSVVg96KkPpNXIJxJL8sz5OLqDt5x1WlOhZp0GZRpsheE3I59Bcye04wlssisP9KfaPt4ypRBVPe/MBDxdVdpFaGR/U/YiOwMLqcz+QH7mAb2WNrkr3Wt4tpF5TMskJIG79FMNVbit3T0676rqbce7uodG/O/KC5zGRtofgEASl3ES9CT5JZY0Td0bVIvmj1aLSszXGZk9HiE7q+6hg0nL80vmkyXuFbzFekezcmUss7CalWmQoRoYOZoZgsUsdnztHb3Mk4bm8FoABJPmoSvsSWA40IGKKOh2fo12x8VJw/GUSRN89vOa9n34NotNGeXneIVA6TNuTmUPvdEPBOlvISwcmbq3mBFpbSjDSR51znCnxWhBFGEoHZTEj2AMcSHWdIt7DTtmn9Yj/RhCLRX50ZLUV9o8AHFGRo4sDH3RL9pRyKKqVxg0vcO+VbtNAdXOlcJsAXHO8SVIPsetMdKr6o/shnyaON7dYjPd7fZgs5U8LxT4TLKgimq9KGmBQHFBKfZhNbj2K5HEFwSFyx9v+JaWy2dmqOEwpMw2Q== jbond@work-laptop"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC8YxhwNNjW0sN6iAMWiNdk0UI9S+bMR6c/nSX/0KsQP jbond@storage"
   - name: homer
     uid: 2029
     class: super-user
