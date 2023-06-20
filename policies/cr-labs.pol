@@ -118,6 +118,19 @@ term confd {
     destination-port:: confd_client
     action:: accept
 }
+term bacula-fd {
+    comment:: "Return traffic"
+    destination-address:: backup_group
+    source-port:: bacula_fd
+    protocol:: tcp
+    action:: accept
+}
+term bacula-sd {
+    destination-address:: backup_group
+    destination-port:: bacula_sd
+    protocol:: tcp
+    action:: accept
+}
 term allow_ok_icmp4 {
   protocol:: icmp
   icmp-type:: echo-request echo-reply unreachable time-exceeded source-quench
