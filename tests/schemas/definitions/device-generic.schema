@@ -46,29 +46,6 @@
         },
         "required": [4]
       }
-    },
-    "trusted_space": {
-      "type": "array",
-      "description": "Whitelisted networks with less restrictions",
-      "prefixItems": [
-        {
-          "type": "object",
-          "additionalProperties" : false,
-          "properties": {
-            "description": {
-              "type": "string"
-            },
-            "network": {
-              "type": "string",
-              "format": "ip_interface"
-            }
-          },
-          "required": [
-            "description",
-            "network"
-          ]
-        }
-      ]
     }
   },
   "type": "object",
@@ -522,8 +499,6 @@
         }
       ]
     },
-    "trusted_space4": { "$ref": "#/definitions/trusted_space" },
-    "trusted_space6": { "$ref": "#/definitions/trusted_space" },
     "rpki_whitelist": {
       "type": "array",
       "description": "Force router to accept a RPKI invalid prefix.",

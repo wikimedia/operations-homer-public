@@ -2,14 +2,14 @@ header {
   target:: juniper loopback mixed
 }
 term allow_ssh4 {
-  source-prefix:: production4 private4 trusted-space4
+  source-prefix:: production4 private4
   protocol:: tcp
   destination-port:: SSH
   restrict-address-family:: inet
   action:: accept
 }
 term allow_ssh6 {
-  source-prefix:: production6 private6 trusted-space6
+  source-prefix:: production6 private6
   protocol:: tcp
   destination-port:: SSH
   restrict-address-family:: inet6
@@ -32,14 +32,14 @@ term allow_ospf {
   action:: accept
 }
 term allow_snmp4 {
-  source-prefix:: production4 private4 trusted-space4
+  source-prefix:: production4 private4
   protocol:: udp
   destination-port:: SNMP
   restrict-address-family:: inet
   action:: accept
 }
 term allow_snmp6 {
-  source-prefix:: production6 private6 trusted-space6
+  source-prefix:: production6 private6
   protocol:: udp
   destination-port:: SNMP
   restrict-address-family:: inet6
