@@ -65,7 +65,7 @@ users:
     uid: 2018
     class: super-user
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDt7HkyaZeIe7L8CuWE1+N47+wDT/4cUmEcrPA1xgdA4By/jesf+1oOTvusbIyXFuCssvspgGmwwNMD+PzNF3xAEo+Yn2aqH4OBhRiF0U8jeaJL1EhzKnT8KKG4fOzzerbKFlE5K9LnYhMXp2i6MoAN9xB3Z350dBwqhspf0OKqZ8AGbsc9RdcEr2pBT7RPRlcKXRTrd47keV+PUazpDVSr2MCdmErknROpcBh5IS27DrKHpma3UcNUGIeMsvsV6nyt8Tz2+EMGkd+P+whij0YzlKDkqB2ppoD+gCPAki277wobiocea79fvPm1/Na+tpXJT7gU+YErld4VRvUclyR/ fgiunchedi@wikimedia.org"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE/BE+c4m55DAUmSUypry/G1UfAavsaascs5XVW2SSWw fgiunchedi@wikimedia.org"
   - name: jgreen
     uid: 2019
     class: operations
