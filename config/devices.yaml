@@ -246,10 +246,6 @@ cr3-knams.wikimedia.org:
         provider: Init7
       2001:1620:1000::85:
         provider: Init7
-      78.41.155.33:
-        provider: Datahop
-      2a01:450:2::1:1:
-        provider: Datahop
       213.46.186.9:
         provider: LibertyGlobal
       2001:730:2209:1::d52e:ba09:

@@ -422,8 +422,6 @@ transit_providers:
   Arelion:
     AS: 1299
     export_policy: true
-  Datahop:
-    AS: 6908
   "Deutsche Telekom":
     # CID in https://netbox.wikimedia.org/circuits/circuits/92/
     AS: 3320
