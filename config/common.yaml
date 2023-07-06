@@ -394,10 +394,10 @@ juniper_services:
   - xnm-clear-text
   - xnm-ssl
 
-ntp_servers:  # soon replace with dns1004, 1005, 1006
-  - 208.80.154.10  # dns1001
+ntp_servers:
   - 208.80.155.108  # dns1002
   - 208.80.154.134  # dns1003
+  - 208.80.154.6    # dns1004
   - 208.80.153.48  # dns2004
   - 208.80.153.74  # dns2005
   - 208.80.153.107  # dns2006
