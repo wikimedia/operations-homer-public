@@ -92,6 +92,7 @@ eqiad:
     interfaces:
       - ae1.1001
       - ae1.1017
+      - ae1.1030
       - ae1.1117
       - ae2.1002
       - ae2.1018
