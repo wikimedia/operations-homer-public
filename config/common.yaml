@@ -75,7 +75,7 @@ users:
     uid: 2000
     class: super-user
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEAorTmQ0qlrxB3RL+GULLzex3k1Pg/c6tgLbKsl1A7Qo0B5XI4eNgfWwaAXUrKyQW3/9gwDH3YJ2eoOue0/BGhKX6voOTnNPeGE9ZbrufpPLT6DXDEbvpmXQd/qw8s0GxdftleHYl28av0nTZgKY+1/Oc+ZHNUN5YxmdGehWBvTXs= mark@talon"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM6K+JZA84Q4ebAGi7R8Pm7G8CZiG1KR+xau7bO9Uzdx mark@wikimedia.org"
   - name: rancid
     uid: 2002
     class: rancid
