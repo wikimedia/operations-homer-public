@@ -56,7 +56,7 @@ term acmechief {
 term prometheus {
     comment:: "Return traffic"
     destination-address:: prometheus_group
-    source-port:: Prometheus prometheus_rsyslog
+    source-port:: Prometheus prometheus_rsyslog PDNS_AUTH PDNS_RECURSOR
     protocol:: tcp
     action:: accept
 }
