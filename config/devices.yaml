@@ -434,6 +434,39 @@ lsw1-e3-eqiad.mgmt.eqiad.wmnet:
         kubernetes1050: {4: 10.64.132.27, 6: 2620:0:861:10b:10:64:132:27}
         kubernetes1051: {4: 10.64.132.28, 6: 2620:0:861:10b:10:64:132:28}
 
+lsw1-e5-eqiad.mgmt.eqiad.wmnet:
+  config:
+    asn: 64810
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+      - sw-analytics
+    filters:
+      irb.1048-in: analytics-in
+
+lsw1-e6-eqiad.mgmt.eqiad.wmnet:
+  config:
+    asn: 64810
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+      - sw-analytics
+    filters:
+      irb.1050-in: analytics-in
+
+lsw1-e7-eqiad.mgmt.eqiad.wmnet:
+  config:
+    asn: 64810
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+      - sw-analytics
+    filters:
+      irb.1052-in: analytics-in
+
 ssw1-f1-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 64810
@@ -496,6 +529,39 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
         kubernetes1054: {4: 10.64.136.25, 6: 2620:0:861:10f:10:64:136:25}
         kubernetes1055: {4: 10.64.136.26, 6: 2620:0:861:10f:10:64:136:26}
         kubernetes1056: {4: 10.64.136.27, 6: 2620:0:861:10f:10:64:136:27}
+
+lsw1-f5-eqiad.mgmt.eqiad.wmnet:
+  config:
+    asn: 64810
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+      - sw-analytics
+    filters:
+      irb.1056-in: analytics-in
+
+lsw1-f6-eqiad.mgmt.eqiad.wmnet:
+  config:
+    asn: 64810
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+      - sw-analytics
+    filters:
+      irb.1058-in: analytics-in
+
+lsw1-f7-eqiad.mgmt.eqiad.wmnet:
+  config:
+    asn: 64810
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+      - sw-analytics
+    filters:
+      irb.1060-in: analytics-in
 
 cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
   config:
