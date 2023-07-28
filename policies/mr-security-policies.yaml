@@ -85,6 +85,13 @@ filters:
         destination-port: WEB
         protocol: tcp
         action: accept
+      - name: apt--httpalt
+        comment: |-
+          To allow fetching Junos images from 8080
+        destination-address: apt_group
+        destination-port: HTTP_ALT
+        protocol: tcp
+        action: accept
       - name: install--tftp
         comment: |-
           To allow fetching of ZTP shell script until http ready
