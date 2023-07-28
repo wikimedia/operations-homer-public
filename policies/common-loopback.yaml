@@ -119,9 +119,9 @@ filters:
         source-address: recdns
         action: accept
       - name: allow_junos_upgrades
-        source-address: install_group
+        source-address: apt_group
         protocol: tcp
-        source-port: HTTP HTTPS
+        source-port: HTTP HTTPS HTTP_ALT
         action: accept
       - name: allow_vmhost
         comment: |-
