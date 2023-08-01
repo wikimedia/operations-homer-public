@@ -332,6 +332,7 @@ esams:
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
     2620:0:862::/48: BGP_aggregate_contributors  # esams
+    2a02:ec80:300::/48: BGP_aggregate_contributors  # esams (post 2023 migration)
     2a02:ec80:500::/48: BGP_aggregate_contributors  # esams OOB swap
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   lvs_neighbors:
@@ -369,6 +370,7 @@ knams:
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
     2620:0:862::/48: BGP_from_LVS  # esams
+    2a02:ec80:300::/48: BGP_aggregate_contributors  # esams (post 2023 migration)
     2a02:ec80:500::/48: BGP_aggregate_contributors  # esams OOB swap
     2001:67c:930::/48: BGP_from_anycast  # Anycast v6
   sampling:
