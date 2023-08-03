@@ -457,6 +457,9 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
         ml-serve1008: {4: 10.64.136.2, 6: 2620:0:861:10f:10:64:136:2}
       k8s_dse_neighbors:
         dse-k8s-worker1008: {4: 10.64.136.7, 6: 2620:0:861:10f:10:64:136:7}
+      k8s_neighbors:
+        kubernetes1025: {4: 10.64.136.9, 6: 2620:0:861:10f:10:64:136:9}
+        kubernetes1026: {4: 10.64.136.10, 6: 2620:0:861:10f:10:64:136:10}
 
 cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
   config:
