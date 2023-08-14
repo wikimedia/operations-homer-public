@@ -73,6 +73,7 @@ cloud_api_barbican_https = 29311/tcp
 gerritSSH = 29418/tcp
 cloud_api_magnum_https = 29511/tcp
 cloud_api_neutron_https = 29696/tcp
+junos_grpc = 32767/tcp
 
 #
 # Wide ranges
