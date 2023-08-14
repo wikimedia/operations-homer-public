@@ -181,7 +181,6 @@ cr3-ulsfo.wikimedia.org:
       et-0/0/1.1221-in: sandbox
     primary_ixp: true
 
-
 cr4-ulsfo.wikimedia.org:
   config:
     transits:
@@ -196,41 +195,16 @@ cr4-ulsfo.wikimedia.org:
     filters:
       et-0/0/1.1221-in: sandbox
 
-cr3-esams.wikimedia.org:
+cr1-esams.wikimedia.org:
   config:
-    mgmt_ip: [10.21.0.119/24, 10.21.0.120/24]
+    mgmt_ip: [10.80.128.2/17, 10.80.128.4/17]
     transits:
-      62.115.145.24:
+      62.115.179.162:
         provider: Arelion
-      2001:2000:3080:0ee8::1:
+      2001:2035:0:699::2:
         provider: Arelion
-    filters:
-      ae1.102-in: sandbox
-      ae1.401-in4: transport-in
-      gr-0/0/0.2-in: border-in
 
 cr2-esams.wikimedia.org:
-  config:
-    mgmt_ip: [10.21.0.117/24, 10.21.0.118/24]
-    transits:
-      80.249.209.211:
-        provider: "Deutsche Telekom"
-      2001:7f8:1::a500:3320:1:
-        provider: "Deutsche Telekom"
-      87.255.35.65:
-        provider: FiberRing
-      2a00:ec8::21d:
-        provider: FiberRing
-      2001:7f8:1::a500:6939:1:
-        provider: "Hurricane Electric"
-    filters:
-      ae1.102-in: sandbox
-      ae1.403-in4: transport-in
-      gr-0/1/0.2-in: border-in
-    minimum_links:
-      ae2: 2
-
-cr3-knams.wikimedia.org:
   config:
     flowspec_flows:
       drop-udp-text-lb:
@@ -250,6 +224,20 @@ cr3-knams.wikimedia.org:
         provider: LibertyGlobal
       2001:730:2209:1::d52e:ba09:
         provider: LibertyGlobal
+
+asw1-bw27-esams.wikimedia.org:
+  config:
+    l3_switch: true
+    asn: 4265003001
+    capirca:
+      - common-loopback
+
+asw1-by27-esams.wikimedia.org:
+  config:
+    l3_switch: true
+    asn: 4265003002
+    capirca:
+      - common-loopback
 
 cr3-eqsin.wikimedia.org:
   config:
@@ -578,6 +566,22 @@ mr1-esams.wikimedia.org:
         screen: untrust-screen
     capirca:
       - mr-security-policies-esams
+
+mr1-esams-new.wikimedia.org:
+  timeout: 120
+  config:
+    security_zones:
+      - name: production
+        services: ['ssh', 'ping', 'traceroute', 'snmp', 'bgp']
+        interfaces: ['lo0.0', 'ge-0/0/3', 'ge-0/0/4']
+      - name: untrust
+        services: ['ssh', 'ping', 'traceroute']
+        interfaces: ['ge-0/0/7']
+      - name: mgmt
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
+        interfaces: ['irb.900']
+    capirca:
+      - mr-security-policies
 
 mr1-drmrs.wikimedia.org:
   timeout: 120

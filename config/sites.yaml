@@ -324,7 +324,7 @@ eqsin:
 
 esams:
   confed: 65003
-  mgmt_gw: 10.21.0.1
+  mgmt_gw: 10.80.128.1
   bgp_out:
     91.198.174.0/24: BGP_aggregate_contributors  # esams
     185.15.59.0/24: BGP_aggregate_contributors  # esams OOB swap
@@ -332,28 +332,12 @@ esams:
     2620:0:862::/48: BGP_aggregate_contributors  # esams
     2a02:ec80:300::/48: BGP_aggregate_contributors  # esams (post 2023 migration)
     2a02:ec80:500::/48: BGP_aggregate_contributors  # esams OOB swap
-  lvs_neighbors:
-    lvs3005: 10.20.0.15
-    lvs3006: 10.20.0.16
-    lvs3007: 10.20.0.17
-  anycast_neighbors:
-    dns3001: {4: 91.198.174.61}
-    dns3002: {4: 91.198.174.62}
-    doh3001: {4: 91.198.174.7, 6: 2620:0:862:1:91:198:174:7}
-    doh3002: {4: 91.198.174.8, 6: 2620:0:862:1:91:198:174:8}
-    durum3001: {4: 10.20.0.6, 6: 2620:0:862:102:10:20:0:6}  # Wikidough check
-    durum3002: {4: 10.20.0.7, 6: 2620:0:862:102:10:20:0:7}  # Wikidough check
-  sampling:
-    collectors:
-      netflow3002: 10.20.0.9
   dhcp_server:
     name: install3002
     ip: 91.198.174.10
-  dhcp_relay:
-    interfaces:
-      - ae1.100
-      - ae1.102
-      - ae1.103
+  sampling:
+    collectors:
+      netflow3002: 10.20.0.9
 
 knams:
   confed: 65003
