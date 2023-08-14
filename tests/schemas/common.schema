@@ -222,6 +222,16 @@
           "type": "integer"
         }
       }
+    },
+    "users_passwords": {
+      "type": "object",
+      "description": "Define Linux style hashed passwords for users who need them set. Set as a different key to live in homer-private.",
+      "additionalProperties" : false,
+      "patternProperties": {
+        "^.+$": {
+              "type": "string"
+        }
+      }
     }
   },
   "required": [
