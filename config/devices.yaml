@@ -547,7 +547,7 @@ msw1-codfw.mgmt.codfw.wmnet:
 mr1-ulsfo.wikimedia.org:
   timeout: 120
 
-mr1-esams.wikimedia.org:
+mr1-esams-old.wikimedia.org:
   timeout: 120
   config:
     security_zones:
@@ -567,7 +567,7 @@ mr1-esams.wikimedia.org:
     capirca:
       - mr-security-policies-esams
 
-mr1-esams-new.wikimedia.org:
+mr1-esams.wikimedia.org:
   timeout: 120
   config:
     security_zones:
