@@ -231,6 +231,12 @@ asw1-bw27-esams.wikimedia.org:
     asn: 4265003001
     capirca:
       - common-loopback
+    device_bgp:
+      anycast_neighbors:
+        dns3004: {4: 185.15.59.2}
+      lvs_neighbors:
+        lvs3008: 10.80.0.3
+        lvs3010: 10.80.0.2
 
 asw1-by27-esams.wikimedia.org:
   config:
@@ -241,6 +247,8 @@ asw1-by27-esams.wikimedia.org:
     device_bgp:
       anycast_neighbors:
         dns3003: {4: 185.15.59.34}
+      lvs_neighbors:
+        lvs3009: 10.80.1.14
 
 cr3-eqsin.wikimedia.org:
   config:
