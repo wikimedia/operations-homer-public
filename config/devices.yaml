@@ -238,6 +238,9 @@ asw1-by27-esams.wikimedia.org:
     asn: 4265003002
     capirca:
       - common-loopback
+    device_bgp:
+      anycast_neighbors:
+        dns3003: {4: 185.15.59.34}
 
 cr3-eqsin.wikimedia.org:
   config:
@@ -491,7 +494,7 @@ asw-a-codfw.mgmt.codfw.wmnet:
   config:
     lldp_disabled: ['ge-1/0/47']  # SRXs show L2 errors when receiving LLDP frames
 
-asw2-esams.mgmt.esams.wmnet:
+asw2-esams.mgmt.esams.wmnet:  # old esams
   config:
     lldp_disabled: ['ge-5/0/47']  # SRXs show L2 errors when receiving LLDP frames
 
@@ -547,7 +550,7 @@ msw1-codfw.mgmt.codfw.wmnet:
 mr1-ulsfo.wikimedia.org:
   timeout: 120
 
-mr1-esams-old.wikimedia.org:
+mr1-esams-old.wikimedia.org:  # old esams
   timeout: 120
   config:
     security_zones:
