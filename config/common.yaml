@@ -197,7 +197,7 @@ ospf:
       bfd: true
       metric: 1390
     - cr2-eqdfw.wikimedia.org: xe-0/1/3.23
-      cr3-knams.wikimedia.org: xe-0/1/5.23
+      cr2-esams.wikimedia.org: xe-0/1/5.23
       bfd: true
       metric: 1550
     - cr1-eqiad.wikimedia.org: ae0.0
@@ -209,23 +209,13 @@ ospf:
       mr1-eqiad.wikimedia.org: ge-0/0/1.402
       metric: 20000
     - cr1-eqiad.wikimedia.org: xe-3/0/7.13
-      cr3-knams.wikimedia.org: xe-0/1/5.13
+      cr2-esams.wikimedia.org: xe-0/1/5.13
       bfd: true
       metric: 1820
-    - cr3-esams.wikimedia.org: ae1.401
-      cr3-knams.wikimedia.org: ae1.401
-      bfd: true
-    - cr2-esams.wikimedia.org: ae1.403
-      cr3-knams.wikimedia.org: ae1.403
-      bfd: true
-    - cr3-esams.wikimedia.org: ae0.0
+    - cr1-esams.wikimedia.org: ae0.0
       cr2-esams.wikimedia.org: ae0.0
-      bfd: true
     - cr2-esams.wikimedia.org: ae1.404
-      mr1-esams.wikimedia.org: ge-0/0/1.404
-      metric: 20000
-    - cr3-esams.wikimedia.org: ae1.402
-      mr1-esams.wikimedia.org: ge-0/0/1.402
+      mr1-esams-old.wikimedia.org: ge-0/0/1.404
       metric: 20000
     - cloudsw1-c8-eqiad.mgmt.eqiad.wmnet: irb.1104
       cloudsw1-d5-eqiad.mgmt.eqiad.wmnet: irb.1104
@@ -251,7 +241,7 @@ ospf:
     mr1-eqiad.wikimedia.org:
       - ge-0/0/2.0
       - ge-0/0/0.0
-    mr1-esams.wikimedia.org:
+    mr1-esams-old.wikimedia.org:
       - ge-0/0/6.2483
       - irb.900
     cr3-ulsfo.wikimedia.org:
@@ -330,10 +320,6 @@ ospf:
       - ae4.1020
       - ae4.1004
       - ae4.1023
-    cr3-esams.wikimedia.org:
-      - ae1.100
-      - ae1.102
-      - ae1.103
     cr2-esams.wikimedia.org:
       - ae1.100
       - ae1.102
