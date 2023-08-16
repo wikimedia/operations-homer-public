@@ -337,7 +337,7 @@ esams:
     ip: 91.198.174.10
   sampling:
     collectors:
-      netflow3002: 10.20.0.9
+      netflow3003: 10.80.0.15
 
 knams:  # old esams
   confed: 65003
