@@ -34,9 +34,9 @@ wikimedia-private = 10.0.0.0/8 # private
                     2001:df2:e500:100::/56 # eqsin private
                     2620:0:860:100::/56 # codfw private
                     2620:0:861:100::/56 # eqiad private
-                    2620:0:862:100::/56 # esams private
+                    2620:0:862:100::/56 # old esams (remove after all decom)
                     2620:0:863:100::/56 # ulsfo private
-                    2a02:ec80:300:100::/56 # esams private (2023 migration)
+                    2a02:ec80:300:100::/56 # esams private
                     2a02:ec80:600:100::/56 # drmrs private
 
 network-infra = 10.136.127.0/24 # drmrs
@@ -74,8 +74,8 @@ text-lb.codfw = 208.80.153.224 # text-lb.codfw
 upload-lb.codfw = 208.80.153.240 # upload-lb.codfw
 text-lb.ulsfo = 198.35.26.96 # text-lb.ulsfo
 upload-lb.ulsfo = 198.35.26.112 # upload-lb.ulsfo
-text-lb.esams = 91.198.174.192 # text-lb.esams
-upload-lb.esams = 91.198.174.208 # upload-lb.esams
+text-lb.esams = 185.15.59.224 # text-lb.esams
+upload-lb.esams = 185.15.59.240 # upload-lb.esams
 text-lb.eqsin = 103.102.166.224 # text-lb.eqsin
 upload-lb.eqsin = 103.102.166.240 # upload-lb.eqsin
 text-lb.drmrs = 185.15.58.224 # text-lb.drmrs
@@ -89,5 +89,4 @@ upload-lb.drmrs = 185.15.58.240 # upload-lb.drmrs
 # Temporarily until converted to the yaml format
 ns_group = 208.80.154.238 # ns0
            208.80.153.231 # ns1
-           91.198.174.239 # ns2
            198.35.27.27 # nsa

@@ -11,7 +11,7 @@
       "additionalProperties" : false,
       "description": "In common as we need the full infra wide list as well.",
       "patternProperties": {
-        "^(eqiad|eqord|codfw|eqdfw|esams|knams|ulsfo|eqsin|drmrs)$": {
+        "^(eqiad|eqord|codfw|eqdfw|esams|ulsfo|eqsin|drmrs)$": {
           "type": "array",
           "prefixItems": [
             {
@@ -28,7 +28,6 @@
         "codfw",
         "eqdfw",
         "esams",
-        "knams",
         "ulsfo",
         "eqsin",
         "drmrs"
