@@ -203,6 +203,14 @@ cr1-esams.wikimedia.org:
         provider: Arelion
       2001:2035:0:699::2:
         provider: Arelion
+      80.249.209.211:
+        provider: "Deutsche Telekom"
+      2001:7f8:1::a500:3320:1:
+        provider: "Deutsche Telekom"
+      2001:7f8:1::a500:6939:1:
+        provider: "Hurricane Electric"
+    minimum_links:
+      ae1: 2
 
 cr2-esams.wikimedia.org:
   config:
