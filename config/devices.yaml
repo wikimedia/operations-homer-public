@@ -502,10 +502,6 @@ asw-a-codfw.mgmt.codfw.wmnet:
   config:
     lldp_disabled: ['ge-1/0/47']  # SRXs show L2 errors when receiving LLDP frames
 
-asw2-esams.mgmt.esams.wmnet:  # old esams
-  config:
-    lldp_disabled: ['ge-5/0/47']  # SRXs show L2 errors when receiving LLDP frames
-
 asw2-ulsfo.mgmt.ulsfo.wmnet:
   config:
     lldp_disabled: ['ge-1/0/13']  # SRXs show L2 errors when receiving LLDP frames
@@ -557,26 +553,6 @@ msw1-codfw.mgmt.codfw.wmnet:
 
 mr1-ulsfo.wikimedia.org:
   timeout: 120
-
-mr1-esams-old.wikimedia.org:  # old esams
-  timeout: 120
-  config:
-    security_zones:
-      - name: production
-        services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
-        interfaces: ['lo0.0', 'ge-0/0/1.402', 'ge-0/0/1.404']
-      - name: untrust
-        services: ['ssh', 'ping', 'traceroute']
-        interfaces: ['ge-0/0/6.2484']
-      - name: mgmt
-        services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: ['irb.900']
-      - name: customers
-        services: ['ping', 'traceroute']
-        interfaces: ['ge-0/0/6.2483']
-        screen: untrust-screen
-    capirca:
-      - mr-security-policies-esams
 
 mr1-esams.wikimedia.org:
   timeout: 120
