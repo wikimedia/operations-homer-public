@@ -201,7 +201,7 @@ cr1-esams.wikimedia.org:
     transits:
       62.115.179.162:
         provider: Arelion
-      2001:2035:0:699::2:
+      2001:2035:0:699::1:
         provider: Arelion
       80.249.209.211:
         provider: "Deutsche Telekom"
