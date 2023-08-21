@@ -239,6 +239,10 @@ asw1-bw27-esams.wikimedia.org:
     asn: 4265003001
     capirca:
       - common-loopback
+    static_routes:
+      185.15.59.231/32:
+        next_hop: 185.15.59.2
+        description: "ns2.wikimedia.org"
     device_bgp:
       anycast_neighbors:
         dns3004: {4: 185.15.59.2}
@@ -252,6 +256,10 @@ asw1-by27-esams.wikimedia.org:
     asn: 4265003002
     capirca:
       - common-loopback
+    static_routes:
+      185.15.59.231/32:
+        next_hop: 185.15.59.34
+        description: "ns2.wikimedia.org"
     device_bgp:
       anycast_neighbors:
         dns3003: {4: 185.15.59.34}
