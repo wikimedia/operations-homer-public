@@ -246,6 +246,7 @@ asw1-bw27-esams.wikimedia.org:
     device_bgp:
       anycast_neighbors:
         dns3004: {4: 185.15.59.2}
+        doh3004: {4: 185.15.59.4, 6: 2a02:ec80:300:1:185:15:59:4}
       lvs_neighbors:
         lvs3008: 10.80.0.3
         lvs3010: 10.80.0.2
@@ -263,6 +264,7 @@ asw1-by27-esams.wikimedia.org:
     device_bgp:
       anycast_neighbors:
         dns3003: {4: 185.15.59.34}
+        doh3003: {4: 185.15.59.35, 6: 2a02:ec80:300:2:185:15:59:35}
       lvs_neighbors:
         lvs3009: 10.80.1.14
 
