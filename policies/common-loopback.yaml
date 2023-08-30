@@ -46,6 +46,12 @@ filters:
         destination-port: junos_grpc
         restrict-address-family: inet
         action: accept
+      - name: allow_gnmi6
+        source-prefix: private6
+        protocol: tcp
+        destination-port: junos_grpc
+        restrict-address-family: inet6
+        action: accept
       - name: allow_ntp_src4
         source-prefix: production4 loopback4
         protocol: udp
