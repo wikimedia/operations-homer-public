@@ -233,7 +233,7 @@ cr2-esams.wikimedia.org:
       2001:730:2209:1::d52e:ba09:
         provider: LibertyGlobal
 
-asw1-bw27-esams.wikimedia.org:
+asw1-bw27-esams.mgmt.esams.wmnet:
   config:
     l3_switch: true
     asn: 4265003001
@@ -251,7 +251,7 @@ asw1-bw27-esams.wikimedia.org:
         lvs3008: 10.80.0.3
         lvs3010: 10.80.0.2
 
-asw1-by27-esams.wikimedia.org:
+asw1-by27-esams.mgmt.esams.wmnet:
   config:
     l3_switch: true
     asn: 4265003002
@@ -604,13 +604,11 @@ mr1-drmrs.wikimedia.org:
     capirca:
       - mr-security-policies
 
-asw1-b12-drmrs.wikimedia.org:
+asw1-b12-drmrs.mgmt.drmrs.wmnet:
   config:
     l3_switch: true
     asn: 4265006001
     lldp_disabled: ['xe-0/0/44']
-    filters:
-      xe-0/0/45.0-in: border-tmp-in
     capirca:
       - common-loopback
     device_bgp:
@@ -622,7 +620,7 @@ asw1-b12-drmrs.wikimedia.org:
         lvs6001: 10.136.0.16
         lvs6003: 10.136.0.17
 
-asw1-b13-drmrs.wikimedia.org:
+asw1-b13-drmrs.mgmt.drmrs.wmnet:
   config:
     l3_switch: true
     asn: 4265006002
