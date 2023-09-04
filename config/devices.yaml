@@ -118,6 +118,9 @@ cr1-codfw.wikimedia.org:
       - common-loopback
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
+    switch_neighbors:
+      ssw1-a1-codfw: {4: 10.192.254.5, 6: 2620:0:860:132::2, peer_as: 64811}
+      cloudsw1-b1-codfw: {4: 10.192.254.1, 6: 2620:0:860:130::2, peer_as: 64711}
 
 cr2-codfw.wikimedia.org:
   config:
@@ -151,6 +154,9 @@ cr2-codfw.wikimedia.org:
       - common-loopback
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
+    switch_neighbors:
+      ssw1-a8-codfw: {4: 10.192.254.7, 6: 2620:0:860:133::2, peer_as: 64811}
+      cloudsw1-b1-codfw: {4: 10.192.254.3, 6: 2620:0:860:131::2, peer_as: 64711}
 
 cr2-eqdfw.wikimedia.org:
   config:
@@ -521,6 +527,148 @@ cloudsw1-b1-codfw.mgmt.codfw.wmnet:
 asw-a-codfw.mgmt.codfw.wmnet:
   config:
     lldp_disabled: ['ge-1/0/47']  # SRXs show L2 errors when receiving LLDP frames
+
+ssw1-a1-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+    device_bgp:
+      cr_neighbors:
+        cr1-codfw: {4: 10.192.254.4, 6: 2620:0:860:132::1}
+
+ssw1-a8-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+    device_bgp:
+      cr_neighbors:
+        cr2-codfw: {4: 10.192.254.6, 6: 2620:0:860:133::1}
+
+lsw1-a1-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-a2-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-a3-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-a4-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-a5-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-a6-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-a7-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-a8-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-b2-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-b3-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-b4-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-b5-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-b6-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-b7-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-b8-codfw.mgmt.codfw.wmnet:
+  config:
+    asn: 64811
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
 
 asw2-ulsfo.mgmt.ulsfo.wmnet:
   config:
