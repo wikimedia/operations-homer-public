@@ -123,7 +123,7 @@ filters:
       - name: ripe-atlas
         comment: |-
           RIPE Atlas wants access to 5666 which we block below
-        destination-address: atlas-eqsin atlas-eqiad atlas-codfw
+        destination-address: atlas-eqsin atlas-eqiad atlas-codfw atlas_group
         action: accept
       - name: webproxy
         comment: |-
