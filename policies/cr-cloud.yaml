@@ -56,8 +56,7 @@ filters:
       - name: DNS
         comment: |-
           To be removed with T207533
-        destination-address: ns-recursor.openstack.eqiad1
-          ns-recursor0.openstack.eqiad1 ns-recursor1.openstack.eqiad1
+        destination-address: ns-recursor0.openstack.eqiad1 ns-recursor1.openstack.eqiad1
           ns-recursor0.openstack.codfw1dev ns-recursor1.openstack.codfw1dev
         destination-port: DNS
         protocol: tcp udp
