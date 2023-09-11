@@ -59,6 +59,7 @@ cloud-support = 10.64.4.0/24 # cloud-support1-a-eqiad
 #
 # WMCS VIPs
 #
+ns-recursor.openstack.eqiad1 = 172.20.255.1 # ns-recorsor.openstack.eqiad1
 ns-recursor0.openstack.eqiad1 = 208.80.154.143 # ns-recursor0.openstack.eqiad1
 ns-recursor1.openstack.eqiad1 = 208.80.154.24 # ns-recursor1.openstack.eqiad1
 ns-recursor0.openstack.codfw1dev = 208.80.153.78 # ns-recursor0.openstack.codfw1dev
