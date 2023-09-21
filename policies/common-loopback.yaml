@@ -81,6 +81,12 @@ filters:
         icmp-type: echo-request echo-reply unreachable time-exceeded source-quench
         policer: policer-2m
         action: accept
+      - name: deny_ra
+        comment: |-
+          T334916
+        protocol: icmpv6
+        icmp-type: router-advertisement
+        action: deny
       - name: allow_ok_icmp6
         protocol: icmpv6
         action: accept
