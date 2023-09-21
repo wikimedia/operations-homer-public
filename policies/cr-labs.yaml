@@ -5,9 +5,6 @@ filters:
       targets:
         juniper: labs-in mixed no-interface-specific
     terms:
-      - name: vrrp
-        protocol: vrrp ah
-        action: accept
       - name: allow_bgp_src
         source-prefix: bgp-sessions
         protocol: tcp

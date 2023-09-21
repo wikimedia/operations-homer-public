@@ -10,9 +10,13 @@ filters:
         source-address: cloud-transports
         protocol: icmp
         action: accept
-      - name: vrrp
-        destination-address: VRRP
-        protocol: vrrp ah
+      - name: deny-from-private
+        source-address: cloud-private
+        action: reject
+      - name: allow-public
+        comment: |-
+          To be moved below deny-to-private-subnets after all hosts moved
+        source-address: cloud-public
         action: accept
       - name: cloudmetrics-http
         destination-address: cloudmetrics_group
@@ -95,7 +99,7 @@ filters:
           cloud_api_designate_https cloud_api_glance_https
           cloud_api_neutron_https cloud_api_barbican_https rabbitMQ rabbitMQ_tls
         action: accept
-      - name: deny-from-private
+      - name: deny-from-instances
         comment: |-
           No more legit traffic from 172.16/12
         source-address: CLOUD_VMs
