@@ -18,25 +18,6 @@ filters:
           To be moved below deny-to-private-subnets after all hosts moved
         source-address: cloud-public
         action: accept
-      - name: cloudmetrics-http
-        destination-address: cloudmetrics_group
-        destination-port: HTTP
-        protocol: tcp
-        action: accept
-      - name: cloudmetrics-statsd
-        comment: |-
-          To be removed with T207543
-        destination-address: cloudmetrics_group
-        destination-port: STATSD
-        protocol: udp
-        action: accept
-      - name: cloudmetrics-graphite
-        comment: |-
-          To be removed with T207543
-        destination-address: cloudmetrics_group
-        destination-port: graphite
-        protocol: tcp udp
-        action: accept
       - name: deny-to-private-subnets
         comment: |-
           Deny any communication with private subnets
