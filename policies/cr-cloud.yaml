@@ -38,14 +38,6 @@ filters:
         protocol: tcp
         destination-port: WEB gerritSSH
         action: accept
-      - name: DNS
-        comment: |-
-          To be removed with T207533
-        destination-address: ns-recursor0.openstack.eqiad1 ns-recursor1.openstack.eqiad1
-          ns-recursor0.openstack.codfw1dev ns-recursor1.openstack.codfw1dev
-        destination-port: DNS
-        protocol: tcp udp
-        action: accept
       - name: NFS
         comment: |-
           To be removed with T216422
@@ -67,18 +59,6 @@ filters:
         destination-address: contint_group
         protocol: tcp
         destination-port: GIT
-        action: accept
-      - name: cloudcontrol-apis
-        destination-address: cloudcontrol_group cloudcontrol-dev_group
-        protocol: tcp
-        destination-port: cloud_api_proxy cloud_api_keystone cloud_api_nova
-          cloud_api_cinder cloud_api_placement cloud_api_trove
-          cloud_api_designate cloud_api_glance cloud_api_neutron
-          cloud_api_barbican cloud_api_heat_https cloud_api_magnum_https
-          cloud_api_proxy_https cloud_api_keystone_https cloud_api_nova_https
-          cloud_api_cinder_https cloud_api_placement_https cloud_api_trove_https
-          cloud_api_designate_https cloud_api_glance_https
-          cloud_api_neutron_https cloud_api_barbican_https rabbitMQ rabbitMQ_tls
         action: accept
       - name: deny-from-instances
         comment: |-
