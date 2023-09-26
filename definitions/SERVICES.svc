@@ -79,6 +79,7 @@ junos_grpc = 32767/tcp
 ceph_OSD = 6800-7100/tcp
 TRACEROUTE = 33434-33534/udp
 high_ports = 1024-65535/tcp 1024-65535/udp
+mySQL_sections = 3311-3318/tcp
 
 
 #

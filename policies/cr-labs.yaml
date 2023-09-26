@@ -123,6 +123,15 @@ filters:
         destination-port: bacula_sd
         protocol: tcp
         action: accept
+      - name: wiki-replica-account-creation
+        comment: |-
+          Wiki replica account creation. Remove when clouddbs are moved
+          to the cloud-private setup (T346947).
+        source-address: cloudcontrol_group
+        protocol: tcp
+        destination-address: clouddb_group
+        destination-port: mySQL_sections
+        action: accept
       - name: allow_ok_icmp4
         protocol: icmp
         icmp-type: echo-request echo-reply unreachable time-exceeded source-quench
