@@ -132,6 +132,14 @@ filters:
         destination-address: clouddb_group
         destination-port: mySQL_sections
         action: accept
+      - name: dbproxy
+        comment: |-
+          Connections to m5 for the wiki replica account metadata database.
+        source-address: cloudcontrol_group
+        protocol: tcp
+        destination-address: dbproxy_group
+        destination-port: mySQL
+        action: accept
       - name: allow_ok_icmp4
         protocol: icmp
         icmp-type: echo-request echo-reply unreachable time-exceeded source-quench
