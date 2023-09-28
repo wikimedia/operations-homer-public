@@ -598,6 +598,13 @@
           }
         }
       }
+    },
+    "esi_lag": {
+      "type": "object",
+      "description": "Mecanism to define AE int as an esi-lag and provide ID.",
+      "additionalProperties": {
+        "type": "string"
+      }
     }
   }
 }
