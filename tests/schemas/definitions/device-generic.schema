@@ -559,10 +559,6 @@
       "type": "object",
       "description": "BGP EVPN members and cluster vars for given site.",
       "properties": {
-        "cluster_id": {
-          "type": "string",
-          "format": "ipv4"
-        },
         "rr": {
           "type": "object",
           "description": "Dict of cluster RRs.  Key is device name, value is device loopback.",
