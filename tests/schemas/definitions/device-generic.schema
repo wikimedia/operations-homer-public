@@ -374,14 +374,6 @@
         "type": "string"
       }
     },
-    "lvs_neighbors": { "$ref": "#/definitions/bgp_neighbor_single_af" },
-    "anycast_neighbors": { "$ref": "#/definitions/bgp_neighbor_opt_v6" },
-    "k8s_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-    "k8s_stage_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-    "k8s_mlserve_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-    "k8s_dse_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-    "k8s_mlstaging_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-    "k8s_aux_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
     "ping_offload_vip": {
       "type": "string",
       "format": "ip_interface"
@@ -525,23 +517,37 @@
         }
       ]
     },
-    "spine_asn": {
-      "type": "integer",
-      "description": "BGP ASN used by datacenter switches or spine layer site-wide."
+    "site_bgp": {
+      "type": "object",
+      "description": "BGP peerings defined at site level, applied on both CRs.",
+      "properties": {
+        "anycast": { "$ref": "#/definitions/bgp_neighbor_opt_v6" },
+        "pybal": { "$ref": "#/definitions/bgp_neighbor_single_af" },
+        "k8s": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "k8s_stage": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "k8s_mlserve": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "k8s_mlstaging": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "k8s_dse": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "k8s_aux": { "$ref": "#/definitions/bgp_neighbor_dual_af" }
+      },
+      "additionalProperties": false
     },
-    "switch_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
     "device_bgp": {
       "type": "object",
       "description": "Device-specific BGP peerings, nested to avoid namespace collision.",
       "properties": {
-        "anycast_neighbors": { "$ref": "#/definitions/bgp_neighbor_opt_v6" },
-        "lvs_neighbors": { "$ref": "#/definitions/bgp_neighbor_single_af" },
-        "k8s_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-        "k8s_stage_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-        "k8s_mlserve_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-        "k8s_dse_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-        "k8s_aux_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-        "cr_neighbors": { "$ref": "#/definitions/bgp_neighbor_dual_af" }
+        "anycast": { "$ref": "#/definitions/bgp_neighbor_opt_v6" },
+        "pybal": { "$ref": "#/definitions/bgp_neighbor_single_af" },
+        "k8s": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "k8s_stage": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "k8s_mlserve": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "k8s_mlstaging": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "k8s_dse": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "k8s_aux": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "cr_switch": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "switch_cr": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "mr_sw": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "sw_mr": { "$ref": "#/definitions/bgp_neighbor_dual_af" }
       },
       "additionalProperties": false
     },
