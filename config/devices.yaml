@@ -261,6 +261,8 @@ asw1-bw27-esams.mgmt.esams.wmnet:
       pybal:
         lvs3008: 10.80.0.3
         lvs3010: 10.80.0.2
+      sw_mr:
+        mr1-esams: {4: 10.80.127.3, 6: 2a02:ec80:300:fe02::1}
 
 asw1-by27-esams.mgmt.esams.wmnet:
   config:
@@ -279,6 +281,8 @@ asw1-by27-esams.mgmt.esams.wmnet:
         durum3003: {4: 10.80.1.16, 6: 2a02:ec80:300:102:10:80:1:16}
       pybal:
         lvs3009: 10.80.1.14
+      sw_mr:
+        mr1-esams: {4: 10.80.127.5, 6: 2a02:ec80:300:fe03::1}
 
 cr3-eqsin.wikimedia.org:
   config:
@@ -856,6 +860,8 @@ asw1-b12-drmrs.mgmt.drmrs.wmnet:
       pybal:
         lvs6001: 10.136.0.16
         lvs6003: 10.136.0.17
+      sw_mr:
+        mr1-drmrs: {4: 10.136.127.3, 6: 2a02:ec80:600:fe02::1}
 
 asw1-b13-drmrs.mgmt.drmrs.wmnet:
   config:
@@ -871,3 +877,5 @@ asw1-b13-drmrs.mgmt.drmrs.wmnet:
         durum6002: {4: 10.136.1.23, 6: 2a02:ec80:600:102:10:136:1:23}
       pybal:
         lvs6002: 10.136.1.15
+      sw_mr:
+        mr1-drmrs: {4: 10.136.127.5, 6: 2a02:ec80:600:fe03::1}
