@@ -221,6 +221,10 @@ cr1-esams.wikimedia.org:
         provider: "Hurricane Electric"
     minimum_links:
       ae1: 2
+    device_bgp:
+      cr_switch:
+        asw1-bw27-esams: {4: 185.15.59.157, 6: 2a02:ec80:300:fe04::2, peer_as: 4265003001}
+        asw1-by27-esams: {4: 185.15.59.155, 6: 2a02:ec80:300:fe05::2, peer_as: 4265003002}
 
 cr2-esams.wikimedia.org:
   config:
@@ -242,6 +246,10 @@ cr2-esams.wikimedia.org:
         provider: LibertyGlobal
       2001:730:2209:1::d52e:ba09:
         provider: LibertyGlobal
+    device_bgp:
+      cr_switch:
+        asw1-bw27-esams: {4: 185.15.59.159, 6: 2a02:ec80:300:fe06::2, peer_as: 4265003001}
+        asw1-by27-esams: {4: 185.15.59.151, 6: 2a02:ec80:300:fe08::2, peer_as: 4265003002}
 
 asw1-bw27-esams.mgmt.esams.wmnet:
   config:
@@ -249,10 +257,6 @@ asw1-bw27-esams.mgmt.esams.wmnet:
     asn: 4265003001
     capirca:
       - common-loopback
-    static_routes:
-      185.15.59.231/32:
-        next_hop: 185.15.59.2
-        description: "ns2.wikimedia.org"
     device_bgp:
       anycast:
         dns3004: {4: 185.15.59.2}
@@ -263,6 +267,9 @@ asw1-bw27-esams.mgmt.esams.wmnet:
         lvs3010: 10.80.0.2
       sw_mr:
         mr1-esams: {4: 10.80.127.3, 6: 2a02:ec80:300:fe02::1}
+      switch_cr:
+        cr1-esams: {4: 185.15.59.156, 6: 2a02:ec80:300:fe04::1}
+        cr2-esams: {4: 185.15.59.158, 6: 2a02:ec80:300:fe06::1}
 
 asw1-by27-esams.mgmt.esams.wmnet:
   config:
@@ -270,10 +277,6 @@ asw1-by27-esams.mgmt.esams.wmnet:
     asn: 4265003002
     capirca:
       - common-loopback
-    static_routes:
-      185.15.59.231/32:
-        next_hop: 185.15.59.34
-        description: "ns2.wikimedia.org"
     device_bgp:
       anycast:
         dns3003: {4: 185.15.59.34}
@@ -283,6 +286,9 @@ asw1-by27-esams.mgmt.esams.wmnet:
         lvs3009: 10.80.1.14
       sw_mr:
         mr1-esams: {4: 10.80.127.5, 6: 2a02:ec80:300:fe03::1}
+      switch_cr:
+        cr1-esams: {4: 185.15.59.154, 6: 2a02:ec80:300:fe05::1}
+        cr2-esams: {4: 185.15.59.150, 6: 2a02:ec80:300:fe08::1}
 
 cr3-eqsin.wikimedia.org:
   config:
@@ -354,6 +360,10 @@ cr1-drmrs.wikimedia.org:
       - cr-border-in
     filters:
       gr-0/0/0.1-in: border-in
+    device_bgp:
+      cr_switch:
+        asw1-b12-drmrs: {4: 185.15.58.143, 6: 2a02:ec80:600:fe06::2, peer_as: 4265006001}
+        asw1-b13-drmrs: {4: 185.15.58.149, 6: 2a02:ec80:600:fe07::2, peer_as: 4265006002}
 
 cr2-drmrs.wikimedia.org:
   config:
@@ -375,6 +385,10 @@ cr2-drmrs.wikimedia.org:
       - cr-border-in
     filters:
       gr-0/0/0.1-in: border-in
+    device_bgp:
+      cr_switch:
+        asw1-b12-drmrs: {4: 185.15.58.141, 6: 2a02:ec80:600:fe08::2, peer_as: 4265006001}
+        asw1-b13-drmrs: {4: 185.15.58.145, 6: 2a02:ec80:600:fe09::2, peer_as: 4265006002}
 
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
@@ -484,7 +498,7 @@ ssw1-f1-eqiad.mgmt.eqiad.wmnet:
       - common-loopback
     device_bgp:
       switch_cr:
-        cr1-eqiad: {4: 10.66.0.10, 6: 2620:0:861:fe08::1}
+        cr2-eqiad: {4: 10.66.0.10, 6: 2620:0:861:fe08::1}
 
 lsw1-f1-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -862,6 +876,9 @@ asw1-b12-drmrs.mgmt.drmrs.wmnet:
         lvs6003: 10.136.0.17
       sw_mr:
         mr1-drmrs: {4: 10.136.127.3, 6: 2a02:ec80:600:fe02::1}
+      switch_cr:
+        cr1-drmrs: {4: 185.15.58.142, 6: 2a02:ec80:600:fe06::1}
+        cr2-drmrs: {4: 185.15.58.140, 6: 2a02:ec80:600:fe08::1}
 
 asw1-b13-drmrs.mgmt.drmrs.wmnet:
   config:
@@ -879,3 +896,6 @@ asw1-b13-drmrs.mgmt.drmrs.wmnet:
         lvs6002: 10.136.1.15
       sw_mr:
         mr1-drmrs: {4: 10.136.127.5, 6: 2a02:ec80:600:fe03::1}
+      switch_cr:
+        cr1-drmrs: {4: 185.15.58.148, 6: 2a02:ec80:600:fe07::1}
+        cr2-drmrs: {4: 185.15.58.144, 6: 2a02:ec80:600:fe09::1}
