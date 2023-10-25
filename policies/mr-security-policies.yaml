@@ -111,6 +111,11 @@ filters:
         destination-port: TRACEROUTE
         protocol: udp
         action: accept
+      - name: pki--http
+        destination-address: pki_group
+        destination-port: HTTP
+        protocol: tcp
+        action: accept
       - name: default-deny
         comment: |-
           T218234 - to-zone junos-host has an implicit default permit
