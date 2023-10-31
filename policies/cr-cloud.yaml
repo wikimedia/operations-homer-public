@@ -6,27 +6,25 @@ filters:
       targets:
         juniper: cloud-in4 inet no-interface-specific
     terms:
-      - name: allow-icmp
+      - name: allow-icmp-from-transport
         source-address: cloud-transports
         protocol: icmp
         action: accept
-      - name: deny-from-private
+      - name: deny-from-transports
+        source-address: cloud-transports
+        action: reject
+      - name: deny-from-cloud-private
+        comment: |-
+          Deny from physical-host cloud-private IP ranges (doesn't include VMs)
         source-address: cloud-private
         action: reject
-      - name: allow-public
-        comment: |-
-          To be moved below deny-to-private-subnets after all hosts moved
-        source-address: cloud-public
-        action: accept
-      - name: deny-to-private-subnets
-        comment: |-
-          Deny any communication with private subnets
+      - name: deny-to-private
         destination-address: RFC1918
         action: reject
       - name: wiki--HTTP-S
         comment: |-
-          All specific flows from 172.16/12 to public IPs - T209082
-          Bellow To be removed with T209011
+          This rule and remaining specific rules allow traffic directly from
+          cloud VM instances in the 172.16/12 range to certain WMF public IPs - T209011
         destination-address: text-lb.eqiad upload-lb.eqiad text-lb.codfw upload-lb.codfw
           text-lb.ulsfo upload-lb.ulsfo text-lb.esams upload-lb.esams
           text-lb.eqsin upload-lb.eqsin text-lb.drmrs upload-lb.drmrs
@@ -65,7 +63,8 @@ filters:
           No more legit traffic from 172.16/12
         source-address: CLOUD_VMs
         action: deny
-      - name: default
+      - name: allow-from-public
         comment: |-
-          Allow communication to public subnets and the Internet
+          Allow from cloud-public ranges, covering various public services, VM NAT ranges etc
+        source-address: cloud-public
         action: accept
