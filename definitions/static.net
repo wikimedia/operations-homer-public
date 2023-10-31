@@ -58,8 +58,8 @@ cloud-hosts = 10.64.20.0/24 # cloud-hosts1-b-eqiad
 cloud-support = 10.64.4.0/24 # cloud-support1-a-eqiad
                 10.64.37.0/24 # cloud-support1-c-eqiad
 cloud-private = 172.20.0.0/16 # cloud-private aggregate
-cloud-public = 185.15.56.0/24 # cloud-public aggregate eqiad
-               185.15.57.0/26 # cloud-public aggregate codfw
+cloud-public = 185.15.56.160/28 # cloud public service VIPs eqiad
+               185.15.57.24/29  # cloud public service VIPs codfw
 
 #
 # Traffic VIPs
