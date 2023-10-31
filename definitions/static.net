@@ -46,10 +46,11 @@ network-infra = 10.136.127.0/24 # drmrs
                 185.15.59.128/27 # esams
                 2a02:ec80:300:fe00::/55 # esams
 
-cloud-transports = 185.15.56.232/29 # cloud-gw-transport-eqiad
+cloud-transports = 185.15.56.236/30 # cloud-gw-transport-eqiad
                    185.15.56.240/29 # cloud-instance-transport1-b-eqiad
-                   185.15.57.8/29 # cloud-gw-transport-codfw
-                   208.80.153.184/29 # cloud-instance-transport1-b-codfw
+                   185.15.57.8/30 # cloud-gw-transport-codfw
+                   185.15.57.16/29 # cloud-instance-transport1-b-codfw (next)
+                   208.80.153.184/29 # cloud-instance-transport1-b-codfw (in use)
 
 cloud-hosts = 10.64.20.0/24 # cloud-hosts1-b-eqiad
               10.192.20.0/24 # cloud-hosts1-b-codfw
@@ -57,8 +58,8 @@ cloud-hosts = 10.64.20.0/24 # cloud-hosts1-b-eqiad
 cloud-support = 10.64.4.0/24 # cloud-support1-a-eqiad
                 10.64.37.0/24 # cloud-support1-c-eqiad
 cloud-private = 172.20.0.0/16 # cloud-private aggregate
-cloud-public = 185.15.56.0/24 # cloud public aggregate eqiad
-               185.15.57.0/26 # cloud public aggregate codfw
+cloud-public = 185.15.56.160/28 # cloud public service VIPs eqiad
+               185.15.57.24/29  # cloud public service VIPs codfw
 
 #
 # Traffic VIPs
