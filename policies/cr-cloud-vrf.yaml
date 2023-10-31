@@ -17,16 +17,14 @@ filters:
       - name: deny-from-private
         source-address: cloud-private
         action: reject
-      - name: allow-public
-        comment: |-
-          To be moved below deny-to-private-subnets after all hosts moved
-        source-address: cloud-public
-        action: accept
       - name: deny-to-private-subnets
         comment: |-
           Deny any communication with private subnets
         destination-address: RFC1918 wikimedia-private
         action: reject
+      - name: allow-public
+        source-address: cloud-public
+        action: accept
       - name: wiki--HTTP-S
         comment: |-
           All specific flows from 172.16/12 to public IPs - T209082
