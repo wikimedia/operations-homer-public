@@ -37,7 +37,7 @@ anycast_prefixes:
   - 208.80.154.238/32  # ns0.wikimedia.org
   - 208.80.153.231/32  # ns1.wikimedia.org
 
-# Next available UID: 2038
+# Next available UID: 2039
 # When adding a new user, please make sure to update "next available UID" above
 # yamllint disable rule:line-length
 users:
@@ -151,6 +151,11 @@ users:
     class: super-user
     sshkeys:
       - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAeydDXbMjhj9yFWzukobrDPyjyIlRY6ugP6tUYUcuVX cardno:23 857 498"
+  - name: taavi
+    uid: 2038
+    class: super-user
+    sshkeys:
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHxFwB22ti9ZoewA9VEJEhccLLBGJGBLETen0/kvyJOs taavi@runko wmf network access"
 # yamllint enable rule:line-length
 # When adding a new user, please make sure to update the "next available UID"
 # comment at the beginning of the users block
