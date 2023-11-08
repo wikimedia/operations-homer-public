@@ -41,7 +41,7 @@ filters:
       - name: NFS
         comment: |-
           To be removed with T216422
-        destination-address: clouddumps_group nfs-maps.wikimedia.org
+        destination-address: clouddumps_group
         protocol: tcp
         destination-port: NFS
         action: accept
