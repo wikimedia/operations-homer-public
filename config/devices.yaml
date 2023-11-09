@@ -32,7 +32,7 @@ cr1-eqiad.wikimedia.org:
       - ae2  # Row B
     capirca:
       - cr-cloud  # For VM traffic
-      - cr-sandbox
+      - common-sandbox
       - common-loopback
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
@@ -68,7 +68,7 @@ cr2-eqiad.wikimedia.org:
       - ae4  # Row D
     capirca:
       - cr-cloud  # For VM traffic
-      - cr-sandbox
+      - common-sandbox
       - common-loopback
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
@@ -102,9 +102,6 @@ cr1-codfw.wikimedia.org:
       2001:2000:3080:af4::1:
         provider: Arelion
     filters:
-      ae1.2201-in: sandbox
-      ae2.2118-in: labs-in
-      ae2.2120-in: cloud-in
       xe-1/0/4:0.1000-in: labs-in
       xe-1/0/4:0.1001-in: cloud-in
       xe-1/1/1:2.0-in4: transport-in  # to eqdfw
@@ -115,7 +112,6 @@ cr1-codfw.wikimedia.org:
       - et-1/1/5  # Row A / B bridged through ssw1-a1-codfw
     capirca:
       - cr-cloud
-      - cr-sandbox
       - common-loopback
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
@@ -137,9 +133,6 @@ cr2-codfw.wikimedia.org:
       2001:1900:2100::4b41:
         provider: Lumen
     filters:
-      ae1.2201-in: sandbox
-      ae2.2118-in: labs-in
-      ae2.2120-in: cloud-in
       xe-1/0/4:0.1000-in: labs-in
       xe-1/0/4:0.1001-in: cloud-in
       xe-5/0/0.0-in4: transport-in  # to eqdfw
@@ -152,7 +145,6 @@ cr2-codfw.wikimedia.org:
     primary_ixp: true
     capirca:
       - cr-cloud
-      - cr-sandbox
       - common-loopback
       - cr-border-in
       - cr-labs  # For cloud-hosts servers
@@ -633,6 +625,9 @@ ssw1-a1-codfw.mgmt.codfw.wmnet:
     l3_switch: true
     capirca:
       - common-loopback
+      - common-sandbox
+    filters:
+      irb.2201-in: sandbox
     device_bgp:
       switch_cr:
         cr1-codfw: {4: 10.192.254.4, 6: 2620:0:860:132::1}
@@ -647,6 +642,9 @@ ssw1-a8-codfw.mgmt.codfw.wmnet:
     l3_switch: true
     capirca:
       - common-loopback
+      - common-sandbox
+    filters:
+      irb.2201-in: sandbox
     device_bgp:
       switch_cr:
         cr2-codfw: {4: 10.192.254.6, 6: 2620:0:860:133::1}

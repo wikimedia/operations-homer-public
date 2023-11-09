@@ -268,7 +268,6 @@ ospf:
       - et-1/1/5.2018
       - ae3.2019
       - ae4.2020
-      - et-1/1/5.2201
     cr2-codfw.wikimedia.org:
       - et-1/1/5.2001
       - et-1/1/5.2002
@@ -278,7 +277,6 @@ ospf:
       - et-1/1/5.2018
       - ae3.2019
       - ae4.2020
-      - et-1/1/5.2201
     cr1-eqiad.wikimedia.org:
       - ae1.1001
       - ae1.1017

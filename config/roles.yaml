@@ -23,11 +23,11 @@ mr:
 
 cr:
   capirca:
-    - cr-sandbox
+    - common-sandbox
     - common-loopback
     - cr-border-in
 
-cloudsw:  # Will have to be split up once there is one in codfw
+cloudsw:
   l3_switch: true
   capirca:
     - common-loopback
