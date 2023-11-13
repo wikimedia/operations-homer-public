@@ -137,6 +137,15 @@ filters:
         destination-address: clouddb_group
         destination-port: mySQL_sections
         action: accept
+      - name: wiki-replica-proxy
+        comment: |-
+          Wiki replica access via cloudlb, formerly via LVS and dbproxy1018/9.
+          Remove when clouddbs are moved to the cloud-private setup (T346947).
+        source-address: cloudlb_group
+        protocol: tcp
+        destination-address: clouddb_group
+        destination-port: mySQL_sections
+        action: accept
       - name: dbproxy
         comment: |-
           Connections to m5 for the wiki replica account metadata database.
