@@ -249,13 +249,6 @@ asw1-bw27-esams.mgmt.esams.wmnet:
     capirca:
       - common-loopback
     device_bgp:
-      anycast:
-        dns3004: {4: 185.15.59.2}
-        doh3004: {4: 185.15.59.4, 6: 2a02:ec80:300:1:185:15:59:4}
-        durum3004: {4: 10.80.0.19, 6: 2a02:ec80:300:101:10:80:0:19}
-      pybal:
-        lvs3008: 10.80.0.3
-        lvs3010: 10.80.0.2
       sw_mr:
         mr1-esams: {4: 10.80.127.3, 6: 2a02:ec80:300:fe02::1}
       switch_cr:
@@ -269,12 +262,6 @@ asw1-by27-esams.mgmt.esams.wmnet:
     capirca:
       - common-loopback
     device_bgp:
-      anycast:
-        dns3003: {4: 185.15.59.34}
-        doh3003: {4: 185.15.59.35, 6: 2a02:ec80:300:2:185:15:59:35}
-        durum3003: {4: 10.80.1.16, 6: 2a02:ec80:300:102:10:80:1:16}
-      pybal:
-        lvs3009: 10.80.1.14
       sw_mr:
         mr1-esams: {4: 10.80.127.5, 6: 2a02:ec80:300:fe03::1}
       switch_cr:
@@ -408,11 +395,6 @@ lsw1-e1-eqiad.mgmt.eqiad.wmnet:
       - sw-analytics
     filters:
       irb.1039-in: analytics-in
-    device_bgp:
-      k8s_dse:
-        dse-k8s-worker1005: {4: 10.64.130.6, 6: 2620:0:861:109:10:64:130:6}
-      k8s:
-        kubernetes1059: {4: 10.64.130.23, 6: 2620:0:861:109:10:64:130:23}
 
 lsw1-e2-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -424,11 +406,6 @@ lsw1-e2-eqiad.mgmt.eqiad.wmnet:
       - sw-analytics
     filters:
       irb.1040-in: analytics-in
-    device_bgp:
-      k8s_mlserve:
-        ml-serve1005: {4: 10.64.131.3, 6: 2620:0:861:10a:10:64:131:3}
-      k8s:
-        kubernetes1060: {4: 10.64.131.26, 6: 2620:0:861:10a:10:64:131:26}
 
 lsw1-e3-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -440,18 +417,6 @@ lsw1-e3-eqiad.mgmt.eqiad.wmnet:
       - sw-analytics
     filters:
       irb.1041-in: analytics-in
-    device_bgp:
-      k8s_mlserve:
-        ml-serve1006: {4: 10.64.132.3, 6: 2620:0:861:10b:10:64:132:3}
-      k8s_dse:
-        dse-k8s-worker1006: {4: 10.64.132.8, 6: 2620:0:861:10b:10:64:132:8}
-      k8s:
-        kubernetes1047: {4: 10.64.132.29, 6: 2620:0:861:10b:10:64:132:29}
-        kubernetes1048: {4: 10.64.132.25, 6: 2620:0:861:10b:10:64:132:25}
-        kubernetes1049: {4: 10.64.132.26, 6: 2620:0:861:10b:10:64:132:26}
-        kubernetes1050: {4: 10.64.132.27, 6: 2620:0:861:10b:10:64:132:27}
-        kubernetes1051: {4: 10.64.132.28, 6: 2620:0:861:10b:10:64:132:28}
-        kubernetes1061: {4: 10.64.132.30, 6: 2620:0:861:10b:10:64:132:30}
 
 lsw1-e5-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -507,9 +472,6 @@ lsw1-f1-eqiad.mgmt.eqiad.wmnet:
       - sw-analytics
     filters:
       irb.1043-in: analytics-in
-    device_bgp:
-      k8s_dse:
-        dse-k8s-worker1007: {4: 10.64.134.5, 6: 2620:0:861:10d:10:64:134:5}
 
 lsw1-f2-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -521,11 +483,6 @@ lsw1-f2-eqiad.mgmt.eqiad.wmnet:
       - sw-analytics
     filters:
       irb.1044-in: analytics-in
-    device_bgp:
-      k8s_mlserve:
-        ml-serve1007: {4: 10.64.135.3, 6: 2620:0:861:10e:10:64:135:3}
-      k8s:
-        kubernetes1062: {4: 10.64.135.25, 6: 2620:0:861:10e:10:64:135:25}
 
 lsw1-f3-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -537,19 +494,6 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
       - sw-analytics
     filters:
       irb.1045-in: analytics-in
-    device_bgp:
-      k8s_mlserve:
-        ml-serve1008: {4: 10.64.136.2, 6: 2620:0:861:10f:10:64:136:2}
-      k8s_dse:
-        dse-k8s-worker1008: {4: 10.64.136.7, 6: 2620:0:861:10f:10:64:136:7}
-      k8s:
-        kubernetes1025: {4: 10.64.136.9, 6: 2620:0:861:10f:10:64:136:9}
-        kubernetes1026: {4: 10.64.136.10, 6: 2620:0:861:10f:10:64:136:10}
-        kubernetes1052: {4: 10.64.136.23, 6: 2620:0:861:10f:10:64:136:23}
-        kubernetes1053: {4: 10.64.136.24, 6: 2620:0:861:10f:10:64:136:24}
-        kubernetes1054: {4: 10.64.136.25, 6: 2620:0:861:10f:10:64:136:25}
-        kubernetes1055: {4: 10.64.136.26, 6: 2620:0:861:10f:10:64:136:26}
-        kubernetes1056: {4: 10.64.136.27, 6: 2620:0:861:10f:10:64:136:27}
 
 lsw1-f5-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -872,13 +816,6 @@ asw1-b12-drmrs.mgmt.drmrs.wmnet:
     capirca:
       - common-loopback
     device_bgp:
-      anycast:
-        doh6001: {4: 185.15.58.11, 6: 2a02:ec80:600:1:185:15:58:11}
-        dns6001: {4: 185.15.58.5}
-        durum6001: {4: 10.136.0.21, 6: 2a02:ec80:600:101:10:136:0:21}
-      pybal:
-        lvs6001: 10.136.0.16
-        lvs6003: 10.136.0.17
       sw_mr:
         mr1-drmrs: {4: 10.136.127.3, 6: 2a02:ec80:600:fe02::1}
       switch_cr:
@@ -893,12 +830,6 @@ asw1-b13-drmrs.mgmt.drmrs.wmnet:
     capirca:
       - common-loopback
     device_bgp:
-      anycast:
-        doh6002: {4: 185.15.58.41, 6: 2a02:ec80:600:2:185:15:58:41}
-        dns6002: {4: 185.15.58.37}
-        durum6002: {4: 10.136.1.23, 6: 2a02:ec80:600:102:10:136:1:23}
-      pybal:
-        lvs6002: 10.136.1.15
       sw_mr:
         mr1-drmrs: {4: 10.136.127.5, 6: 2a02:ec80:600:fe03::1}
       switch_cr:

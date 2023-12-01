@@ -517,21 +517,6 @@
         }
       ]
     },
-    "site_bgp": {
-      "type": "object",
-      "description": "BGP peerings defined at site level, applied on both CRs.",
-      "properties": {
-        "anycast": { "$ref": "#/definitions/bgp_neighbor_opt_v6" },
-        "pybal": { "$ref": "#/definitions/bgp_neighbor_single_af" },
-        "k8s": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-        "k8s_stage": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-        "k8s_mlserve": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-        "k8s_mlstaging": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-        "k8s_dse": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-        "k8s_aux": { "$ref": "#/definitions/bgp_neighbor_dual_af" }
-      },
-      "additionalProperties": false
-    },
     "device_bgp": {
       "type": "object",
       "description": "Device-specific BGP peerings, nested to avoid namespace collision.",
