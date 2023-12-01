@@ -101,11 +101,6 @@ users:
     class: super-user
     sshkeys:
       - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPLPtrz3vy1SKNu4Rez8Jr+my9QhlNO0/iWLb4/cZB8V Riccardo Coccioli (volans) <rcoccioli@wikimedia.org>"
-  - name: jbond
-    uid: 2028
-    class: super-user
-    sshkeys:
-      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC8YxhwNNjW0sN6iAMWiNdk0UI9S+bMR6c/nSX/0KsQP jbond@storage"
   - name: homer
     uid: 2029
     class: super-user
