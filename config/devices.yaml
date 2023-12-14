@@ -27,9 +27,6 @@ cr1-eqiad.wikimedia.org:
       - ae3.1022  # analytics1-c-eqiad
       - ae4.1023  # analytics1-d-eqiad
     vrrp_bandwidth_threshold: true
-    vrrp_master_pinning:
-      - ae1  # Row A
-      - ae2  # Row B
     capirca:
       - cr-cloud  # For VM traffic
       - common-sandbox
@@ -63,9 +60,6 @@ cr2-eqiad.wikimedia.org:
       - ae4.1023  # analytics1-d-eqiad
     damping: [xe-3/2/1]
     vrrp_bandwidth_threshold: true
-    vrrp_master_pinning:
-      - ae3  # Row C
-      - ae4  # Row D
     capirca:
       - cr-cloud  # For VM traffic
       - common-sandbox
@@ -139,9 +133,6 @@ cr2-codfw.wikimedia.org:
       xe-1/0/1:1.0-in4: transport-in  # to eqord
     urpf_strict:
       - xe-1/0/4:0.1000  # cloud-hosts networks
-    vrrp_master_pinning:
-      - ae3  # Row C
-      - ae4  # Row D
     primary_ixp: true
     capirca:
       - cr-cloud
