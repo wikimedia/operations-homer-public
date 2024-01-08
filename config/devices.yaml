@@ -722,7 +722,6 @@ asw2-ulsfo.mgmt.ulsfo.wmnet:
 asw1-eqsin.mgmt.eqsin.wmnet:
   config:
     lldp_disabled: ['ge-0/0/23']  # SRXs show L2 errors when receiving LLDP frames
-    mgmt_junos: false  # Remove after upgrade, see T332395
 
 # management switches/routers
 mr1-eqiad.wikimedia.org:
