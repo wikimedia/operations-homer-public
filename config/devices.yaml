@@ -610,6 +610,9 @@ lsw1-a2-codfw.mgmt.codfw.wmnet:
     l3_switch: true
     capirca:
       - common-loopback
+    device_bgp:
+      sw_mr:
+        mr1-codfw: {4: 10.192.254.9, 6: 2620:0:860:134::2}
 
 lsw1-a3-codfw.mgmt.codfw.wmnet:
   config:
