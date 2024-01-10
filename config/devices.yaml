@@ -747,11 +747,11 @@ mr1-codfw.wikimedia.org:
   config:
     security_zones:
       - name: production
-        services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
-        interfaces: ['lo0.0', 'ge-0/0/1.401', 'ge-0/0/1.402']
+        services: ['ssh', 'ping', 'traceroute', 'snmp', 'bgp']
+        interfaces: ['lo0.0', 'ge-0/0/3.0']
       - name: untrust
         services: ['ssh', 'ping', 'traceroute']
-        interfaces: ['ge-0/0/5']
+        interfaces: ['ge-0/0/5.0']
       - name: mgmt
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/0.0']
