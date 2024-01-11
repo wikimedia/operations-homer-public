@@ -755,6 +755,9 @@ mr1-codfw.wikimedia.org:
       - name: mgmt
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/0.0']
+    device_bgp:
+      mr_sw:
+        lsw1-a2-codfw: {4: 10.192.254.8, 6: 2620:0:860:134::1, peer_as: 64811}
 
 mr1-eqsin.wikimedia.org:
   timeout: 120
@@ -781,6 +784,10 @@ mr1-esams.wikimedia.org:
         interfaces: ['irb.900']
     capirca:
       - mr-security-policies
+    device_bgp:
+      mr_sw:
+        asw1-bw27-esams: {4: 10.80.127.2, 6: 2a02:ec80:300:fe02::2, peer_as: 4265003001}
+        asw1-by27-esams: {4: 10.80.127.4, 6: 2a02:ec80:300:fe03::2, peer_as: 4265003002}
 
 mr1-drmrs.wikimedia.org:
   timeout: 120
@@ -797,6 +804,10 @@ mr1-drmrs.wikimedia.org:
         interfaces: ['irb.900']
     capirca:
       - mr-security-policies
+    device_bgp:
+      mr_sw:
+        asw1-b12-drmrs: {4: 10.136.127.2, 6: 2a02:ec80:600:fe02::2, peer_as: 4265006001}
+        asw1-b13-drmrs: {4: 10.136.127.4, 6: 2a02:ec80:600:fe03::2, peer_as: 4265006002}
 
 asw1-b12-drmrs.mgmt.drmrs.wmnet:
   config:
