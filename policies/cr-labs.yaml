@@ -28,9 +28,6 @@ filters:
         protocol: tcp
         destination-port: kafkaTLS
         action: accept
-      - name: allow-labs
-        destination-address: cloud-support
-        action: accept
       - name: allow-anycast-dns
         destination-address: recdns
         protocol: tcp udp
