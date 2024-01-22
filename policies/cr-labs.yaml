@@ -146,6 +146,12 @@ filters:
         destination-address: dbproxy_group
         destination-port: mySQL
         action: accept
+      - name: cloudrabbit
+        comment: |-
+          Temporary rule to allow inter-cluster traffic while the cloudrabbit
+          hosts are being migrated to the cloud-private setup.
+        source-address: cloudrabbit_group
+        destination-address: cloudrabbit_group
       - name: allow_ok_icmp4
         protocol: icmp
         icmp-type: echo-request echo-reply unreachable time-exceeded source-quench
