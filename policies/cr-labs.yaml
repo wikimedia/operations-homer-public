@@ -66,11 +66,6 @@ filters:
           T269457
         destination-address: cloudcontrol_group cloudcontrol-dev_group
         action: accept
-      - name: openstack-apis
-        comment: |-
-          Needed until all cloud hosts are connected via cloud-private, see T346948
-        destination-address: openstack.eqiad1.wikimediacloud.org openstack.codfw1dev.wikimediacloud.org
-        action: accept
       - name: debmonitor
         comment: |-
           T261489
