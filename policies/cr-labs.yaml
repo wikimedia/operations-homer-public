@@ -152,6 +152,7 @@ filters:
           hosts are being migrated to the cloud-private setup.
         source-address: cloudrabbit_group
         destination-address: cloudrabbit_group
+        action: accept
       - name: allow_ok_icmp4
         protocol: icmp
         icmp-type: echo-request echo-reply unreachable time-exceeded source-quench
