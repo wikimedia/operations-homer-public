@@ -1,0 +1,25 @@
+prefix-list vms-ips4 {
+    10.192.24.0/23;
+}
+prefix-list vms-ips6 {
+    2620:0:860:140::/64;
+}
+policy-statement vms_import {
+    term ipv4 {
+        from {
+            family inet;
+            protocol bgp;
+            prefix-list-filter vms-ips4 longer;
+        }
+        then accept;
+    }
+    term ipv4 {
+        from {
+            family inet6;
+            protocol bgp;
+            prefix-list-filter vms-ips6 longer;
+        }
+        then accept;
+    }
+    then reject;
+}
