@@ -13,7 +13,7 @@ policy-statement vms_import {
         }
         then accept;
     }
-    term ipv4 {
+    term ipv6 {
         from {
             family inet6;
             protocol bgp;
