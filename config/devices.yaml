@@ -228,6 +228,8 @@ cr2-esams.wikimedia.org:
         provider: LibertyGlobal
       2001:730:2209:1::d52e:ba09:
         provider: LibertyGlobal
+      2001:7f8:13::a500:6939:1:
+        provider: "Hurricane Electric"
     device_bgp:
       cr_switch:
         asw1-bw27-esams: {4: 185.15.59.159, 6: 2a02:ec80:300:fe06::2, peer_as: 4265003001}
