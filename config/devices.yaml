@@ -234,6 +234,7 @@ cr2-esams.wikimedia.org:
       cr_switch:
         asw1-bw27-esams: {4: 185.15.59.159, 6: 2a02:ec80:300:fe06::2, peer_as: 4265003001}
         asw1-by27-esams: {4: 185.15.59.151, 6: 2a02:ec80:300:fe08::2, peer_as: 4265003002}
+    primary_ixp: true
 
 asw1-bw27-esams.mgmt.esams.wmnet:
   config:
