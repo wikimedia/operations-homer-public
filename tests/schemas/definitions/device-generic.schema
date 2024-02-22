@@ -384,10 +384,10 @@
     },
     "dhcp_server": {
       "type": "object",
-      "additionalProperties" : false,                                                          
+      "additionalProperties" : false,
       "properties": {
-        "name": {                                                                              
-          "type": "string"                                                                     
+        "name": {
+          "type": "string"
         },
         "ip": {
           "type": "string",
@@ -395,20 +395,15 @@
         }
       }
     },
-    "dhcp_relay": {
-      "type": "object",
-      "additionalProperties" : false,
-      "properties": {
-        "interfaces": {
-          "type": "array",
-          "prefixItems": [
-            {
-              "type": "string",
-              "minProperties": 1
-            }
-          ]
+    "dhcp_relay_ra": {
+      "type": "array",
+      "description": "Controls interfaces to get DHCP relay and IPv6 RAs enabled on CRs",
+      "minProperties": 1,
+      "prefixItems": [
+        {
+          "type": "string"
         }
-      }
+      ]
     },
     "capirca": {
       "type": "array",

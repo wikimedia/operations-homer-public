@@ -25,23 +25,22 @@ eqiad:
   dhcp_server:
     name: install1004
     ip: 208.80.154.74
-  dhcp_relay:
-    interfaces:
-      - ae1.1001
-      - ae1.1017
-      - ae1.1030
-      - ae1.1117
-      - ae2.1002
-      - ae2.1018
-      - ae2.1021
-      - ae3.1003
-      - ae3.1019
-      - ae3.1022
-      - ae3.1119
-      - ae4.1023
-      - ae4.1020
-      - ae4.1004
-      - ae2.1202
+  dhcp_relay_ra:
+    - ae1.1001
+    - ae1.1017
+    - ae1.1030
+    - ae1.1117
+    - ae2.1002
+    - ae2.1018
+    - ae2.1021
+    - ae3.1003
+    - ae3.1019
+    - ae3.1022
+    - ae3.1119
+    - ae4.1023
+    - ae4.1020
+    - ae4.1004
+    - ae2.1202
   tcp_mss_clamping: true
   wmcs_prefixes:
     - 172.16.0.0/21
@@ -104,14 +103,12 @@ codfw:
   dhcp_server:
     name: install2004
     ip: 208.80.153.105
-  dhcp_relay:
-    interfaces:
-      - ae3.2003
-      - ae4.2004
-      - et-1/1/5.2017
-      - et-1/1/5.2018
-      - ae3.2019
-      - ae4.2020
+  dhcp_relay_ra:
+    - ae3.2003
+    - ae4.2004
+    - et-1/1/5.2018
+    - ae3.2019
+    - ae4.2020
   wmcs_prefixes:
     - 172.16.128.0/21
     - 185.15.57.0/27
@@ -170,11 +167,10 @@ ulsfo:
   dhcp_server:
     name: install4002
     ip: 198.35.26.13
-  dhcp_relay:
-    interfaces:
-      - et-0/0/1.1201
-      - et-0/0/1.1211
-      - et-0/0/1.1221
+  dhcp_relay_ra:
+    - et-0/0/1.1201
+    - et-0/0/1.1211
+    - et-0/0/1.1221
 
 eqsin:
   confed: 65005
@@ -192,11 +188,10 @@ eqsin:
   dhcp_server:
     name: install5002
     ip: 103.102.166.12
-  dhcp_relay:
-    interfaces:
-      - ae1.510
-      - ae1.520
-      - ae1.530
+  dhcp_relay_ra:
+    - ae1.510
+    - ae1.520
+    - ae1.530
   tcp_mss_clamping: true
 
 esams:
