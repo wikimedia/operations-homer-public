@@ -106,7 +106,6 @@ codfw:
   dhcp_relay_ra:
     - ae3.2003
     - ae4.2004
-    - et-1/1/5.2018
     - ae3.2019
     - ae4.2020
   wmcs_prefixes:
