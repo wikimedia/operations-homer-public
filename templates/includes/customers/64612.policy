@@ -1,7 +1,9 @@
 prefix-list vms-ips4 {
     10.192.24.0/23;
+    208.80.152.128/27;
 }
 prefix-list vms-ips6 {
+    2620:0:860:5::/64;
     2620:0:860:140::/64;
 }
 policy-statement vms_import {
