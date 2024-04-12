@@ -37,6 +37,7 @@ wikimedia-private = 10.0.0.0/8 # private
                     2620:0:863:100::/56 # ulsfo private
                     2a02:ec80:300:100::/56 # esams private
                     2a02:ec80:600:100::/56 # drmrs private
+                    2a02:ec80:700:100::/56 # magru private
 
 network-infra = 10.136.127.0/24 # drmrs
                 185.15.58.128/27 # drmrs
@@ -44,6 +45,9 @@ network-infra = 10.136.127.0/24 # drmrs
                 10.80.127.0/24 # esams
                 185.15.59.128/27 # esams
                 2a02:ec80:300:fe00::/55 # esams
+                10.140.127.0/24 # magru
+                195.200.68.128/27 # magru
+                2a02:ec80:700:fe00::/55 # magru
 
 cloud-transports = 185.15.56.236/30 # cloud-gw-transport-eqiad
                    185.15.56.240/29 # cloud-instance-transport1-b-eqiad
@@ -73,6 +77,8 @@ text-lb.eqsin = 103.102.166.224 # text-lb.eqsin
 upload-lb.eqsin = 103.102.166.240 # upload-lb.eqsin
 text-lb.drmrs = 185.15.58.224 # text-lb.drmrs
 upload-lb.drmrs = 185.15.58.240 # upload-lb.drmrs
+text-lb.magru = 195.200.68.224 # text-lb.magru
+upload-lb.magru = 195.200.68.240 # upload-lb.magru
 
 #
 # Groups

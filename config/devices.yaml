@@ -837,3 +837,82 @@ asw1-b13-drmrs.mgmt.drmrs.wmnet:
       switch_cr:
         cr1-drmrs: {4: 185.15.58.148, 6: 2a02:ec80:600:fe07::1}
         cr2-drmrs: {4: 185.15.58.144, 6: 2a02:ec80:600:fe09::1}
+
+# ----------------------------------------------------------
+# MAGRU
+# ----------------------------------------------------------
+cr1-magru.wikimedia.org:
+  config:
+    transits:  # TODO Momentum
+      94.142.103.58:
+        provider: Telxius
+      2001:1498:1:966:1:0:0:251:
+        provider: Telxius
+    capirca:
+      - common-loopback
+      - cr-border-in
+    device_bgp:
+      cr_switch:
+        asw1-b3-magru: {4: 195.200.68.143, 6: 2a02:ec80:700:fe06::2, peer_as: 4265007001}
+        asw1-b4-magru: {4: 195.200.68.149, 6: 2a02:ec80:700:fe07::2, peer_as: 4265007002}
+
+cr2-magru.wikimedia.org:
+  config:
+    transits:  # TODO HE
+      198.18.40.77:
+        provider: EdgeUno
+      2800:1e0:1025::10e:
+        provider: EdgeUno
+    capirca:
+      - common-loopback
+      - cr-border-in
+    device_bgp:
+      cr_switch:
+        asw1-b3-magru: {4: 195.200.68.147, 6: 2a02:ec80:700:fe08::2, peer_as: 4265007001}
+        asw1-b4-magru: {4: 195.200.68.145, 6: 2a02:ec80:700:fe09::2, peer_as: 4265007002}
+
+mr1-magru.wikimedia.org:
+  timeout: 120
+  config:
+    security_zones:
+      - name: production
+        services: ['ssh', 'ping', 'traceroute', 'snmp', 'bgp']
+        interfaces: ['lo0.0', 'ge-0/0/3', 'ge-0/0/4']
+      - name: untrust
+        services: ['ssh', 'ping', 'traceroute']
+        interfaces: ['ge-0/0/7']
+      - name: mgmt
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
+        interfaces: ['irb.900']
+    capirca:
+      - mr-security-policies
+    device_bgp:
+      mr_sw:
+        asw1-b3-magru: {4: 10.140.127.2, 6: 2a02:ec80:700:fe02::2, peer_as: 4265007001}
+        asw1-b4-magru: {4: 10.140.127.4, 6: 2a02:ec80:700:fe03::2, peer_as: 4265007002}
+
+asw1-b3-magru.mgmt.magru.wmnet:
+  config:
+    l3_switch: true
+    asn: 4265007001
+    capirca:
+      - common-loopback
+    device_bgp:
+      sw_mr:
+        mr1-magru: {4: 10.140.127.3, 6: 2a02:ec80:700:fe02::1}
+      switch_cr:
+        cr1-magru: {4: 195.200.68.142, 6: 2a02:ec80:700:fe06::1}
+        cr2-magru: {4: 195.200.68.146, 6: 2a02:ec80:700:fe08::1}
+
+asw1-b4-magru.mgmt.magru.wmnet:
+  config:
+    l3_switch: true
+    asn: 4265007002
+    capirca:
+      - common-loopback
+    device_bgp:
+      sw_mr:
+        mr1-magru: {4: 10.140.127.5, 6: 2a02:ec80:700:fe03::1}
+      switch_cr:
+        cr1-magru: {4: 195.200.68.148, 6: 2a02:ec80:700:fe07::1}
+        cr2-magru: {4: 195.200.68.144, 6: 2a02:ec80:700:fe09::1}
