@@ -238,9 +238,9 @@ magru:
   bgp6_out:
     2a02:ec80:700::/48: BGP_aggregate_contributors  # magru
     # 2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6 - TODO
-    # sampling:
-    #  collectors:
-    #    netflow7001: TODO
-    # dhcp_server:
-    #  name: install7001
-    #  ip: TODO
+  sampling:
+    collectors:
+      netflow7001: 192.0.2.10  # dummy ip TODO
+  dhcp_server:
+    name: install7001
+    ip: 192.0.2.11  # dummy ip TODO
