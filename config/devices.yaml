@@ -859,7 +859,7 @@ cr1-magru.wikimedia.org:
 cr2-magru.wikimedia.org:
   config:
     transits:  # TODO HE
-      198.18.40.77:
+      200.25.58.212:
         provider: EdgeUno
       2800:1e0:1025::10e:
         provider: EdgeUno
