@@ -850,7 +850,7 @@ cr1-magru.wikimedia.org:
         provider: Telxius
       186.224.200.29:
         provider: Novacore
-      2804:1a0:800::9:
+      2804:1a0:3::c1:
         provider: Novacore
     capirca:
       - common-loopback
