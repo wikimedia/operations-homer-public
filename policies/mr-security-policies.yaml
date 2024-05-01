@@ -163,7 +163,7 @@ filters:
         protocol: icmp icmpv6
         action: accept
       - name: any--ssh
-        source-address: bast_group cumin_group
+        source-address: bast_group cumin_group netmon_group
         destination-port: SSH
         protocol: tcp
         action: accept
