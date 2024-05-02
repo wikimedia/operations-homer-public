@@ -240,7 +240,7 @@ magru:
     # 2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6 - TODO
   sampling:
     collectors:
-      netflow7001: 192.0.2.10  # dummy ip TODO
+      netflow7001: 10.140.0.16
   dhcp_server:
     # TODO - Change below when install7001 is built
     name: install1004
