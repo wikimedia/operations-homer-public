@@ -241,5 +241,6 @@ magru:
     collectors:
       netflow7001: 10.140.0.16
   dhcp_server:
-    name: install7001
-    ip: 195.200.68.7
+    # TODO - Change below when install7001 is built
+    name: install1004
+    ip: 208.80.154.74
