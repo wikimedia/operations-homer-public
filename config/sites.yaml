@@ -91,7 +91,7 @@ codfw:
   bgp_out:
     208.80.152.0/23: BGP_aggregate_contributors  # codfw
     185.15.57.0/24: BGP_from_customers  # customers/wmcs
-    198.35.27.0/24: BGP_from_anycast  # Anycast
+    198.35.27.0/24: BGP_from_anycast  # ns2 Anycast
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
     2620:0:860::/48: BGP_aggregate_contributors  # codfw
@@ -138,7 +138,7 @@ codfw:
 eqdfw:
   confed: 65002
   bgp_out:
-    198.35.27.0/24: BGP_from_anycast  # Anycast
+    198.35.27.0/24: BGP_from_anycast  # ns2 Anycast
     208.80.152.0/23: BGP_from_LVS  # codfw
     185.15.57.0/24: BGP_aggregate_contributors  # WMCS codfw
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
@@ -156,7 +156,7 @@ ulsfo:
     - 11820  # WMF HQ
   bgp_out:
     198.35.26.0/24: BGP_aggregate_contributors  # ulsfo
-    198.35.27.0/24: BGP_from_anycast  # Anycast
+    198.35.27.0/24: BGP_from_anycast  # ns2 Anycast
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
     2620:0:863::/48: BGP_aggregate_contributors  # ulsfo
@@ -177,7 +177,7 @@ eqsin:
   mgmt_gw: 10.132.128.1
   bgp_out:
     103.102.166.0/24: BGP_aggregate_contributors  # eqsin
-    198.35.27.0/24: BGP_from_anycast  # Anycast
+    198.35.27.0/24: BGP_from_anycast  # ns2 Anycast
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
     2001:df2:e500::/48: BGP_aggregate_contributors  # eqsin
@@ -199,7 +199,7 @@ esams:
   mgmt_gw: 10.80.128.1
   bgp_out:
     185.15.59.0/24: BGP_aggregate_contributors  # esams
-    198.35.27.0/24: BGP_from_anycast  # Anycast
+    198.35.27.0/24: BGP_from_anycast  # ns2 Anycast
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
   bgp6_out:
     2a02:ec80:300::/48: BGP_aggregate_contributors  # esams
@@ -217,7 +217,7 @@ drmrs:
   bgp_out:
     185.15.58.0/24: BGP_aggregate_contributors  # drmrs
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
-    198.35.27.0/24: BGP_from_anycast  # Anycast
+    198.35.27.0/24: BGP_from_anycast  # ns2 Anycast
   bgp6_out:
     2a02:ec80:600::/48: BGP_aggregate_contributors  # drmrs
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
@@ -235,7 +235,7 @@ magru:
   bgp_out:
     195.200.68.0/24: BGP_aggregate_contributors  # magru
     185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
-    # 198.35.27.0/24: BGP_from_anycast  # Anycast - TODO
+    # 198.35.27.0/24: BGP_from_anycast  # ns2 Anycast - TODO
   bgp6_out:
     2a02:ec80:700::/48: BGP_aggregate_contributors  # magru
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
