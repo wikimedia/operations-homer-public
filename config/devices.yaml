@@ -369,7 +369,6 @@ asw2-a-eqiad.mgmt.eqiad.wmnet:
 
 ssw1-e1-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -381,7 +380,6 @@ ssw1-e1-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-e1-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -392,7 +390,6 @@ lsw1-e1-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-e2-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -403,7 +400,6 @@ lsw1-e2-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-e3-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -414,7 +410,6 @@ lsw1-e3-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-e5-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -425,7 +420,6 @@ lsw1-e5-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-e6-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -436,7 +430,6 @@ lsw1-e6-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-e7-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -447,7 +440,6 @@ lsw1-e7-eqiad.mgmt.eqiad.wmnet:
 
 ssw1-f1-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -458,7 +450,6 @@ ssw1-f1-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-f1-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -469,7 +460,6 @@ lsw1-f1-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-f2-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -480,7 +470,6 @@ lsw1-f2-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-f3-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -491,7 +480,6 @@ lsw1-f3-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-f5-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -502,7 +490,6 @@ lsw1-f5-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-f6-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -513,7 +500,6 @@ lsw1-f6-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-f7-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 64810
     evpn: true
     l3_switch: true
     capirca:
@@ -562,7 +548,6 @@ cloudsw1-b1-codfw.mgmt.codfw.wmnet:
 
 ssw1-a1-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -573,7 +558,6 @@ ssw1-a1-codfw.mgmt.codfw.wmnet:
 
 ssw1-a8-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -584,7 +568,6 @@ ssw1-a8-codfw.mgmt.codfw.wmnet:
 
 lsw1-a2-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -606,7 +589,6 @@ lsw1-a3-codfw.mgmt.codfw.wmnet:
 
 lsw1-a4-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -614,7 +596,6 @@ lsw1-a4-codfw.mgmt.codfw.wmnet:
 
 lsw1-a5-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -622,7 +603,6 @@ lsw1-a5-codfw.mgmt.codfw.wmnet:
 
 lsw1-a6-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -630,7 +610,6 @@ lsw1-a6-codfw.mgmt.codfw.wmnet:
 
 lsw1-a7-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -638,7 +617,6 @@ lsw1-a7-codfw.mgmt.codfw.wmnet:
 
 lsw1-a8-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -646,7 +624,6 @@ lsw1-a8-codfw.mgmt.codfw.wmnet:
 
 lsw1-b2-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -654,7 +631,6 @@ lsw1-b2-codfw.mgmt.codfw.wmnet:
 
 lsw1-b3-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -662,7 +638,6 @@ lsw1-b3-codfw.mgmt.codfw.wmnet:
 
 lsw1-b4-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -670,7 +645,6 @@ lsw1-b4-codfw.mgmt.codfw.wmnet:
 
 lsw1-b5-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -678,7 +652,6 @@ lsw1-b5-codfw.mgmt.codfw.wmnet:
 
 lsw1-b6-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -686,7 +659,6 @@ lsw1-b6-codfw.mgmt.codfw.wmnet:
 
 lsw1-b7-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -694,7 +666,6 @@ lsw1-b7-codfw.mgmt.codfw.wmnet:
 
 lsw1-b8-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
