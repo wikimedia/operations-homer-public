@@ -232,11 +232,11 @@ magru:
   mgmt_gw: 10.140.128.1
   bgp_out:
     195.200.68.0/24: BGP_aggregate_contributors  # magru
-    # 185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast - TODO
+    185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
     # 198.35.27.0/24: BGP_from_anycast  # Anycast - TODO
   bgp6_out:
     2a02:ec80:700::/48: BGP_aggregate_contributors  # magru
-    # 2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6 - TODO
+    2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   sampling:
     collectors:
       netflow7001: 10.140.0.16
