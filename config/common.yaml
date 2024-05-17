@@ -420,6 +420,7 @@ transit_providers:
     export_policy: true
   Telxius:
     AS: 12956
+    export_policy: true
   Lumen:
     AS: 3356
     export_policy: true
