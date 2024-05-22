@@ -47,22 +47,24 @@ eqiad:
     - 185.15.56.0/24
   evpn_bgp:
     asn: 64810
-    rr:
-      ssw1-e1-eqiad: 10.64.128.1
-      ssw1-f1-eqiad: 10.64.128.2
-    clients:
-      lsw1-e1-eqiad: 10.64.128.3
-      lsw1-e2-eqiad: 10.64.128.4
-      lsw1-e3-eqiad: 10.64.128.5
-      lsw1-e5-eqiad: 10.64.128.6
-      lsw1-e6-eqiad: 10.64.128.10
-      lsw1-e7-eqiad: 10.64.128.11
-      lsw1-f1-eqiad: 10.64.128.7
-      lsw1-f2-eqiad: 10.64.128.8
-      lsw1-f3-eqiad: 10.64.128.9
-      lsw1-f5-eqiad: 10.64.128.12
-      lsw1-f6-eqiad: 10.64.128.13
-      lsw1-f7-eqiad: 10.64.128.14
+    clusters:
+      ef:
+        rr:
+          ssw1-e1-eqiad: 10.64.128.1
+          ssw1-f1-eqiad: 10.64.128.2
+        client:
+          lsw1-e1-eqiad: 10.64.128.3
+          lsw1-e2-eqiad: 10.64.128.4
+          lsw1-e3-eqiad: 10.64.128.5
+          lsw1-e5-eqiad: 10.64.128.6
+          lsw1-e6-eqiad: 10.64.128.10
+          lsw1-e7-eqiad: 10.64.128.11
+          lsw1-f1-eqiad: 10.64.128.7
+          lsw1-f2-eqiad: 10.64.128.8
+          lsw1-f3-eqiad: 10.64.128.9
+          lsw1-f5-eqiad: 10.64.128.12
+          lsw1-f6-eqiad: 10.64.128.13
+          lsw1-f7-eqiad: 10.64.128.14
 
 eqord:
   confed: 65020
@@ -115,25 +117,46 @@ codfw:
     - 208.80.153.184/29
   evpn_bgp:
     asn: 64811
-    rr:
-      ssw1-a1-codfw: 10.192.252.1
-      ssw1-a8-codfw: 10.192.252.2
-    clients:
-      lsw1-a2-codfw: 10.192.252.4
-      lsw1-a3-codfw: 10.192.252.5
-      lsw1-a4-codfw: 10.192.252.6
-      lsw1-a5-codfw: 10.192.252.7
-      lsw1-a6-codfw: 10.192.252.8
-      lsw1-a7-codfw: 10.192.252.9
-      lsw1-a8-codfw: 10.192.252.10
-      lsw1-b2-codfw: 10.192.252.11
-      lsw1-b3-codfw: 10.192.252.12
-      lsw1-b4-codfw: 10.192.252.13
-      lsw1-b5-codfw: 10.192.252.14
-      lsw1-b6-codfw: 10.192.252.15
-      lsw1-b7-codfw: 10.192.252.16
-      lsw1-b8-codfw: 10.192.252.17
-
+    clusters:
+      ab:
+        rr:
+          ssw1-a1-codfw: 10.192.252.1
+          ssw1-a8-codfw: 10.192.252.2
+        client:
+          lsw1-a2-codfw: 10.192.252.4
+          lsw1-a3-codfw: 10.192.252.5
+          lsw1-a4-codfw: 10.192.252.6
+          lsw1-a5-codfw: 10.192.252.7
+          lsw1-a6-codfw: 10.192.252.8
+          lsw1-a7-codfw: 10.192.252.9
+          lsw1-a8-codfw: 10.192.252.10
+          lsw1-b2-codfw: 10.192.252.11
+          lsw1-b3-codfw: 10.192.252.12
+          lsw1-b4-codfw: 10.192.252.13
+          lsw1-b5-codfw: 10.192.252.14
+          lsw1-b6-codfw: 10.192.252.15
+          lsw1-b7-codfw: 10.192.252.16
+          lsw1-b8-codfw: 10.192.252.17
+      cd:
+        rr:
+          ssw1-d1-codfw: 10.192.252.18
+          ssw1-d8-codfw: 10.192.252.19
+        client:
+          lsw1-c1-codfw: 10.192.252.20
+          lsw1-c2-codfw: 10.192.252.21
+          lsw1-c3-codfw: 10.192.252.22
+          lsw1-c4-codfw: 10.192.252.23
+          lsw1-c5-codfw: 10.192.252.24
+          lsw1-c6-codfw: 10.192.252.25
+          lsw1-c7-codfw: 10.192.252.26
+          lsw1-d1-codfw: 10.192.252.3
+          lsw1-d2-codfw: 10.192.252.27
+          lsw1-d3-codfw: 10.192.252.28
+          lsw1-d4-codfw: 10.192.252.29
+          lsw1-d5-codfw: 10.192.252.30
+          lsw1-d6-codfw: 10.192.252.31
+          lsw1-d7-codfw: 10.192.252.32
+          lsw1-d8-codfw: 10.192.252.33
 
 eqdfw:
   confed: 65002

@@ -112,6 +112,7 @@ cr1-codfw.wikimedia.org:
     device_bgp:
       cr_switch:
         ssw1-a1-codfw: {4: 10.192.254.5, 6: 2620:0:860:132::2, peer_as: 64811}
+        # ssw1-d1-codfw: {4: 10.192.254.11, 6: 2620:0:860:135::2, peer_as: 64811} # TODO after port enabled
         cloudsw1-b1-codfw: {4: 10.192.254.1, 6: 2620:0:860:130::2, peer_as: 64711}
 
 cr2-codfw.wikimedia.org:
@@ -142,6 +143,7 @@ cr2-codfw.wikimedia.org:
     device_bgp:
       cr_switch:
         ssw1-a8-codfw: {4: 10.192.254.7, 6: 2620:0:860:133::2, peer_as: 64811}
+        ssw1-d8-codfw: {4: 10.192.254.13, 6: 2620:0:860:136::2, peer_as: 64811}
         cloudsw1-b1-codfw: {4: 10.192.254.3, 6: 2620:0:860:131::2, peer_as: 64711}
 
 cr2-eqdfw.wikimedia.org:
@@ -566,6 +568,26 @@ ssw1-a8-codfw.mgmt.codfw.wmnet:
       switch_cr:
         cr2-codfw: {4: 10.192.254.6, 6: 2620:0:860:133::1}
 
+ssw1-d1-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+    device_bgp:
+      switch_cr:
+        cr1-codfw: {4: 10.192.254.10, 6: 2620:0:860:135::1}
+
+ssw1-d8-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+    device_bgp:
+      switch_cr:
+        cr2-codfw: {4: 10.192.254.12, 6: 2620:0:860:136::1}
+
 lsw1-a2-codfw.mgmt.codfw.wmnet:
   config:
     evpn: true
@@ -581,7 +603,6 @@ lsw1-a2-codfw.mgmt.codfw.wmnet:
 
 lsw1-a3-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64811
     evpn: true
     l3_switch: true
     capirca:
@@ -672,6 +693,104 @@ lsw1-b8-codfw.mgmt.codfw.wmnet:
       - common-loopback
 
 lsw1-c1-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-c2-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-c3-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-c4-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-c5-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-c6-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-c7-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-d1-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-d2-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-d3-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-d4-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-d5-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-d6-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-d7-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
+lsw1-d8-codfw.mgmt.codfw.wmnet:
   config:
     evpn: true
     l3_switch: true
