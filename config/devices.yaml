@@ -44,7 +44,7 @@ cr2-eqiad.wikimedia.org:
     transits:
       80.239.132.225:
         provider: Arelion
-      2001:2000:3080:0a98::1:
+      2001:2035:0:a98::1:
         provider: Arelion
     filters:
       xe-1/0/1:0-in4: transport-in  # to eqord
@@ -93,7 +93,7 @@ cr1-codfw.wikimedia.org:
     transits:
       80.239.192.101:
         provider: Arelion
-      2001:2000:3080:af4::1:
+      2001:2035:0:af4::1:
         provider: Arelion
     filters:
       xe-1/0/4:0.1000-in: labs-in
@@ -161,7 +161,7 @@ cr3-ulsfo.wikimedia.org:
     transits:
       80.239.192.65:
         provider: Arelion
-      2001:2000:3080:0a9a::1:
+      2001:2035:0:a9a::1:
         provider: Arelion
       206.197.187.12:
         provider: "Hurricane Electric"
@@ -279,7 +279,7 @@ cr3-eqsin.wikimedia.org:
         provider: Arelion
         import_policy: true
         export_policy: true
-      2001:2000:3080:15b5::1:
+      2001:2035:0:15b5::1:
         provider: Arelion
         import_policy: true
         export_policy: true
