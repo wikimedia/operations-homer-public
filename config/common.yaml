@@ -419,6 +419,7 @@ transit_providers:
   Telxius:
     AS: 12956
     export_policy: true
+    BFD: true
   Lumen:
     AS: 3356
     export_policy: true
