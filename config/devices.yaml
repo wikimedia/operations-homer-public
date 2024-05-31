@@ -671,6 +671,13 @@ lsw1-b8-codfw.mgmt.codfw.wmnet:
     capirca:
       - common-loopback
 
+lsw1-c1-codfw.mgmt.codfw.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+
 asw2-ulsfo.mgmt.ulsfo.wmnet:
   config:
     lldp_disabled: ['ge-1/0/13']  # SRXs show L2 errors when receiving LLDP frames
