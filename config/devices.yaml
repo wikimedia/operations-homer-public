@@ -817,11 +817,15 @@ cr1-magru.wikimedia.org:
 
 cr2-magru.wikimedia.org:
   config:
-    transits:  # TODO HE
+    transits:
       200.25.58.212:
         provider: EdgeUno
       2800:1e0:1025::10e:
         provider: EdgeUno
+      187.16.221.197:
+        provider: "Hurricane Electric"  # Partial transit
+      2001:12f8::221:197:
+        provider: "Hurricane Electric"  # Partial transit
     capirca:
       - common-loopback
       - cr-border-in
