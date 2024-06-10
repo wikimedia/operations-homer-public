@@ -99,7 +99,7 @@ codfw:
     2620:0:860::/48: BGP_aggregate_contributors  # codfw
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   ping_offload_vip: 208.80.153.224/32
-  ping_offload_redirect: 10.192.48.31  # ping2003.codfw.wmnet
+  ping_offload_redirect: 10.192.48.9  # ping2004.codfw.wmnet
   sampling:
     collectors:
       netflow2003: 10.192.32.159
