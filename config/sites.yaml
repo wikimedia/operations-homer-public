@@ -18,7 +18,7 @@ eqiad:
     2620:0:861::/48: BGP_aggregate_contributors  # eqiad
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   ping_offload_vip: 208.80.154.224/32
-  ping_offload_redirect: 10.64.48.10  # ping1003.eqiad.wmnet
+  ping_offload_redirect: 10.64.32.63  # ping1004.eqiad.wmnet
   sampling:
     collectors:
       netflow1002: 10.64.16.82
