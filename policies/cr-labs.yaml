@@ -34,7 +34,7 @@ filters:
         destination-port: DNS
         action: accept
       - name: allow-anycast-ntp
-        destination-address: ntp.anycast.wmnet
+        destination-address: ntp.anycast.wmnet ntp-a.anycast.wmnet ntp-b.anycast.wmnet ntp-c.anycast.wmnet
         protocol: tcp udp
         destination-port: NTP
         action: accept
