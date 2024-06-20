@@ -53,25 +53,25 @@ filters:
         restrict-address-family: inet6
         action: accept
       - name: allow_ntp_src4
-        source-prefix: production4 loopback4
+        source-prefix: production4 private4 loopback4
         protocol: udp
         source-port: NTP
         restrict-address-family: inet
         action: accept
       - name: allow_ntp_dst4
-        source-prefix: production4 loopback4
+        source-prefix: production4 private4 loopback4
         protocol: udp
         destination-port: NTP
         restrict-address-family: inet
         action: accept
       - name: allow_ntp_src6
-        source-prefix: production6 loopback6
+        source-prefix: private6 production6 loopback6
         protocol: udp
         source-port: NTP
         restrict-address-family: inet6
         action: accept
       - name: allow_ntp_dst6
-        source-prefix: production6 loopback6
+        source-prefix: private6 production6 loopback6
         protocol: udp
         destination-port: NTP
         restrict-address-family: inet6
