@@ -23,6 +23,9 @@ filters:
         comment: |-
           Allow traffic from configured BGP peers
         source-prefix: bgp-sessions
+        qos: control
+        loss-priority: low
+        dscp-set: cs6
         action: accept
       - name: own-space
         comment: |-
@@ -74,6 +77,12 @@ filters:
         destination-prefix: private6
         restrict-address-family: inet6
         action: deny
+      - name: set-qos
+        comment: "Map external traffic to normal priority forwarding class and set DSCP BE"
+        qos: normal
+        loss-priority: high
+        dscp-set: be
+        action: next
       - name: authdns
         comment: |-
           explicitly allow Auth DNS traffic; would normally be discarded by the DDoS UDP term below
