@@ -126,7 +126,7 @@ filters:
           to the cloud-private setup (T346947).
         source-address: cloudcontrol_group
         protocol: tcp
-        destination-address: clouddb_group
+        destination-address: clouddb_group an-redacteddb_group
         destination-port: mySQL_sections
         action: accept
       - name: wiki-replica-proxy
