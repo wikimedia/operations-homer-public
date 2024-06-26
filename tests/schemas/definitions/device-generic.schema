@@ -587,6 +587,10 @@
       "additionalProperties": {
         "type": "string"
       }
+    },
+    "diffserv_qos": {
+      "type": "boolean",
+      "description": "Used to enable/disable applying QoS to interfaces (temp until rolled out everywhere)."
     }
   }
 }
