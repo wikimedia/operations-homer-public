@@ -386,6 +386,7 @@ transit_providers:
     export_policy: true
   EdgeUno:
     AS: 7195
+    export_policy: true
   FiberRing:
     AS: 38930
   "Hurricane Electric":
