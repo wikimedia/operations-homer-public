@@ -71,12 +71,12 @@ eqord:
   bgp_out:
     208.80.152.0/23: BGP_agg_net_pops  # codfw
     208.80.154.0/23: BGP_agg_net_pops  # eqiad
-    198.35.27.0/24: BGP_from_anycast  # ns2 Anycast
-    185.71.138.0/24: BGP_from_anycast  # Wikidough Anycast
+    198.35.27.0/24: BGP_agg_net_pops  # ns2 Anycast
+    185.71.138.0/24: BGP_agg_net_pops  # Wikidough Anycast
   bgp6_out:
     2620:0:860::/48: BGP_agg_net_pops  # codfw
     2620:0:861::/48: BGP_agg_net_pops  # eqiad
-    2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
+    2001:67c:930::/48: BGP_agg_net_pops  # Wikidough Anycast v6
   sampling:
     collectors:
       netflow1002: 10.64.16.82
