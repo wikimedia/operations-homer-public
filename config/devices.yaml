@@ -577,6 +577,9 @@ ssw1-d1-codfw.mgmt.codfw.wmnet:
     device_bgp:
       switch_cr:
         cr1-codfw: {4: 10.192.254.10, 6: 2620:0:860:135::1}
+    esi_lag:
+      ae0: "01"
+      ae1: "02"
 
 ssw1-d8-codfw.mgmt.codfw.wmnet:
   config:
@@ -587,6 +590,9 @@ ssw1-d8-codfw.mgmt.codfw.wmnet:
     device_bgp:
       switch_cr:
         cr2-codfw: {4: 10.192.254.12, 6: 2620:0:860:136::1}
+    esi_lag:
+      ae0: "01"
+      ae1: "02"
 
 lsw1-a2-codfw.mgmt.codfw.wmnet:
   config:
