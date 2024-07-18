@@ -112,7 +112,7 @@ cr1-codfw.wikimedia.org:
     device_bgp:
       cr_switch:
         ssw1-a1-codfw: {4: 10.192.254.5, 6: 2620:0:860:132::2, peer_as: 64811}
-        # ssw1-d1-codfw: {4: 10.192.254.11, 6: 2620:0:860:135::2, peer_as: 64811} # TODO after port enabled
+        ssw1-d1-codfw: {4: 10.192.254.11, 6: 2620:0:860:135::2, peer_as: 64811}
         cloudsw1-b1-codfw: {4: 10.192.254.1, 6: 2620:0:860:130::2, peer_as: 64711}
 
 cr2-codfw.wikimedia.org:
