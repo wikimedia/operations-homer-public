@@ -114,29 +114,13 @@ filters:
         destination-prefix: LVS-service-ips
         restrict-address-family: inet
         protocol: tcp
-        destination-port: SSH BGP PyBal Prometheus cadvisor
+        destination-port: SSH BGP PyBal Prometheus cadvisor NRPE
         action: deny
       - name: protect-lvs
         destination-prefix: LVS-service-ips6
         restrict-address-family: inet6
         protocol: tcp
-        destination-port: SSH BGP PyBal Prometheus cadvisor
-        action: deny
-      - name: ripe-atlas
-        comment: |-
-          RIPE Atlas wants access to 5666 which we block below
-        destination-address: atlas-eqsin atlas-eqiad atlas-codfw atlas_group
-        action: accept
-      - name: webproxy
-        comment: |-
-          Discard webproxy for extra protection, as it's a gateway to prod - T122368
-        destination-address: install_group
-        protocol: tcp
-        destination-port: SQUID_PROXY
-        action: deny
-      - name: nrpe
-        protocol: tcp
-        destination-port: NRPE
+        destination-port: SSH BGP PyBal Prometheus cadvisor NRPE
         action: deny
       - name: icmp-first-frag
         comment: |-
