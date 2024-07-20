@@ -74,13 +74,3 @@ text-lb.drmrs = 185.15.58.224 # text-lb.drmrs
 upload-lb.drmrs = 185.15.58.240 # upload-lb.drmrs
 text-lb.magru = 195.200.68.224 # text-lb.magru
 upload-lb.magru = 195.200.68.240 # upload-lb.magru
-
-#
-# Groups
-#
-
-# Workaround an Aerleon bug where groups don't work
-# Temporarily until converted to the yaml format
-ns_group = 208.80.154.238 # ns0
-           208.80.153.231 # ns1
-           198.35.27.27 # nsa
