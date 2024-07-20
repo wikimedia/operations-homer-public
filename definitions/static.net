@@ -19,11 +19,6 @@ gerrit.wikimedia.org = 208.80.154.151 # gerrit.wikimedia.org
 gerrit-replica.wikimedia.org = 208.80.153.107 # gerrit-replica.wikimedia.org
                                2620:0:860:4:208:80:153:107 # gerrit-replica.wikimedia.org
 
-git-ssh.eqiad = 208.80.154.250 # git-ssh.eqiad.wikimedia.org
-                2620:0:861:ed1a::3:16 # git-ssh.eqiad.wikimedia.org
-git-ssh.codfw = 208.80.153.250 # git-ssh.codfw.wikimedia.org
-                2620:0:860:ed1a::3:fa # git-ssh.codfw.wikimedia.org
-
 
 #
 # Subnets

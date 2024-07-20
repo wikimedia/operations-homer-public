@@ -90,13 +90,6 @@ filters:
         protocol: tcp udp
         port: DNS
         action: accept
-      - name: phab-git-ssh
-        comment: |-
-          explicitly allow SSH traffic; would normally be discarded by the protect-lvs term below
-        destination-address: git-ssh.eqiad git-ssh.codfw
-        protocol: tcp
-        destination-port: SSH
-        action: accept
       - name: gre-lvs-ddos
         destination-prefix: LVS-service-ips
         restrict-address-family: inet
