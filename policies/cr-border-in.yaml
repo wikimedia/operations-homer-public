@@ -83,6 +83,13 @@ filters:
         loss-priority: high
         dscp-set: be
         action: next
+      - name: authdns
+        comment: |-
+          explicitly allow Auth DNS traffic; would normally be discarded by the DDoS UDP term below
+        destination-address: ns_group
+        protocol: tcp udp
+        port: DNS
+        action: accept
       - name: gre-lvs-ddos
         destination-prefix: LVS-service-ips
         restrict-address-family: inet
