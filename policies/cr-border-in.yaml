@@ -91,7 +91,7 @@ filters:
         port: DNS
         action: accept
       - name: gre-lvs-ddos
-        destination-prefix: LVS-service-ips
+        destination-prefix: LVS-and-NS-service-ips
         restrict-address-family: inet
         protocol: gre
         action: deny
@@ -101,7 +101,7 @@ filters:
         protocol: gre
         action: deny
       - name: udp-lvs-ddos
-        destination-prefix: LVS-service-ips
+        destination-prefix: LVS-and-NS-service-ips
         restrict-address-family: inet
         protocol: udp
         action: deny
@@ -111,7 +111,7 @@ filters:
         protocol: udp
         action: deny
       - name: protect-lvs
-        destination-prefix: LVS-service-ips
+        destination-prefix: LVS-and-NS-service-ips
         restrict-address-family: inet
         protocol: tcp
         destination-port: SSH BGP PyBal Prometheus cadvisor NRPE
