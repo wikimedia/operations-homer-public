@@ -232,6 +232,14 @@ cr2-esams.wikimedia.org:
         provider: LibertyGlobal
       2001:7f8:13::a500:6939:1:
         provider: "Hurricane Electric"
+      139.156.127.121:
+        provider: KPN
+      139.156.127.122:
+        provider: KPN
+      2001:67c:24f0:cfe0::1:1:
+        provider: KPN
+      2001:67c:24f0:cfe0::1:2:
+        provider: KPN
     device_bgp:
       cr_switch:
         asw1-bw27-esams: {4: 185.15.59.159, 6: 2a02:ec80:300:fe06::2, peer_as: 4265003001}

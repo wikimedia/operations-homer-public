@@ -394,6 +394,8 @@ transit_providers:
   Init7:
     AS: 13030
     export_policy: true
+  KPN:
+    AS: 1136
   LibertyGlobal:
     AS: 6830
     flowspec: true
