@@ -33,6 +33,7 @@ wikimedia-private = 10.0.0.0/8 # private
                     2a02:ec80:300:100::/56 # esams private
                     2a02:ec80:600:100::/56 # drmrs private
                     2a02:ec80:700:100::/56 # magru private
+                    2a02:ec80:ff00:100::/56 # global private
 
 network-infra = 10.136.127.0/24 # drmrs
                 185.15.58.128/27 # drmrs

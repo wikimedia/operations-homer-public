@@ -34,12 +34,13 @@ lvs:
     - 2a02:ec80:700:ed1a::/64
 
 anycast_prefixes:
-  - 10.3.0.0/24        # Internal
-  - 198.35.27.0/24     # Public prod anycast - incl. ns2.wikimedia.org
-  - 185.71.138.0/24    # Wikidough
-  - 2001:67c:930::/48  # IPv6 Anycast - incl. wikidough
-  - 208.80.154.238/32  # ns0.wikimedia.org
-  - 208.80.153.231/32  # ns1.wikimedia.org
+  - 10.3.0.0/24              # Internal
+  - 2a02:ec80:ff00:101::/64  # Internal IPv6
+  - 198.35.27.0/24           # Public prod anycast - incl. ns2.wikimedia.org
+  - 185.71.138.0/24          # Wikidough
+  - 2001:67c:930::/48        # IPv6 Anycast - incl. wikidough
+  - 208.80.154.238/32        # ns0.wikimedia.org
+  - 208.80.153.231/32        # ns1.wikimedia.org
 
 # Next available UID: 2039
 # When adding a new user, please make sure to update "next available UID" above
