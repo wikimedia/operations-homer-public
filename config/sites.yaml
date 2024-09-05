@@ -193,7 +193,6 @@ ulsfo:
     - et-0/0/1.1201
     - et-0/0/1.1211
     - et-0/0/1.1221
-  diffserv_qos: true
 
 eqsin:
   confed: 65005
