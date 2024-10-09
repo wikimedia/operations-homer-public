@@ -1,10 +1,10 @@
 filters:
   - header:
       comment: |-
-        Applied to cloud instance traffic going out of the cloud-instance-transport vlan
+        Applied to traffic leaving cloud vrf on the cloud switches (includes VM instance traffic)
         Last audit in T264993
       targets:
-        juniper: cloud-in4 inet no-interface-specific
+        juniper: cloud-in mixed no-interface-specific
     terms:
       - name: allow-icmp
         source-address: cloud-transports
@@ -21,7 +21,7 @@ filters:
       - name: deny-to-private-subnets
         comment: |-
           Deny any communication with private subnets
-        destination-address: RFC1918
+        destination-address: RFC1918 wikimedia-private
         action: reject
       - name: wiki--HTTP-S
         comment: |-
