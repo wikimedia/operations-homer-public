@@ -531,16 +531,6 @@
       },
       "additionalProperties": false
     },
-    "wmcs_prefixes": {
-      "type": "array",
-      "description": "List of prefixes announced by cloudsw to core at given site.",
-      "prefixItems": [
-        {
-          "type": "string",
-          "format": "ip_network"
-        }
-      ]
-    },
     "evpn_bgp": {
       "type": "object",
       "description": "BGP EVPN members and cluster vars for given site.",
