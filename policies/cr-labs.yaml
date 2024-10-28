@@ -95,14 +95,6 @@ filters:
         protocol: tcp
         source-port: ceph_monitor ceph_monitor_legacy ceph_OSD
         action: accept
-      - name: labtestwikitech-mysql
-        comment: |-
-          Return traffic
-        destination-address: mwmaint_group
-        protocol: tcp
-        source-address: clouddb-dev_group
-        source-port: mySQL
-        action: accept
       - name: confd
         destination-address: conf_group
         protocol: tcp
