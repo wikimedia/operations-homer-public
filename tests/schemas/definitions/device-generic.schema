@@ -527,7 +527,8 @@
         "cr_switch": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
         "switch_cr": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
         "mr_sw": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
-        "sw_mr": { "$ref": "#/definitions/bgp_neighbor_dual_af" }
+        "sw_mr": { "$ref": "#/definitions/bgp_neighbor_dual_af" },
+        "ris": { "$ref": "#/definitions/bgp_neighbor_dual_af" }
       },
       "additionalProperties": false
     },

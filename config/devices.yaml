@@ -145,6 +145,8 @@ cr2-codfw.wikimedia.org:
         ssw1-a8-codfw: {4: 10.192.254.7, 6: 2620:0:860:133::2, peer_as: 64811}
         ssw1-d8-codfw: {4: 10.192.254.13, 6: 2620:0:860:136::2, peer_as: 64811}
         cloudsw1-b1-codfw: {4: 10.192.254.3, 6: 2620:0:860:131::2, peer_as: 64711}
+      ris:
+        RRC00: {4: 193.0.4.28, 6: 2001:67c:2e8:2:ffff:0:4:28}
 
 cr2-eqdfw.wikimedia.org:
   config:
@@ -209,6 +211,8 @@ cr1-esams.wikimedia.org:
       cr_switch:
         asw1-bw27-esams: {4: 185.15.59.157, 6: 2a02:ec80:300:fe04::2, peer_as: 4265003001}
         asw1-by27-esams: {4: 185.15.59.155, 6: 2a02:ec80:300:fe05::2, peer_as: 4265003002}
+      ris:
+        RRC03: {4: 80.249.208.69, 6: 2001:7f8:1::a501:2654:1}
 
 cr2-esams.wikimedia.org:
   config:
@@ -291,6 +295,9 @@ cr3-eqsin.wikimedia.org:
       ae1.530-in: sandbox
       gr-0/0/0.1-in: border-in
     damping: [xe-0/1/0]
+    device_bgp:
+      ris:
+        RRC23: {4: 27.111.228.137, 6: 2001:de8:4::1:2654:1}
 
 cr2-eqsin.wikimedia.org:
   config:
@@ -371,6 +378,8 @@ cr2-drmrs.wikimedia.org:
       cr_switch:
         asw1-b12-drmrs: {4: 185.15.58.141, 6: 2a02:ec80:600:fe08::2, peer_as: 4265006001}
         asw1-b13-drmrs: {4: 185.15.58.145, 6: 2a02:ec80:600:fe09::2, peer_as: 4265006002}
+      ris:
+        RRC21: {4: 37.49.232.30, 6: 2001:7f8:54:5::30}
 
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
