@@ -147,6 +147,9 @@ cr2-codfw.wikimedia.org:
         cloudsw1-b1-codfw: {4: 10.192.254.3, 6: 2620:0:860:131::2, peer_as: 64711}
       ris:
         RRC00: {4: 193.0.4.28, 6: 2001:67c:2e8:2:ffff:0:4:28}
+      bgptools:
+        bgptools: {4: 206.53.202.92, 6: 2001:504:61:0:3:3d08:0:1}
+
 
 cr2-eqdfw.wikimedia.org:
   config:
@@ -213,6 +216,8 @@ cr1-esams.wikimedia.org:
         asw1-by27-esams: {4: 185.15.59.155, 6: 2a02:ec80:300:fe05::2, peer_as: 4265003002}
       ris:
         RRC03: {4: 80.249.208.69, 6: 2001:7f8:1::a501:2654:1}
+      bgptools:
+        bgptools: {4: 80.249.211.111, 6: 2001:7f8:1:0:a500:21:2232:1}
 
 cr2-esams.wikimedia.org:
   config:
@@ -248,6 +253,8 @@ cr2-esams.wikimedia.org:
       cr_switch:
         asw1-bw27-esams: {4: 185.15.59.159, 6: 2a02:ec80:300:fe06::2, peer_as: 4265003001}
         asw1-by27-esams: {4: 185.15.59.151, 6: 2a02:ec80:300:fe08::2, peer_as: 4265003002}
+      bgptools:
+        bgptools: {4: 193.239.118.186, 6: 2001:7f8:13::a521:2232:1}
     primary_ixp: true
 
 asw1-bw27-esams.mgmt.esams.wmnet:
@@ -328,6 +335,9 @@ cr2-eqsin.wikimedia.org:
       ae1.530-in: sandbox
       gr-0/0/0.2-in: border-in
     primary_ixp: true
+    device_bgp:
+      bgptools:
+        bgptools: {4: 103.231.152.58, 6: 2001:df5:b800:bb00:0:21:2232:1}
 
 cr1-drmrs.wikimedia.org:
   config:
@@ -353,6 +363,8 @@ cr1-drmrs.wikimedia.org:
       cr_switch:
         asw1-b12-drmrs: {4: 185.15.58.143, 6: 2a02:ec80:600:fe06::2, peer_as: 4265006001}
         asw1-b13-drmrs: {4: 185.15.58.149, 6: 2a02:ec80:600:fe07::2, peer_as: 4265006002}
+      bgptools:
+        bgptools: {4: 185.1.47.63, 6: 2001:7f8:36:0:3:3d08:0:1}
 
 cr2-drmrs.wikimedia.org:
   config:
@@ -976,6 +988,9 @@ cr2-magru.wikimedia.org:
       cr_switch:
         asw1-b3-magru: {4: 195.200.68.147, 6: 2a02:ec80:700:fe08::2, peer_as: 4265007001}
         asw1-b4-magru: {4: 195.200.68.145, 6: 2a02:ec80:700:fe09::2, peer_as: 4265007002}
+      bgptools:
+        bgptools: {4: 187.16.211.46, 6: 2001:12f8::211:46}
+
 
 mr1-magru.wikimedia.org:
   timeout: 120
