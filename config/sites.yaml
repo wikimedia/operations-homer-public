@@ -167,8 +167,6 @@ eqdfw:
 ulsfo:
   confed: 65004
   mgmt_gw: 10.128.128.1
-  customers:
-    - 11820  # WMF HQ
   bgp_out:
     198.35.26.0/24: BGP_aggregate_contributors  # ulsfo
     198.35.27.0/24: BGP_from_anycast  # ns2 Anycast
