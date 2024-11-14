@@ -407,7 +407,6 @@ ssw1-e1-eqiad.mgmt.eqiad.wmnet:
     device_bgp:
       switch_cr:
         cr1-eqiad: {4: 10.66.0.8, 6: 2620:0:861:fe07::1}
-        lsw1-e8-eqiad: {4: 10.66.0.13, 6: 2620:0:861:fe12::2, peer_as: 4265001058}
 
 lsw1-e1-eqiad.mgmt.eqiad.wmnet:
   config:
