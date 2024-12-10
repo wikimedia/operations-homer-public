@@ -127,21 +127,6 @@
       "type": "boolean",
       "description": "In a LACP bundle, configure VRRP to failover on the loss of one link."
     },
-    "vrrp_priority": {
-      "type": "integer",
-      "description": "Override priority for every VRRP, useful for forced failover/maintenance. Highest number wins; default when unspecified is 100. Remove any vrrp_master_pinning config on both devices before using as it takes precedence."
-    },
-    "vrrp_master_pinning": {
-      "type": "array",
-      "minProperties": 1,
-      "description": "Pin (sub)interfaces to a given device (sets its VRRP priority to 110)",
-      "prefixItems": [
-        {
-          "type": "string",
-          "description": "ae1  # Interface and all sub-interfaces; xe-1/0/1.1234  # Specific sub-interface"
-        }
-      ]
-    },
     "damping": {
       "type": "array",
       "description": "Enable interface flap damping.",

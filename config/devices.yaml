@@ -102,8 +102,6 @@ cr1-codfw.wikimedia.org:
     urpf_strict:
       - xe-1/0/4:0.1000  # cloud-hosts networks
     damping: [xe-1/0/1:2]
-    vrrp_master_pinning:
-      - et-1/1/5  # Row A / B bridged through ssw1-a1-codfw
     capirca:
       - cr-cloud
       - common-loopback
