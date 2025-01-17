@@ -3,12 +3,24 @@ prefix-list cloud4 {
     185.15.56.0/24;
 }
 
+prefix-list cloud6 {
+    2a02:ec80:a000::/48
+}
+
 policy-statement BGP_cloud_in {
     term address {
         from {
             family inet;
             protocol bgp;
             prefix-list-filter cloud4 orlonger;
+        }
+        then next policy;
+    }
+    term address6 {
+        from {
+            family inet6;
+            protocol bgp;
+            prefix-list-filter cloud6 orlonger;
         }
         then next policy;
     }
