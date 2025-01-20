@@ -214,16 +214,6 @@
         "frack"
       ]
     },
-    "vrf_ids": {
-      "type": "object",
-      "description": "Global VRF identifiers for generating RD, RTs etc.",
-      "additionalProperties": false,
-      "patternProperties": {
-        "^.+$": {
-          "type": "integer"
-        }
-      }
-    },
     "users_passwords": {
       "type": "object",
       "description": "Define Linux style hashed passwords for users who need them set. Set as a different key to live in homer-private.",
