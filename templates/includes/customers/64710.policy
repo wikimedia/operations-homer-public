@@ -4,7 +4,7 @@ prefix-list cloud4 {
 }
 
 prefix-list cloud6 {
-    2a02:ec80:a000::/48
+    2a02:ec80:a000::/48;
 }
 
 policy-statement BGP_cloud_in {
