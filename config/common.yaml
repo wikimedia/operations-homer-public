@@ -207,9 +207,6 @@ ospf:
       metric: 1820
     - cr1-esams.wikimedia.org: ae0.0
       cr2-esams.wikimedia.org: ae0.0
-    - cr2-esams.wikimedia.org: ae1.404
-      mr1-esams-old.wikimedia.org: ge-0/0/1.404
-      metric: 20000
     - cloudsw1-c8-eqiad.mgmt.eqiad.wmnet: irb.1104
       cloudsw1-d5-eqiad.mgmt.eqiad.wmnet: irb.1104
     - cr1-drmrs.wikimedia.org: et-0/0/0.0
@@ -304,9 +301,6 @@ ospf:
       - ae4.1020
       - ae4.1004
       - ae4.1023
-    cr2-esams.wikimedia.org:
-      - ae1.100
-      - ae1.103
     cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
       - irb.1120
     cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
