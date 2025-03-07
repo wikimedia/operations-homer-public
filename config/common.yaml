@@ -184,7 +184,6 @@ ospf:
       metric: 20000
     - cr1-codfw.wikimedia.org: ae0.0
       cr2-codfw.wikimedia.org: ae0.0
-      bfd: true
     - cr2-eqdfw.wikimedia.org: xe-0/1/3.12
       cr1-eqiad.wikimedia.org: xe-3/0/7.12
       bfd: true
