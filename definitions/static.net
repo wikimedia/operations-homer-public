@@ -45,18 +45,26 @@ network-infra = 10.136.127.0/24 # drmrs
                 195.200.68.128/27 # magru
                 2a02:ec80:700:fe00::/55 # magru
 
-cloud-transports = 185.15.56.236/30 # cloud-gw-transport-eqiad
+cloud-transports = 185.15.56.232/29 # cloud-gw-transport-eqiad
+                   2a02:ec80:a000:fe04::/64 # cloud-gw-transport-eqiad
                    185.15.56.240/29 # cloud-instance-transport1-b-eqiad
-                   185.15.57.8/30 # cloud-gw-transport-codfw
+                   2a02:ec80:a000:fe03::/64 # cloud-instance-transport1-b-eqiad
+                   185.15.57.8/29 # cloud-gw-transport-codfw
+                   2a02:ec80:a100:fe04::/64 # cloud-gw-transport-codfw
                    185.15.57.16/29 # cloud-instance-transport1-b-codfw (next)
                    208.80.153.184/29 # cloud-instance-transport1-b-codfw (in use)
+                   2a02:ec80:a100:fe03::/64 # cloud-instance-transport1-b-codfw
 
 cloud-hosts = 10.64.20.0/24 # cloud-hosts1-b-eqiad
               10.192.20.0/24 # cloud-hosts1-b-codfw
               10.64.148.0/22 # cloud-hosts1 eqiad per-rack agg
 cloud-private = 172.20.0.0/16 # cloud-private aggregate
+                2a02:ec80:a000:200::/56 # cloud-private eqiad
+                2a02:ec80:a100:200::/56 # cloud-private codfw
 cloud-public = 185.15.56.160/28 # cloud public service VIPs eqiad
+               2a02:ec80:a000:4000::/64 # cloud public service VIPs eqiad
                185.15.57.24/29  # cloud public service VIPs codfw
+               2a02:ec80:a100:4000::/64 # cloud public service VIPs codfw
 
 #
 # Traffic VIPs
