@@ -468,6 +468,16 @@ lsw1-e7-eqiad.mgmt.eqiad.wmnet:
     filters:
       irb.1052-in: analytics-in
 
+lsw1-e8-eqiad.mgmt.eqiad.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+      - sw-analytics
+    filters:
+      irb.1054-in: analytics-in
+
 ssw1-f1-eqiad.mgmt.eqiad.wmnet:
   config:
     evpn: true
@@ -537,6 +547,16 @@ lsw1-f7-eqiad.mgmt.eqiad.wmnet:
       - sw-analytics
     filters:
       irb.1060-in: analytics-in
+
+lsw1-f8-eqiad.mgmt.eqiad.wmnet:
+  config:
+    evpn: true
+    l3_switch: true
+    capirca:
+      - common-loopback
+      - sw-analytics
+    filters:
+      irb.1062-in: analytics-in
 
 cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
   config:

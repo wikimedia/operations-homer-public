@@ -56,12 +56,14 @@ eqiad:
           lsw1-e5-eqiad: 10.64.128.6
           lsw1-e6-eqiad: 10.64.128.10
           lsw1-e7-eqiad: 10.64.128.11
+          lsw1-e8-eqiad: 10.64.128.15
           lsw1-f1-eqiad: 10.64.128.7
           lsw1-f2-eqiad: 10.64.128.8
           lsw1-f3-eqiad: 10.64.128.9
           lsw1-f5-eqiad: 10.64.128.12
           lsw1-f6-eqiad: 10.64.128.13
           lsw1-f7-eqiad: 10.64.128.14
+          lsw1-f8-eqiad: 10.64.128.16
 
 eqord:
   confed: 65020
