@@ -89,6 +89,7 @@ codfw:
     - 64604  # k8s-staging-codfw
     - 64607  # k8s-mlserve-codfw
     - 64608  # k8s-mlstaging-codfw
+    - 64611  # k8s-aux-codfw
     - 64612  # Ganeti
     - 64701  # fundraising-codfw
     - 64711  # WMCS-codfw

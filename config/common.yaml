@@ -431,6 +431,7 @@ asns_mapping:
     eqiad: 64609
   k8s-aux:
     eqiad: 64610
+    codfw: 64611
   frack:
     eqiad: 64700
     codfw: 64701
