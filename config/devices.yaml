@@ -1006,6 +1006,8 @@ cr2-magru.wikimedia.org:
     capirca:
       - common-loopback
       - cr-border-in
+    arp_policer:
+      ae0.3347: 2000000
     device_bgp:
       cr_switch:
         asw1-b3-magru: {4: 195.200.68.147, 6: 2a02:ec80:700:fe08::2, peer_as: 4265007001}

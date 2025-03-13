@@ -571,6 +571,16 @@
       "additionalProperties": {
         "type": "string"
       }
+    },
+    "arp_policer": {
+      "type": "object",
+      "description": "Dict keyed by interface names with arp policer bandwidth in bytes as values",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^.+$": {
+            "type": "integer"
+        }
+      }
     }
   }
 }
