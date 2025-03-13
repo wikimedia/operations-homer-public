@@ -6,9 +6,13 @@ filters:
       targets:
         juniper: cloud-in mixed no-interface-specific
     terms:
-      - name: allow-icmp
+      - name: allow-icmp4
         source-address: cloud-transports
         protocol: icmp
+        action: accept
+      - name: allow-icmp6
+        source-address: cloud-transports
+        protocol: icmpv6
         action: accept
       - name: deny-from-private
         source-address: cloud-private
