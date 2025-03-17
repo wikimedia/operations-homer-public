@@ -27,6 +27,12 @@ filters:
       - name: icmp
         protocol: icmp
         action: accept
+      - name: proxies--web
+        comment: Monitoring return traffic - T388419
+        destination-address: install_group
+        protocol: tcp
+        source-port: WEB
+        action: accept
       - name: icmp6
         protocol: icmpv6
         action: accept
