@@ -226,6 +226,7 @@ esams:
   sampling:
     collectors:
       netflow3003: 10.80.0.15
+  prepend_as_out: true
 
 drmrs:
   confed: 65006
