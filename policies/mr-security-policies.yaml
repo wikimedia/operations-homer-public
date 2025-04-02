@@ -172,11 +172,6 @@ filters:
         destination-port: SNMP
         protocol: udp
         action: accept
-      - name: monitoring--gnmi
-        source-address: cumin_group netflow_group
-        protocol: tcp
-        destination-port: junos_grpc
-        action: accept
       - name: default-deny
         comment: |-
           T218234 - to-zone junos-host has an implicit default permit
