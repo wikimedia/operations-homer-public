@@ -418,9 +418,6 @@ transit_providers:
     export_policy: true
   Orange:
     AS: 5511
-  Novacore:
-    AS: 28189
-    export_policy: true
 
 asns_mapping:
   k8s:
