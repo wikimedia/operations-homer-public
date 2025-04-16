@@ -567,7 +567,7 @@ cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
 
 cloudsw2-d5-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 4264710002
+    asn: 64710
     static_routes:
       0.0.0.0/0:
         next_hop: 10.64.147.10
@@ -578,11 +578,11 @@ cloudsw2-d5-eqiad.mgmt.eqiad.wmnet:
 
 cloudsw1-e4-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 4264710003
+    asn: 64710
 
 cloudsw1-f4-eqiad.mgmt.eqiad.wmnet:
   config:
-    asn: 4264710004
+    asn: 64710
 
 cloudsw1-b1-codfw.mgmt.codfw.wmnet:
   config:
