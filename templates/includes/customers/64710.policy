@@ -1,5 +1,6 @@
 prefix-list cloud4 {
     172.16.0.0/21;
+    172.16.0.0/17;
     185.15.56.0/24;
 }
 
@@ -12,7 +13,7 @@ policy-statement BGP_cloud_in {
         from {
             family inet;
             protocol bgp;
-            prefix-list-filter cloud4 orlonger;
+            prefix-list-filter cloud4;
         }
         then next policy;
     }
@@ -20,7 +21,7 @@ policy-statement BGP_cloud_in {
         from {
             family inet6;
             protocol bgp;
-            prefix-list-filter cloud6 orlonger;
+            prefix-list-filter cloud6;
         }
         then next policy;
     }

@@ -3,9 +3,9 @@ NO_IP = 0.0.0.0/32
 LIMITED_BROADCAST = 255.255.255.255/32
 vmhost = 192.168.1.0/24 # Junos internal subnet
 
-CLOUD_VMs = 172.16.0.0/12 # Cloud VMs
+CLOUD_VMs = 172.16.0.0/16 # Cloud VMs
 RFC1918 = 10.0.0.0/8
-          CLOUD_VMs
+          172.16.0.0/12
           192.168.0.0/16
 
 #
@@ -25,7 +25,7 @@ gerrit-replica.wikimedia.org = 208.80.153.107 # gerrit-replica.wikimedia.org
 #
 
 wikimedia-private = 10.0.0.0/8 # private
-                    172.16.0.0/12 # CloudVPS VMs
+                    CLOUD_VMs # CloudVPS VMs
                     2001:df2:e500:100::/56 # eqsin private
                     2620:0:860:100::/56 # codfw private
                     2620:0:861:100::/56 # eqiad private
