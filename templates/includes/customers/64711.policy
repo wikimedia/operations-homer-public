@@ -14,7 +14,7 @@ policy-statement BGP_cloud_in {
         from {
             family inet;
             protocol bgp;
-            prefix-list-filter cloud4;
+            prefix-list cloud4;
         }
         then next policy;
     }
@@ -22,7 +22,7 @@ policy-statement BGP_cloud_in {
         from {
             family inet6;
             protocol bgp;
-            prefix-list-filter cloud6;
+            prefix-list cloud6;
         }
         then next policy;
     }
