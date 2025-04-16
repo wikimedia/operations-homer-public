@@ -564,13 +564,6 @@ cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
 cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:
   config:
     asn: 64710
-    static_routes:
-      10.64.146.251/32:
-        next_hop: 10.64.147.11
-        description: "cloudsw2-d5-eqiad loopback"
-      2620:0:861:11b::251/128:
-        next_hop: 2620:0:861:fe11::2
-        description: "cloudsw2-d5-eqiad loopback"
 
 cloudsw2-d5-eqiad.mgmt.eqiad.wmnet:
   config:
