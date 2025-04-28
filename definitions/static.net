@@ -14,10 +14,10 @@ RFC1918 = 10.0.0.0/8
 
 recdns = 10.3.0.1 # recdns
 ldap-ro.eqiad = 208.80.154.252 # ldap-ro.eqiad
-gerrit.wikimedia.org = 208.80.154.151 # gerrit.wikimedia.org
-                       2620:0:861:2:208:80:154:151 # gerrit.wikimedia.org
-gerrit-replica.wikimedia.org = 208.80.153.107 # gerrit-replica.wikimedia.org
-                               2620:0:860:4:208:80:153:107 # gerrit-replica.wikimedia.org
+gerrit.wikimedia.org = 208.80.154.151 # gerrit.wikimedia.org (eqiad)
+                       2620:0:861:2:208:80:154:151 # gerrit.wikimedia.org (eqiad)
+                       208.80.153.104 # gerrit.wikimedia.org (codfw)
+                       2620:0:860:4:208:80:153:104 # gerrit.wikimedia.org (codfw)
 
 
 #

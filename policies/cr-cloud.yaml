@@ -38,7 +38,7 @@ filters:
         destination-port: WEB
         action: accept
       - name: gerrit
-        destination-address: gerrit.wikimedia.org gerrit-replica.wikimedia.org
+        destination-address: gerrit.wikimedia.org
         protocol: tcp
         destination-port: WEB gerritSSH
         action: accept
