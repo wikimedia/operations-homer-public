@@ -154,11 +154,13 @@ users:
   - name: dcaro
     uid: 2038
     class: super-user
-    sshkeys: []
+    sshkeys:
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID46/gY7mfN96ylAdQb6ZBfrq9L3QwemMtN5ZjrJgEmK dcaro@magnum wmf network access"
   - name: taavi
     uid: 2039
     class: super-user
-    sshkeys: []
+    sshkeys:
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHxFwB22ti9ZoewA9VEJEhccLLBGJGBLETen0/kvyJOs taavi@runko wmf network access"
 # yamllint enable rule:line-length
 # When adding a new user, please make sure to update the "next available UID"
 # comment at the beginning of the users block
