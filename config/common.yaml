@@ -404,9 +404,6 @@ transit_providers:
   Tata:
     AS: 6453
     export_policy: true
-  Tele2:
-    AS: 1257
-    export_policy: true
   Telxius:
     AS: 12956
     export_policy: true

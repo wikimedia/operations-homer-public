@@ -227,10 +227,6 @@ cr2-esams.wikimedia.org:
         protocol: udp
         destination: 185.15.59.224/32
     transits:
-      130.244.6.249:
-        provider: Tele2
-      2a00:800:0:10::3:1:
-        provider: Tele2
       77.109.134.113:
         provider: Init7
       2001:1620:1000::85:
