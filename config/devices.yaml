@@ -593,8 +593,8 @@ ssw1-a1-codfw.mgmt.codfw.wmnet:
     device_bgp:
       sw_external:
         cr1-codfw: {4: 10.192.254.4, 6: 2620:0:860:132::1}
-        ssw1-e1-codfw: {4: 10.192.253.163, 6: 2620:0:860:18b::2, peer_as: 64813}
-        ssw1-f1-codfw: {4: 10.192.253.173, 6: 2620:0:860:190::2, peer_as: 64813}
+        ssw1-e1-codfw: {4: 10.192.253.163, 6: 2620:0:860:139::19, peer_as: 64813}
+        ssw1-f1-codfw: {4: 10.192.253.173, 6: 2620:0:860:139::23, peer_as: 64813}
 
 ssw1-a8-codfw.mgmt.codfw.wmnet:
   config:
@@ -605,8 +605,8 @@ ssw1-a8-codfw.mgmt.codfw.wmnet:
     device_bgp:
       sw_external:
         cr2-codfw: {4: 10.192.254.6, 6: 2620:0:860:133::1}
-        ssw1-e1-codfw: {4: 10.192.253.161, 6: 2620:0:860:18a::2, peer_as: 64813}
-        ssw1-f1-codfw: {4: 10.192.253.171, 6: 2620:0:860:18f::2, peer_as: 64813}
+        ssw1-e1-codfw: {4: 10.192.253.161, 6: 2620:0:860:139::17, peer_as: 64813}
+        ssw1-f1-codfw: {4: 10.192.253.171, 6: 2620:0:860:139::21, peer_as: 64813}
 
 ssw1-d1-codfw.mgmt.codfw.wmnet:
   config:
@@ -617,8 +617,8 @@ ssw1-d1-codfw.mgmt.codfw.wmnet:
     device_bgp:
       sw_external:
         cr1-codfw: {4: 10.192.254.10, 6: 2620:0:860:135::1}
-        ssw1-e1-codfw: {4: 10.192.253.159, 6: 2620:0:860:189::2, peer_as: 64813}
-        ssw1-f1-codfw: {4: 10.192.253.169, 6: 2620:0:860:18e::2, peer_as: 64813}
+        ssw1-e1-codfw: {4: 10.192.253.159, 6: 2620:0:860:139::15, peer_as: 64813}
+        ssw1-f1-codfw: {4: 10.192.253.169, 6: 2620:0:860:139::1f, peer_as: 64813}
 
 ssw1-d8-codfw.mgmt.codfw.wmnet:
   config:
@@ -629,8 +629,8 @@ ssw1-d8-codfw.mgmt.codfw.wmnet:
     device_bgp:
       sw_external:
         cr2-codfw: {4: 10.192.254.12, 6: 2620:0:860:136::1}
-        ssw1-e1-codfw: {4: 10.192.253.157, 6: 2620:0:860:188::2, peer_as: 64813}
-        ssw1-f1-codfw: {4: 10.192.253.167, 6: 2620:0:860:18d::2, peer_as: 64813}
+        ssw1-e1-codfw: {4: 10.192.253.157, 6: 2620:0:860:139::13, peer_as: 64813}
+        ssw1-f1-codfw: {4: 10.192.253.167, 6: 2620:0:860:139::1d, peer_as: 64813}
 
 lsw1-a2-codfw.mgmt.codfw.wmnet:
   config:
@@ -838,6 +838,60 @@ lsw1-d8-codfw.mgmt.codfw.wmnet:
   config:
     evpn: true
     l3_switch: true
+    capirca:
+      - common-loopback
+
+ssw1-e1-codfw.mgmt.codfw.wmnet:
+  config:
+    l3_switch: true
+    asn: 64813
+    capirca:
+      - common-loopback
+    device_bgp:
+      sw_external:
+        ssw1-a1-codfw: {4: 10.192.253.162, 6: 2620:0:860:139::20, peer_as: 64811}
+        ssw1-a8-codfw: {4: 10.192.253.160, 6: 2620:0:860:139::16, peer_as: 64811}
+        ssw1-d1-codfw: {4: 10.192.253.158, 6: 2620:0:860:139::14, peer_as: 64811}
+        ssw1-d8-codfw: {4: 10.192.253.156, 6: 2620:0:860:139::12, peer_as: 64811}
+
+ssw1-f1-codfw.mgmt.codfw.wmnet:
+  config:
+    l3_switch: true
+    asn: 64813
+    capirca:
+      - common-loopback
+    device_bgp:
+      sw_external:
+        ssw1-a1-codfw: {4: 10.192.253.172, 6: 2620:0:860:139::22, peer_as: 64811}
+        ssw1-a8-codfw: {4: 10.192.253.170, 6: 2620:0:860:139::20, peer_as: 64811}
+        ssw1-d1-codfw: {4: 10.192.253.168, 6: 2620:0:860:139::1e, peer_as: 64811}
+        ssw1-d8-codfw: {4: 10.192.253.166, 6: 2620:0:860:139::1c, peer_as: 64811}
+
+lsw1-e1-codfw.mgmt.codfw.wmnet:
+  config:
+    l3_switch: true
+    asn: 64813
+    capirca:
+      - common-loopback
+
+lsw1-e3-codfw.mgmt.codfw.wmnet:
+  config:
+    l3_switch: true
+    asn: 64813
+    capirca:
+      - common-loopback
+
+lsw1-f1-codfw.mgmt.codfw.wmnet:
+  config:
+    l3_switch: true
+    asn: 64813
+    capirca:
+      - common-loopback
+
+lsw1-f3-codfw.mgmt.codfw.wmnet:
+  config:
+    l3_switch: true
+    asn: 64813
     capirca:
       - common-loopback
 
