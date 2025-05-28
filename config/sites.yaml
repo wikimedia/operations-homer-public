@@ -269,3 +269,5 @@ magru:
     name: install7001
     ip: 195.200.68.7
   prepend_as_out: false
+  customers:
+    - 64612  # Ganeti

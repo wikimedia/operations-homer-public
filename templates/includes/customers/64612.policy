@@ -1,10 +1,22 @@
 prefix-list vms-ips4 {
+    /* codfw */
     10.192.24.0/23;
+    /* magru */
+    10.140.2.0/24;
+    /* codfw */
     208.80.152.128/27;
+    /* magru */
+    195.200.68.96/27;
 }
 prefix-list vms-ips6 {
+    /* codfw */
     2620:0:860:5::/64;
+    /* codfw */
     2620:0:860:140::/64;
+    /* magru */
+    2a02:ec80:700:103::/64;
+    /* magru */
+    2a02:ec80:700:3::/64;
 }
 policy-statement vms_import {
     term ipv4 {
