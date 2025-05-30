@@ -111,8 +111,8 @@ cr1-codfw.wikimedia.org:
       cr_switch:
         ssw1-a1-codfw: {4: 10.192.254.5, 6: 2620:0:860:132::2, peer_as: 64811}
         ssw1-d1-codfw: {4: 10.192.254.11, 6: 2620:0:860:135::2, peer_as: 64811}
+        ssw1-e1-codfw: {4: 10.192.253.165, 6: 2620:0:860:139::1b, peer_as: 64813}
         cloudsw1-b1-codfw: {4: 10.192.254.1, 6: 2620:0:860:130::2, peer_as: 64711}
-        ssw2-a8-codfw: {4: 10.192.254.15, 6: 2620:0:860:137::2, peer_as: 64812}
 
 cr2-codfw.wikimedia.org:
   config:
@@ -144,7 +144,6 @@ cr2-codfw.wikimedia.org:
         ssw1-a8-codfw: {4: 10.192.254.7, 6: 2620:0:860:133::2, peer_as: 64811}
         ssw1-d8-codfw: {4: 10.192.254.13, 6: 2620:0:860:136::2, peer_as: 64811}
         cloudsw1-b1-codfw: {4: 10.192.254.3, 6: 2620:0:860:131::2, peer_as: 64711}
-        ssw3-a8-codfw: {4: 10.192.254.17, 6: 2620:0:860:138::2, peer_as: 64812}
       ris:
         RRC00: {4: 193.0.4.28, 6: 2001:67c:2e8:2:ffff:0:4:28}
       bgptools:
@@ -853,6 +852,7 @@ ssw1-e1-codfw.mgmt.codfw.wmnet:
         ssw1-a8-codfw: {4: 10.192.253.160, 6: 2620:0:860:139::16, peer_as: 64811}
         ssw1-d1-codfw: {4: 10.192.253.158, 6: 2620:0:860:139::14, peer_as: 64811}
         ssw1-d8-codfw: {4: 10.192.253.156, 6: 2620:0:860:139::12, peer_as: 64811}
+        cr1-codfw: {4: 10.192.253.164, 6: 2620:0:860:139::1a}
 
 ssw1-f1-codfw.mgmt.codfw.wmnet:
   config:
