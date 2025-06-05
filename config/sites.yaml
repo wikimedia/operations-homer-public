@@ -265,6 +265,7 @@ magru:
   sampling:
     collectors:
       netflow7001: 10.140.0.16
+      netflow7002: 10.140.2.6
   dhcp_server:
     name: install7001
     ip: 195.200.68.7
