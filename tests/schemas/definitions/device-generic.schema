@@ -427,10 +427,6 @@
         }
       ]
     },
-    "netbox_driven_interfaces": {
-      "type": "boolean",
-      "description": "Configure interfaces using Netbox as the source of truth."
-    },
     "l3_switch": {
       "type": "boolean",
       "description": "The switch also does L3 routing."
@@ -518,27 +514,49 @@
       },
       "additionalProperties": false
     },
-    "evpn_bgp": {
+    "ibgp_clusters": {
       "type": "object",
-      "description": "BGP EVPN members and cluster vars for given site.",
-      "properties": {
-        "rr": {
+      "description": "Switch fabric IBGP cluster definitions, indexed by ASN.",
+      "patternProperties": {
+        "^[0-9]+$": {
           "type": "object",
-          "description": "Dict of cluster RRs.  Key is device name, value is device loopback.",
-          "additionalProperties": {
-            "type": "string",
-            "format": "ipv4"
-          }
-        },
-        "clients": {
-          "type": "object",
-          "description": "Dict of cluster RR clients.  Key is device name, value is device loopback.",
-          "additionalProperties": {
-            "type": "string",
-            "format": "ipv4"
-          }
+          "description": "AS Number used by members of this cluster",
+          "properties": {
+            "evpn": {
+              "type": "boolean",
+              "description": "Whether sessions are of type EVPN for VXLAN overlay"
+            },
+            "pods": {
+              "type": "object",
+              "description": "Pods belonging to this cluster, a POD is a set of Spines and connected Leaf switches",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "rr": {
+                    "type": "array",
+                    "description": "Hostnames of route-reflectors in this pod (Spine switches)",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "client": {
+                    "type": "array",
+                    "description": "Hostnames of RR clients in this pod (Leaf switches)",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": ["rr", "client"],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": ["evpn", "pods"],
+          "additionalProperties": false
         }
-      }
+      },
+      "additionalProperties": false
     },
     "static_routes": {
       "type": "object",
