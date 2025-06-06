@@ -264,7 +264,6 @@ magru:
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   sampling:
     collectors:
-      netflow7001: 10.140.0.16
       netflow7002: 10.140.2.6
   dhcp_server:
     name: install7001
