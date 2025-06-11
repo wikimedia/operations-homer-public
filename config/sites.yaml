@@ -266,8 +266,8 @@ magru:
     collectors:
       netflow7002: 10.140.2.6
   dhcp_server:
-    name: install7001
-    ip: 195.200.68.7
+    name: install7002
+    ip: 195.200.68.100
   prepend_as_out: false
   customers:
     - 64612  # Ganeti
