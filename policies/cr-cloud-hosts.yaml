@@ -3,7 +3,7 @@ filters:
       comment: |-
         Applied to traffic going out of the cloud-hosts vlans
       targets:
-        juniper: labs-in mixed no-interface-specific
+        juniper: cloud-hosts-in mixed no-interface-specific
     terms:
       - name: allow_bgp_src
         source-prefix: bgp-sessions

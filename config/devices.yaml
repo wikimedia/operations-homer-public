@@ -16,7 +16,7 @@ cr1-eqiad.wikimedia.org:
       2001:470:0:1c0::1:
         provider: "Hurricane Electric"
     filters:
-      xe-3/0/4.1000-in: labs-in
+      xe-3/0/4.1000-in: cloud-hosts-in
       xe-3/0/4.1102-in: cloud-in
       ae2.1202-in: sandbox
       gr-3/3/0.1-in: border-in
@@ -32,7 +32,7 @@ cr1-eqiad.wikimedia.org:
       - common-sandbox
       - common-loopback
       - cr-border-in
-      - cr-labs  # For cloud-hosts servers
+      - cr-cloud-hosts  # For cloud-hosts servers
     device_bgp:
       cr_switch:
         ssw1-e1-eqiad: {4: 10.66.0.9, 6: 2620:0:861:fe07::2, peer_as: 64810}
@@ -48,7 +48,7 @@ cr2-eqiad.wikimedia.org:
         provider: Arelion
     filters:
       xe-1/0/1:0-in4: transport-in  # to eqord
-      xe-3/0/4.1100-in: labs-in
+      xe-3/0/4.1100-in: cloud-hosts-in
       xe-3/0/4.1103-in: cloud-in
       ae2.1202-in: sandbox
       gr-3/3/0.2-in: border-in
@@ -65,7 +65,7 @@ cr2-eqiad.wikimedia.org:
       - common-sandbox
       - common-loopback
       - cr-border-in
-      - cr-labs  # For cloud-hosts servers
+      - cr-cloud-hosts  # For cloud-hosts servers
     device_bgp:
       cr_switch:
         ssw1-f1-eqiad: {4: 10.66.0.11, 6: 2620:0:861:fe08::2, peer_as: 64810}
@@ -96,7 +96,7 @@ cr1-codfw.wikimedia.org:
       2001:2035:0:af4::1:
         provider: Arelion
     filters:
-      xe-1/0/4:0.1000-in: labs-in
+      xe-1/0/4:0.1000-in: cloud-hosts-in
       xe-1/0/4:0.1001-in: cloud-in
       xe-1/1/1:2.0-in4: transport-in  # to eqdfw
     urpf_strict:
@@ -106,7 +106,7 @@ cr1-codfw.wikimedia.org:
       - cr-cloud
       - common-loopback
       - cr-border-in
-      - cr-labs  # For cloud-hosts servers
+      - cr-cloud-hosts  # For cloud-hosts servers
     device_bgp:
       cr_switch:
         ssw1-a1-codfw: {4: 10.192.254.5, 6: 2620:0:860:132::2, peer_as: 64811}
@@ -127,7 +127,7 @@ cr2-codfw.wikimedia.org:
       2001:1900:2100::4b41:
         provider: Lumen
     filters:
-      xe-1/0/4:0.1000-in: labs-in
+      xe-1/0/4:0.1000-in: cloud-hosts-in
       xe-1/0/4:0.1001-in: cloud-in
       xe-5/0/0.0-in4: transport-in  # to eqdfw
       xe-1/0/1:1.0-in4: transport-in  # to eqord
@@ -138,7 +138,7 @@ cr2-codfw.wikimedia.org:
       - cr-cloud
       - common-loopback
       - cr-border-in
-      - cr-labs  # For cloud-hosts servers
+      - cr-cloud-hosts  # For cloud-hosts servers
     device_bgp:
       cr_switch:
         ssw1-a8-codfw: {4: 10.192.254.7, 6: 2620:0:860:133::2, peer_as: 64811}
