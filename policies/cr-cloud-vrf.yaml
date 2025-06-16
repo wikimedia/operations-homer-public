@@ -4,7 +4,7 @@ filters:
         Applied to traffic leaving cloud vrf on the cloud switches (includes VM instance traffic)
         Last audit in T264993
       targets:
-        juniper: cloud-in mixed no-interface-specific
+        juniper: cloud-vrf-in mixed no-interface-specific
     terms:
       - name: allow-icmp4
         source-address: cloud-transports
