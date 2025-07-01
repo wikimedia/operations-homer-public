@@ -28,11 +28,11 @@ cr1-eqiad.wikimedia.org:
       - ae4.1023  # analytics1-d-eqiad
     vrrp_bandwidth_threshold: true
     capirca:
-      - cr-cloud  # For VM traffic
       - common-sandbox
       - common-loopback
       - cr-border-in
-      - cr-cloud-hosts  # For cloud-hosts servers
+      - cr-cloud-hosts  # Cloud hosts (wmf prod. realm)
+      - cr-cloud-vrf  # Cloud VRF (cloud realm, incl. VMs)
     device_bgp:
       cr_switch:
         ssw1-e1-eqiad: {4: 10.66.0.9, 6: 2620:0:861:fe07::2, peer_as: 64810}
@@ -61,11 +61,11 @@ cr2-eqiad.wikimedia.org:
     damping: [xe-3/2/1]
     vrrp_bandwidth_threshold: true
     capirca:
-      - cr-cloud  # For VM traffic
       - common-sandbox
       - common-loopback
       - cr-border-in
-      - cr-cloud-hosts  # For cloud-hosts servers
+      - cr-cloud-hosts  # Cloud hosts (wmf prod. realm)
+      - cr-cloud-vrf  # Cloud VRF (cloud realm, incl. VMs)
     device_bgp:
       cr_switch:
         ssw1-f1-eqiad: {4: 10.66.0.11, 6: 2620:0:861:fe08::2, peer_as: 64810}
@@ -103,10 +103,10 @@ cr1-codfw.wikimedia.org:
       - xe-1/0/4:0.1000  # cloud-hosts networks
     damping: [xe-1/0/1:2]
     capirca:
-      - cr-cloud
       - common-loopback
       - cr-border-in
-      - cr-cloud-hosts  # For cloud-hosts servers
+      - cr-cloud-hosts  # Cloud hosts (wmf prod. realm)
+      - cr-cloud-vrf  # Cloud VRF (cloud realm, incl. VMs)
     device_bgp:
       cr_switch:
         ssw1-a1-codfw: {4: 10.192.254.5, 6: 2620:0:860:132::2, peer_as: 64811}
@@ -135,10 +135,10 @@ cr2-codfw.wikimedia.org:
       - xe-1/0/4:0.1000  # cloud-hosts networks
     primary_ixp: true
     capirca:
-      - cr-cloud
       - common-loopback
       - cr-border-in
-      - cr-cloud-hosts  # For cloud-hosts servers
+      - cr-cloud-hosts  # Cloud hosts (wmf prod. realm)
+      - cr-cloud-vrf  # Cloud VRF (cloud realm, incl. VMs)
     device_bgp:
       cr_switch:
         ssw1-a8-codfw: {4: 10.192.254.7, 6: 2620:0:860:133::2, peer_as: 64811}
