@@ -427,13 +427,9 @@
         }
       ]
     },
-    "l3_switch": {
-      "type": "boolean",
-      "description": "The switch also does L3 routing."
-    },
     "evpn": {
       "type": "boolean",
-      "description": "The switch uses BGP EVPN and VXLAN transport."
+      "description": "The IBGP cluster is using the EVPN SAFI to exchange routes for VXLAN."
     },
     "junos_root_password": {
       "type": "string",

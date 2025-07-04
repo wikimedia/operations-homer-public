@@ -28,6 +28,5 @@ cr:
     - cr-border-in
 
 cloudsw:
-  l3_switch: true
   capirca:
     - common-loopback
