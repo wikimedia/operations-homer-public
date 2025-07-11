@@ -905,6 +905,10 @@ cr1-magru.wikimedia.org:
         provider: Telxius
       2001:1498:1:966:1:0:0:251:
         provider: Telxius
+      187.108.235.25:
+        provider: Ufinet
+      2804:2b78:8000::7c1:
+        provider: Ufinet
     capirca:
       - common-loopback
       - cr-border-in

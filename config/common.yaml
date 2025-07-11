@@ -415,6 +415,8 @@ transit_providers:
     export_policy: true
   Orange:
     AS: 5511
+  Ufinet:
+    AS: 52468
 
 asns_mapping:
   k8s:
