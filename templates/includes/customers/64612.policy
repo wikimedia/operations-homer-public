@@ -19,7 +19,7 @@ prefix-list vms-ips6 {
     2a02:ec80:700:3::/64;
 }
 policy-statement vms_import {
-    term ipv4 {
+    term vm4 {
         from {
             family inet;
             protocol bgp;
@@ -27,12 +27,16 @@ policy-statement vms_import {
         }
         then accept;
     }
-    term ipv6 {
+    term vm6 {
         from {
             family inet6;
             protocol bgp;
             prefix-list-filter vms-ips6 longer;
         }
+        then accept;
+    }
+    term anycast {
+        from policy anycast_import;
         then accept;
     }
     then reject;
