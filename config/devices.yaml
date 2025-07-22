@@ -519,17 +519,6 @@ lsw1-f8-eqiad.mgmt.eqiad.wmnet:
     filters:
       irb.1062-in: analytics-in
 
-cloudsw2-d5-eqiad.mgmt.eqiad.wmnet:
-  config:
-    asn: 64710
-    static_routes:
-      0.0.0.0/0:
-        next_hop: 10.64.147.10
-        description: "default via cloudsw1-d5-eqiad"
-      ::/0:
-        next_hop: 2620:0:861:fe11::1
-        description: "default via cloudsw1-d5-eqiad"
-
 cloudsw1-b1-codfw.mgmt.codfw.wmnet:
   config:
     asn: 64711
