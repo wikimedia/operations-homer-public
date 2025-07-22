@@ -417,6 +417,8 @@ transit_providers:
     AS: 5511
   Ufinet:
     AS: 52468
+  Interlink:
+    AS: 5405
 
 asns_mapping:
   k8s:
