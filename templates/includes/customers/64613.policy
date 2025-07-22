@@ -1,0 +1,25 @@
+prefix-list kubedse-pod-ips4 {
+    10.192.96.0/21;
+}
+prefix-list kubedse-pod-ips6 {
+    2620:0:860:308::/64;
+}
+policy-statement kubedse_import {
+    term pod_ips4 {
+        from {
+            family inet;
+            protocol bgp;
+            prefix-list-filter kubedse-pod-ips4 longer;
+        }
+        then accept;
+    }
+    term pod_ips6 {
+        from {
+            family inet6;
+            protocol bgp;
+            prefix-list-filter kubedse-pod-ips6 longer;
+        }
+        then accept;
+    }
+    then reject;
+}

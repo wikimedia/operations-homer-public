@@ -434,6 +434,7 @@ asns_mapping:
     codfw: 64608
   k8s-dse:
     eqiad: 64609
+    codfw: 64613
   k8s-aux:
     eqiad: 64610
     codfw: 64611

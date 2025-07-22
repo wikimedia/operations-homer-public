@@ -8,6 +8,7 @@ eqiad:
     - 64606  # k8s-mlserve-eqiad
     - 64609  # k8s-dse-eqiad
     - 64610  # k8s-aux-eqiad
+    - 64613  # k8s-dse-codfw
     - 64700  # fundraising-eqiad
     - 64710  # WMCS-eqiad
   bgp_out:
