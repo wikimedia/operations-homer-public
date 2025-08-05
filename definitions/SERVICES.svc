@@ -32,7 +32,6 @@ NRPE = 5666/tcp
 IDRAC_KVM = 5900/tcp
 SYSLOGTLS = 6514/tcp
 ceph_monitor_legacy = 6789/tcp
-SONIC_GNMI = 8080/tcp
 SQUID_PROXY = 8080/tcp
 HTTP_ALT = 8080/tcp
 PDNS_AUTH = 8081/tcp
@@ -48,6 +47,7 @@ GIT = 9418/tcp
 SYSLOG_LOGSTASH = 10514/udp
 gerritSSH = 29418/tcp
 junos_grpc = 32767/tcp
+nokia_grpc = 57400/tcp
 
 #
 # Wide ranges

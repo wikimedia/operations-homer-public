@@ -50,7 +50,7 @@ filters:
       - name: gnmi
         source-address: cumin_group netflow_group prometheus_group
         protocol: tcp
-        destination-port: SONIC_GNMI junos_grpc
+        destination-port: junos_grpc nokia_grpc
         action: accept
   - header:
       comment: |-
