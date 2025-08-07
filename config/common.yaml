@@ -83,7 +83,7 @@ users:
       - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM6K+JZA84Q4ebAGi7R8Pm7G8CZiG1KR+xau7bO9Uzdx mark@wikimedia.org"
   - name: rancid
     uid: 2002
-    class: rancid
+    class: wmf-ro
     sshkeys:
       - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIG6+zGenRPRSzxvsnfyTeRXbnBhxyN41o6xTzAWSlOK"
   - name: robh
@@ -128,7 +128,7 @@ users:
       - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKdVgbQxt3Bfx8g6/irDLpr27gPI/YI57+swSnl0DRgt cmooney_prod@wikilap"
   - name: jayme
     uid: 2033
-    class: read-only
+    class: wmf-ro
     sshkeys:
       - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF2TjL7xYqQjY286d/CV+PjmE2vTd9FfoLZZRDkf38XH janis@norna"
   - name: sukhe
@@ -163,7 +163,7 @@ users:
       - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHxFwB22ti9ZoewA9VEJEhccLLBGJGBLETen0/kvyJOs taavi@runko wmf network access"
   - name: jclark
     uid: 2040
-    class: read-only
+    class: wmf-ro
     sshkeys:
       - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAT4FRcxa8eUFu4TTi0Xr258p6OYrbAFYvz6xyZuh79P jclark@wmf1953"
 # yamllint enable rule:line-length
