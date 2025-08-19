@@ -3,12 +3,18 @@ prefix-list vms-ips4 {
     10.192.24.0/23;
     /* magru */
     10.140.2.0/24;
+    /* esams */
+    10.80.2.0/24;
     /* codfw */
     208.80.152.128/27;
     /* magru */
     195.200.68.96/27;
     /* magru */
     195.200.68.64/29;
+    /* esams */
+    185.15.59.96/27;
+    /* esams - sandbox */
+    185.15.59.72/29;
 }
 prefix-list vms-ips6 {
     /* codfw */
@@ -21,6 +27,12 @@ prefix-list vms-ips6 {
     2a02:ec80:700:3::/64;
     /* magru */
     2a02:ec80:700:201::/64;
+    /* esams */
+    2a02:ec80:300:103::/64;
+    /* esams */
+    2a02:ec80:300:3::/64;
+    /* esams - sandbox */
+    2a02:ec80:300:202::/64;
 }
 policy-statement vms_import {
     term vm4 {
