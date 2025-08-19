@@ -7,6 +7,8 @@ prefix-list vms-ips4 {
     208.80.152.128/27;
     /* magru */
     195.200.68.96/27;
+    /* magru */
+    195.200.68.64/29;
 }
 prefix-list vms-ips6 {
     /* codfw */
@@ -17,6 +19,8 @@ prefix-list vms-ips6 {
     2a02:ec80:700:103::/64;
     /* magru */
     2a02:ec80:700:3::/64;
+    /* magru */
+    2a02:ec80:700:201::/64;
 }
 policy-statement vms_import {
     term vm4 {
