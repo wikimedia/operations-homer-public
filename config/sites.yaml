@@ -67,6 +67,27 @@ eqiad:
             - lsw1-f6-eqiad
             - lsw1-f7-eqiad
             - lsw1-f8-eqiad
+    "64814":
+      evpn: true
+      pods:
+        cd:
+          rr:
+            - ssw1-d1-eqiad
+            - ssw1-d8-eqiad
+          client:
+            - lsw1-c2-eqiad
+            - lsw1-c3-eqiad
+            - lsw1-c4-eqiad
+            - lsw1-c5-eqiad
+            - lsw1-c6-eqiad
+            - lsw1-c7-eqiad
+            - lsw1-d1-eqiad
+            - lsw1-d2-eqiad
+            - lsw1-d3-eqiad
+            - lsw1-d4-eqiad
+            - lsw1-d6-eqiad
+            - lsw1-d7-eqiad
+            - lsw1-d8-eqiad
     "64710":
       evpn: false
       pods:
