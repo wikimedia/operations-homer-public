@@ -176,9 +176,14 @@ codfw:
             - ssw1-f1-codfw
           client:
             - lsw1-e1-codfw
+            - lsw1-e2-codfw
             - lsw1-e3-codfw
+            - lsw1-e4-codfw
+            - lsw1-e5-codfw
             - lsw1-f1-codfw
+            - lsw1-f2-codfw
             - lsw1-f3-codfw
+            - lsw1-f4-codfw
 
 eqdfw:
   confed: 65002
