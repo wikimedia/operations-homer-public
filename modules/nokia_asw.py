@@ -1,7 +1,6 @@
 "Entry class for access switches."
 
-from nokia.interface import SrlInterface
-from nokia.system import SrlSystem
+import importlib
 
 
 class AccessSwitches:
@@ -9,10 +8,21 @@ class AccessSwitches:
     def __init__(self, data):
         self._data = data
 
+    _classes: list[str] = [
+        "nokia.interface.SrlInterface",
+        "nokia.system.SrlSystem",
+        "nokia.network_instance.SrlNetworkInstance",
+    ]
+
     def render(self) -> list:
         generated_config: list = []
-        generated_config.extend(SrlInterface(self._data).get_commands())
-        generated_config.extend(SrlSystem(self._data).get_commands())
+        for class_path in self._classes:
+            module_name, class_name = class_path.rsplit(".", 1)
+            module = importlib.import_module(module_name)
+            generated_config.extend(
+                getattr(module, class_name)(self._data).get_commands()
+            )
+
         return generated_config
 
 
