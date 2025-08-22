@@ -32,11 +32,13 @@ def is_ip_network(instance):
     ipaddress.ip_network(instance)  # Raises ValueError if invalid
     return True
 
+
 @jsonschema.FormatChecker.cls_checks('ip_interface', raises=(ValueError,))
 def is_ip_interface(instance):
     """Custom jsonschema format validator for IPv4 and IPv6 interfaces."""
     ipaddress.ip_interface(instance)  # Raises ValueError if invalid
     return True
+
 
 def get_configs():
     """Collect all the existing config files and return them as a list of Paths."""
@@ -59,4 +61,3 @@ def test_valid_config(jsonschema_store, config_file):
         print(f'Configuration file {config_file} failed validation, see '
               f'https://doc.wikimedia.org/homer-public/master/{schema_name}.html')
         raise
-

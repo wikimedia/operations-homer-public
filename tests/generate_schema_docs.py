@@ -62,7 +62,7 @@ class ExternalLinksParser(HTMLParser):
         if not url_path.suffix:
             url_path = url_path.with_suffix('.js' if key == 'src' else '.css')
 
-        file_content = requests.get(url).text
+        file_content = requests.get(url, timeout=10).text
         file_path = self.base_path / url_path.name
         file_path.write_text(file_content)
 
@@ -80,7 +80,7 @@ class ExternalLinksParser(HTMLParser):
             if match is not None:
                 url = match.groupdict()['url']
                 name = Path(requests.utils.urlparse(url).path).name
-                (self.base_path / name).write_text(requests.get(url).text)
+                (self.base_path / name).write_text(requests.get(url, timeout=10).text)
                 links[url] = name
 
         return links
