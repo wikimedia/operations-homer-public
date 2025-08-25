@@ -235,8 +235,8 @@ ulsfo:
     collectors:
       netflow4002: 10.128.0.13
   dhcp_server:
-    name: install4002
-    ip: 198.35.26.13
+    name: install4003
+    ip: 198.35.26.11
   dhcp_relay_ra:
     - et-0/0/1.1201
     - et-0/0/1.1211
