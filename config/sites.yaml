@@ -299,8 +299,8 @@ drmrs:
       netflow6001: 10.136.1.22
   tcp_mss_clamping: true
   dhcp_server:
-    name: install6002
-    ip: 185.15.58.12
+    name: install6003
+    ip: 185.15.58.7
   prepend_as_out: false
 
 magru:
