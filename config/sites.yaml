@@ -142,8 +142,8 @@ codfw:
     collectors:
       netflow2003: 10.192.32.159
   dhcp_server:
-    name: install2004
-    ip: 208.80.153.105
+    name: install2005
+    ip: 208.80.153.70
   prepend_as_out: false
   ibgp_clusters:
     "64811":
