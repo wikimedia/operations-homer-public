@@ -179,6 +179,9 @@ cr3-ulsfo.wikimedia.org:
     filters:
       et-0/0/1.1221-in: sandbox
     primary_ixp: true
+    device_bgp:
+      sw_mr:
+        mr1-ulsfo: {4: 198.35.26.199, 6: 2620:0:863:fe05::2}
 
 cr4-ulsfo.wikimedia.org:
   config:
@@ -193,6 +196,9 @@ cr4-ulsfo.wikimedia.org:
         provider: "Hurricane Electric"  # Partial transit
     filters:
       et-0/0/1.1221-in: sandbox
+    device_bgp:
+      sw_mr:
+        mr1-ulsfo: {4: 198.35.26.201, 6: 2620:0:863:fe06::2}
 
 cr1-esams.wikimedia.org:
   config:
@@ -821,6 +827,11 @@ msw1-codfw.mgmt.codfw.wmnet:
 
 mr1-ulsfo.wikimedia.org:
   timeout: 120
+  config:
+    device_bgp:
+      mr_sw:
+        cr3-ulsfo: {4: 198.35.26.198, 6: 2620:0:863:fe05::1, peer_as: 65004}
+        cr4-ulsfo: {4: 198.35.26.200, 6: 2620:0:863:fe06::1, peer_as: 65004}
 
 mr1-esams.wikimedia.org:
   timeout: 120
