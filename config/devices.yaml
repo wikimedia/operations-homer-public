@@ -959,9 +959,6 @@ asw1-b3-magru.mgmt.magru.wmnet:
     asn: 4265007001
     capirca:
       - common-loopback
-      - common-sandbox
-    filters:
-      irb.731-in: sandbox
     device_bgp:
       sw_mr:
         mr1-magru: {4: 10.140.127.3, 6: 2a02:ec80:700:fe02::1}
