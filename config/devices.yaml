@@ -830,8 +830,8 @@ mr1-ulsfo.wikimedia.org:
   config:
     device_bgp:
       mr_sw:
-        cr3-ulsfo: {4: 198.35.26.198, 6: 2620:0:863:fe05::1, peer_as: 65004}
-        cr4-ulsfo: {4: 198.35.26.200, 6: 2620:0:863:fe06::1, peer_as: 65004}
+        cr3-ulsfo: {4: 198.35.26.198, 6: 2620:0:863:fe05::1, peer_as: 14907}
+        cr4-ulsfo: {4: 198.35.26.200, 6: 2620:0:863:fe06::1, peer_as: 14907}
 
 mr1-esams.wikimedia.org:
   timeout: 120
