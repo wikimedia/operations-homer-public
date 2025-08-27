@@ -8,7 +8,6 @@ eqiad:
     - 64606  # k8s-mlserve-eqiad
     - 64609  # k8s-dse-eqiad
     - 64610  # k8s-aux-eqiad
-    - 64613  # k8s-dse-codfw
     - 64700  # fundraising-eqiad
     - 64710  # WMCS-eqiad
   bgp_out:
@@ -126,6 +125,7 @@ codfw:
     - 64608  # k8s-mlstaging-codfw
     - 64611  # k8s-aux-codfw
     - 64612  # Ganeti
+    - 64613  # k8s-dse-codfw
     - 64701  # fundraising-codfw
     - 64711  # WMCS-codfw
   bgp_out:
