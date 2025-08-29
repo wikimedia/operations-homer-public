@@ -12,6 +12,7 @@ class AccessSwitches:
         "nokia.interface.SrlInterface",
         "nokia.system.SrlSystem",
         "nokia.network_instance.SrlNetworkInstance",
+        "nokia.ospf.SrlOspf",
     ]
 
     def render(self) -> list:
