@@ -9,6 +9,7 @@ class AccessSwitches:
         self._data = data
 
     _classes: list[str] = [
+        "nokia.routing_policy.SrlRoutingPolicy",
         "nokia.interface.SrlInterface",
         "nokia.system.SrlSystem",
         "nokia.network_instance.SrlNetworkInstance",

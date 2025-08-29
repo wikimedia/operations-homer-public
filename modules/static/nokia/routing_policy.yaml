@@ -1,0 +1,6 @@
+# prefix_sets:
+
+policy:
+  - name: ALL
+    default-action:
+      policy-result: accept

@@ -1,8 +1,11 @@
+import logging
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any
 
 from homer.exceptions import HomerError
 
+logger = logging.getLogger(__name__)
 NoConfig = object()
 
 
@@ -46,3 +49,13 @@ class BaseNokiaRpc:
             )
 
         return commands
+
+
+def get_static_config(*args: str):
+    # double parent seems needed
+    path = str(
+        Path(__file__).parent.parent.joinpath("static", *args).with_suffix(".yaml")
+    )
+    logger.debug("Importing YAML file: %s", path)
+    return path
+    # the str() is needed until we convert the whole homer to use pathlib
