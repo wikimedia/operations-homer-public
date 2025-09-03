@@ -5,11 +5,10 @@ from typing import Any, Iterator
 
 from . import BaseNokiaRpc, NokiaRpc
 
-_methods = ["srl_ospf"]
-
 
 class SrlOspf(BaseNokiaRpc):
     # We only have OSPF in the default instance
+    _methods = ["srl_ospf"]
 
     def srl_ospf(self) -> Iterator[NokiaRpc]:
         # TODO as we need the router ID for BGP too maybe move those few lines

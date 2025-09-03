@@ -214,6 +214,23 @@
         "frack"
       ]
     },
+    "syslog_servers": {
+      "type": "object",
+      "description": "Dict of syslog server fqdn's, each element is a dict with config attributes for that server",
+      "additionalProperties" : false,
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "port": {
+              "type": "integer"
+            }
+          },
+          "required": ["port"]
+        }
+      }
+    },
     "users_passwords": {
       "type": "object",
       "description": "Define Linux style hashed passwords for users who need them set. Set as a different key to live in homer-private.",
@@ -234,6 +251,7 @@
     "juniper_services",
     "ntp_servers",
     "transit_providers",
-    "asns_mapping"
+    "asns_mapping",
+    "syslog_servers"
   ]
 }

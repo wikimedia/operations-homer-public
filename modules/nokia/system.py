@@ -135,7 +135,7 @@ class SrlSystem(BaseNokiaRpc):
 
     def srl_hostname(self) -> Iterator[NokiaRpc]:
         config = {"host-name": self._data["metadata"]["netbox_object"].name}
-        yield NokiaRpc(path="", config=config)
+        yield NokiaRpc(path="/system/name", config=config)
 
     def srl_grpc_server(self) -> Iterator[NokiaRpc]:
         config = {
@@ -228,20 +228,18 @@ class SrlSystem(BaseNokiaRpc):
 
     def srl_logging(self) -> Iterator[NokiaRpc]:
         yield NokiaRpc(path="/system/logging/network-instance", config="mgmt")
-        config = {
-            "transport": "udp",
-            "facility": [
-                {
-                    "facility-name": "all",
-                    "priority": {"match-above": "informational"},
-                }
-            ],
-        }
-        yield NokiaRpc(
-            path="/system/logging/remote-server[host=librenms.wikimedia.org]",
-            config=config,
-        )
-        yield NokiaRpc(
-            path="/system/logging/remote-server[host=syslog.anycast.wmnet]",
-            config=config,
-        )
+        for target_fqdn, target_conf in self._data["syslog_servers"].items():
+            config = {
+                "transport": "udp",
+                "remote-port": target_conf["port"],
+                "facility": [
+                    {
+                        "facility-name": "all",
+                        "priority": {"match-above": "informational"},
+                    }
+                ],
+            }
+            yield NokiaRpc(
+                path=f"/system/logging/remote-server[host={target_fqdn}]",
+                config=config,
+            )

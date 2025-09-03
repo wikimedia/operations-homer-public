@@ -440,3 +440,9 @@ asns_mapping:
   frack:
     eqiad: 64700
     codfw: 64701
+
+syslog_servers:
+  syslog.anycast.wmnet:
+    port: 10514
+  librenms.wikimedia.org:
+    port: 514
