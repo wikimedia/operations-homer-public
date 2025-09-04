@@ -13,7 +13,6 @@ class SrlInterface(BaseNokiaRpc):
     def srl_interface(self) -> Iterator[NokiaRpc]:
         """Returns commands to individually replace all /interface configuration in a Nokia format."""
         yield NokiaRpc(path="/interface", action="delete")
-        evpn = self._data["netbox"]["device_plugin"]["ibgp_config"]["evpn"]
         interfaces: list[dict[str, Any]] = []
 
         sub_ints: dict[str, Any] = defaultdict(dict)
@@ -53,7 +52,7 @@ class SrlInterface(BaseNokiaRpc):
                     interface["value"]["vlan-tagging"] = True
                 if parent_name == "irb0":
                     interface["value"]["subinterface"] = get_srl_l3_subints(
-                        sub_ints[parent_name], evpn
+                        sub_ints[parent_name], self._data["evpn"]
                     )
                 else:
                     interface["value"]["subinterface"] = get_srl_l3_subints(
