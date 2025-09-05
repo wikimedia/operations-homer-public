@@ -309,6 +309,8 @@ cr3-eqsin.wikimedia.org:
     device_bgp:
       ris:
         RRC23: {4: 27.111.228.137, 6: 2001:de8:4::1:2654:1}
+      sw_mr:
+        mr1-eqsin: {4: 103.102.166.133, 6: 2001:df2:e500:fe03::2}
 
 cr2-eqsin.wikimedia.org:
   config:
@@ -338,6 +340,8 @@ cr2-eqsin.wikimedia.org:
     device_bgp:
       bgptools:
         bgptools: {4: 103.231.152.58, 6: 2001:df5:b800:bb00:0:21:2232:1}
+      sw_mr:
+        mr1-eqsin: {4: 103.102.166.143, 6: 2001:df2:e500:fe04::2}
 
 cr1-drmrs.wikimedia.org:
   config:
@@ -817,6 +821,11 @@ mr1-codfw.wikimedia.org:
 
 mr1-eqsin.wikimedia.org:
   timeout: 120
+  config:
+    device_bgp:
+      mr_sw:
+        cr2-eqsin: {4: 103.102.166.142, 6: 2001:df2:e500:fe04::1, peer_as: 14907}
+        cr3-eqsin: {4: 103.102.166.132, 6: 2001:df2:e500:fe03::1, peer_as: 14907}
 
 msw1-codfw.mgmt.codfw.wmnet:
   config:
