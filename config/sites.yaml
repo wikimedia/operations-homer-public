@@ -277,8 +277,8 @@ esams:
     2a02:ec80:300::/48: BGP_aggregate_contributors  # esams
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
   dhcp_server:
-    name: install3003
-    ip: 185.15.59.3
+    name: install3004
+    ip: 185.15.59.101
   sampling:
     collectors:
       netflow3004: 10.80.2.8
