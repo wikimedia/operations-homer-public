@@ -281,7 +281,7 @@ esams:
     ip: 185.15.59.3
   sampling:
     collectors:
-      netflow3003: 10.80.0.15
+      netflow3004: 10.80.2.8
   prepend_as_out: false
   customers:
     - 64612  # Ganeti
