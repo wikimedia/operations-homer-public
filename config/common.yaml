@@ -413,27 +413,56 @@ transit_providers:
   Interlink:
     AS: 5405
 
-asns_mapping:
+bgp_group_data:
   k8s:
-    eqiad: 64601
-    codfw: 64602
+    asns:
+      eqiad: 64601
+      codfw: 64602
   k8s-stage:
-    eqiad: 64603
-    codfw: 64604
+    asns:
+      eqiad: 64603
+      codfw: 64604
   k8s-mlserve:
-    eqiad: 64606
-    codfw: 64607
+    asns:
+      eqiad: 64606
+      codfw: 64607
   k8s-mlstaging:
-    codfw: 64608
+    asns:
+      codfw: 64608
   k8s-dse:
-    eqiad: 64609
-    codfw: 64613
+    asns:
+      eqiad: 64609
+      codfw: 64613
   k8s-aux:
-    eqiad: 64610
-    codfw: 64611
+    asns:
+      eqiad: 64610
+      codfw: 64611
   frack:
-    eqiad: 64700
-    codfw: 64701
+    asns:
+      eqiad: 64700
+      codfw: 64701
+  anycast:
+    asns:
+      global: 64605
+    BFD: true
+  pybal:
+    asns:
+      global: 64600
+  ganeti:
+    asns:
+      global: 64612
+  ris:
+    asns:
+      global: 12654
+  sw_external:
+    asns:
+      global: 14907
+  sw_mr:
+    asns:
+      global: 65000
+  bgptools:
+    asns:
+      global: 212232
 
 syslog_servers:
   syslog.anycast.wmnet:

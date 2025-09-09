@@ -187,32 +187,25 @@
         }
       }
     },
-    "asns_mapping": {
+    "bgp_group_data": {
       "type": "object",
-      "additionalProperties" : false,
-      "patternProperties": {
-        "^(k8s|k8s-(stage|mlserve|mlstaging|dse|aux)|frack)$": {
-          "type": "object",
-          "additionalProperties" : false,
-          "properties": {
-            "eqiad": {
-              "type": "integer"
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "asns": {
+            "type": "object",
+            "properties": {
+              "eqiad": { "type": "integer" },
+              "codfw": { "type": "integer" },
+              "global": { "type": "integer" }
             },
-            "codfw": {
-              "type": "integer"
-            }
+            "additionalProperties": false
           },
-          "anyOf": [
-            { "required": ["eqiad"] } ,
-            { "required": ["codfw"] }
-          ]
-        }
-      },
-      "required": [
-        "k8s",
-        "k8s-stage",
-        "frack"
-      ]
+          "BFD": { "type": "boolean" }
+        },
+        "required": ["asns"],
+        "additionalProperties": false
+      }
     },
     "syslog_servers": {
       "type": "object",
@@ -251,7 +244,7 @@
     "juniper_services",
     "ntp_servers",
     "transit_providers",
-    "asns_mapping",
+    "bgp_group_data",
     "syslog_servers"
   ]
 }
