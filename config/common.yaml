@@ -182,12 +182,6 @@ ospf:
       bfd: true
     - cr3-eqsin.wikimedia.org: ae0.0
       cr2-eqsin.wikimedia.org: ae0.0
-    - cr3-eqsin.wikimedia.org: ae1.401
-      mr1-eqsin.wikimedia.org: ge-0/0/4.401
-      metric: 20000
-    - cr2-eqsin.wikimedia.org: ae1.402
-      mr1-eqsin.wikimedia.org: ge-0/0/4.402
-      metric: 20000
     - cr1-codfw.wikimedia.org: ae0.0
       cr2-codfw.wikimedia.org: ae0.0
     - cr2-eqdfw.wikimedia.org: xe-0/1/3.12
