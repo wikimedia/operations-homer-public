@@ -1,0 +1,21 @@
+filters:
+  - header:
+      comment: |-
+        Applied to traffic ingress on IRB interfaces from analytics hosts
+      targets:
+        nokiasrl: analytics-in mixed stats r24.3.2
+    terms:
+      - name: allow_dhcp4
+        comment: |-
+          Specific rule as source is 0.0.0.0
+        source-address: NO_IP
+        destination-address: LIMITED_BROADCAST
+        restrict-address-family: inet
+        action: accept
+      - name: allow_private
+        comment: |-
+          Only allow traffic from private source IPs
+        source-address: wikimedia-private
+        action: accept
+      - name: default
+        action: deny

@@ -412,6 +412,14 @@ asw2-a-eqiad.mgmt.eqiad.wmnet:
   config:
     lldp_disabled: ['ge-8/0/10']
 
+lsw1-c2-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+      # filters:  TODO ?
+      #  irb.1039-in: analytics-in
+
 ssw1-e1-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
@@ -789,6 +797,11 @@ lsw1-e1-codfw.mgmt.codfw.wmnet:
     asn: 64813
     capirca:
       - common-loopback
+
+lsw1-e2-codfw.mgmt.codfw.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
 
 lsw1-e3-codfw.mgmt.codfw.wmnet:
   config:

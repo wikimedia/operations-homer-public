@@ -1,0 +1,121 @@
+filters:
+  - header:
+      comment: |-
+        Loopback filter
+      targets:
+        nokiasrl: cpm mixed stats r24.3.2
+    terms:
+      - name: allow_ssh
+        source-address: production wikimedia-private
+        protocol: tcp
+        destination-port: SSH
+        action: accept
+      - name: allow_jsonrpc
+        source-address: wikimedia-private
+        protocol: tcp
+        destination-port: HTTPS
+        action: accept
+      - name: allow_bgp_src
+        #source-address: bgp-sessions bgp-sessions-overlay
+        protocol: tcp
+        source-port: BGP
+        action: accept
+      - name: allow_bgp_dst
+        #source-address: bgp-sessions bgp-sessions-overlay
+        protocol: tcp
+        destination-port: BGP
+        action: accept
+      - name: allow_ospf
+        protocol: ospf
+        action: accept
+      - name: allow_snmp
+        source-address: production wikimedia-private
+        protocol: udp
+        destination-port: SNMP
+        action: accept
+      - name: allow_gnmi
+        source-address: wikimedia-private
+        protocol: tcp
+        destination-port: junos_grpc
+        action: accept
+      - name: allow_ntp_src
+        source-address: production wikimedia-private
+        protocol: udp
+        source-port: NTP
+        action: accept
+      - name: allow_ntp_dst
+        source-address: wikimedia-private production # TODO loopback6
+        protocol: udp
+        destination-port: NTP
+        action: accept
+      - name: allow_ok_icmp4
+        protocol: icmp
+        icmp-type: echo-request echo-reply unreachable time-exceeded source-quench
+        # policer: policer-2m
+        action: accept
+      # - name: deny_ra  https://github.com/aerleon/aerleon/issues/426
+      #   comment: |-
+      #     T334916
+      #   protocol: icmpv6
+      #   icmp-type: router-advertisement
+      #   action: deny
+      - name: allow_ok_icmp6
+        protocol: icmpv6
+        action: accept
+      - name: allow_dhcp_request4
+        comment: |-
+          discovery from the host to the relay
+        source-address: NO_IP
+        destination-address: LIMITED_BROADCAST
+        protocol: udp
+        source-port: BOOTPC
+        destination-port: BOOTPC BOOTPS
+        action: accept
+      - name: allow_dhcp_reply4
+        comment: |-
+          reply from the DHCP server back to the relay
+        source-address: production
+        protocol: udp
+        source-port: BOOTPS
+        destination-port: BOOTPC BOOTPS
+        restrict-address-family: inet
+        action: accept
+      - name: allow_dhcp_transit4
+        comment: |-
+          In-transit DHCP from 3rd party relays - T337345
+        source-address: wikimedia-private
+        protocol: udp
+        source-port: BOOTPS
+        destination-port: BOOTPC BOOTPS
+        restrict-address-family: inet
+        action: accept
+      - name: allow_bfd
+        protocol: udp
+        destination-port: BFD
+        action: accept
+      - name: allow_mbfd
+        comment: |-
+          T209989
+        protocol: udp
+        #source-address: bgp-sessions bgp-sessions-overlay
+        destination-port: mBFD
+        action: accept
+      - name: allow_dns
+        protocol: udp
+        source-port: DNS
+        source-address: recdns
+        action: accept
+      - name: allow_upgrades
+        source-address: apt_group
+        protocol: tcp
+        source-port: HTTP HTTPS HTTP_ALT
+        action: accept
+      - name: return-tcp
+        source-address: production
+        option:
+          - tcp-established
+        protocol: tcp
+        action: accept
+      - name: deny_all
+        action: deny
+        logging: true
