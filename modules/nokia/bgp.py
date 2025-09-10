@@ -1,6 +1,6 @@
 """Nokia SR-Linux module for /network-instance/protocols/ospf related configuration."""
 
-from typing import Any, Iterator
+from typing import Any, Iterator, Optional
 
 from . import BaseNokiaRpc, NokiaRpc
 
@@ -9,8 +9,10 @@ class SrlBgp(BaseNokiaRpc):
     _methods = ["srl_bgp"]
 
     def srl_bgp(self) -> Iterator[NokiaRpc]:
+        default_ebgp_vrf = "PRODUCTION" if self._data["evpn"] else "default"
         # BGP config is nested in the network-instance config, so we build for each
         for vrf_name, vrf_data in self._data["vrfs"].items():
+            vrf_data["default_ebgp"] = True if vrf_name == default_ebgp_vrf else False
             instance_bgp_conf = self._get_instance_bgp_conf(vrf_name, vrf_data)
             if not instance_bgp_conf:
                 continue
@@ -38,14 +40,20 @@ class SrlBgp(BaseNokiaRpc):
                 # TODO - get the policy names for the group, add them to _data["required_items"]
                 bgp_config["group"].append(
                     self._get_bgp_group(
-                        group, ibgp_data["asn"], "ALL", "ALL", address_fams
+                        bgp_group_name=group,
+                        import_pol="ALL",
+                        export_pol="ALL",
+                        address_fams=address_fams,
+                        peer_as=ibgp_data["asn"],
                     )
                 )
                 bgp_config["neighbor"].extend(self._get_ibgp_neighbors(ibgp_data))
             if ibgp_data["rr"]:
                 bgp_config["route-reflector"] = {"cluster-id": self._data["router_id"]}
 
-        # TODO - Add EBGP neighbors (hosts and manually defined in YAML)
+        ebgp_groups, ebgp_neighbors = self._get_ebgp_conf(vrf_name, vrf_data)
+        bgp_config["group"].extend(ebgp_groups)
+        bgp_config["neighbor"].extend(ebgp_neighbors)
 
         # If this instance has no neighbors return an empty dict i.e. no bgp config
         if not bgp_config["neighbor"]:
@@ -92,19 +100,20 @@ class SrlBgp(BaseNokiaRpc):
     def _get_bgp_group(
         self,
         bgp_group_name: str,
-        peer_as: int,
-        import_pol: str,
-        export_pol: str,
         address_fams: list[str],
+        peer_as: Optional[int] = None,
+        import_pol: str = "NONE",
+        export_pol: str = "NONE",
     ) -> dict[str, Any]:
         """Generates a BGP group configuration block for inside a network instance"""
         group_config: dict[str, Any] = {
             "group-name": bgp_group_name,
-            "peer-as": peer_as,
             "export-policy": [export_pol],
             "import-policy": [import_pol],
             "afi-safi": [],
         }
+        if peer_as:
+            group_config["peer-as"] = peer_as
         for address_fam in address_fams:
             group_config["afi-safi"].append(
                 {"afi-safi-name": address_fam, "admin-state": "enable"}
@@ -138,6 +147,7 @@ class SrlBgp(BaseNokiaRpc):
         peer_group: str,
         peer_name: str,
         peer_ip: str,
+        peer_as: Optional[int] = None,
         source_ip: str = "",
         rr_client: bool = False,
         bfd: bool = False,
@@ -148,6 +158,8 @@ class SrlBgp(BaseNokiaRpc):
             "description": peer_name,
             "peer-group": peer_group,
         }
+        if peer_as:
+            neigh_conf["peer-as"] = peer_as
         if source_ip:
             neigh_conf["transport"] = {"local-address": source_ip}
         if rr_client:
@@ -158,3 +170,75 @@ class SrlBgp(BaseNokiaRpc):
                 "fast-failover": True,
             }
         return neigh_conf
+
+    def _get_ebgp_conf(
+        self, vrf_name: str, vrf_data: dict[str, Any]
+    ) -> tuple[list, list]:
+        """Generates the BGP neighbor and group configs for EBGP peers
+
+        Returns two lists:
+            groups:    A list of BGP group configurations that gets appended to
+                       /network-instance[name={vrf_name}]/protocols/bgp/group/
+            neighbors: A list of BGP neighbor configs that gets appended to
+                       /network-instance[name={vrf_name}]/protocols/bgp/neighbor/
+        """
+
+        device_bgp = self._data.get("device_bgp", {})
+        bgp_servers = self._data["netbox"]["device_plugin"]["bgp_servers"]
+        site = self._data["metadata"]["site"]
+
+        neighbors = []
+        groups = []
+        for peer_group, bgp_peers in (device_bgp | bgp_servers).items():
+            address_fams = []
+            required_groups = set()
+
+            # Get group ASN. Per-site or global, default to 0 for groups where each peer is different
+            group_data = self._data["bgp_group_data"].get(peer_group, {})
+            asns = group_data.get("asns", {})
+            group_peer_as = asns.get(site, asns.get("global", 0))
+
+            # Loop over peers extracting group info as needed and adding to neighbor list
+            for peer_name, peer_config in bgp_peers.items():
+                # If we are in the wrong VRF for the peer continue
+                if (
+                    not vrf_data["default_ebgp"]
+                    and peer_config.get("vrf", "") != vrf_name
+                ):
+                    continue
+                for address_fam in (4, 6):
+                    if address_fam not in peer_config:
+                        continue
+                    bgp_group_name = f"{peer_group}{address_fam}"
+                    required_groups.add(bgp_group_name)
+                    peer_as = peer_config.get("peer_as", 0)
+                    neighbors.append(
+                        self._get_bgp_neighbor(
+                            peer_group=bgp_group_name,
+                            peer_name=peer_name,
+                            peer_as=peer_as,
+                            peer_ip=peer_config[address_fam].compressed,
+                            bfd=group_data.get("BFD", False),
+                        )
+                    )
+
+            # Now build the group configs as needed, we may have two groups (v4 and v6) for each
+            for bgp_group_name in required_groups:
+                address_fams = [bgp_group_name[-1]]
+                # Exception for Pybal group where we use IPv4 transport to also exchange IPv6 NLRIs
+                if bgp_group_name == "pybal4":
+                    address_fams = ["4", "6"]
+                afi_safis = [
+                    f"ipv{address_fam}-unicast" for address_fam in address_fams
+                ]
+                groups.append(
+                    self._get_bgp_group(
+                        bgp_group_name=bgp_group_name,
+                        import_pol="ALL",
+                        export_pol="ALL",
+                        address_fams=afi_safis,
+                        peer_as=group_peer_as,
+                    )
+                )
+
+        return groups, neighbors
