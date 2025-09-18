@@ -23,8 +23,8 @@ eqiad:
     collectors:
       netflow1002: 10.64.16.82
   dhcp_server:
-    name: install1004
-    ip: 208.80.154.74
+    name: install1005
+    ip: 208.80.154.134
   dhcp_relay_ra:
     - ae1.1001
     - ae1.1017
