@@ -1,6 +1,7 @@
 """Nokia SR-Linux module for /interface related configuration."""
 
 from collections import defaultdict
+from ipaddress import ip_interface
 from typing import Any, Iterator
 
 from . import BaseNokiaRpc, NokiaRpc
@@ -35,7 +36,9 @@ class SrlInterface(BaseNokiaRpc):
                 srl_int.update(get_srl_trunk_int(int_data))
             # Routed interface
             if int_data["ip_addresses"]:
-                srl_int["subinterface"] = [get_srl_routed_subint(0, int_data, False)]
+                srl_int["subinterface"] = [
+                    get_srl_routed_subint(0, int_data, self._data)
+                ]
 
             interfaces.append(
                 {
@@ -50,14 +53,9 @@ class SrlInterface(BaseNokiaRpc):
                 parent_name = interface["value"]["name"]
                 if parent_name.startswith("ethernet-1"):
                     interface["value"]["vlan-tagging"] = True
-                if parent_name == "irb0":
-                    interface["value"]["subinterface"] = get_srl_l3_subints(
-                        sub_ints[parent_name], self._data["evpn"]
-                    )
-                else:
-                    interface["value"]["subinterface"] = get_srl_l3_subints(
-                        sub_ints[parent_name], False
-                    )
+                interface["value"]["subinterface"] = get_srl_l3_subints(
+                    sub_ints[parent_name], self._data
+                )
         for interface in interfaces:
             yield NokiaRpc(path=interface["path"], config=interface["value"])
 
@@ -132,12 +130,12 @@ def get_srl_trunk_int(int_data: dict) -> dict:
     return trunk_int
 
 
-def get_srl_l3_subints(interface_subs: dict, evpn: bool) -> list:
+def get_srl_l3_subints(interface_subs: dict, data: dict) -> list:
     """Generates list with all routed sub-int configs for a parent"""
     subinterfaces = []
     for subint_name, subint_data in interface_subs.items():
         subint_index = int(subint_name.split(".")[-1])
-        subint_conf = get_srl_routed_subint(subint_index, subint_data, evpn)
+        subint_conf = get_srl_routed_subint(subint_index, subint_data, data)
         if subint_data["parent"]["name"].startswith("ethernet-1"):
             subint_conf["vlan"] = {
                 "encap": {"single-tagged": {"vlan-id": subint_index}}
@@ -146,7 +144,7 @@ def get_srl_l3_subints(interface_subs: dict, evpn: bool) -> list:
     return subinterfaces
 
 
-def get_srl_routed_subint(index, int_data, evpn) -> dict:
+def get_srl_routed_subint(index, int_data: dict, data: dict) -> dict:
     """Gets config block for a single routed sub-interface"""
     subint = {"index": index, "admin-state": "enable"}
 
@@ -165,8 +163,28 @@ def get_srl_routed_subint(index, int_data, evpn) -> dict:
         # Add the address-fam block to the subinterface if needed:
         if address_fam not in subint:
             subint[address_fam] = {"admin-state": "enable", "address": []}
-            if evpn:
-                subint[address_fam].update(get_irb_evpn_conf(address_fam))
+            # Additional config is needed on IRB interfaces
+            if int_data["name"].startswith("irb"):
+                if data["evpn"]:
+                    subint[address_fam].update(get_irb_evpn_conf(address_fam))
+                if int_data["description"].startswith(("private", "analytics")):
+                    if address_fam == "ipv4":
+                        subint[address_fam]["dhcp-relay"] = {
+                            "gi-address": data["loopbacks"]["external"]["4"],
+                            "use-gi-addr-as-src-ip-addr": True,
+                            "network-instance": data["loopbacks"]["external"]["vrf"],
+                            "server": [data["dhcp_server"]["ip"].compressed],
+                        }
+                    if address_fam == "ipv6":
+                        prefix = ip_interface(int_addr["address"]).network
+                        subint[address_fam]["router-advertisement"] = {
+                            "router-role": {
+                                "admin-state": "enable",
+                                "min-advertisement-interval": 30,
+                                "router-lifetime": 600,
+                                "prefix": [{"ipv6-prefix": prefix.with_prefixlen}],
+                            }
+                        }
 
         # Now add the current IP to the address fam block for this subint
         subint[address_fam]["address"].append({"ip-prefix": int_addr["address"]})
