@@ -176,22 +176,6 @@ class SrlSystem(BaseNokiaRpc):
         yield NokiaRpc(path="/system/ntp", config=config)
 
     def srl_sflow(self) -> Iterator[NokiaRpc]:
-        # We need to source from lo50 or system0 depending on if we're running VXLAN/EVPN or not
-        if "lo50" in self._data["netbox"]["device_plugin"]["device_interfaces"]:
-            loopback_ips = self._data["netbox"]["device_plugin"]["device_interfaces"][
-                "lo50"
-            ]["ip_addresses"]
-            network_instance = self._data["netbox"]["device_plugin"][
-                "device_interfaces"
-            ]["lo50"]["vrf"]["name"]
-        else:
-            loopback_ips = self._data["netbox"]["device_plugin"]["device_interfaces"][
-                "system0"
-            ]["ip_addresses"]
-            network_instance = "default"
-        loopback_4 = [
-            ip["address"] for ip in loopback_ips if ip["family"]["value"] == 4
-        ][0]
         config = {
             "admin-state": "enable",
             "sample-rate": 1000,
@@ -201,8 +185,8 @@ class SrlSystem(BaseNokiaRpc):
                     "collector-address": str(
                         list(self._data["sampling"]["collectors"].values())[0]
                     ),
-                    "network-instance": network_instance,
-                    "source-address": loopback_4.split("/")[0],
+                    "network-instance": self._data["loopbacks"]["external"]["vrf"],
+                    "source-address": self._data["loopbacks"]["external"]["4"],
                 }
             ],
         }
