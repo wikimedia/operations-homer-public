@@ -69,6 +69,23 @@ def get_srl_base_int(int_name: str, int_data: dict) -> dict:
     if int_data["description"]:
         base_int["description"] = int_data["description"]
 
+    # For members of a LAG
+    if int_data["lag"]:
+        base_int["ethernet"] = {"aggregate-id": int_data["lag"]["name"]}
+    # For the LAG interface itself
+    if int_data["type"] == "lag":
+        local_lag_id = int(int_name[-1])
+        base_int["lag"] = {
+            "lag-type": "lacp",
+            "lacp": {
+                "interval": "FAST",
+                "lacp-mode": "ACTIVE",
+                "admin-key": 100 + local_lag_id,
+                "system-id-mac": f"00:00:00:00:00:1{local_lag_id}",
+                "system-priority": 100 + local_lag_id,
+            },
+        }
+
     # Set FEC to match Juniper default if other side is QFX
     if (
         int_data["enabled"]
@@ -89,8 +106,7 @@ def get_srl_base_int(int_name: str, int_data: dict) -> dict:
 
 def get_srl_access_int(int_data: dict) -> dict:
     """Returns dict elements for untagged access interface"""
-    return {
-        "sflow": {"admin-state": "enable"},
+    access_int: dict[str, Any] = {
         "vlan-tagging": False,
         "subinterface": [
             {
@@ -100,15 +116,19 @@ def get_srl_access_int(int_data: dict) -> dict:
             }
         ],
     }
+    if not int_data["type"] == "lag":
+        access_int["sflow"] = {"admin-state": "enable"}
+    return access_int
 
 
 def get_srl_trunk_int(int_data: dict) -> dict:
     """Returns dict elements for tagged trunk interface"""
     trunk_int: dict[str, Any] = {
-        "sflow": {"admin-state": "enable"},
         "vlan-tagging": True,
         "subinterface": [],
     }
+    if not int_data["type"] == "lag":
+        trunk_int["sflow"] = {"admin-state": "enable"}
     for tagged_vlan in int_data["tagged_vlans"]:
         trunk_int["subinterface"].append(
             {

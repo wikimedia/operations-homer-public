@@ -537,6 +537,13 @@ ssw1-d1-eqiad.mgmt.eqiad.wmnet:
         cr1-eqiad: {4: 10.66.0.20, 6: 2620:0:861:fe16::1}
         ssw1-e1-eqiad: {4: 10.64.147.9, 6: 2620:0:861:146::3, peer_as: 64810}
         ssw1-f1-eqiad: {4: 10.64.147.11, 6: 2620:0:861:146::5, peer_as: 64810}
+    esi_lag:
+      lag1: "11"
+
+ssw1-d8-eqiad.mgmt.eqiad.wmnet:
+  config:
+    esi_lag:
+      lag1: "11"
 
 cloudsw1-b1-codfw.mgmt.codfw.wmnet:
   config:
