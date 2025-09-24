@@ -47,14 +47,17 @@ class SrlInterface(BaseNokiaRpc):
                 }
             )
 
-        # Now loop over the interface config we built and add subints to parents where needed
+        # Now loop over the interface config we built and add L3 subints to parents where needed
         for interface in interfaces:
             if interface["value"]["name"] in sub_ints:
                 parent_name = interface["value"]["name"]
                 if parent_name.startswith("ethernet-1"):
                     interface["value"]["vlan-tagging"] = True
-                interface["value"]["subinterface"] = get_srl_l3_subints(
-                    sub_ints[parent_name], self._data
+                if "subinterface" not in interface["value"]:
+                    # No L2 sub-ints are already defined
+                    interface["value"]["subinterface"] = []
+                interface["value"]["subinterface"].extend(
+                    get_srl_l3_subints(sub_ints[parent_name], self._data)
                 )
         for interface in interfaces:
             yield NokiaRpc(path=interface["path"], config=interface["value"])
