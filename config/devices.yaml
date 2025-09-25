@@ -539,11 +539,18 @@ ssw1-d1-eqiad.mgmt.eqiad.wmnet:
         ssw1-f1-eqiad: {4: 10.64.147.11, 6: 2620:0:861:146::5, peer_as: 64810}
     esi_lag:
       lag1: "11"
+      lag2: "12"
 
 ssw1-d8-eqiad.mgmt.eqiad.wmnet:
   config:
+    device_bgp:
+      sw_external:
+        cr2-eqiad: {4: 10.66.0.22, 6: 2620:0:861:fe17::1}
+        ssw1-e1-eqiad: {4: 10.64.147.19, 6: 2620:0:861:146::7, peer_as: 64810}
+        ssw1-f1-eqiad: {4: 10.64.147.20, 6: 2620:0:861:146::9, peer_as: 64810}
     esi_lag:
       lag1: "11"
+      lag2: "12"
 
 cloudsw1-b1-codfw.mgmt.codfw.wmnet:
   config:
