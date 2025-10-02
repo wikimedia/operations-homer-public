@@ -35,6 +35,7 @@ cr1-eqiad.wikimedia.org:
       - cr-cloud-vrf  # Cloud VRF (cloud realm, incl. VMs)
     device_bgp:
       cr_switch:
+        ssw1-d1-eqiad: {4: 10.66.0.21, 6: 2620:0:861:fe16::2, peer_as: 64814}
         ssw1-e1-eqiad: {4: 10.66.0.9, 6: 2620:0:861:fe07::2, peer_as: 64810}
         cloudsw1-c8-eqiad: {4: 10.64.147.17, 6: 2620:0:861:fe09::2, peer_as: 64710}
 
