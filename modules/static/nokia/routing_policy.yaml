@@ -1,6 +1,61 @@
-# prefix_sets:
-
+prefix-set:
+  - name: no_host_routes4
+    prefix:
+      - ip-prefix: "0.0.0.0/0"
+        mask-length-range: 32..32
+  - name: no_host_routes6
+    prefix:
+      - ip-prefix: "::/0"
+        mask-length-range: 128..128
+  - name: overlay_loopback4
+    prefix:
+      - ip-prefix: "10.64.168.0/24"
+        mask-length-range: 32..32
+  - name: overlay_loopback6
+    prefix:
+      - ip-prefix: "2620:0:861:130::/64"
+        mask-length-range: 128..128
 policy:
   - name: ALL
     default-action:
       policy-result: accept
+  - name: evpn_external_out4
+    default-action:
+      policy-result: reject
+    statement:
+      - name: loopback4
+        match:
+          prefix-set: overlay_loopback4
+        action:
+          policy-result: accept
+      - name: no_host_routes4
+        match:
+          prefix-set: no_host_routes4
+          bgp:
+            as-path-length:
+              value: 0
+        action:
+          policy-result: reject
+      - name: overlay_routes
+        action:
+          policy-result: accept
+  - name: evpn_external_out6
+    default-action:
+      policy-result: reject
+    statement:
+      - name: loopback6
+        match:
+          prefix-set: overlay_loopback6
+        action:
+          policy-result: accept
+      - name: no_host_routes6
+        match:
+          prefix-set: no_host_routes6
+          bgp:
+            as-path-length:
+              value: 0
+        action:
+          policy-result: reject
+      - name: overlay_routes
+        action:
+          policy-result: accept

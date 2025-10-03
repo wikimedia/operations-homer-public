@@ -2,8 +2,6 @@
 
 from typing import Iterator
 
-from homer.config import load_yaml_config
-
 from . import BaseNokiaRpc, NokiaRpc, get_static_config
 
 
@@ -14,5 +12,5 @@ class SrlRoutingPolicy(BaseNokiaRpc):
     def srl_routing_policy(self) -> Iterator[NokiaRpc]:
         yield NokiaRpc(
             path="/routing-policy",
-            config=load_yaml_config(get_static_config("nokia", "routing_policy")),
+            config=get_static_config("nokia", "routing_policy"),
         )
