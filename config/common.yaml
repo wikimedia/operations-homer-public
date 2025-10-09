@@ -412,6 +412,7 @@ transit_providers:
     AS: 52468
   Interlink:
     AS: 5405
+    export_policy: true
 
 bgp_group_data:
   k8s:
