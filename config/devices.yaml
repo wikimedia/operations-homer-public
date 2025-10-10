@@ -9,12 +9,12 @@ cr1-eqiad.wikimedia.org:
         provider: NTT
       4.16.71.245:
         provider: Lumen
-      216.66.30.89:
-        provider: "Hurricane Electric"  # Partial transit
+      206.126.236.37:
+        provider: "Hurricane Electric"  # Partial transit over IX
       2001:1900:2100::a9d:
         provider: Lumen
-      2001:470:0:1c0::1:
-        provider: "Hurricane Electric"
+      2001:504:0:2::6939:1:
+        provider: "Hurricane Electric"  # Tranist over IX
     filters:
       xe-3/0/4.1000-in: cloud-hosts-in
       xe-3/0/4.1102-in: cloud-vrf-in
@@ -47,6 +47,10 @@ cr2-eqiad.wikimedia.org:
         provider: Arelion
       2001:2035:0:a98::1:
         provider: Arelion
+      206.126.236.37:
+        provider: "Hurricane Electric"  # Partial transit over IX
+      2001:504:0:2::6939:1:
+        provider: "Hurricane Electric"  # Transit over IX
     filters:
       xe-1/0/1:0-in4: transport-in  # to eqord
       xe-3/0/4.1100-in: cloud-hosts-in
