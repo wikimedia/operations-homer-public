@@ -74,6 +74,7 @@ cr2-eqiad.wikimedia.org:
     device_bgp:
       cr_switch:
         ssw1-f1-eqiad: {4: 10.66.0.11, 6: 2620:0:861:fe08::2, peer_as: 64810}
+        ssw1-d8-eqiad: {4: 10.66.0.23, 6: 2620:0:861:fe17::2, peer_as: 64814}
         cloudsw-d5-eqiad: {4: 10.64.147.15, 6: 2620:0:861:fe0a::2, peer_as: 64710}
 
 cr2-eqord.wikimedia.org:
