@@ -359,6 +359,10 @@ cr1-drmrs.wikimedia.org:
         provider: Tata
       2a01:3e0:ff50::3d:
         provider: Tata
+      5.183.211.146:
+        provider: Interlink
+      2a11:4141:6002::8:
+        provider: Interlink
       185.1.47.2:
         provider: "Hurricane Electric"
       2001:7f8:36::1b1b:0:1:
