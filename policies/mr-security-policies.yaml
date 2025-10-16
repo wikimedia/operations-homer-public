@@ -19,7 +19,7 @@ filters:
         destination-port: SNMP
         action: accept
       - name: icmp
-        source-address: netmon_group alert_group bast_group cumin_group prometheus_group
+        source-address: netmon_group netflow_group alert_group bast_group cumin_group prometheus_group
         protocol: icmp icmpv6
         action: accept
       - name: ssh
