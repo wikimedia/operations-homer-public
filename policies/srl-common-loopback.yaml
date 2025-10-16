@@ -36,7 +36,7 @@ filters:
       - name: allow_gnmi
         source-address: wikimedia-private
         protocol: tcp
-        destination-port: junos_grpc
+        destination-port: nokia_grpc
         action: accept
       - name: allow_ntp_src
         source-address: production wikimedia-private

@@ -412,14 +412,6 @@ asw2-a-eqiad.mgmt.eqiad.wmnet:
   config:
     lldp_disabled: ['ge-8/0/10']
 
-lsw1-c2-eqiad.mgmt.eqiad.wmnet:
-  config:
-    capirca:
-      - srl-common-loopback
-      - srl-sw-analytics
-      # filters:  TODO ?
-      #  irb.1039-in: analytics-in
-
 ssw1-e1-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
@@ -551,8 +543,10 @@ lsw1-f8-eqiad.mgmt.eqiad.wmnet:
 
 ssw1-d1-eqiad.mgmt.eqiad.wmnet:
   config:
+    capirca:
+      - srl-common-loopback
     device_bgp:
-      sw_external:
+      evpn_external:
         cr1-eqiad: {4: 10.66.0.20, 6: 2620:0:861:fe16::1}
         ssw1-e1-eqiad: {4: 10.64.147.9, 6: 2620:0:861:146::3, peer_as: 64810}
         ssw1-f1-eqiad: {4: 10.64.147.11, 6: 2620:0:861:146::5, peer_as: 64810}
@@ -562,14 +556,133 @@ ssw1-d1-eqiad.mgmt.eqiad.wmnet:
 
 ssw1-d8-eqiad.mgmt.eqiad.wmnet:
   config:
+    capirca:
+      - srl-common-loopback
     device_bgp:
-      sw_external:
+      evpn_external:
         cr2-eqiad: {4: 10.66.0.22, 6: 2620:0:861:fe17::1}
         ssw1-e1-eqiad: {4: 10.64.147.19, 6: 2620:0:861:146::7, peer_as: 64810}
         ssw1-f1-eqiad: {4: 10.64.147.20, 6: 2620:0:861:146::9, peer_as: 64810}
     esi_lag:
       lag1: "11"
       lag2: "12"
+
+lsw1-c2-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+    filters:
+      irb.1022-in: analytics-in
+      irb.1064-in: analytics-in
+
+lsw1-c3-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+    filters:
+      irb.1022-in: analytics-in
+      irb.1066-in: analytics-in
+
+lsw1-c4-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+    filters:
+      irb.1022-in: analytics-in
+      irb.1068-in: analytics-in
+
+lsw1-c5-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+    filters:
+      irb.1022-in: analytics-in
+      irb.1070-in: analytics-in
+
+lsw1-c6-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+    filters:
+      irb.1022-in: analytics-in
+      irb.1072-in: analytics-in
+
+lsw1-c7-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+    filters:
+      irb.1022-in: analytics-in
+      irb.1074-in: analytics-in
+
+lsw1-d1-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+    filters:
+      irb.1023-in: analytics-in
+      irb.1076-in: analytics-in
+
+lsw1-d2-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+    filters:
+      irb.1023-in: analytics-in
+      irb.1078-in: analytics-in
+
+lsw1-d3-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+    filters:
+      irb.1023-in: analytics-in
+      irb.1080-in: analytics-in
+
+lsw1-d4-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+    filters:
+      irb.1023-in: analytics-in
+      irb.1082-in: analytics-in
+
+lsw1-d6-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+    filters:
+      irb.1023-in: analytics-in
+      irb.1084-in: analytics-in
+
+lsw1-d7-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+    filters:
+      irb.1023-in: analytics-in
+      irb.1086-in: analytics-in
+
+lsw1-d8-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+    filters:
+      irb.1023-in: analytics-in
+      irb.1088-in: analytics-in
 
 cloudsw1-b1-codfw.mgmt.codfw.wmnet:
   config:
@@ -768,7 +881,6 @@ lsw1-d8-codfw.mgmt.codfw.wmnet:
 
 ssw1-e1-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64813
     capirca:
       - common-loopback
     device_bgp:
@@ -781,7 +893,6 @@ ssw1-e1-codfw.mgmt.codfw.wmnet:
 
 ssw1-f1-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64813
     capirca:
       - common-loopback
     device_bgp:
@@ -794,7 +905,6 @@ ssw1-f1-codfw.mgmt.codfw.wmnet:
 
 lsw1-e1-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64813
     capirca:
       - common-loopback
 
@@ -805,21 +915,38 @@ lsw1-e2-codfw.mgmt.codfw.wmnet:
 
 lsw1-e3-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64813
     capirca:
       - common-loopback
+
+lsw1-e4-codfw.mgmt.codfw.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+
+lsw1-e5-codfw.mgmt.codfw.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
 
 lsw1-f1-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64813
     capirca:
       - common-loopback
 
+lsw1-f2-codfw.mgmt.codfw.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+
 lsw1-f3-codfw.mgmt.codfw.wmnet:
   config:
-    asn: 64813
     capirca:
       - common-loopback
+
+lsw1-f4-codfw.mgmt.codfw.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
 
 asw2-ulsfo.mgmt.ulsfo.wmnet:
   config:
