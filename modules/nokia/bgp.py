@@ -1,14 +1,15 @@
 """Nokia SR-Linux module for /network-instance/protocols/ospf related configuration."""
 
-from typing import Any, Iterator, Optional
+from typing import Any, Iterator, Optional, Tuple
 
-from . import BaseNokiaRpc, NokiaRpc
+from . import BaseNokiaRpc, NokiaRpc, get_static_config
 
 
 class SrlBgp(BaseNokiaRpc):
     _methods = ["srl_bgp"]
 
     def srl_bgp(self) -> Iterator[NokiaRpc]:
+        self._data["routing_policy_names"] = self._get_policy_names()
         default_ebgp_vrf = "PRODUCTION" if self._data["evpn"] else "default"
         # BGP config is nested in the network-instance config, so we build for each
         for vrf_name, vrf_data in self._data["vrfs"].items():
@@ -231,14 +232,45 @@ class SrlBgp(BaseNokiaRpc):
                 afi_safis = [
                     f"ipv{address_fam}-unicast" for address_fam in address_fams
                 ]
+                import_pol, export_pol = self._get_bgp_group_policy(bgp_group_name)
                 groups.append(
                     self._get_bgp_group(
                         bgp_group_name=bgp_group_name,
-                        import_pol="ALL",
-                        export_pol="ALL",
+                        import_pol=import_pol,
+                        export_pol=export_pol,
                         address_fams=afi_safis,
                         peer_as=group_peer_as,
                     )
                 )
 
         return groups, neighbors
+
+    def _get_policy_names(self) -> list[str]:
+        """Parses the policies defined in YAML and returns a list of their names"""
+        routing_policy = get_static_config("nokia", "routing_policy")
+        policies = routing_policy["policy"]
+        policy_names = [policy["name"] for policy in policies]
+        return policy_names
+
+    def _get_bgp_group_policy(self, bgp_group_name: str) -> Tuple[str, str]:
+        """Returns the name of a defined policy matching the bgp group name, or NONE"""
+        policies = {
+            "in": "NONE",
+            "out": "NONE",
+        }
+        # Check if there are policies defined which match {group_name}_out, {group_name}_in etc.
+        for policy_direction in policies.keys():
+            # Separate policies per group/address-fam, i.e. evpn_external4_out, evpn_external6_out
+            if (
+                f"{bgp_group_name}_{policy_direction}"
+                in self._data["routing_policy_names"]
+            ):
+                policies[policy_direction] = f"{bgp_group_name}_{policy_direction}"
+            # Single policy for both address-fam groups, i.e. evpn_external_in
+            elif (
+                f"{bgp_group_name[:-1]}_{policy_direction}"
+                in self._data["routing_policy_names"]
+            ):
+                policies[policy_direction] = f"{bgp_group_name[:-1]}_{policy_direction}"
+
+        return policies["in"], policies["out"]

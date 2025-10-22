@@ -458,6 +458,9 @@ bgp_group_data:
   sw_external:
     asns:
       global: 14907
+  evpn_external:
+    asns:
+      global: 14907
   sw_mr:
     asns:
       global: 65000

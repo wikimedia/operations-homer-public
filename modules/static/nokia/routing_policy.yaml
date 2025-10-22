@@ -15,11 +15,27 @@ prefix-set:
     prefix:
       - ip-prefix: "2620:0:861:130::/64"
         mask-length-range: 128..128
+
+community-set:
+  - name: GRACEFUL_SHUTDOWN
+    member: ["65535:0"]
+  - name: AVOIDED_PATH
+    member: ["14907:0"]
+  - name: BACKUP_PATH
+    member: ["14907:1"]
+  - name: SELECTED_PATH
+    member: ["14907:11"]
+
 policy:
   - name: ALL
     default-action:
       policy-result: accept
-  - name: evpn_external_out4
+
+  - name: NONE
+    default-action:
+      policy-result: reject
+
+  - name: evpn_external4_out
     default-action:
       policy-result: reject
     statement:
@@ -39,7 +55,8 @@ policy:
       - name: overlay_routes
         action:
           policy-result: accept
-  - name: evpn_external_out6
+
+  - name: evpn_external6_out
     default-action:
       policy-result: reject
     statement:
@@ -59,3 +76,40 @@ policy:
       - name: overlay_routes
         action:
           policy-result: accept
+
+  - name: evpn_external_in
+    default-action:
+      policy-result: accept
+    statement:
+      - name: graceful_shutdown
+        match:
+          bgp:
+            community-set: GRACEFUL_SHUTDOWN
+        action:
+          bgp:
+            local-preference:
+              set: 0
+      - name: localpref_avoid
+        match:
+          bgp:
+            community-set: AVOIDED_PATH
+        action:
+          bgp:
+            local-preference:
+              set: 50
+      - name: localpref_backup
+        match:
+          bgp:
+            community-set: BACKUP_PATH
+        action:
+          bgp:
+            local-preference:
+              set: 70
+      - name: localpref_prefer
+        match:
+          bgp:
+            community-set: SELECTED_PATH
+        action:
+          bgp:
+            local-preference:
+              set: 350

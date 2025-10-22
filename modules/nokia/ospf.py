@@ -16,8 +16,10 @@ class SrlOspf(BaseNokiaRpc):
         ospf_interfaces = []
         # Add the required interfaces
         for int_name in ibgp_config["ospf_ints"]:
-            int_conf = {"interface-name": f"{int_name}.0"}
-            if int_name != "system0":
+            int_conf: dict[str, Any] = {"interface-name": f"{int_name}.0"}
+            if int_name == "system0":
+                int_conf["passive"] = True
+            else:
                 int_conf["interface-type"] = "point-to-point"
             ospf_interfaces.append(int_conf)
 
