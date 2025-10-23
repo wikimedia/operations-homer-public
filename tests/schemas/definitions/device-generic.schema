@@ -108,7 +108,7 @@
       "patternProperties": {
         "^.+$": {
               "type": "string",
-              "desciption": "ae1.530-in: foo    Apply foo as input to both inet and inet6 (if any)\nae1.530-in4: foo   Apply foo as input only to inet (even if inet6 exists)\ngr-0/0/0.2-out: bar   Apply bar as output to both inet and inet6"
+              "description": "ae1.530-in: foo    Apply foo as input to both inet and inet6 (if any)\nae1.530-in4: foo   Apply foo as input only to inet (even if inet6 exists)\ngr-0/0/0.2-out: bar   Apply bar as output to both inet and inet6"
         }
       }
     },
