@@ -190,15 +190,21 @@ def get_srl_routed_subint(index, int_data: dict, data: dict) -> dict:
             if int_data["name"].startswith("irb"):
                 if data["evpn"]:
                     subint[address_fam].update(get_irb_evpn_conf(address_fam))
-                if int_data["description"].startswith(("private", "analytics")):
-                    if address_fam == "ipv4":
+                if int_data["description"].startswith(
+                    ("public", "private", "analytics")
+                ):
+                    if address_fam == "ipv4" and int_addr["role"] != "anycast":
                         subint[address_fam]["dhcp-relay"] = {
-                            "gi-address": data["loopbacks"]["external"]["4"],
+                            "gi-address": int_addr["address"].split("/")[0],
                             "use-gi-addr-as-src-ip-addr": True,
                             "network-instance": data["loopbacks"]["external"]["vrf"],
+                            "option": ["circuit-id"],
                             "server": [data["dhcp_server"]["ip"].compressed],
                         }
-                    if address_fam == "ipv6":
+                    if (
+                        address_fam == "ipv6"
+                        and "router-advertisement" not in subint[address_fam]
+                    ):
                         prefix = ip_interface(int_addr["address"]).network
                         subint[address_fam]["router-advertisement"] = {
                             "router-role": {
