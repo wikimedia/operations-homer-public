@@ -484,6 +484,7 @@ ssw1-f1-eqiad.mgmt.eqiad.wmnet:
     device_bgp:
       sw_external:
         cr2-eqiad: {4: 10.66.0.10, 6: 2620:0:861:fe08::1}
+        ssw1-d1-eqiad: {4: 10.64.147.10, 6: 2620:0:861:146::4, peer_as: 64814}
 
 lsw1-f1-eqiad.mgmt.eqiad.wmnet:
   config:
