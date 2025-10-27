@@ -564,7 +564,7 @@ ssw1-d8-eqiad.mgmt.eqiad.wmnet:
       evpn_external:
         cr2-eqiad: {4: 10.66.0.22, 6: 2620:0:861:fe17::1}
         ssw1-e1-eqiad: {4: 10.64.147.19, 6: 2620:0:861:146::7, peer_as: 64810}
-        ssw1-f1-eqiad: {4: 10.64.147.20, 6: 2620:0:861:146::9, peer_as: 64810}
+        ssw1-f1-eqiad: {4: 10.64.147.21, 6: 2620:0:861:146::9, peer_as: 64810}
     esi_lag:
       lag1: "11"
       lag2: "12"
