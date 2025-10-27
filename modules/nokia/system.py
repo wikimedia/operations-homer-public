@@ -18,6 +18,7 @@ class SrlSystem(BaseNokiaRpc):
 
     _methods = [
         "srl_system_management",
+        "srl_system_control_plane_traffic",
         "srl_system_configuration",
         "srl_aaa",
         "srl_ssh_server",
@@ -35,10 +36,24 @@ class SrlSystem(BaseNokiaRpc):
     ]
 
     def srl_system_management(self) -> Iterator[NokiaRpc]:
-        """Returns commands to replace all system configuration section in Nokia format."""
+        """Returns commands to enable openconfig RPC paths."""
         yield NokiaRpc(
             path="/system/management", config={"openconfig": {"admin-state": "enable"}}
         )
+
+    def srl_system_control_plane_traffic(self) -> Iterator[NokiaRpc]:
+        """Returns commands to configure control-plane-traffic filters/qos."""
+        config = {
+            "input": {
+                "acl": {
+                    "acl-filter": [
+                        {"name": "cpm", "type": "ipv4"},
+                        {"name": "cpm", "type": "ipv6"},
+                    ]
+                }
+            }
+        }
+        yield NokiaRpc(path="/system/control-plane-traffic", config=config)
 
     def srl_system_configuration(self) -> Iterator[NokiaRpc]:
         """Returns commands to replace all system configuration section in Nokia format."""
