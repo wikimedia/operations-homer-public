@@ -420,6 +420,7 @@ ssw1-e1-eqiad.mgmt.eqiad.wmnet:
       sw_external:
         cr1-eqiad: {4: 10.66.0.8, 6: 2620:0:861:fe07::1}
         ssw1-d1-eqiad: {4: 10.64.147.8, 6: 2620:0:861:146::2, peer_as: 64814}
+        ssw1-d8-eqiad: {4: 10.64.147.18, 6: 2620:0:861:146::6, peer_as: 64814}
 
 lsw1-e1-eqiad.mgmt.eqiad.wmnet:
   config:
