@@ -24,7 +24,7 @@ cr1-eqiad.wikimedia.org:
       - xe-3/0/4.1000  # cloud-hosts networks
       - ae1.1030  # analytics1-a-eqiad
       - ae2.1021  # analytics1-b-eqiad
-      - ae3.1022  # analytics1-c-eqiad
+      - et-1/0/5.1022  # analytics1-c-eqiad
       - ae4.1023  # analytics1-d-eqiad
     vrrp_bandwidth_threshold: true
     capirca:
@@ -61,7 +61,7 @@ cr2-eqiad.wikimedia.org:
       - xe-3/0/4.1100  # cloud-hosts networks
       - ae1.1030  # analytics1-a-eqiad
       - ae2.1021  # analytics1-b-eqiad
-      - ae3.1022  # analytics1-c-eqiad
+      - et-1/0/5.1022  # analytics1-c-eqiad
       - ae4.1023  # analytics1-d-eqiad
     damping: [xe-3/2/1]
     vrrp_bandwidth_threshold: true
