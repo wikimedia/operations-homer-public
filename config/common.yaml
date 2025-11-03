@@ -280,9 +280,9 @@ ospf:
       - ae3.1019
       - et-1/0/5.1022
       - ae3.1119
-      - ae4.1020
-      - ae4.1004
-      - ae4.1023
+      - et-1/0/5.1020
+      - et-1/0/5.1004
+      - et-1/0/5.1023
     cr2-eqiad.wikimedia.org:
       - ae1.1001
       - ae1.1017
@@ -297,9 +297,9 @@ ospf:
       - ae3.1019
       - et-1/0/5.1022
       - ae3.1119
-      - ae4.1020
-      - ae4.1004
-      - ae4.1023
+      - et-1/0/5.1020
+      - et-1/0/5.1004
+      - et-1/0/5.1023
     cloudsw1-c8-eqiad.mgmt.eqiad.wmnet:
       - irb.1120
     cloudsw1-d5-eqiad.mgmt.eqiad.wmnet:

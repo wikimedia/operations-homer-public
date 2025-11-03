@@ -25,7 +25,7 @@ cr1-eqiad.wikimedia.org:
       - ae1.1030  # analytics1-a-eqiad
       - ae2.1021  # analytics1-b-eqiad
       - et-1/0/5.1022  # analytics1-c-eqiad
-      - ae4.1023  # analytics1-d-eqiad
+      - et-1/0/5.1023  # analytics1-d-eqiad
     vrrp_bandwidth_threshold: true
     capirca:
       - common-sandbox
@@ -62,7 +62,7 @@ cr2-eqiad.wikimedia.org:
       - ae1.1030  # analytics1-a-eqiad
       - ae2.1021  # analytics1-b-eqiad
       - et-1/0/5.1022  # analytics1-c-eqiad
-      - ae4.1023  # analytics1-d-eqiad
+      - et-1/0/5.1023  # analytics1-d-eqiad
     damping: [xe-3/2/1]
     vrrp_bandwidth_threshold: true
     capirca:
