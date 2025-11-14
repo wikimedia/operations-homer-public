@@ -56,7 +56,7 @@ ceph_OSD = 6800-7100/tcp
 TRACEROUTE = 33434-33534/udp
 high_ports = 1024-65535/tcp 1024-65535/udp
 mySQL_sections = 3311-3318/tcp  # s1..s8
-                 3363/tcp       # x3
+                 3363-3364/tcp  # x3..x4
 
 
 #
