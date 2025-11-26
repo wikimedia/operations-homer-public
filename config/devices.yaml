@@ -687,6 +687,12 @@ lsw1-d8-eqiad.mgmt.eqiad.wmnet:
       irb.1023-in: analytics-in
       irb.1088-in: analytics-in
 
+lswtest-d8-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
 cloudsw1-b1-codfw.mgmt.codfw.wmnet:
   config:
     asn: 64711

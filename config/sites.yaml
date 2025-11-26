@@ -87,6 +87,7 @@ eqiad:
             - lsw1-d6-eqiad
             - lsw1-d7-eqiad
             - lsw1-d8-eqiad
+            - lswtest-d8-eqiad
     "64710":
       evpn: false
       pods:
