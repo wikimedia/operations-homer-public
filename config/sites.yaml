@@ -42,7 +42,7 @@ eqiad:
     - et-1/0/5.1004
     - ae2.1202
   tcp_mss_clamping: true
-  prepend_as_out: true
+  prepend_as_out: false
   ibgp_clusters:
     "64810":
       evpn: true
@@ -265,7 +265,7 @@ eqsin:
     - ae1.520
     - ae1.530
   tcp_mss_clamping: true
-  prepend_as_out: true
+  prepend_as_out: false
 
 esams:
   confed: 65003
@@ -304,7 +304,7 @@ drmrs:
   dhcp_server:
     name: install6003
     ip: 185.15.58.7
-  prepend_as_out: true
+  prepend_as_out: false
 
 magru:
   confed: 65007
