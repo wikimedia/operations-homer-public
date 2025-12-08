@@ -6,6 +6,21 @@ from typing import Any, Iterator
 
 from . import BaseNokiaRpc, NokiaRpc
 
+NOKIA_PORT_BLOCKS = [
+    (1, 2, 3, 6),
+    (4, 5, 7, 9),
+    (8, 10, 11, 12),
+    (13, 14, 15, 18),
+    (16, 17, 19, 21),
+    (20, 22, 23, 24),
+    (25, 26, 27, 30),
+    (28, 29, 31, 33),
+    (32, 34, 35, 36),
+    (37, 38, 39, 42),
+    (40, 41, 43, 45),
+    (44, 46, 47, 48),
+]
+
 
 class SrlInterface(BaseNokiaRpc):
 
@@ -17,7 +32,6 @@ class SrlInterface(BaseNokiaRpc):
         interfaces: list[dict[str, Any]] = []
 
         sub_ints: dict[str, Any] = defaultdict(dict)
-
         for int_name, int_data in self._data["netbox"]["device_plugin"][
             "device_interfaces"
         ].items():
@@ -27,7 +41,7 @@ class SrlInterface(BaseNokiaRpc):
                 sub_ints[parent][int_name] = int_data
                 continue
 
-            srl_int = get_srl_base_int(int_name, int_data)
+            srl_int = self.get_srl_base_int(int_name, int_data)
             # Access interface
             if int_data["mode"] == "access":
                 srl_int.update(get_srl_access_int(int_data))
@@ -62,49 +76,81 @@ class SrlInterface(BaseNokiaRpc):
         for interface in interfaces:
             yield NokiaRpc(path=interface["path"], config=interface["value"])
 
-
-def get_srl_base_int(int_name: str, int_data: dict) -> dict:
-    """Gets common base interface dict"""
-    base_int: dict[str, Any] = {
-        "name": int_name,
-        "admin-state": "enable" if int_data["enabled"] else "disable",
-    }
-    if int_data["description"]:
-        base_int["description"] = int_data["description"]
-
-    # For members of a LAG
-    if int_data["lag"]:
-        base_int["ethernet"] = {"aggregate-id": int_data["lag"]["name"]}
-    # For the LAG interface itself
-    if int_data["type"] == "lag":
-        local_lag_id = int(int_name[-1])
-        base_int["lag"] = {
-            "lag-type": "lacp",
-            "lacp": {
-                "interval": "FAST",
-                "lacp-mode": "ACTIVE",
-                "admin-key": 100 + local_lag_id,
-                "system-id-mac": f"00:00:00:00:00:1{local_lag_id}",
-                "system-priority": 100 + local_lag_id,
-            },
+    def get_srl_base_int(self, int_name: str, int_data: dict) -> dict:
+        """Gets common base interface dict"""
+        base_int: dict[str, Any] = {
+            "name": int_name,
+            "admin-state": "enable" if int_data["enabled"] else "disable",
         }
+        # If the port is disabled - T409178
+        # check if there are enabled ports in the same group
+        # to set the disabled one at the same speed
+        if not int_data["enabled"]:
+            port_block_speed = self._get_port_block_speed(int_name)
+            if port_block_speed:
+                # That shouldn't conflict with the LACP base_int["ethernet"]
+                base_int["ethernet"] = {"port-speed": f"{port_block_speed}G"}
 
-    # Set FEC to match Juniper default if other side is QFX
-    if (
-        int_data["enabled"]
-        and int_data["connected_endpoints"]
-        and int_data["type"].startswith("100gbase")
-        and int_data["connected_endpoints"][0]["__typename"] == "InterfaceType"
-        and int_data["connected_endpoints"][0]["device"]["role"]["slug"] == "asw"
-        and int_data["connected_endpoints"][0]["device"]["device_type"]["manufacturer"][
-            "slug"
-        ]
-        == "juniper"
-    ):
-        # TODO: How to model this and work for every variant, below works for SR4 matching QFX default
-        base_int["transceiver"] = {"forward-error-correction": "rs-528"}
+        if int_data["description"]:
+            base_int["description"] = int_data["description"]
 
-    return base_int
+        # For members of a LAG
+        if int_data["lag"]:
+            base_int["ethernet"] = {"aggregate-id": int_data["lag"]["name"]}
+        # For the LAG interface itself
+        if int_data["type"] == "lag":
+            local_lag_id = int(int_name[-1])
+            base_int["lag"] = {
+                "lag-type": "lacp",
+                "lacp": {
+                    "interval": "FAST",
+                    "lacp-mode": "ACTIVE",
+                    "admin-key": 100 + local_lag_id,
+                    "system-id-mac": f"00:00:00:00:00:1{local_lag_id}",
+                    "system-priority": 100 + local_lag_id,
+                },
+            }
+
+        # Set FEC to match Juniper default if other side is QFX
+        if (
+            int_data["enabled"]
+            and int_data["connected_endpoints"]
+            and int_data["type"].startswith("100gbase")
+            and int_data["connected_endpoints"][0]["__typename"] == "InterfaceType"
+            and int_data["connected_endpoints"][0]["device"]["role"]["slug"] == "asw"
+            and int_data["connected_endpoints"][0]["device"]["device_type"][
+                "manufacturer"
+            ]["slug"]
+            == "juniper"
+        ):
+            # TODO: How to model this and work for every variant, below works for SR4 matching QFX default
+            base_int["transceiver"] = {"forward-error-correction": "rs-528"}
+
+        return base_int
+
+    def _get_port_block_speed(self, int_name: str) -> int:
+        """Return the speed of the active ports in the same group."""
+        port_number = int(int_name.split(":")[0].split("/")[-1])
+        neighbors_ports = []
+        for block in NOKIA_PORT_BLOCKS:
+            if port_number in block:
+                neighbors_ports = [port for port in block if port != port_number]
+                break
+        device_interfaces = self._data["netbox"]["device_plugin"]["device_interfaces"]
+        int_type = ""
+        for port in neighbors_ports:
+            if (
+                f"ethernet-1/{port}" in device_interfaces
+                and device_interfaces[f"ethernet-1/{port}"]["enabled"]
+            ):
+                int_type = device_interfaces[f"ethernet-1/{port}"]["type"]
+                break
+        if not int_type:
+            return 0
+        elif int_type.startswith("1000base"):
+            return 10
+        else:
+            return int(int_type.split("gbase")[0])
 
 
 def get_srl_access_int(int_data: dict) -> dict:
