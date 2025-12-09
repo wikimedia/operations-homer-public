@@ -85,7 +85,7 @@ class SrlInterface(BaseNokiaRpc):
         # If the port is disabled - T409178
         # check if there are enabled ports in the same group
         # to set the disabled one at the same speed
-        if not int_data["enabled"]:
+        if not int_data["enabled"] and self._data["metadata"]["type"] == "7220-ixr-d2l":
             port_block_speed = self._get_port_block_speed(int_name)
             if port_block_speed:
                 # That shouldn't conflict with the LACP base_int["ethernet"]
