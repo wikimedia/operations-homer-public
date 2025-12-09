@@ -67,11 +67,19 @@ class SrlBgp(BaseNokiaRpc):
                 afi_safis.add(afi_safi["afi-safi-name"])
 
         for afi_safi in afi_safis:
+            multipath_conf: dict[str, Any]
+            if self._data["srlinux_version"].startswith("24"):
+                multipath_conf = {"maximum-paths": 64}
+            else:
+                multipath_conf = {
+                    "ebgp": {"maximum-paths": 64},
+                    "ibgp": {"maximum-paths": 64},
+                }
             bgp_config["afi-safi"].append(
                 {
                     "afi-safi-name": afi_safi,
                     "admin-state": "enable",
-                    "multipath": {"maximum-paths": 64},
+                    "multipath": multipath_conf,
                 }
             )
         # Lastly disable any afi-safis enabled at the top level if they are not needed for a group

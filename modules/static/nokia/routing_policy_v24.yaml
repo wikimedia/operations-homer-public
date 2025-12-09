@@ -41,14 +41,12 @@ policy:
     statement:
       - name: loopback4
         match:
-          prefix:
-            prefix-set: overlay_loopback4
+          prefix-set: overlay_loopback4
         action:
           policy-result: accept
       - name: no_host_routes4
         match:
-          prefix:
-            prefix-set: no_host_routes4
+          prefix-set: no_host_routes4
           bgp:
             as-path-length:
               value: 0
@@ -64,14 +62,12 @@ policy:
     statement:
       - name: loopback6
         match:
-          prefix:
-            prefix-set: overlay_loopback6
+          prefix-set: overlay_loopback6
         action:
           policy-result: accept
       - name: no_host_routes6
         match:
-          prefix:
-            prefix-set: no_host_routes6
+          prefix-set: no_host_routes6
           bgp:
             as-path-length:
               value: 0

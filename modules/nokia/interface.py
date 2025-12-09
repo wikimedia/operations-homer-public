@@ -123,8 +123,13 @@ class SrlInterface(BaseNokiaRpc):
             ]["slug"]
             == "juniper"
         ):
-            # TODO: How to model this and work for every variant, below works for SR4 matching QFX default
-            base_int["transceiver"] = {"forward-error-correction": "rs-528"}
+            if self._data["srlinux_version"].startswith("24"):
+                base_int["transceiver"] = {"forward-error-correction": "rs-528"}
+            else:
+                # Again should not interfere with disabled or LAG ports
+                base_int["ethernet"] = {
+                    "forward-error-correction": {"fec-option": "rs-528"}
+                }
 
         return base_int
 

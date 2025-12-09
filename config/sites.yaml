@@ -43,6 +43,7 @@ eqiad:
     - ae2.1202
   tcp_mss_clamping: true
   prepend_as_out: false
+  srlinux_version: 24.10.4
   ibgp_clusters:
     "64810":
       evpn: true
@@ -146,6 +147,7 @@ codfw:
     name: install2005
     ip: 208.80.153.70
   prepend_as_out: false
+  srlinux_version: 25.10.1
   ibgp_clusters:
     "64811":
       evpn: true

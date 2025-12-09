@@ -596,6 +596,10 @@
             "type": "integer"
         }
       }
+    },
+    "srlinux_version": {
+      "type": "string",
+      "description": "Allow us to specify the version of SR-Linux to help building the correct config"
     }
   }
 }
