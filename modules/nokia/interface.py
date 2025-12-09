@@ -29,8 +29,8 @@ class SrlInterface(BaseNokiaRpc):
     def srl_interface(self) -> Iterator[NokiaRpc]:
         """Returns commands to individually replace all /interface configuration in a Nokia format."""
         yield NokiaRpc(path="/interface", action="delete")
+        hostname = self._data["metadata"]["netbox_object"].name
         interfaces: list[dict[str, Any]] = []
-
         sub_ints: dict[str, Any] = defaultdict(dict)
         for int_name, int_data in self._data["netbox"]["device_plugin"][
             "device_interfaces"
@@ -44,10 +44,10 @@ class SrlInterface(BaseNokiaRpc):
             srl_int = self.get_srl_base_int(int_name, int_data)
             # Access interface
             if int_data["mode"] == "access":
-                srl_int.update(get_srl_access_int(int_data))
+                srl_int.update(get_srl_access_int(int_data, hostname))
             # Trunk interface
             if int_data["mode"] == "tagged":
-                srl_int.update(get_srl_trunk_int(int_data))
+                srl_int.update(get_srl_trunk_int(int_data, hostname))
             # Routed interface
             if int_data["ip_addresses"]:
                 srl_int["subinterface"] = [
@@ -153,7 +153,7 @@ class SrlInterface(BaseNokiaRpc):
             return int(int_type.split("gbase")[0])
 
 
-def get_srl_access_int(int_data: dict) -> dict:
+def get_srl_access_int(int_data: dict, hostname: str) -> dict:
     """Returns dict elements for untagged access interface"""
     access_int: dict[str, Any] = {
         "vlan-tagging": False,
@@ -165,18 +165,18 @@ def get_srl_access_int(int_data: dict) -> dict:
             }
         ],
     }
-    if not int_data["type"] == "lag":
+    if not hostname.startswith("ssw") and not int_data["type"] == "lag":
         access_int["sflow"] = {"admin-state": "enable"}
     return access_int
 
 
-def get_srl_trunk_int(int_data: dict) -> dict:
+def get_srl_trunk_int(int_data: dict, hostname: str) -> dict:
     """Returns dict elements for tagged trunk interface"""
     trunk_int: dict[str, Any] = {
         "vlan-tagging": True,
         "subinterface": [],
     }
-    if not int_data["type"] == "lag":
+    if not hostname.startswith("ssw") and not int_data["type"] == "lag":
         trunk_int["sflow"] = {"admin-state": "enable"}
     for tagged_vlan in int_data["tagged_vlans"]:
         trunk_int["subinterface"].append(
