@@ -247,30 +247,30 @@ class SrlSystem(BaseNokiaRpc):
     def srl_net_instance_protocols(self) -> Iterator[NokiaRpc]:
         """Primarily used to define ESI segments used in MC-LAG w/EVPN"""
         if "esi_lag" not in self._data:
-            return
-
-        # Build list of eth_segments we need to define ESI ID for
-        eth_segments = []
-        for lag_name, lag_id in self._data["esi_lag"].items():
-            lag_evpn_conf = {
-                "name": lag_name.upper(),
-                "admin-state": "enable",
-                "esi": f"00:01:00:00:00:00:00:00:00:{lag_id}",
-                "interface": [{"ethernet-interface": lag_name}],
-            }
-            eth_segments.append(lag_evpn_conf)
-
-        config = {
-            "evpn": {
-                "ethernet-segments": {
-                    "bgp-instance": [
-                        {
-                            "id": 1,
-                            "ethernet-segment": eth_segments,
-                        }
-                    ]
+            config = {}
+        else:
+            # Build list of eth_segments we need to define ESI ID for
+            eth_segments = []
+            for lag_name, lag_id in self._data["esi_lag"].items():
+                lag_evpn_conf = {
+                    "name": lag_name.upper(),
+                    "admin-state": "enable",
+                    "esi": f"00:01:00:00:00:00:00:00:00:{lag_id}",
+                    "interface": [{"ethernet-interface": lag_name}],
                 }
-            },
-            "bgp-vpn": {"bgp-instance": [{"id": 1}]},
-        }
+                eth_segments.append(lag_evpn_conf)
+
+            config = {
+                "evpn": {
+                    "ethernet-segments": {
+                        "bgp-instance": [
+                            {
+                                "id": 1,
+                                "ethernet-segment": eth_segments,
+                            }
+                        ]
+                    }
+                },
+                "bgp-vpn": {"bgp-instance": [{"id": 1}]},
+            }
         yield NokiaRpc(path="/system/network-instance/protocols", config=config)
