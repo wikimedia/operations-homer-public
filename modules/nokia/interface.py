@@ -111,22 +111,26 @@ class SrlInterface(BaseNokiaRpc):
                 },
             }
 
-        # Set FEC to match Juniper default if other side is QFX
+        # 100G Ports need FEC set in some cases
         if (
             int_data["enabled"]
             and int_data["connected_endpoints"]
             and int_data["type"].startswith("100gbase")
-            and int_data["connected_endpoints"][0]["__typename"] == "InterfaceType"
-            and int_data["connected_endpoints"][0]["device"]["role"]["slug"] == "asw"
-            and int_data["connected_endpoints"][0]["device"]["device_type"][
-                "manufacturer"
-            ]["slug"]
-            == "juniper"
         ):
-            if self._data["srlinux_version"].startswith("24"):
+            # For v24 we set the mode on Juniper-facing ports
+            if (
+                int(self._data["srlinux_version"].split(".")[0]) == 24
+                and int_data["connected_endpoints"][0]["__typename"] == "InterfaceType"
+                and int_data["connected_endpoints"][0]["device"]["role"]["slug"]
+                == "asw"
+                and int_data["connected_endpoints"][0]["device"]["device_type"][
+                    "manufacturer"
+                ]["slug"]
+                == "juniper"
+            ):
                 base_int["transceiver"] = {"forward-error-correction": "rs-528"}
-            else:
-                # Again should not interfere with disabled or LAG ports
+            # For v25 we need to set it on all 100G ports so it is compatible with the v24 default
+            elif int(self._data["srlinux_version"].split(".")[0]) >= 25:
                 base_int["ethernet"] = {
                     "forward-error-correction": {"fec-option": "rs-528"}
                 }
