@@ -747,6 +747,9 @@ lsw1-a3-codfw.mgmt.codfw.wmnet:
   config:
     capirca:
       - common-loopback
+    device_bgp:
+      sw_mr:
+        mr1-codfw: {4: 10.192.254.15, 6: 2620:0:860:137::2}
 
 lsw1-a4-codfw.mgmt.codfw.wmnet:
   config:
@@ -985,7 +988,7 @@ mr1-codfw.wikimedia.org:
     security_zones:
       - name: production
         services: ['ssh', 'ping', 'traceroute', 'snmp', 'bgp']
-        interfaces: ['lo0.0', 'ge-0/0/3.0']
+        interfaces: ['lo0.0', 'ge-0/0/3.0', 'ge-0/0/4.0']
       - name: untrust
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['ge-0/0/5.0']
@@ -995,6 +998,7 @@ mr1-codfw.wikimedia.org:
     device_bgp:
       mr_sw:
         lsw1-a2-codfw: {4: 10.192.254.8, 6: 2620:0:860:134::1, peer_as: 64811}
+        lsw1-a3-codfw: {4: 10.192.254.14, 6: 2620:0:860:137::1, peer_as: 64811}
 
 mr1-eqsin.wikimedia.org:
   timeout: 120
