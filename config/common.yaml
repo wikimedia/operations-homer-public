@@ -42,7 +42,7 @@ anycast_prefixes:
   - 208.80.154.238/32        # ns0.wikimedia.org
   - 208.80.153.231/32        # ns1.wikimedia.org
 
-# Next available UID: 2041
+# Next available UID: 2042
 # When adding a new user, please make sure to update "next available UID" above
 # yamllint disable rule:line-length
 users:
@@ -166,6 +166,11 @@ users:
     class: wmf-ro
     sshkeys:
       - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAT4FRcxa8eUFu4TTi0Xr258p6OYrbAFYvz6xyZuh79P jclark@wmf1953"
+  - name: astein
+    uid: 2041
+    class: wmf-ro
+    sshkeys:
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMjoabk/8RwY48ExL+TuZHUz466v8yluAuxZhSCO9pmp"
 # yamllint enable rule:line-length
 # When adding a new user, please make sure to update the "next available UID"
 # comment at the beginning of the users block
