@@ -41,6 +41,9 @@ anycast_prefixes:
   - 2001:67c:930::/48        # IPv6 Anycast - incl. wikidough
   - 208.80.154.238/32        # ns0.wikimedia.org
   - 208.80.153.231/32        # ns1.wikimedia.org
+  - 2620:0:861:53::1/128     # ns0.wikimedia.org
+  - 2620:0:860:53::1/128     # ns1.wikimedia.org
+  - 2a02:ec80:53::1/128      # ns2.wikimedia.org
 
 # Next available UID: 2042
 # When adding a new user, please make sure to update "next available UID" above

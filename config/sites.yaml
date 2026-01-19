@@ -17,6 +17,7 @@ eqiad:
   bgp6_out:
     2620:0:861::/48: BGP_aggregate_contributors  # eqiad
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
+    2a02:ec80:53::/48: BGP_from_anycast  # ns2.wikimedia.org anycast
   ping_offload_vip: 208.80.154.224/32
   ping_offload_redirect: 10.64.32.63  # ping1004.eqiad.wmnet
   sampling:
@@ -111,6 +112,7 @@ eqord:
     2620:0:860::/48: BGP_agg_net_pops  # codfw
     2620:0:861::/48: BGP_agg_net_pops  # eqiad
     2001:67c:930::/48: BGP_agg_net_pops  # Wikidough Anycast v6
+    2a02:ec80:53::/48: BGP_from_anycast  # ns2.wikimedia.org anycast
   sampling:
     collectors:
       netflow1002: 10.64.16.82
@@ -138,6 +140,7 @@ codfw:
   bgp6_out:
     2620:0:860::/48: BGP_aggregate_contributors  # codfw
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
+    2a02:ec80:53::/48: BGP_from_anycast  # ns2.wikimedia.org anycast
   ping_offload_vip: 208.80.153.224/32
   ping_offload_redirect: 10.192.48.9  # ping2004.codfw.wmnet
   sampling:
@@ -219,6 +222,7 @@ eqdfw:
   bgp6_out:
     2620:0:860::/48: BGP_agg_net_pops  # codfw
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
+    2a02:ec80:53::/48: BGP_from_anycast  # ns2.wikimedia.org anycast
   sampling:
     collectors:
       netflow2003: 10.192.32.159
@@ -234,6 +238,7 @@ ulsfo:
   bgp6_out:
     2620:0:863::/48: BGP_aggregate_contributors  # ulsfo
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
+    2a02:ec80:53::/48: BGP_from_anycast  # ns2.wikimedia.org anycast
   sampling:
     collectors:
       netflow4002: 10.128.0.13
@@ -256,6 +261,7 @@ eqsin:
   bgp6_out:
     2001:df2:e500::/48: BGP_aggregate_contributors  # eqsin
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
+    2a02:ec80:53::/48: BGP_from_anycast  # ns2.wikimedia.org anycast
   sampling:
     collectors:
       netflow5002: 10.132.0.15
@@ -279,6 +285,7 @@ esams:
   bgp6_out:
     2a02:ec80:300::/48: BGP_aggregate_contributors  # esams
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
+    2a02:ec80:53::/48: BGP_from_anycast  # ns2.wikimedia.org anycast
   dhcp_server:
     name: install3004
     ip: 185.15.59.101
@@ -299,6 +306,7 @@ drmrs:
   bgp6_out:
     2a02:ec80:600::/48: BGP_aggregate_contributors  # drmrs
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
+    2a02:ec80:53::/48: BGP_from_anycast  # ns2.wikimedia.org anycast
   sampling:
     collectors:
       netflow6001: 10.136.1.22
@@ -318,6 +326,7 @@ magru:
   bgp6_out:
     2a02:ec80:700::/48: BGP_aggregate_contributors  # magru
     2001:67c:930::/48: BGP_from_anycast  # Wikidough Anycast v6
+    2a02:ec80:53::/48: BGP_from_anycast  # ns2.wikimedia.org anycast
   sampling:
     collectors:
       netflow7002: 10.140.2.6
