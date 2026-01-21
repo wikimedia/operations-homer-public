@@ -16,6 +16,29 @@ prefix-set:
       - ip-prefix: "2620:0:861:130::/64"
         mask-length-range: 128..128
 
+  - name: kubernetes-ipv4
+    prefix:
+      - ip-prefix: 10.64.72.0/24
+        mask-length-range: 26..26
+      - ip-prefix: 10.67.128.0/17
+        mask-length-range: 26..26
+      - ip-prefix: 10.192.72.0/24
+        mask-length-range: 26..26
+      - ip-prefix: 10.194.128.0/17
+        mask-length-range: 26..26
+
+  - name: kubernetes-ipv6
+    prefix:
+      - ip-prefix: '2620:0:860:cabe::/64'
+        mask-length-range: 122..122
+      - ip-prefix: '2620:0:860:cabf::/64'
+        mask-length-range: 122..122
+      - ip-prefix: '2620:0:861:cabe::/64'
+        mask-length-range: 122..122
+      - ip-prefix: '2620:0:861:cabf::/64'
+        mask-length-range: 122..122
+
+
 community-set:
   - name: GRACEFUL_SHUTDOWN
     member: ["65535:0"]
@@ -113,3 +136,19 @@ policy:
           bgp:
             local-preference:
               set: 350
+
+  - name: k8s4_in
+    default-action:
+      policy-result: reject
+    statement:
+      - name: k8s_prefixes
+        match:
+          prefix-set: kubernetes-ipv4
+
+  - name: k8s6_in
+    default-action:
+      policy-result: reject
+    statement:
+      - name: k8s_prefixes
+        match:
+          prefix-set: kubernetes-ipv6

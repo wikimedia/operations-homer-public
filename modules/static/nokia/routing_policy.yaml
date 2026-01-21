@@ -3,18 +3,44 @@ prefix-set:
     prefix:
       - ip-prefix: "0.0.0.0/0"
         mask-length-range: 32..32
+
   - name: no_host_routes6
     prefix:
       - ip-prefix: "::/0"
         mask-length-range: 128..128
+
   - name: overlay_loopback4
     prefix:
       - ip-prefix: "10.64.168.0/24"
         mask-length-range: 32..32
+
   - name: overlay_loopback6
     prefix:
       - ip-prefix: "2620:0:861:130::/64"
         mask-length-range: 128..128
+
+  - name: kubernetes-ipv4
+    prefix:
+      - ip-prefix: 10.64.72.0/24
+        mask-length-range: 26..26
+      - ip-prefix: 10.67.128.0/17
+        mask-length-range: 26..26
+      - ip-prefix: 10.192.72.0/24
+        mask-length-range: 26..26
+      - ip-prefix: 10.194.128.0/17
+        mask-length-range: 26..26
+
+  - name: kubernetes-ipv6
+    prefix:
+      - ip-prefix: '2620:0:860:cabe::/64'
+        mask-length-range: 122..122
+      - ip-prefix: '2620:0:860:cabf::/64'
+        mask-length-range: 122..122
+      - ip-prefix: '2620:0:861:cabe::/64'
+        mask-length-range: 122..122
+      - ip-prefix: '2620:0:861:cabf::/64'
+        mask-length-range: 122..122
+
 
 community-set:
   - name: GRACEFUL_SHUTDOWN
@@ -117,3 +143,22 @@ policy:
           bgp:
             local-preference:
               set: 350
+
+  - name: k8s4_in
+    default-action:
+      policy-result: reject
+    statement:
+      - name: k8s_prefixes
+        match:
+          prefix:
+            prefix-set: kubernetes-ipv4
+
+  - name: k8s6_in
+    default-action:
+      policy-result: reject
+    statement:
+      - name: k8s_prefixes
+        match:
+          prefix:
+            prefix-set: kubernetes-ipv6
+
