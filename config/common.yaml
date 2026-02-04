@@ -173,7 +173,7 @@ users:
     uid: 2041
     class: wmf-ro
     sshkeys:
-      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMjoabk/8RwY48ExL+TuZHUz466v8yluAuxZhSCO9pmp"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPKOcE4nDmVZiJBqTCCEIEfmJn9YLf1Sb/h4l2rQf6Di astein@wikimedia.org"
 # yamllint enable rule:line-length
 # When adding a new user, please make sure to update the "next available UID"
 # comment at the beginning of the users block
