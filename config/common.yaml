@@ -63,7 +63,7 @@ users:
     uid: 2016
     class: super-user
     sshkeys:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKODQ/AENdGWaAzpp8S7bLVRf0w3mtPSb7X+Y9e7YUoM1KVsRTzAcnJ7PTPtKyo3dF2LoXdT4tWGSbx6NDb3K8Omv1eaohGeLw01UyrUdGP4Vqm8F1IDARWL7bd0AWcy3+VY3fwv2Z1LzRCn9tHGOe+EFEpRj+ZxvpQqaN3aS8I2wrHGdDavCv33hF2/evRl95rpIzDiy7ArPUoPOlO85b9hJ8XObROb+C5W/3dtduuiBHLv8TBgVHMZhJTRhnyc8JyqLf3GfH9SM1LLletnkf2jDa3pplGQam1yRSZXhb9XwQOyZlWP7WqNkC+o6pslcfNV9/XlgFVGQe+O4j48Ij bb@y51"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPZtRQLd8irAKUoVpuswkf6VpNWqUJHZEvTfEETzcfsA bblack"
   - name: elukey
     uid: 2021
     class: super-user
