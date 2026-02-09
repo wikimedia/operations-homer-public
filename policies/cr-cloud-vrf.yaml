@@ -37,11 +37,6 @@ filters:
         protocol: tcp
         destination-port: WEB
         action: accept
-      - name: gerrit
-        destination-address: gerrit.wikimedia.org
-        protocol: tcp
-        destination-port: WEB gerritSSH
-        action: accept
       - name: NFS
         comment: |-
           To be removed with T216422
