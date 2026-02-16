@@ -49,11 +49,6 @@ anycast_prefixes:
 # When adding a new user, please make sure to update "next available UID" above
 # yamllint disable rule:line-length
 users:
-  - name: akosiaris
-    uid: 2013
-    class: super-user
-    sshkeys:
-      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOaQh65Vz3lIjtSnFC08NUg1VL1nH0FThYv+La2xxuI1 akosiaris"
   - name: ayounsi
     uid: 2023
     class: super-user
