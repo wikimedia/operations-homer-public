@@ -314,7 +314,7 @@ drmrs:
   dhcp_server:
     name: install6003
     ip: 185.15.58.7
-  prepend_as_out: false
+  prepend_as_out: true
 
 magru:
   confed: 65007
