@@ -206,6 +206,14 @@ cr4-ulsfo.wikimedia.org:
       sw_mr:
         mr1-ulsfo: {4: 198.35.26.201, 6: 2620:0:863:fe06::2}
 
+asw1-22-ulsfo.mgmt.ulsfo.wmnet:
+  config:
+    asn: 4265004001
+
+asw1-23-ulsfo.mgmt.ulsfo.wmnet:
+  config:
+    asn: 4265004002
+
 cr1-esams.wikimedia.org:
   config:
     mgmt_ip: [10.80.128.2/17, 10.80.128.4/17]
