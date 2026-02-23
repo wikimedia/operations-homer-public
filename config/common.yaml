@@ -419,25 +419,31 @@ transit_providers:
 
 bgp_group_data:
   k8s:
+    local_as: 14907
     asns:
       eqiad: 64601
       codfw: 64602
   k8s-stage:
+    local_as: 14907
     asns:
       eqiad: 64603
       codfw: 64604
   k8s-mlserve:
+    local_as: 14907
     asns:
       eqiad: 64606
       codfw: 64607
   k8s-mlstaging:
+    local_as: 14907
     asns:
       codfw: 64608
   k8s-dse:
+    local_as: 14907
     asns:
       eqiad: 64609
       codfw: 64613
   k8s-aux:
+    local_as: 14907
     asns:
       eqiad: 64610
       codfw: 64611

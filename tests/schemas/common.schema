@@ -201,7 +201,8 @@
             },
             "additionalProperties": false
           },
-          "BFD": { "type": "boolean" }
+          "BFD": { "type": "boolean" },
+          "local_as": { "type": "integer" }
         },
         "required": ["asns"],
         "additionalProperties": false

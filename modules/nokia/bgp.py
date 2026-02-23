@@ -111,6 +111,7 @@ class SrlBgp(BaseNokiaRpc):
         bgp_group_name: str,
         address_fams: list[str],
         peer_as: Optional[int] = None,
+        local_as: Optional[int] = None,
         import_pol: str = "NONE",
         export_pol: str = "NONE",
     ) -> dict[str, Any]:
@@ -123,6 +124,8 @@ class SrlBgp(BaseNokiaRpc):
         }
         if peer_as:
             group_config["peer-as"] = peer_as
+        if local_as:
+            group_config["local-as"] = {"as-number": local_as}
         for address_fam in address_fams:
             group_config["afi-safi"].append(
                 {"afi-safi-name": address_fam, "admin-state": "enable"}
@@ -248,6 +251,7 @@ class SrlBgp(BaseNokiaRpc):
                         export_pol=export_pol,
                         address_fams=afi_safis,
                         peer_as=group_peer_as,
+                        local_as=group_data.get("local_as", None),
                     )
                 )
 
