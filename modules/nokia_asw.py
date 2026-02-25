@@ -39,8 +39,11 @@ class AccessSwitches:
             if address["family"]["value"] == 4:
                 data["router_id"] = str(ip_interface(address["address"]).ip)
                 break
-
-        data["evpn"] = data["netbox"]["device_plugin"]["ibgp_config"]["evpn"]
+        data["evpn"] = data["netbox"]["device_plugin"]["ibgp_config"].get("evpn", False)
+        # Use the iBGP config asn in priority and default to the yaml defined one if not present
+        data["asn"] = data["netbox"]["device_plugin"]["ibgp_config"].get(
+            "asn", data["asn"]
+        )
         # Compile the vlans and vrfs we need to configure, plus member interfaces
         data["vlans"], data["vrfs"] = get_required_instances(data)
         # Lists to store the names of polices we use, which we can use in routing_policy to only add what we use

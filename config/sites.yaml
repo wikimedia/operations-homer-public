@@ -250,6 +250,7 @@ ulsfo:
     - et-0/0/1.1211
     - et-0/0/1.1221
   prepend_as_out: false
+  srlinux_version: 25.10.2
 
 eqsin:
   confed: 65005

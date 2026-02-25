@@ -25,17 +25,19 @@ class SrlBgp(BaseNokiaRpc):
     def _get_instance_bgp_conf(self, vrf_name: str, vrf_data: dict) -> dict:
         """Generates the full BGP config for a given network instance"""
         ibgp_data = self._data["netbox"]["device_plugin"]["ibgp_config"]
-        bgp_config = self._get_base_bgp_config(ibgp_data)
+        bgp_config = self._get_base_bgp_config()
 
         # IBGP config is only in the default network instance
         if vrf_name == "default":
             ibgp_groups = (
-                ["ibgp_evpn"] if ibgp_data["evpn"] else ["ibgp_ipv4", "ibgp_ipv6"]
+                ["ibgp_evpn"]
+                if ibgp_data.get("evpn", False)
+                else ["ibgp_ipv4", "ibgp_ipv6"]
             )
             for group in ibgp_groups:
                 address_fams = (
                     ["evpn"]
-                    if ibgp_data["evpn"]
+                    if ibgp_data.get("evpn", False)
                     else [f"{group.split('_')[-1]}-unicast"]
                 )
                 # TODO - get the policy names for the group, add them to _data["required_items"]
@@ -45,11 +47,11 @@ class SrlBgp(BaseNokiaRpc):
                         import_pol="ALL",
                         export_pol="ALL",
                         address_fams=address_fams,
-                        peer_as=ibgp_data["asn"],
+                        peer_as=self._data["asn"],
                     )
                 )
                 bgp_config["neighbor"].extend(self._get_ibgp_neighbors(ibgp_data))
-            if ibgp_data["rr"]:
+            if ibgp_data.get("rr", False):
                 bgp_config["route-reflector"] = {"cluster-id": self._data["router_id"]}
 
         ebgp_groups, ebgp_neighbors = self._get_ebgp_conf(vrf_name, vrf_data)
@@ -95,11 +97,11 @@ class SrlBgp(BaseNokiaRpc):
 
         return bgp_config
 
-    def _get_base_bgp_config(self, ibgp_data: dict) -> dict:
+    def _get_base_bgp_config(self) -> dict:
         """Gets the basic dict structure for the BGP part of a net instance config"""
         return {
             "router-id": self._data["router_id"],
-            "autonomous-system": ibgp_data["asn"],
+            "autonomous-system": self._data["asn"],
             "failure-detection": {"fast-failover": True},
             "afi-safi": [],
             "group": [],
@@ -139,7 +141,7 @@ class SrlBgp(BaseNokiaRpc):
         """Parse ibgp_data from the wmf_plugin and build up the neighbor configs by running _get_bgp_neighbors()
         with the correct vars"""
         ibgp_neighbors = []
-        for peer_name, peer_data in ibgp_data["peers"].items():
+        for peer_name, peer_data in ibgp_data.get("peers", {}).items():
             for ip_version, ip_address in peer_data["addresses"].items():
                 peer_group = (
                     "ibgp_evpn" if ibgp_data["evpn"] else f"ibgp_ipv{ip_version}"

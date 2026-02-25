@@ -11,11 +11,13 @@ class SrlOspf(BaseNokiaRpc):
 
     def srl_ospf(self) -> Iterator[NokiaRpc]:
         ibgp_config = self._data["netbox"]["device_plugin"]["ibgp_config"]
+        if "ospf_ints" not in ibgp_config:
+            return
         ospf: dict[str, list[dict]] = {"instance": []}
 
         ospf_interfaces = []
         # Add the required interfaces
-        for int_name in ibgp_config["ospf_ints"]:
+        for int_name in ibgp_config.get("ospf_ints", []):
             int_conf: dict[str, Any] = {"interface-name": f"{int_name}.0"}
             if int_name == "system0":
                 int_conf["passive"] = True
