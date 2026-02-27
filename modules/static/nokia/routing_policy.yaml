@@ -152,6 +152,8 @@ policy:
         match:
           prefix:
             prefix-set: kubernetes-ipv4
+        action:
+          policy-result: accept
 
   - name: k8s6_in
     default-action:
@@ -161,4 +163,6 @@ policy:
         match:
           prefix:
             prefix-set: kubernetes-ipv6
+        action:
+          policy-result: accept
 
