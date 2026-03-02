@@ -125,7 +125,10 @@ class SrlBgp(BaseNokiaRpc):
         if peer_as:
             group_config["peer-as"] = peer_as
         if local_as:
-            group_config["local-as"] = {"as-number": local_as}
+            group_config["local-as"] = {
+                "as-number": local_as,
+                "prepend-local-as": False,
+            }
         for address_fam in address_fams:
             group_config["afi-safi"].append(
                 {"afi-safi-name": address_fam, "admin-state": "enable"}
