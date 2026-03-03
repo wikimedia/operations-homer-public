@@ -209,6 +209,14 @@ cr4-ulsfo.wikimedia.org:
 asw1-22-ulsfo.mgmt.ulsfo.wmnet:
   config:
     asn: 4265004001
+    capirca:
+      - srl-common-loopback
+    device_bgp:
+      sw_mr:
+        mr1-ulsfo: {4: 10.128.127.3, 6: 2620:0:863:fe05::2}
+      sw_external:
+        cr3-ulsfo: {4: 198.35.26.142, 6: 2620:0:863:fe03::1}
+        cr4-ulsfo: {4: 198.35.26.146, 6: 2620:0:863:fe0a::1}
 
 asw1-23-ulsfo.mgmt.ulsfo.wmnet:
   config:
