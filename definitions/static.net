@@ -85,8 +85,10 @@ text-lb.eqiad = 208.80.154.224 # text-lb.eqiad
 upload-lb.eqiad = 208.80.154.240 # upload-lb.eqiad
 text-lb.codfw = 208.80.153.224 # text-lb.codfw
 upload-lb.codfw = 208.80.153.240 # upload-lb.codfw
-text-lb.ulsfo = 198.35.26.96 # text-lb.ulsfo
-upload-lb.ulsfo = 198.35.26.112 # upload-lb.ulsfo
+text-lb.ulsfo = 198.35.26.96 # text-lb.ulsfo - old
+                198.35.26.224 # text-lb.ulsfo
+upload-lb.ulsfo = 198.35.26.112 # upload-lb.ulsfo - old
+                  198.35.26.240 # upload-lb.ulsfo
 text-lb.esams = 185.15.59.224 # text-lb.esams
 upload-lb.esams = 185.15.59.240 # upload-lb.esams
 text-lb.eqsin = 103.102.166.224 # text-lb.eqsin
