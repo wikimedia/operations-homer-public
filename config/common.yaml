@@ -124,6 +124,7 @@ users:
     class: super-user
     sshkeys:
       - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKdVgbQxt3Bfx8g6/irDLpr27gPI/YI57+swSnl0DRgt cmooney_prod@wikilap"
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFQETqt4PL+u/TIUBMgg1At2Ab1PhXBQK0AYy1GFEW4E temp_network@macbook"
   - name: jayme
     uid: 2033
     class: wmf-ro
