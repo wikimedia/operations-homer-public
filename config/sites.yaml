@@ -251,6 +251,8 @@ ulsfo:
     - et-0/0/1.1221
   prepend_as_out: false
   srlinux_version: 25.10.2
+  customers:
+    - 64612  # Ganeti
 
 eqsin:
   confed: 65005
