@@ -138,6 +138,14 @@ filters:
         destination-address: dbproxy_group
         destination-port: mySQL
         action: accept
+      - name: clouddev-ldap
+        comment: |-
+          Return traffic for connections to the codfw1dev LDAP directory
+          hosted on cloudservices-dev nodes.
+        protocol: tcp
+        source-port: LDAP LDAPS
+        source-address: cloudservices-dev_group
+        destination-address: cloudidp-dev_group
         action: accept
       - name: allow_ok_icmp4
         protocol: icmp
