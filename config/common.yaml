@@ -438,7 +438,7 @@ bgp_group_data:
     local_as: 14907
     asns:
       codfw: 64608
-  k8s-dse:
+  k8s_dse:
     local_as: 14907
     asns:
       eqiad: 64609
