@@ -41,6 +41,20 @@ prefix-set:
       - ip-prefix: '2620:0:861:cabf::/64'
         mask-length-range: 122..122
 
+  - name: k8s_dse-ipv4
+    prefix:
+      - ip-prefix: "10.67.24.0/21"
+        mask-length-range: 26..26
+      - ip-prefix: "10.192.96.0/21"
+        mask-length-range: 26..26
+
+  - name: k8s_dse-ipv6
+    prefix:
+      - ip-prefix: "2620:0:861:302::/64"
+        mask-length-range: 122..122
+      - ip-prefix: "2620:0:860:308::/64"
+        mask-length-range: 122..122
+
 
 community-set:
   - name: GRACEFUL_SHUTDOWN
@@ -166,3 +180,24 @@ policy:
         action:
           policy-result: accept
 
+  - name: k8s_dse4_in
+    default-action:
+      policy-result: reject
+    statement:
+      - name: k8s_dse_prefixes
+        match:
+          prefix:
+            prefix-set: k8s_dse-ipv4
+        action:
+          policy-result: accept
+
+  - name: k8s_dse6_in
+    default-action:
+      policy-result: reject
+    statement:
+      - name: k8s_dse_prefixes
+        match:
+          prefix:
+            prefix-set: k8s_dse-ipv6
+        action:
+          policy-result: accept
