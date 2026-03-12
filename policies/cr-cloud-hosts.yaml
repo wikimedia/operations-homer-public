@@ -39,7 +39,7 @@ filters:
         destination-port: NTP
         action: accept
       - name: puppet-infrastructure
-        destination-address: puppetmaster_group puppetserver_group
+        destination-address: puppetserver_group
         protocol: tcp
         destination-port: puppet
         action: accept
