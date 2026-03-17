@@ -102,6 +102,10 @@ upload-lb.magru = 195.200.68.240 # upload-lb.magru
 
 # Workaround an Aerleon bug where groups don't work
 # Temporarily until converted to the yaml format
-ns_group = 208.80.154.238 # ns0
-           208.80.153.231 # ns1
-           198.35.27.27 # nsa
+# From authdns_addrs in hieradata/common.yaml
+ns_group = 208.80.154.238   # ns0 v4
+           2620:0:861:53::1 # ns0 v6
+           208.80.153.231   # ns1 v4
+           2620:0:860:53::1 # ns1 v6
+           198.35.27.27     # nsa v4
+           2a02:ec80:53::1  # nsa v6
