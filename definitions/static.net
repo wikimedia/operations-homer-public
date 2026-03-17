@@ -19,11 +19,6 @@ gerrit.wikimedia.org = 208.80.154.151 # gerrit.wikimedia.org (eqiad)
                        208.80.153.104 # gerrit.wikimedia.org (codfw)
                        2620:0:860:4:208:80:153:104 # gerrit.wikimedia.org (codfw)
 
-openstack.eqiad1.wikimediacloud.org    = 185.15.56.161
-                                         2a02:ec80:a000:4000::1
-openstack.codfw1dev.wikimediacloud.org = 185.15.57.24
-                                         2a02:ec80:a100:4000::1
-
 
 #
 # Subnets
