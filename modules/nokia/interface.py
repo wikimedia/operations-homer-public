@@ -229,7 +229,9 @@ def get_srl_routed_subint(index, int_data: dict, data: dict) -> dict:
     # Check based on roles set on the interface IPs if this is anycast gw
     anycast_gw = ""
     if any(int_addr["role"] == "anycast" for int_addr in int_data["ip_addresses"]):
-        subint["anycast-gw"] = {}
+        # Set static MAC to avoid potential clash with VRRP MAC on same subnet during migrations
+        vid = f"{index:04d}"
+        subint["anycast-gw"] = {"anycast-gw-mac": f"12:00:00:00:{vid[:2]}:{vid[2:]}"}
         if any(int_addr["role"] != "anycast" for int_addr in int_data["ip_addresses"]):
             anycast_gw = "dual"
         else:
