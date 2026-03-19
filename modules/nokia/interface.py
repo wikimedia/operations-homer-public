@@ -245,30 +245,32 @@ def get_srl_routed_subint(index, int_data: dict, data: dict) -> dict:
             if int_data["name"].startswith("irb"):
                 if data["evpn"]:
                     subint[address_fam].update(get_irb_evpn_conf(address_fam))
-                if int_data["description"].startswith(
-                    ("public", "private", "analytics")
-                ):
-                    if address_fam == "ipv4" and int_addr["role"] != "anycast":
-                        subint[address_fam]["dhcp-relay"] = {
-                            "gi-address": int_addr["address"].split("/")[0],
-                            "use-gi-addr-as-src-ip-addr": True,
-                            "network-instance": data["loopbacks"]["external"]["vrf"],
-                            "option": ["circuit-id"],
-                            "server": [data["dhcp_server"]["ip"].compressed],
-                        }
-                    if (
-                        address_fam == "ipv6"
-                        and "router-advertisement" not in subint[address_fam]
-                    ):
-                        prefix = ip_interface(int_addr["address"]).network
-                        subint[address_fam]["router-advertisement"] = {
-                            "router-role": {
-                                "admin-state": "enable",
-                                "min-advertisement-interval": 30,
-                                "router-lifetime": 600,
-                                "prefix": [{"ipv6-prefix": prefix.with_prefixlen}],
-                            }
-                        }
+
+        # DHCP Relay and IPv6 RA generation needs to be applied for certain vlan sub-ints
+        if int_data["name"].startswith("irb") and int_data["description"].startswith(
+            ("public", "private", "analytics")
+        ):
+            if address_fam == "ipv4" and int_addr["role"] != "anycast":
+                subint[address_fam]["dhcp-relay"] = {
+                    "gi-address": int_addr["address"].split("/")[0],
+                    "use-gi-addr-as-src-ip-addr": True,
+                    "network-instance": data["loopbacks"]["external"]["vrf"],
+                    "option": ["circuit-id"],
+                    "server": [data["dhcp_server"]["ip"].compressed],
+                }
+            if (
+                address_fam == "ipv6"
+                and "router-advertisement" not in subint[address_fam]
+            ):
+                prefix = ip_interface(int_addr["address"]).network
+                subint[address_fam]["router-advertisement"] = {
+                    "router-role": {
+                        "admin-state": "enable",
+                        "min-advertisement-interval": 30,
+                        "router-lifetime": 600,
+                        "prefix": [{"ipv6-prefix": prefix.with_prefixlen}],
+                    }
+                }
 
         # Now add the current IP to the address fam block for this subint
         subint[address_fam]["address"].append({"ip-prefix": int_addr["address"]})
