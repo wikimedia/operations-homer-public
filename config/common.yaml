@@ -442,7 +442,7 @@ bgp_group_data:
     asns:
       eqiad: 64609
       codfw: 64613
-  k8s-aux:
+  k8s_aux:
     local_as: 14907
     asns:
       eqiad: 64610
