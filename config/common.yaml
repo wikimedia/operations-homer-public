@@ -225,16 +225,9 @@ ospf:
       cr2-magru.wikimedia.org: et-0/0/0.0
 
   stub:
-    mr1-ulsfo.wikimedia.org:
-      - irb.900
-    mr1-eqsin.wikimedia.org:
-      - irb.900
     mr1-eqiad.wikimedia.org:
       - ge-0/0/2.0
       - ge-0/0/0.0
-    mr1-esams-old.wikimedia.org:
-      - ge-0/0/6.2483
-      - irb.900
     cr3-ulsfo.wikimedia.org:
       - et-0/0/1.1201
       - et-0/0/1.1211
