@@ -1,4 +1,12 @@
 prefix-set:
+  - name: default-ipv4
+    prefix:
+      - ip-prefix: "0.0.0.0/0"
+
+  - name: default-ipv6
+    prefix:
+      - ip-prefix: "::/0"
+
   - name: no_host_routes4
     prefix:
       - ip-prefix: "0.0.0.0/0"
@@ -68,6 +76,122 @@ prefix-set:
         mask-length-range: 122..122
       - ip-prefix: "2620:0:860:305::/64"
         mask-length-range: 122..122
+
+  - name: anycast-ipv4
+    prefix:
+      - ip-prefix: "10.3.0.0/24"
+        mask-length-range: 32..32
+      - ip-prefix: "198.35.27.0/24"
+        mask-length-range: 32..32
+      - ip-prefix: "208.80.153.231/32"
+        mask-length-range: 32..32
+      - ip-prefix: "208.80.154.238/32"
+        mask-length-range: 32..32
+
+  - name: anycast-ipv6
+    prefix:
+      - ip-prefix: "2001:67c:930::/48"
+        mask-length-range: 128..128
+      - ip-prefix: "2a02:ec80:ff00:101::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2620:0:860:53::1/128"
+        mask-length-range: 128..128
+      - ip-prefix: "2620:0:861:53::1/128"
+        mask-length-range: 128..128
+      - ip-prefix: "2a02:ec80:53::1/128"
+        mask-length-range: 128..128
+
+  - name: ganeti-ipv4
+    prefix:
+      - ip-prefix: "10.80.2.0/24"
+        mask-length-range: 32..32
+      - ip-prefix: "10.128.2.0/24"
+        mask-length-range: 32..32
+      - ip-prefix: "10.140.2.0/24"
+        mask-length-range: 32..32
+      - ip-prefix: "10.192.24.0/23"
+        mask-length-range: 32..32
+      - ip-prefix: "185.15.59.72/29"
+        mask-length-range: 32..32
+      - ip-prefix: "185.15.59.96/27"
+        mask-length-range: 32..32
+      - ip-prefix: "195.200.68.64/29"
+        mask-length-range: 32..32
+      - ip-prefix: "195.200.68.96/27"
+        mask-length-range: 32..32
+      - ip-prefix: "198.35.26.96/27"
+        mask-length-range: 32..32
+      - ip-prefix: "208.80.152.128/27"
+        mask-length-range: 32..32
+
+
+  - name: ganeti-ipv6
+    prefix:
+      - ip-prefix: "2620:0:860:5::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2620:0:860:140::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2620:0:863:3::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2620:0:863:103::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2a02:ec80:300:3::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2a02:ec80:300:103::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2a02:ec80:300:202::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2a02:ec80:700:3::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2a02:ec80:700:103::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2a02:ec80:700:201::/64"
+        mask-length-range: 128..128
+
+  - name: pybal
+    prefix:
+      - ip-prefix: "10.2.1.0/24"
+        mask-length-range: 32..32
+      - ip-prefix: "10.2.2.0/24"
+        mask-length-range: 32..32
+      - ip-prefix: "10.2.3.0/24"
+        mask-length-range: 32..32
+      - ip-prefix: "10.2.4.0/24"
+        mask-length-range: 32..32
+      - ip-prefix: "10.2.5.0/24"
+        mask-length-range: 32..32
+      - ip-prefix: "10.2.6.0/24"
+        mask-length-range: 32..32
+      - ip-prefix: "10.2.7.0/24"
+        mask-length-range: 32..32
+      - ip-prefix: "103.102.166.224/27"
+        mask-length-range: 32..32
+      - ip-prefix: "185.15.58.224/27"
+        mask-length-range: 32..32
+      - ip-prefix: "185.15.59.224/27"
+        mask-length-range: 32..32
+      - ip-prefix: "195.200.68.224/27"
+        mask-length-range: 32..32
+      - ip-prefix: "198.35.26.224/27"
+        mask-length-range: 32..32
+      - ip-prefix: "208.80.153.224/27"
+        mask-length-range: 32..32
+      - ip-prefix: "208.80.154.224/27"
+        mask-length-range: 32..32
+      - ip-prefix: "2001:df2:e500:ed1a::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2620:0:860:ed1a::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2620:0:861:ed1a::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2620:0:863:ed1a::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2a02:ec80:300:ed1a::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2a02:ec80:600:ed1a::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2a02:ec80:700:ed1a::/64"
+        mask-length-range: 128..128
 
 community-set:
   - name: GRACEFUL_SHUTDOWN
@@ -236,3 +360,116 @@ policy:
             prefix-set: k8s_aux-ipv6
         action:
           policy-result: accept
+
+  - name: anycast4_in
+    default-action:
+      policy-result: reject
+    statement:
+      - name: anycast_prefixes
+        match:
+          prefix:
+            prefix-set: anycast-ipv4
+        action:
+          policy-result: accept
+
+  - name: anycast6_in
+    default-action:
+      policy-result: reject
+    statement:
+      - name: anycast_prefixes
+        match:
+          prefix:
+            prefix-set: anycast-ipv6
+        action:
+          policy-result: accept
+
+  - name: ganeti4_in
+    default-action:
+      policy-result: reject
+    statement:
+      - name: ganeti_prefixes
+        match:
+          prefix:
+            prefix-set: ganeti-ipv4
+        action:
+          policy-result: accept
+
+  - name: ganeti6_in
+    default-action:
+      policy-result: reject
+    statement:
+      - name: ganeti_prefixes
+        match:
+          prefix:
+            prefix-set: ganeti-ipv6
+        action:
+          policy-result: accept
+
+  - name: sw_mr4_in
+    default-action:
+      policy-result: accept
+
+  - name: sw_mr6_in
+    default-action:
+      policy-result: accept
+
+  - name: sw_mr4_out
+    default-action:
+      policy-result: reject
+    statement:
+      - name: default
+        match:
+          prefix:
+            prefix-set: default-ipv4
+        action:
+          policy-result: accept
+
+  - name: sw_mr6_out
+    default-action:
+      policy-result: reject
+    statement:
+      - name: default
+        match:
+          prefix:
+            prefix-set: default-ipv6
+        action:
+          policy-result: accept
+
+  - name: pybal_in
+    default-action:
+      policy-result: reject
+    statement:
+      - name: localpref_avoid
+        match:
+          bgp:
+            community-set: AVOIDED_PATH
+        action:
+          bgp:
+            local-preference:
+              set: 50
+      - name: localpref_backup
+        match:
+          bgp:
+            community-set: BACKUP_PATH
+        action:
+          bgp:
+            local-preference:
+              set: 70
+      - name: localpref_prefer
+        match:
+          bgp:
+            community-set: SELECTED_PATH
+        action:
+          bgp:
+            local-preference:
+              set: 350
+      - name: pybal_prefixes
+        match:
+          prefix:
+            prefix-set: pybal
+        action:
+          policy-result: accept
+
+
+# TODO: CORE IN duplicated of evpn_external_in
+#       CORE OUT
