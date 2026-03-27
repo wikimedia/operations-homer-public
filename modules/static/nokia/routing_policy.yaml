@@ -2,10 +2,12 @@ prefix-set:
   - name: default-ipv4
     prefix:
       - ip-prefix: "0.0.0.0/0"
+        mask-length-range: 0..0
 
   - name: default-ipv6
     prefix:
       - ip-prefix: "::/0"
+        mask-length-range: 0..0
 
   - name: no_host_routes4
     prefix:
