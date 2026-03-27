@@ -297,6 +297,47 @@ policy:
             local-preference:
               set: 350
 
+  - name: sw_external_out
+    default-action:
+      policy-result: accept
+
+  - name: sw_external_in
+    default-action:
+      policy-result: accept
+    statement:
+      - name: graceful_shutdown
+        match:
+          bgp:
+            community-set: GRACEFUL_SHUTDOWN
+        action:
+          bgp:
+            local-preference:
+              set: 0
+      - name: localpref_avoid
+        match:
+          bgp:
+            community-set: AVOIDED_PATH
+        action:
+          bgp:
+            local-preference:
+              set: 50
+      - name: localpref_backup
+        match:
+          bgp:
+            community-set: BACKUP_PATH
+        action:
+          bgp:
+            local-preference:
+              set: 70
+      - name: localpref_prefer
+        match:
+          bgp:
+            community-set: SELECTED_PATH
+        action:
+          bgp:
+            local-preference:
+              set: 350
+
   - name: k8s4_in
     default-action:
       policy-result: reject
@@ -471,7 +512,3 @@ policy:
             prefix-set: pybal
         action:
           policy-result: accept
-
-
-# TODO: CORE IN duplicated of evpn_external_in
-#       CORE OUT
