@@ -1023,6 +1023,16 @@ mr1-eqsin.wikimedia.org:
       mr_sw:
         cr2-eqsin: {4: 103.102.166.142, 6: 2001:df2:e500:fe04::1, peer_as: 14907}
         cr3-eqsin: {4: 103.102.166.132, 6: 2001:df2:e500:fe03::1, peer_as: 14907}
+    security_zones:
+      - name: production
+        services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3', 'bgp']
+        interfaces: ['lo0.0', 'ge-0/0/4.401', 'ge-0/0/4.402']
+      - name: untrust
+        services: ['ssh', 'ping', 'traceroute']
+        interfaces: ['ge-0/0/0.0']
+      - name: mgmt
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
+        interfaces: ['irb.900']
 
 msw1-codfw.mgmt.codfw.wmnet:
   config:
@@ -1035,22 +1045,20 @@ mr1-ulsfo.wikimedia.org:
       mr_sw:
         cr3-ulsfo: {4: 198.35.26.198, 6: 2620:0:863:fe05::1, peer_as: 14907}
         cr4-ulsfo: {4: 198.35.26.200, 6: 2620:0:863:fe06::1, peer_as: 14907}
+    security_zones:
+      - name: production
+        services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3', 'bgp']
+        interfaces: ['lo0.0', 'ge-0/0/4.401', 'ge-0/0/4.402']
+      - name: untrust
+        services: ['ssh', 'ping', 'traceroute']
+        interfaces: ['ge-0/0/0.0']
+      - name: mgmt
+        services: ['ssh', 'ping', 'traceroute', 'dhcp']
+        interfaces: ['irb.900']
 
 mr1-esams.wikimedia.org:
   timeout: 120
   config:
-    security_zones:
-      - name: production
-        services: ['ssh', 'ping', 'traceroute', 'snmp', 'bgp']
-        interfaces: ['lo0.0', 'ge-0/0/3', 'ge-0/0/4']
-      - name: untrust
-        services: ['ssh', 'ping', 'traceroute']
-        interfaces: ['ge-0/0/7']
-      - name: mgmt
-        services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: ['irb.900']
-    capirca:
-      - mr-security-policies
     device_bgp:
       mr_sw:
         asw1-bw27-esams: {4: 10.80.127.2, 6: 2a02:ec80:300:fe02::2, peer_as: 4265003001}
@@ -1059,18 +1067,6 @@ mr1-esams.wikimedia.org:
 mr1-drmrs.wikimedia.org:
   timeout: 120
   config:
-    security_zones:
-      - name: production
-        services: ['ssh', 'ping', 'traceroute', 'snmp', 'bgp']
-        interfaces: ['lo0.0', 'ge-0/0/3', 'ge-0/0/4']
-      - name: untrust
-        services: ['ssh', 'ping', 'traceroute']
-        interfaces: ['ge-0/0/7']
-      - name: mgmt
-        services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: ['irb.900']
-    capirca:
-      - mr-security-policies
     device_bgp:
       mr_sw:
         asw1-b12-drmrs: {4: 10.136.127.2, 6: 2a02:ec80:600:fe02::2, peer_as: 4265006001}
@@ -1151,18 +1147,6 @@ cr2-magru.wikimedia.org:
 mr1-magru.wikimedia.org:
   timeout: 120
   config:
-    security_zones:
-      - name: production
-        services: ['ssh', 'ping', 'traceroute', 'snmp', 'bgp']
-        interfaces: ['lo0.0', 'ge-0/0/3', 'ge-0/0/4']
-      - name: untrust
-        services: ['ssh', 'ping', 'traceroute']
-        interfaces: ['ge-0/0/7']
-      - name: mgmt
-        services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: ['irb.900']
-    capirca:
-      - mr-security-policies
     device_bgp:
       mr_sw:
         asw1-b3-magru: {4: 10.140.127.2, 6: 2a02:ec80:700:fe02::2, peer_as: 4265007001}

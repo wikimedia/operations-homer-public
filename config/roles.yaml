@@ -2,11 +2,11 @@
 mr:
   security_zones:
     - name: production
-      services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3', 'bgp']
-      interfaces: ['lo0.0', 'ge-0/0/4.401', 'ge-0/0/4.402']
+      services: ['ssh', 'ping', 'traceroute', 'snmp', 'bgp']
+      interfaces: ['lo0.0', 'ge-0/0/3', 'ge-0/0/4']
     - name: untrust
       services: ['ssh', 'ping', 'traceroute']
-      interfaces: ['ge-0/0/0.0']
+      interfaces: ['ge-0/0/7']
     - name: mgmt
       services: ['ssh', 'ping', 'traceroute', 'dhcp']
       interfaces: ['irb.900']
