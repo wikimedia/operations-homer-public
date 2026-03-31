@@ -38,6 +38,8 @@ cr1-eqiad.wikimedia.org:
         ssw1-d1-eqiad: {4: 10.66.0.21, 6: 2620:0:861:fe16::2, peer_as: 64814}
         ssw1-e1-eqiad: {4: 10.66.0.9, 6: 2620:0:861:fe07::2, peer_as: 64810}
         cloudsw1-c8-eqiad: {4: 10.64.147.17, 6: 2620:0:861:fe09::2, peer_as: 64710}
+      sw_mr:
+        mr1-eqiad: {4: 208.80.154.204, 6: 2620:0:861:fe04::1}
 
 cr2-eqiad.wikimedia.org:
   config:
@@ -76,6 +78,8 @@ cr2-eqiad.wikimedia.org:
         ssw1-f1-eqiad: {4: 10.66.0.11, 6: 2620:0:861:fe08::2, peer_as: 64810}
         ssw1-d8-eqiad: {4: 10.66.0.23, 6: 2620:0:861:fe17::2, peer_as: 64814}
         cloudsw-d5-eqiad: {4: 10.64.147.15, 6: 2620:0:861:fe0a::2, peer_as: 64710}
+      sw_mr:
+        mr1-eqiad: {4: 208.80.154.206, 6: 2620:0:861:fe05::1}
 
 cr2-eqord.wikimedia.org:
   config:
@@ -985,7 +989,7 @@ mr1-eqiad.wikimedia.org:
   config:
     security_zones:
       - name: production
-        services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3']
+        services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3', 'bgp']
         interfaces: ['lo0.0', 'ge-0/0/1.401', 'ge-0/0/1.402']
       - name: untrust
         services: ['ssh', 'ping', 'traceroute']
@@ -993,6 +997,10 @@ mr1-eqiad.wikimedia.org:
       - name: mgmt
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['ge-0/0/0.0']
+    device_bgp:
+      mr_sw:
+        cr1-eqiad: {4: 208.80.154.205, 6: 2620:0:861:fe04::2, peer_as: 14907}
+        cr2-eqiad: {4: 208.80.154.207, 6: 2620:0:861:fe05::2, peer_as: 14907}
 
 msw1-eqiad.mgmt.eqiad.wmnet:
   config:
