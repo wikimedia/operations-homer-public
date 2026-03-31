@@ -19,6 +19,12 @@ prefix-list vms-ips4 {
     185.15.59.72/29;
     /* ulso */
     198.35.26.96/27;
+    /* eqsin */
+    103.102.166.96/27;
+    /* eqsin */
+    10.132.2.0/24;
+    /* eqsin - sandbox */
+    103.102.166.72/29;
 }
 prefix-list vms-ips6 {
     /* codfw */
@@ -41,6 +47,12 @@ prefix-list vms-ips6 {
     2620:0:863:103::/64;
     /* ulsfo */
     2620:0:863:3::/64;
+    /* eqsin */
+    2001:df2:e500:3::/64;
+    /* eqsin */
+    2001:df2:e500:103::/64;
+    /* eqsin - sandbox */
+    2001:df2:e500:202::/64;
 }
 policy-statement vms_import {
     term vm4 {
