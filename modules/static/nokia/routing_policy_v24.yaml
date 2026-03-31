@@ -300,6 +300,8 @@ policy:
       - name: k8s_prefixes
         match:
           prefix-set: kubernetes-ipv4
+        action:
+          policy-result: accept
 
   - name: k8s6_in
     default-action:
@@ -308,6 +310,8 @@ policy:
       - name: k8s_prefixes
         match:
           prefix-set: kubernetes-ipv6
+        action:
+          policy-result: accept
 
   - name: k8s_dse4_in
     default-action:
