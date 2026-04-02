@@ -17,13 +17,6 @@ filters:
       - name: deny-from-private
         source-address: cloud-private
         action: reject
-      - name: allow-cumin
-        comment: |-
-          Allow traffic to cloud and cloudcumin for the Openstack backend to work.
-          To be removed once cumin can use the prod proxies instead. - T419996
-        source-address: openstack.eqiad1.wikimediacloud.org openstack.codfw1dev.wikimediacloud.org
-        destination-address: cumin_group cloudcumin_group
-        action: accept
       - name: deny-to-private-subnets
         comment: |-
           Deny any communication with private subnets
