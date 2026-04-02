@@ -197,12 +197,6 @@ ospf:
       metric: 1550
     - cr1-eqiad.wikimedia.org: ae0.0
       cr2-eqiad.wikimedia.org: ae0.0
-    - cr1-eqiad.wikimedia.org: ae1.401
-      mr1-eqiad.wikimedia.org: ge-0/0/1.401
-      metric: 20000
-    - cr2-eqiad.wikimedia.org: ae1.402
-      mr1-eqiad.wikimedia.org: ge-0/0/1.402
-      metric: 20000
     - cr1-eqiad.wikimedia.org: xe-3/0/7.13
       cr2-esams.wikimedia.org: xe-0/1/5.13
       bfd: true
