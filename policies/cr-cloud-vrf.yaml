@@ -35,13 +35,6 @@ filters:
         protocol: tcp
         destination-port: WEB
         action: accept
-      - name: NFS
-        comment: |-
-          To be removed with T216422
-        destination-address: clouddumps_group
-        protocol: tcp
-        destination-port: NFS
-        action: accept
       - name: LDAP
         destination-address: ldap-ro.codfw.wikimedia.org ldap-ro.eqiad.wikimedia.org
         protocol: tcp

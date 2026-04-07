@@ -19,7 +19,6 @@ IPMITOOL = 623/udp
 LDAPS = 636/tcp
 IMAPS = 993/tcp
 POP_SSL = 995/tcp
-NFS = 2049/tcp 2049/udp
 NETFLOW = 2056/udp
 ceph_monitor = 3300/tcp
 mySQL = 3306/tcp
