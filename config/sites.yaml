@@ -276,6 +276,8 @@ eqsin:
     - ae1.530
   tcp_mss_clamping: true
   prepend_as_out: false
+  customers:
+    - 64612  # Ganeti
 
 esams:
   confed: 65003
