@@ -266,7 +266,7 @@ eqsin:
     2a02:ec80:53::/48: BGP_from_anycast  # ns2.wikimedia.org anycast
   sampling:
     collectors:
-      netflow5002: 10.132.0.15
+      netflow5003: 10.132.2.6
   dhcp_server:
     name: install5003
     ip: 103.102.166.11
