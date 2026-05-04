@@ -190,8 +190,6 @@ cr3-ulsfo.wikimedia.org:
       et-0/0/1.1221-in: sandbox
     primary_ixp: true
     device_bgp:
-      sw_mr:
-        mr1-ulsfo: {4: 198.35.26.199, 6: 2620:0:863:fe05::2}
       cr_switch:
         asw1-22-ulsfo: {4: 198.35.26.143, 6: 2620:0:863:fe03::2, peer_as: 4265004001}
         asw1-23-ulsfo: {4: 198.35.26.149, 6: 2620:0:863:fe09::2, peer_as: 4265004002}
@@ -210,11 +208,9 @@ cr4-ulsfo.wikimedia.org:
     filters:
       et-0/0/1.1221-in: sandbox
     device_bgp:
-      sw_mr:
-        mr1-ulsfo: {4: 198.35.26.201, 6: 2620:0:863:fe06::2}
       cr_switch:
         asw1-22-ulsfo: {4: 198.35.26.147, 6: 2620:0:863:fe0a::2, peer_as: 4265004001}
-        asw1-23-ulsfo: {4: 198.35.16.145, 6: 2620:0:863:fe0b::2, peer_as: 4265004002}
+        asw1-23-ulsfo: {4: 198.35.26.145, 6: 2620:0:863:fe0b::2, peer_as: 4265004002}
 
 asw1-22-ulsfo.mgmt.ulsfo.wmnet:
   config:
@@ -1065,12 +1061,12 @@ mr1-ulsfo.wikimedia.org:
   config:
     device_bgp:
       mr_sw:
-        cr3-ulsfo: {4: 198.35.26.198, 6: 2620:0:863:fe05::1, peer_as: 14907}
-        cr4-ulsfo: {4: 198.35.26.200, 6: 2620:0:863:fe06::1, peer_as: 14907}
+        asw1-22-ulsfo: {4: 10.128.127.2, 6: 2620:0:863:fe05::1, peer_as: 4265004001}
+        asw1-23-ulsfo: {4: 10.128.127.4, 6: 2620:0:863:fe06::1, peer_as: 4265004002}
     security_zones:
       - name: production
         services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3', 'bgp']
-        interfaces: ['lo0.0', 'ge-0/0/4.401', 'ge-0/0/4.402']
+        interfaces: ['lo0.0', 'ge-0/0/3.0', 'ge-0/0/4.0']
       - name: untrust
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['ge-0/0/0.0']
