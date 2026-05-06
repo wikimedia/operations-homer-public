@@ -1063,16 +1063,6 @@ mr1-ulsfo.wikimedia.org:
       mr_sw:
         asw1-22-ulsfo: {4: 10.128.127.2, 6: 2620:0:863:fe05::1, peer_as: 4265004001}
         asw1-23-ulsfo: {4: 10.128.127.4, 6: 2620:0:863:fe06::1, peer_as: 4265004002}
-    security_zones:
-      - name: production
-        services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3', 'bgp']
-        interfaces: ['lo0.0', 'ge-0/0/3.0', 'ge-0/0/4.0']
-      - name: untrust
-        services: ['ssh', 'ping', 'traceroute']
-        interfaces: ['ge-0/0/7.0']
-      - name: mgmt
-        services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: ['irb.900']
 
 mr1-esams.wikimedia.org:
   timeout: 120
