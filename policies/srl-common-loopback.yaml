@@ -16,12 +16,12 @@ filters:
         destination-port: HTTPS
         action: accept
       - name: allow_bgp_src
-        source-address: production RFC1918_10 IPV6_LL
+        source-prefix: bgp_peers
         protocol: tcp
         source-port: BGP
         action: accept
       - name: allow_bgp_dst
-        source-address: production RFC1918_10 IPV6_LL
+        source-prefix: bgp_peers
         protocol: tcp
         destination-port: BGP
         action: accept

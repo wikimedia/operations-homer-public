@@ -1,5 +1,6 @@
 """Nokia SR-Linux module for /network-instance/protocols/ospf related configuration."""
 
+import ipaddress
 from typing import Any, Iterator, Optional, Tuple
 
 from . import BaseNokiaRpc, NokiaRpc, get_static_config
@@ -10,6 +11,8 @@ class SrlBgp(BaseNokiaRpc):
 
     def srl_bgp(self) -> Iterator[NokiaRpc]:
         self._data["routing_policy_names"] = self._get_policy_names()
+        # Lists to store all the BGP peer IPs for prefix-list
+        self._data["bgp_peers"] = {4: [], 6: []}
         default_ebgp_vrf = "PRODUCTION" if self._data["evpn"] else "default"
         # BGP config is nested in the network-instance config, so we build for each
         for vrf_name, vrf_data in self._data["vrfs"].items():
@@ -21,6 +24,7 @@ class SrlBgp(BaseNokiaRpc):
                 path=f"/network-instance[name={vrf_name}]/protocols/bgp",
                 config=instance_bgp_conf,
             )
+        yield from self._bgp_peer_pfx_list()
 
     def _get_instance_bgp_conf(self, vrf_name: str, vrf_data: dict) -> dict:
         """Generates the full BGP config for a given network instance"""
@@ -170,6 +174,11 @@ class SrlBgp(BaseNokiaRpc):
                 "enable-bfd": True,
                 "fast-failover": True,
             }
+
+        # Add peer's IP to list of peer IPs for prefix-list
+        peer_ip_obj = ipaddress.ip_address(peer_ip)
+        self._data["bgp_peers"][peer_ip_obj.version].append(peer_ip)
+
         return neigh_conf
 
     def _get_ebgp_conf(self, vrf_name: str, vrf_data: dict[str, Any]) -> tuple[list, list]:
@@ -262,3 +271,17 @@ class SrlBgp(BaseNokiaRpc):
                 policies[policy_direction] = f"{bgp_group_name[:-1]}_{policy_direction}"
 
         return policies["in"], policies["out"]
+
+    def _bgp_peer_pfx_list(self):
+        """Generates ACL prefix lists with IPs of the configured BGP peers"""
+        for address_fam, peer_list in self._data["bgp_peers"].items():
+            pfx_len = 32 if address_fam == 4 else 128
+            # Add localhost IP by default to avoid ever having invalid empty list
+            localhost_ip = "127.0.0.1/32" if address_fam == 4 else "::1/128"
+            pfx_list = {"prefix": [{f"ipv{address_fam}-prefix": localhost_ip}]}
+            for peer_ip in peer_list:
+                pfx_list["prefix"].append({f"ipv{address_fam}-prefix": f"{peer_ip}/{pfx_len}"})
+            yield NokiaRpc(
+                path=f"/acl/match-list/ipv{address_fam}-prefix-list[name=bgp_peers]",
+                config=pfx_list,
+            )
