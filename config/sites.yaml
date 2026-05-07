@@ -268,8 +268,8 @@ eqsin:
     collectors:
       netflow5003: 10.132.2.6
   dhcp_server:
-    name: install5003
-    ip: 103.102.166.11
+    name: install5004
+    ip: 103.102.166.104
   dhcp_relay_ra:
     - ae1.510
     - ae1.520
