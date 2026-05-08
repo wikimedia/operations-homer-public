@@ -16,12 +16,12 @@ filters:
         destination-port: HTTPS
         action: accept
       - name: allow_bgp_src
-        #source-address: bgp-sessions bgp-sessions-overlay
+        source-address: production RFC1918_10 IPV6_LL
         protocol: tcp
         source-port: BGP
         action: accept
       - name: allow_bgp_dst
-        #source-address: bgp-sessions bgp-sessions-overlay
+        source-address: production RFC1918_10 IPV6_LL
         protocol: tcp
         destination-port: BGP
         action: accept
@@ -97,7 +97,7 @@ filters:
         comment: |-
           T209989
         protocol: udp
-        #source-address: bgp-sessions bgp-sessions-overlay
+        source-address: production RFC1918_10 IPV6_LL
         destination-port: mBFD
         action: accept
       - name: allow_dns

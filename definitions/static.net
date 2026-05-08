@@ -1,12 +1,14 @@
+# RFC / AINA reserved special ranges
 VRRP = 224.0.0.18/32
 NO_IP = 0.0.0.0/32
 LIMITED_BROADCAST = 255.255.255.255/32
-vmhost = 192.168.1.0/24 # Junos internal subnet
-
-CLOUD_VMs = 172.16.0.0/16 # Cloud VMs
 RFC1918 = 10.0.0.0/8
           172.16.0.0/12
           192.168.0.0/16
+RFC1918_10 = 10.0.0.0/8
+IPV6_LL = fe80::/10
+
+vmhost = 192.168.1.0/24 # Junos internal subnet
 
 #
 # VIPs
@@ -19,10 +21,11 @@ gerrit.wikimedia.org = 208.80.154.151 # gerrit.wikimedia.org (eqiad)
                        208.80.153.104 # gerrit.wikimedia.org (codfw)
                        2620:0:860:4:208:80:153:104 # gerrit.wikimedia.org (codfw)
 
-
 #
 # Subnets
 #
+
+CLOUD_VMs = 172.16.0.0/16 # Cloud VMs
 
 production = 103.102.166.0/24
              185.15.58.0/24
