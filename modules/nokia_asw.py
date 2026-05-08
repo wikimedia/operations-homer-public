@@ -18,6 +18,7 @@ class AccessSwitches:
         "nokia.network_instance.SrlNetworkInstance",
         "nokia.ospf.SrlOspf",
         "nokia.bgp.SrlBgp",
+        "nokia.bfd.SrlBfd",
     ]
 
     def render(self) -> list:
