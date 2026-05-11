@@ -37,9 +37,7 @@ class SrlSystem(BaseNokiaRpc):
 
     def srl_system_management(self) -> Iterator[NokiaRpc]:
         """Returns commands to enable openconfig RPC paths."""
-        yield NokiaRpc(
-            path="/system/management", config={"openconfig": {"admin-state": "enable"}}
-        )
+        yield NokiaRpc(path="/system/management", config={"openconfig": {"admin-state": "enable"}})
 
     def srl_system_control_plane_traffic(self) -> Iterator[NokiaRpc]:
         """Returns commands to configure control-plane-traffic filters/qos."""
@@ -102,12 +100,8 @@ class SrlSystem(BaseNokiaRpc):
             "authentication": {
                 "idle-timeout": 7200,
                 "authentication-method": ["local"],
-                "admin-user": {
-                    "password": self._data["nokia_users_passwords"]["admin"]
-                },
-                "linuxadmin-user": {
-                    "password": self._data["nokia_users_passwords"]["linuxadmin"]
-                },
+                "admin-user": {"password": self._data["nokia_users_passwords"]["admin"]},
+                "linuxadmin-user": {"password": self._data["nokia_users_passwords"]["linuxadmin"]},
                 "local-linux-users": {"disable-login": ["remote"]},
                 "user": [],
             },
@@ -183,9 +177,7 @@ class SrlSystem(BaseNokiaRpc):
 
     def srl_ntp(self) -> Iterator[NokiaRpc]:
         config = {
-            "server": [
-                {"address": str(server)} for server in self._data["ntp_servers"]
-            ],
+            "server": [{"address": str(server)} for server in self._data["ntp_servers"]],
             "admin-state": "enable",
             "network-instance": "mgmt",
         }
@@ -198,9 +190,7 @@ class SrlSystem(BaseNokiaRpc):
             "collector": [
                 {
                     "collector-id": 1,
-                    "collector-address": str(
-                        list(self._data["sampling"]["collectors"].values())[0]
-                    ),
+                    "collector-address": str(list(self._data["sampling"]["collectors"].values())[0]),
                     "network-instance": self._data["loopbacks"]["external"]["vrf"],
                     "source-address": self._data["loopbacks"]["external"]["4"],
                 }

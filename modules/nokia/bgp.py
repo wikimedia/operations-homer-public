@@ -29,17 +29,9 @@ class SrlBgp(BaseNokiaRpc):
 
         # IBGP config is only in the default network instance
         if vrf_name == "default":
-            ibgp_groups = (
-                ["ibgp_evpn"]
-                if ibgp_data.get("evpn", False)
-                else ["ibgp_ipv4", "ibgp_ipv6"]
-            )
+            ibgp_groups = ["ibgp_evpn"] if ibgp_data.get("evpn", False) else ["ibgp_ipv4", "ibgp_ipv6"]
             for group in ibgp_groups:
-                address_fams = (
-                    ["evpn"]
-                    if ibgp_data.get("evpn", False)
-                    else [f"{group.split('_')[-1]}-unicast"]
-                )
+                address_fams = ["evpn"] if ibgp_data.get("evpn", False) else [f"{group.split('_')[-1]}-unicast"]
                 # TODO - get the policy names for the group, add them to _data["required_items"]
                 bgp_config["group"].append(
                     self._get_bgp_group(
@@ -86,14 +78,10 @@ class SrlBgp(BaseNokiaRpc):
             )
         # Lastly disable any afi-safis enabled at the top level if they are not needed for a group
         for bgp_group in bgp_config["group"]:
-            group_afi_safis = [
-                afi_safi["afi-safi-name"] for afi_safi in bgp_group["afi-safi"]
-            ]
+            group_afi_safis = [afi_safi["afi-safi-name"] for afi_safi in bgp_group["afi-safi"]]
             for afi_safi in afi_safis:
                 if afi_safi not in group_afi_safis:
-                    bgp_group["afi-safi"].append(
-                        {"afi-safi-name": afi_safi, "admin-state": "disable"}
-                    )
+                    bgp_group["afi-safi"].append({"afi-safi-name": afi_safi, "admin-state": "disable"})
 
         return bgp_config
 
@@ -132,9 +120,7 @@ class SrlBgp(BaseNokiaRpc):
                 "prepend-local-as": False,
             }
         for address_fam in address_fams:
-            group_config["afi-safi"].append(
-                {"afi-safi-name": address_fam, "admin-state": "enable"}
-            )
+            group_config["afi-safi"].append({"afi-safi-name": address_fam, "admin-state": "enable"})
         return group_config
 
     def _get_ibgp_neighbors(self, ibgp_data: dict) -> list:
@@ -143,9 +129,7 @@ class SrlBgp(BaseNokiaRpc):
         ibgp_neighbors = []
         for peer_name, peer_data in ibgp_data.get("peers", {}).items():
             for ip_version, ip_address in peer_data["addresses"].items():
-                peer_group = (
-                    "ibgp_evpn" if ibgp_data["evpn"] else f"ibgp_ipv{ip_version}"
-                )
+                peer_group = "ibgp_evpn" if ibgp_data["evpn"] else f"ibgp_ipv{ip_version}"
                 ibgp_neighbors.append(
                     self._get_bgp_neighbor(
                         peer_group=peer_group,
@@ -188,9 +172,7 @@ class SrlBgp(BaseNokiaRpc):
             }
         return neigh_conf
 
-    def _get_ebgp_conf(
-        self, vrf_name: str, vrf_data: dict[str, Any]
-    ) -> tuple[list, list]:
+    def _get_ebgp_conf(self, vrf_name: str, vrf_data: dict[str, Any]) -> tuple[list, list]:
         """Generates the BGP neighbor and group configs for EBGP peers
 
         Returns two lists:
@@ -218,10 +200,7 @@ class SrlBgp(BaseNokiaRpc):
             # Loop over peers extracting group info as needed and adding to neighbor list
             for peer_name, peer_config in bgp_peers.items():
                 # If we are in the wrong VRF for the peer continue
-                if (
-                    not vrf_data["default_ebgp"]
-                    and peer_config.get("vrf", "") != vrf_name
-                ):
+                if not vrf_data["default_ebgp"] and peer_config.get("vrf", "") != vrf_name:
                     continue
                 for address_fam in (4, 6):
                     if address_fam not in peer_config:
@@ -245,9 +224,7 @@ class SrlBgp(BaseNokiaRpc):
                 # Exception for Pybal group where we use IPv4 transport to also exchange IPv6 NLRIs
                 if bgp_group_name == "pybal4":
                     address_fams = ["4", "6"]
-                afi_safis = [
-                    f"ipv{address_fam}-unicast" for address_fam in address_fams
-                ]
+                afi_safis = [f"ipv{address_fam}-unicast" for address_fam in address_fams]
                 import_pol, export_pol = self._get_bgp_group_policy(bgp_group_name)
                 groups.append(
                     self._get_bgp_group(
@@ -278,16 +255,10 @@ class SrlBgp(BaseNokiaRpc):
         # Check if there are policies defined which match {group_name}_out, {group_name}_in etc.
         for policy_direction in policies.keys():
             # Separate policies per group/address-fam, i.e. evpn_external4_out, evpn_external6_out
-            if (
-                f"{bgp_group_name}_{policy_direction}"
-                in self._data["routing_policy_names"]
-            ):
+            if f"{bgp_group_name}_{policy_direction}" in self._data["routing_policy_names"]:
                 policies[policy_direction] = f"{bgp_group_name}_{policy_direction}"
             # Single policy for both address-fam groups, i.e. evpn_external_in
-            elif (
-                f"{bgp_group_name[:-1]}_{policy_direction}"
-                in self._data["routing_policy_names"]
-            ):
+            elif f"{bgp_group_name[:-1]}_{policy_direction}" in self._data["routing_policy_names"]:
                 policies[policy_direction] = f"{bgp_group_name[:-1]}_{policy_direction}"
 
         return policies["in"], policies["out"]

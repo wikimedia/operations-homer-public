@@ -32,9 +32,7 @@ class SrlInterface(BaseNokiaRpc):
         hostname = self._data["metadata"]["netbox_object"].name
         interfaces: list[dict[str, Any]] = []
         sub_ints: dict[str, Any] = defaultdict(dict)
-        for int_name, int_data in self._data["netbox"]["device_plugin"][
-            "device_interfaces"
-        ].items():
+        for int_name, int_data in self._data["netbox"]["device_plugin"]["device_interfaces"].items():
             # If it's a sub-interface just record for later and continue
             if int_data["type"] == "virtual" and int_data["parent"]:
                 parent = int_data["parent"]["name"]
@@ -50,9 +48,7 @@ class SrlInterface(BaseNokiaRpc):
                 srl_int.update(get_srl_trunk_int(int_data, hostname))
             # Routed interface
             if int_data["ip_addresses"]:
-                srl_int["subinterface"] = [
-                    get_srl_routed_subint(0, int_data, self._data)
-                ]
+                srl_int["subinterface"] = [get_srl_routed_subint(0, int_data, self._data)]
 
             interfaces.append(
                 {
@@ -70,9 +66,7 @@ class SrlInterface(BaseNokiaRpc):
                 if "subinterface" not in interface["value"]:
                     # No L2 sub-ints are already defined
                     interface["value"]["subinterface"] = []
-                interface["value"]["subinterface"].extend(
-                    get_srl_l3_subints(sub_ints[parent_name], self._data)
-                )
+                interface["value"]["subinterface"].extend(get_srl_l3_subints(sub_ints[parent_name], self._data))
         for interface in interfaces:
             yield NokiaRpc(path=interface["path"], config=interface["value"])
 
@@ -112,28 +106,18 @@ class SrlInterface(BaseNokiaRpc):
             }
 
         # 100G Ports need FEC set in some cases
-        if (
-            int_data["enabled"]
-            and int_data["connected_endpoints"]
-            and int_data["type"].startswith("100gbase")
-        ):
+        if int_data["enabled"] and int_data["connected_endpoints"] and int_data["type"].startswith("100gbase"):
             # For v24 we set the mode on Juniper-facing ports
             if (
                 int(self._data["srlinux_version"].split(".")[0]) == 24
                 and int_data["connected_endpoints"][0]["__typename"] == "InterfaceType"
-                and int_data["connected_endpoints"][0]["device"]["role"]["slug"]
-                == "asw"
-                and int_data["connected_endpoints"][0]["device"]["device_type"][
-                    "manufacturer"
-                ]["slug"]
-                == "juniper"
+                and int_data["connected_endpoints"][0]["device"]["role"]["slug"] == "asw"
+                and int_data["connected_endpoints"][0]["device"]["device_type"]["manufacturer"]["slug"] == "juniper"
             ):
                 base_int["transceiver"] = {"forward-error-correction": "rs-528"}
             # For v25 we need to set it on all 100G ports so it is compatible with the v24 default
             elif int(self._data["srlinux_version"].split(".")[0]) >= 25:
-                base_int["ethernet"] = {
-                    "forward-error-correction": {"fec-option": "rs-528"}
-                }
+                base_int["ethernet"] = {"forward-error-correction": {"fec-option": "rs-528"}}
 
         return base_int
 
@@ -148,10 +132,7 @@ class SrlInterface(BaseNokiaRpc):
         device_interfaces = self._data["netbox"]["device_plugin"]["device_interfaces"]
         int_type = ""
         for port in neighbors_ports:
-            if (
-                f"ethernet-1/{port}" in device_interfaces
-                and device_interfaces[f"ethernet-1/{port}"]["enabled"]
-            ):
+            if f"ethernet-1/{port}" in device_interfaces and device_interfaces[f"ethernet-1/{port}"]["enabled"]:
                 int_type = device_interfaces[f"ethernet-1/{port}"]["type"]
                 break
         if not int_type:
@@ -215,9 +196,7 @@ def get_srl_l3_subints(interface_subs: dict, data: dict) -> list:
         subint_index = int(subint_name.split(".")[-1])
         subint_conf = get_srl_routed_subint(subint_index, subint_data, data)
         if subint_data["parent"]["name"].startswith("ethernet-1"):
-            subint_conf["vlan"] = {
-                "encap": {"single-tagged": {"vlan-id": subint_index}}
-            }
+            subint_conf["vlan"] = {"encap": {"single-tagged": {"vlan-id": subint_index}}}
         subinterfaces.append(subint_conf)
     return subinterfaces
 
@@ -260,10 +239,7 @@ def get_srl_routed_subint(index, int_data: dict, data: dict) -> dict:
                     "option": ["circuit-id"],
                     "server": [data["dhcp_server"]["ip"].compressed],
                 }
-            if (
-                address_fam == "ipv6"
-                and "router-advertisement" not in subint[address_fam]
-            ):
+            if address_fam == "ipv6" and "router-advertisement" not in subint[address_fam]:
                 prefix = ip_interface(int_addr["address"]).network
                 subint[address_fam]["router-advertisement"] = {
                     "router-role": {

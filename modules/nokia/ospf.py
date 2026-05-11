@@ -25,9 +25,7 @@ class SrlOspf(BaseNokiaRpc):
                 int_conf["interface-type"] = "point-to-point"
             ospf_interfaces.append(int_conf)
 
-        for ospf_version in (
-            ("ospf-v2", "ospf-v3") if ibgp_config["ospf3"] else ("ospf-v2",)
-        ):
+        for ospf_version in ("ospf-v2", "ospf-v3") if ibgp_config["ospf3"] else ("ospf-v2",):
             instance_conf: dict[str, Any] = {
                 "name": ospf_version.replace("-", ""),
                 "admin-state": "enable",
@@ -42,6 +40,4 @@ class SrlOspf(BaseNokiaRpc):
 
             ospf["instance"].append(instance_conf)
         # This needs to happen after the initial network-instances are defined in SrlNetworkInstance
-        yield NokiaRpc(
-            path="/network-instance[name=default]/protocols/ospf", config=ospf
-        )
+        yield NokiaRpc(path="/network-instance[name=default]/protocols/ospf", config=ospf)

@@ -25,9 +25,7 @@ class AccessSwitches:
         for class_path in self._classes:
             module_name, class_name = class_path.rsplit(".", 1)
             module = importlib.import_module(module_name)
-            generated_config.extend(
-                getattr(module, class_name)(self._data).get_commands()
-            )
+            generated_config.extend(getattr(module, class_name)(self._data).get_commands())
 
         return generated_config
 
@@ -41,9 +39,7 @@ class AccessSwitches:
                 break
         data["evpn"] = data["netbox"]["device_plugin"]["ibgp_config"].get("evpn", False)
         # Use the iBGP config asn in priority and default to the yaml defined one if not present
-        data["asn"] = data["netbox"]["device_plugin"]["ibgp_config"].get(
-            "asn", data["asn"]
-        )
+        data["asn"] = data["netbox"]["device_plugin"]["ibgp_config"].get("asn", data["asn"])
         # Compile the vlans and vrfs we need to configure, plus member interfaces
         data["vlans"], data["vrfs"] = get_required_instances(data)
         # Lists to store the names of polices we use, which we can use in routing_policy to only add what we use

@@ -69,9 +69,7 @@ class SrlNetworkInstance(BaseNokiaRpc):
 def add_vlan_int(int_name: str, vlan: dict, vlans: dict):
     """Appends int_name to the vlans dict, plus the vlan itself if it's not already there"""
     vlan_name = vlan["name"]
-    subint_name = (
-        int_name if len(int_name.split(".")) == 2 else f"{int_name}.{vlan['vid']}"
-    )
+    subint_name = int_name if len(int_name.split(".")) == 2 else f"{int_name}.{vlan['vid']}"
     if vlan_name not in vlans:
         vlans[vlan_name] = {"vid": vlan["vid"], "interfaces": [subint_name]}
     else:
@@ -89,9 +87,7 @@ def base_vlan_conf(vlan_name: str, vlan_data: dict, evpn: bool) -> dict:
         "bridge-table": {"mac-learning": {"aging": {"age-time": 1200}}},
     }
     if evpn:
-        vlan_conf.update(
-            instance_evpn_conf(instance_id=vlan_data["vid"], l3_instance=False)
-        )
+        vlan_conf.update(instance_evpn_conf(instance_id=vlan_data["vid"], l3_instance=False))
     return vlan_conf
 
 
@@ -105,9 +101,7 @@ def base_vrf_conf(vrf_name: str, vrf_data: dict, data: dict) -> dict:
         "interface": [{"name": int_name} for int_name in vrf_data["interfaces"]],
     }
     if data["evpn"] and "rd" in vrf_data and vrf_data["rd"]:
-        base_vrf.update(
-            instance_evpn_conf(instance_id=vrf_data["rd"], l3_instance=True)
-        )
+        base_vrf.update(instance_evpn_conf(instance_id=vrf_data["rd"], l3_instance=True))
     return base_vrf
 
 
@@ -123,9 +117,7 @@ def mgmt_vrf_conf(mgmt_ip) -> dict:
                 "export-neighbors": True,
             }
         },
-        "static-routes": {
-            "route": [{"prefix": "0.0.0.0/0", "next-hop-group": "mgmt_gw"}]
-        },
+        "static-routes": {"route": [{"prefix": "0.0.0.0/0", "next-hop-group": "mgmt_gw"}]},
         "next-hop-groups": {
             "group": [
                 {
@@ -169,9 +161,7 @@ def get_required_instances(data: dict) -> tuple[dict, dict]:
         "default": {"rd": None, "interfaces": []},
     }
     vlans: dict[str, dict] = {}
-    for int_name, int_data in data["netbox"]["device_plugin"][
-        "device_interfaces"
-    ].items():
+    for int_name, int_data in data["netbox"]["device_plugin"]["device_interfaces"].items():
         if not int_data["enabled"]:
             continue
 
