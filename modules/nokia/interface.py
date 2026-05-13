@@ -151,6 +151,7 @@ def get_srl_access_int(int_data: dict, hostname: str) -> dict:
             {
                 "index": int_data["untagged_vlan"]["vid"],
                 "type": "bridged",
+                "description": int_data["untagged_vlan"]["name"],
                 "admin-state": "enable",
             }
         ],
@@ -173,6 +174,7 @@ def get_srl_trunk_int(int_data: dict, hostname: str) -> dict:
             {
                 "index": tagged_vlan["vid"],
                 "type": "bridged",
+                "description": tagged_vlan["name"],
                 "admin-state": "enable",
                 "vlan": {"encap": {"single-tagged": {"vlan-id": tagged_vlan["vid"]}}},
             }
@@ -182,6 +184,7 @@ def get_srl_trunk_int(int_data: dict, hostname: str) -> dict:
             {
                 "index": int_data["untagged_vlan"]["vid"],
                 "type": "bridged",
+                "description": int_data["untagged_vlan"]["name"],
                 "admin-state": "enable",
                 "vlan": {"encap": {"untagged": {}}},
             }
@@ -257,6 +260,10 @@ def get_srl_routed_subint(index, int_data: dict, data: dict) -> dict:
             subint[address_fam]["address"][-1]["anycast-gw"] = True
         if (int_addr["role"] != "anycast" and anycast_gw) or anycast_gw == "single":
             subint[address_fam]["address"][-1]["primary"] = [None]
+
+        # Add description for non-default subints if present in Netbox data
+        if int_data["description"] and index != 0:
+            subint["description"] = int_data["description"]
 
     return subint
 
