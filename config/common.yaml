@@ -212,9 +212,6 @@ ospf:
       cr2-esams.wikimedia.org: xe-0/1/5.13
       bfd: true
       metric: 1820
-    - cr1-esams.wikimedia.org: ae0.0
-      cr2-esams.wikimedia.org: ae0.0
-      metric: 15
     - cr1-esams.wikimedia.org: et-1/0/0.341
       cr2-esams.wikimedia.org: et-0/0/0.341
       bfd: true
@@ -223,9 +220,6 @@ ospf:
       bfd: true
     - cloudsw1-c8-eqiad.mgmt.eqiad.wmnet: irb.1104
       cloudsw1-d5-eqiad.mgmt.eqiad.wmnet: irb.1104
-    - cr1-drmrs.wikimedia.org: et-0/0/0.0
-      cr2-drmrs.wikimedia.org: et-0/0/0.0
-      metric: 15
     - cr1-drmrs.wikimedia.org: et-0/0/1.641
       cr2-drmrs.wikimedia.org: et-0/0/2.641
       bfd: true
@@ -240,9 +234,6 @@ ospf:
       cr2-drmrs.wikimedia.org: xe-0/1/4.16
       metric: 968  # 88ms + 10% (backup link)
       bfd: true
-    - cr1-magru.wikimedia.org: et-0/0/0.0
-      cr2-magru.wikimedia.org: et-0/0/0.0
-      metric: 15
     - cr1-magru.wikimedia.org: et-0/0/1.741
       cr2-magru.wikimedia.org: et-0/0/1.741
       bfd: true
