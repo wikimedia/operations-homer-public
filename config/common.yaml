@@ -175,17 +175,21 @@ users:
 
 ospf:
   p2p:
-    - cr3-ulsfo.wikimedia.org: ae0.2
-      cr4-ulsfo.wikimedia.org: ae0.2
-    - cr3-ulsfo.wikimedia.org: et-0/0/0.0
-      cr4-ulsfo.wikimedia.org: et-0/0/0.0
-    - cr4-ulsfo.wikimedia.org: gr-0/0/0.2
-      cr2-eqdfw.wikimedia.org: gr-0/0/0.1
-      metric: 1390
+    - cr1-codfw.wikimedia.org: ae0.0
+      cr2-codfw.wikimedia.org: ae0.0
+    - cr1-eqiad.wikimedia.org: ae0.0
+      cr2-eqiad.wikimedia.org: ae0.0
+    - cr1-esams.wikimedia.org: et-1/0/0.341
+      cr2-esams.wikimedia.org: et-0/0/0.341
       bfd: true
-    - cr1-drmrs.wikimedia.org: gr-0/0/0.2
-      cr2-eqiad.wikimedia.org: gr-3/3/0.1
-      metric: 5000
+    - cr1-esams.wikimedia.org: et-1/0/1.342
+      cr2-esams.wikimedia.org: et-0/0/1.342
+      bfd: true
+    - cr3-ulsfo.wikimedia.org: et-0/0/1.441
+      cr4-ulsfo.wikimedia.org: et-0/0/1.441
+      bfd: true
+    - cr3-ulsfo.wikimedia.org: et-0/0/2.442
+      cr4-ulsfo.wikimedia.org: et-0/0/2.442
       bfd: true
     - cr3-eqsin.wikimedia.org: ae0.0
       cr2-eqsin.wikimedia.org: ae0.0
@@ -196,8 +200,26 @@ ospf:
     - cr3-eqsin.wikimedia.org: ae1.542
       cr2-eqsin.wikimedia.org: ae1.542
       bfd: true
-    - cr1-codfw.wikimedia.org: ae0.0
-      cr2-codfw.wikimedia.org: ae0.0
+    - cr1-drmrs.wikimedia.org: et-0/0/1.641
+      cr2-drmrs.wikimedia.org: et-0/0/2.641
+      bfd: true
+    - cr1-drmrs.wikimedia.org: et-0/0/2.642
+      cr2-drmrs.wikimedia.org: et-0/0/1.642
+      bfd: true
+    - cr1-magru.wikimedia.org: et-0/0/1.741
+      cr2-magru.wikimedia.org: et-0/0/1.741
+      bfd: true
+    - cr1-magru.wikimedia.org: et-0/0/2.742
+      cr2-magru.wikimedia.org: et-0/0/2.742
+      bfd: true
+    - cr4-ulsfo.wikimedia.org: gr-0/0/0.2
+      cr2-eqdfw.wikimedia.org: gr-0/0/0.1
+      metric: 1390
+      bfd: true
+    - cr1-drmrs.wikimedia.org: gr-0/0/0.2
+      cr2-eqiad.wikimedia.org: gr-3/3/0.1
+      metric: 5000
+      bfd: true
     - cr2-eqdfw.wikimedia.org: xe-0/1/3.12
       cr1-eqiad.wikimedia.org: xe-3/0/7.12
       bfd: true
@@ -206,26 +228,10 @@ ospf:
       cr2-esams.wikimedia.org: xe-0/1/5.23
       bfd: true
       metric: 1550
-    - cr1-eqiad.wikimedia.org: ae0.0
-      cr2-eqiad.wikimedia.org: ae0.0
     - cr1-eqiad.wikimedia.org: xe-3/0/7.13
       cr2-esams.wikimedia.org: xe-0/1/5.13
       bfd: true
       metric: 1820
-    - cr1-esams.wikimedia.org: et-1/0/0.341
-      cr2-esams.wikimedia.org: et-0/0/0.341
-      bfd: true
-    - cr1-esams.wikimedia.org: et-1/0/1.342
-      cr2-esams.wikimedia.org: et-0/0/1.342
-      bfd: true
-    - cloudsw1-c8-eqiad.mgmt.eqiad.wmnet: irb.1104
-      cloudsw1-d5-eqiad.mgmt.eqiad.wmnet: irb.1104
-    - cr1-drmrs.wikimedia.org: et-0/0/1.641
-      cr2-drmrs.wikimedia.org: et-0/0/2.641
-      bfd: true
-    - cr1-drmrs.wikimedia.org: et-0/0/2.642
-      cr2-drmrs.wikimedia.org: et-0/0/1.642
-      bfd: true
     - cr2-eqdfw.wikimedia.org: xe-0/1/3.26
       cr2-drmrs.wikimedia.org: xe-0/1/4.26
       metric: 1180  # 118ms
@@ -234,12 +240,9 @@ ospf:
       cr2-drmrs.wikimedia.org: xe-0/1/4.16
       metric: 968  # 88ms + 10% (backup link)
       bfd: true
-    - cr1-magru.wikimedia.org: et-0/0/1.741
-      cr2-magru.wikimedia.org: et-0/0/1.741
-      bfd: true
-    - cr1-magru.wikimedia.org: et-0/0/2.742
-      cr2-magru.wikimedia.org: et-0/0/2.742
-      bfd: true
+    - cloudsw1-c8-eqiad.mgmt.eqiad.wmnet: irb.1104
+      cloudsw1-d5-eqiad.mgmt.eqiad.wmnet: irb.1104
+
 
   stub:
     mr1-eqiad.wikimedia.org:

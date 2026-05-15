@@ -92,26 +92,24 @@
       "properties": {
         "p2p": {
           "type": "array",
-          "prefixItems": [
-            {
-              "type": "object",
-              "additionalProperties" : false,
-              "minProperties": 2,
-              "properties": {
-                "metric": {
-                  "type": "integer"
-                },
-                "bfd": {
-                  "type": "boolean"
-                }
+          "items": {
+            "type": "object",
+            "additionalProperties" : false,
+            "minProperties": 2,
+            "properties": {
+              "metric": {
+                "type": "integer"
               },
-              "patternProperties": {
-                "^.+$": {
-                  "type": "string"
-                }
+              "bfd": {
+                "type": "boolean"
+              }
+            },
+            "patternProperties": {
+              "^(?!metric$|bfd$).+$": {
+                "type": "string"
               }
             }
-          ]
+          }
         },
         "stub": {
           "type": "object",
