@@ -89,6 +89,8 @@ prefix-set:
         mask-length-range: 32..32
       - ip-prefix: "208.80.154.238/32"
         mask-length-range: 32..32
+      - ip-prefix: "185.71.138.0/24"
+        mask-length-range: 32..32
 
   - name: anycast-ipv6
     prefix:
