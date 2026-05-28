@@ -436,6 +436,12 @@ policy:
             prefix-set: ganeti-ipv4
         action:
           policy-result: accept
+      - name: anycast_prefixes
+        match:
+          prefix:
+            prefix-set: anycast-ipv4
+        action:
+          policy-result: accept
 
   - name: ganeti6_in
     default-action:
@@ -445,6 +451,12 @@ policy:
         match:
           prefix:
             prefix-set: ganeti-ipv6
+        action:
+          policy-result: accept
+      - name: anycast_prefixes
+        match:
+          prefix:
+            prefix-set: anycast-ipv6
         action:
           policy-result: accept
 
