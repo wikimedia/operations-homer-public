@@ -116,6 +116,11 @@ filters:
           - tcp-established
         protocol: tcp
         action: accept
+      - name: allow_traceroute
+        comment: T348120
+        source-address: RFC1918_10
+        destination-port: TRACEROUTE
+        protocol: udp
       - name: deny_all
         action: deny
         logging: true
