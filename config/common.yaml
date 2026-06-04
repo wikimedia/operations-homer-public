@@ -191,14 +191,11 @@ ospf:
     - cr3-ulsfo.wikimedia.org: et-0/0/2.442
       cr4-ulsfo.wikimedia.org: et-0/0/2.442
       bfd: true
-    - cr3-eqsin.wikimedia.org: ae0.0
-      cr2-eqsin.wikimedia.org: ae0.0
-      metric: 15
-    - cr3-eqsin.wikimedia.org: ae1.541
-      cr2-eqsin.wikimedia.org: ae1.541
+    - cr2-eqsin.wikimedia.org: ae1.541
+      cr3-eqsin.wikimedia.org: ae1.541
       bfd: true
-    - cr3-eqsin.wikimedia.org: ae1.542
-      cr2-eqsin.wikimedia.org: ae1.542
+    - cr2-eqsin.wikimedia.org: ae1.542
+      cr3-eqsin.wikimedia.org: ae1.542
       bfd: true
     - cr1-drmrs.wikimedia.org: et-0/0/1.641
       cr2-drmrs.wikimedia.org: et-0/0/2.641
