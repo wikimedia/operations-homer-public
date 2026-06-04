@@ -117,6 +117,7 @@ filters:
         protocol: tcp
         action: accept
       - name: allow_traceroute
+        restrict-address-family: inet
         comment: T348120
         source-address: RFC1918_10
         destination-port: TRACEROUTE
