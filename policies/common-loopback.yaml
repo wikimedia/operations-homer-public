@@ -166,5 +166,6 @@ filters:
         source-address: RFC1918_10
         destination-port: TRACEROUTE
         protocol: udp
+        action: accept
       - name: deny_all
         action: deny
