@@ -600,6 +600,15 @@
     "srlinux_version": {
       "type": "string",
       "description": "Allow us to specify the version of SR-Linux to help building the correct config"
+    },
+    "channelized_ports": {
+      "type": "array",
+      "description": "List of ports on QFX5120 which have 4x10G QSFP+ module and need to be set to 10G",
+      "items": {
+        "type": "integer",
+        "minimum": 48,
+        "maximum": 55
+      }
     }
   }
 }

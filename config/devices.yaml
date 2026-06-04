@@ -322,6 +322,8 @@ asw1-by27-esams.mgmt.esams.wmnet:
       sw_external:
         cr1-esams: {4: 185.15.59.154, 6: 2a02:ec80:300:fe05::1}
         cr2-esams: {4: 185.15.59.150, 6: 2a02:ec80:300:fe08::1}
+    channelized_ports:
+      - 55
 
 cr3-eqsin.wikimedia.org:
   config:
