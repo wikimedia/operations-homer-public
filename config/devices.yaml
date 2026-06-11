@@ -137,12 +137,12 @@ cr2-codfw.wikimedia.org:
       2001:1900:2100::4b41:
         provider: Lumen
     filters:
-      xe-1/0/4:0.1000-in: cloud-hosts-in
-      xe-1/0/4:0.1001-in: cloud-vrf-in
+      xe-0/0/4:0.1000-in: cloud-hosts-in
+      xe-0/0/4:0.1001-in: cloud-vrf-in
       xe-5/0/0.0-in4: transport-in  # to eqdfw
       xe-1/0/1:1.0-in4: transport-in  # to eqord
     urpf_strict:
-      - xe-1/0/4:0.1000  # cloud-hosts networks
+      - xe-0/0/4:0.1000  # cloud-hosts networks
     primary_ixp: true
     capirca:
       - common-loopback
