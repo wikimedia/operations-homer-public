@@ -15,11 +15,6 @@ cr1-eqiad.wikimedia.org:
         provider: Lumen
       2001:504:0:2::6939:1:
         provider: "Hurricane Electric"  # Tranist over IX
-    filters:
-      xe-3/0/4.1000-in: cloud-hosts-in
-      xe-3/0/4.1102-in: cloud-vrf-in
-      ae2.1202-in: sandbox
-      gr-3/3/0.1-in: border-in
     urpf_strict:
       - xe-3/0/4.1000  # cloud-hosts networks
       - ae1.1030  # analytics1-a-eqiad
@@ -53,12 +48,6 @@ cr2-eqiad.wikimedia.org:
         provider: "Hurricane Electric"  # Partial transit over IX
       2001:504:0:2::6939:1:
         provider: "Hurricane Electric"  # Transit over IX
-    filters:
-      xe-1/0/1:0-in4: transport-in  # to eqord
-      xe-3/0/4.1100-in: cloud-hosts-in
-      xe-3/0/4.1103-in: cloud-vrf-in
-      ae2.1202-in: sandbox
-      gr-3/3/0.2-in: border-in
     urpf_strict:
       - xe-3/0/4.1100  # cloud-hosts networks
       - ae1.1030  # analytics1-a-eqiad
@@ -105,10 +94,6 @@ cr1-codfw.wikimedia.org:
         provider: Arelion
       2001:2035:0:af4::1:
         provider: Arelion
-    filters:
-      xe-1/0/4:0.1000-in: cloud-hosts-in
-      xe-1/0/4:0.1001-in: cloud-vrf-in
-      xe-1/1/1:2.0-in4: transport-in  # to eqdfw
     urpf_strict:
       - xe-1/0/4:0.1000  # cloud-hosts networks
     damping: [xe-1/0/1:2]
@@ -136,11 +121,6 @@ cr2-codfw.wikimedia.org:
         provider: Lumen
       2001:1900:2100::4b41:
         provider: Lumen
-    filters:
-      xe-0/0/4:0.1000-in: cloud-hosts-in
-      xe-0/0/4:0.1001-in: cloud-vrf-in
-      xe-0/0/1:1.0: transport-in  # to eqord (ping offload)
-      xe-0/1/1:2.0: transport-in  # to eqdfw (ping offload)
     urpf_strict:
       - xe-0/0/4:0.1000  # cloud-hosts networks
     primary_ixp: true
@@ -186,8 +166,6 @@ cr3-ulsfo.wikimedia.org:
         provider: Lumen
       2001:1900:2100::a99:
         provider: Lumen
-    filters:
-      et-0/0/1.1221-in: sandbox
     primary_ixp: true
     device_bgp:
       cr_switch:
@@ -205,8 +183,6 @@ cr4-ulsfo.wikimedia.org:
         provider: NTT
       206.223.116.37:
         provider: "Hurricane Electric"  # Partial transit
-    filters:
-      et-0/0/1.1221-in: sandbox
     device_bgp:
       cr_switch:
         asw1-22-ulsfo: {4: 198.35.26.147, 6: 2620:0:863:fe0a::2, peer_as: 4265004001}
@@ -340,8 +316,6 @@ cr3-eqsin.wikimedia.org:
         provider: "Hurricane Electric"
       2001:de8:4::6939:1:
         provider: "Hurricane Electric"
-    filters:
-      gr-0/0/0.1-in: border-in
     damping: [xe-0/1/0]
     device_bgp:
       ris:
@@ -370,8 +344,6 @@ cr2-eqsin.wikimedia.org:
         provider: "Hurricane Electric"
       2001:df5:b800:bb00::6939:1:
         provider: "Hurricane Electric"
-    filters:
-      gr-0/0/0.2-in: border-in
     primary_ixp: true
     device_bgp:
       bgptools:
@@ -401,8 +373,6 @@ cr1-drmrs.wikimedia.org:
     capirca:
       - common-loopback
       - cr-border-in
-    filters:
-      gr-0/0/0.1-in: border-in
     device_bgp:
       cr_switch:
         asw1-b12-drmrs: {4: 185.15.58.143, 6: 2a02:ec80:600:fe06::2, peer_as: 4265006001}
@@ -428,8 +398,6 @@ cr2-drmrs.wikimedia.org:
     capirca:
       - common-loopback
       - cr-border-in
-    filters:
-      gr-0/0/0.1-in: border-in
     device_bgp:
       cr_switch:
         asw1-b12-drmrs: {4: 185.15.58.141, 6: 2a02:ec80:600:fe08::2, peer_as: 4265006001}
@@ -457,56 +425,42 @@ lsw1-e1-eqiad.mgmt.eqiad.wmnet:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1039-in: analytics-in
 
 lsw1-e2-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1040-in: analytics-in
 
 lsw1-e3-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1041-in: analytics-in
 
 lsw1-e5-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1048-in: analytics-in
 
 lsw1-e6-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1050-in: analytics-in
 
 lsw1-e7-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1052-in: analytics-in
 
 lsw1-e8-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1054-in: analytics-in
 
 ssw1-f1-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -523,56 +477,42 @@ lsw1-f1-eqiad.mgmt.eqiad.wmnet:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1043-in: analytics-in
 
 lsw1-f2-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1044-in: analytics-in
 
 lsw1-f3-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1045-in: analytics-in
 
 lsw1-f5-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1056-in: analytics-in
 
 lsw1-f6-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1058-in: analytics-in
 
 lsw1-f7-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1060-in: analytics-in
 
 lsw1-f8-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - common-loopback
       - sw-analytics
-    filters:
-      irb.1062-in: analytics-in
 
 ssw1-d1-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -599,117 +539,78 @@ lsw1-c2-eqiad.mgmt.eqiad.wmnet:
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
-    filters:
-      irb.1022-in: analytics-in
-      irb.1064-in: analytics-in
 
 lsw1-c3-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
-    filters:
-      irb.1022-in: analytics-in
-      irb.1066-in: analytics-in
 
 lsw1-c4-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
-    filters:
-      irb.1022-in: analytics-in
-      irb.1068-in: analytics-in
 
 lsw1-c5-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
-    filters:
-      irb.1022-in: analytics-in
-      irb.1070-in: analytics-in
 
 lsw1-c6-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
-    filters:
-      irb.1022-in: analytics-in
-      irb.1072-in: analytics-in
 
 lsw1-c7-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
-    filters:
-      irb.1022-in: analytics-in
-      irb.1074-in: analytics-in
 
 lsw1-d1-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
-    filters:
-      irb.1023-in: analytics-in
-      irb.1076-in: analytics-in
 
 lsw1-d2-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
-    filters:
-      irb.1023-in: analytics-in
-      irb.1078-in: analytics-in
 
 lsw1-d3-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
-    filters:
-      irb.1023-in: analytics-in
-      irb.1080-in: analytics-in
 
 lsw1-d4-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
-    filters:
-      irb.1023-in: analytics-in
-      irb.1082-in: analytics-in
 
 lsw1-d6-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
-    filters:
-      irb.1023-in: analytics-in
-      irb.1084-in: analytics-in
 
 lsw1-d7-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
-    filters:
-      irb.1023-in: analytics-in
-      irb.1086-in: analytics-in
 
 lsw1-d8-eqiad.mgmt.eqiad.wmnet:
   config:
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
-    filters:
-      irb.1023-in: analytics-in
-      irb.1088-in: analytics-in
 
 lswtest-d8-eqiad.mgmt.eqiad.wmnet:
   config:
@@ -767,8 +668,6 @@ lsw1-a2-codfw.mgmt.codfw.wmnet:
     capirca:
       - common-loopback
       - common-sandbox
-    filters:
-      irb.2201-in: sandbox
     device_bgp:
       sw_mr:
         mr1-codfw: {4: 10.192.254.9, 6: 2620:0:860:134::2}
