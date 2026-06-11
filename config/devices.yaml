@@ -139,8 +139,8 @@ cr2-codfw.wikimedia.org:
     filters:
       xe-0/0/4:0.1000-in: cloud-hosts-in
       xe-0/0/4:0.1001-in: cloud-vrf-in
-      xe-5/0/0.0-in4: transport-in  # to eqdfw
-      xe-1/0/1:1.0-in4: transport-in  # to eqord
+      xe-0/0/1:1.0: transport-in  # to eqord (ping offload)
+      xe-0/1/1:2.0: transport-in  # to eqdfw (ping offload)
     urpf_strict:
       - xe-0/0/4:0.1000  # cloud-hosts networks
     primary_ixp: true
