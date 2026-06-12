@@ -225,15 +225,12 @@ def get_srl_routed_subint(index, int_data: dict, data: dict) -> dict:
         # Add the address-fam block to the subinterface if needed:
         if address_fam not in subint:
             subint[address_fam] = {"admin-state": "enable", "address": []}
-            # Additional config is needed on IRB interfaces
-            if int_data["name"].startswith("irb"):
-                if data["evpn"]:
-                    subint[address_fam].update(get_irb_evpn_conf(address_fam))
+            # If it is an IRB interface and we run EVPN, configure ARP/ND export to EVPN
+            if int_data["name"].startswith("irb") and data["evpn"]:
+                subint[address_fam].update(get_irb_evpn_conf(address_fam))
 
-        # DHCP Relay and IPv6 RA generation needs to be applied for certain vlan sub-ints
-        if int_data["name"].startswith("irb") and int_data["description"].startswith(
-            ("public", "private", "analytics")
-        ):
+        # Enable DHCP Relay and IPv6 RA generation on irb sub-interfaces
+        if int_data["name"].startswith("irb"):
             if address_fam == "ipv4" and int_addr["role"] != "anycast":
                 subint[address_fam]["dhcp-relay"] = {
                     "gi-address": int_addr["address"].split("/")[0],
