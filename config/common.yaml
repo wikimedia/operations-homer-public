@@ -180,7 +180,7 @@ ospf:
     - cr1-eqiad.wikimedia.org: ae0.0
       cr2-eqiad.wikimedia.org: ae0.0
     - cr1-esams.wikimedia.org: et-1/0/0.341
-      cr2-esams.wikimedia.org: et-0/0/0.341
+      cr2-esams.wikimedia.org: et-0/0/2.341
       bfd: true
     - cr1-esams.wikimedia.org: ae0.342
       cr2-esams.wikimedia.org: et-0/0/1.342
