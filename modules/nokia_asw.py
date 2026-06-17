@@ -14,7 +14,6 @@ class AccessSwitches:
     _classes: list[str] = [
         "nokia.routing_policy.SrlRoutingPolicy",
         "nokia.interface.SrlInterface",
-        "nokia.acl_interface.SrlAclInterface",
         "nokia.system.SrlSystem",
         "nokia.network_instance.SrlNetworkInstance",
         "nokia.ospf.SrlOspf",
