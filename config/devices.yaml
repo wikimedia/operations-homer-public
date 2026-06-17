@@ -923,7 +923,7 @@ mr1-codfw.wikimedia.org:
         interfaces: ['ge-0/0/7.0']
       - name: mgmt
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: ['irb.900']
+        interfaces: ['ge-0/0/0.0']
     device_bgp:
       mr_sw:
         lsw1-a2-codfw: {4: 10.192.254.8, 6: 2620:0:860:134::1, peer_as: 64811}
