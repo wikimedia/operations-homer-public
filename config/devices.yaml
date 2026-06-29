@@ -224,6 +224,8 @@ cr1-esams.wikimedia.org:
         provider: "Deutsche Telekom"
       2001:7f8:1::a500:3320:1:
         provider: "Deutsche Telekom"
+      80.249.209.150:
+        provider: "Hurricane Electric"  # Partial v4 transit at AMS-IX
       2001:7f8:1::a500:6939:1:
         provider: "Hurricane Electric"
     minimum_links:
@@ -253,6 +255,8 @@ cr2-esams.wikimedia.org:
         provider: LibertyGlobal
       2001:730:2209:1::d52e:ba09:
         provider: LibertyGlobal
+      193.239.116.14:
+        provider: "Hurricane Electric"  # Partial v4 transit at NL-IX
       2001:7f8:13::a500:6939:1:
         provider: "Hurricane Electric"
       139.156.127.121:
