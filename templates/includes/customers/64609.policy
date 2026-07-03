@@ -1,5 +1,6 @@
 prefix-list kubedse-pod-ips4 {
     10.67.24.0/21;
+    10.68.0.0/17;
 }
 prefix-list kubedse-pod-ips6 {
     2620:0:861:302::/64;
