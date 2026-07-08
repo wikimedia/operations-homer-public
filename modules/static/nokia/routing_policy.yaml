@@ -267,20 +267,25 @@ policy:
   - name: evpn_external_in
     default-action:
       policy-result: accept
+      bgp:
+        local-preference:
+          set: 100
     statement:
       - name: graceful_shutdown
         match:
           bgp:
             community-set: GRACEFUL_SHUTDOWN
         action:
+          policy-result: accept
           bgp:
             local-preference:
-              set: 0
+              set: 1
       - name: localpref_avoid
         match:
           bgp:
             community-set: AVOIDED_PATH
         action:
+          policy-result: accept
           bgp:
             local-preference:
               set: 50
@@ -289,6 +294,7 @@ policy:
           bgp:
             community-set: BACKUP_PATH
         action:
+          policy-result: accept
           bgp:
             local-preference:
               set: 70
@@ -297,6 +303,7 @@ policy:
           bgp:
             community-set: SELECTED_PATH
         action:
+          policy-result: accept
           bgp:
             local-preference:
               set: 350
@@ -308,20 +315,25 @@ policy:
   - name: sw_external_in
     default-action:
       policy-result: accept
+      bgp:
+        local-preference:
+          set: 100
     statement:
       - name: graceful_shutdown
         match:
           bgp:
             community-set: GRACEFUL_SHUTDOWN
         action:
+          policy-result: accept
           bgp:
             local-preference:
-              set: 0
+              set: 1
       - name: localpref_avoid
         match:
           bgp:
             community-set: AVOIDED_PATH
         action:
+          policy-result: accept
           bgp:
             local-preference:
               set: 50
@@ -330,6 +342,7 @@ policy:
           bgp:
             community-set: BACKUP_PATH
         action:
+          policy-result: accept
           bgp:
             local-preference:
               set: 70
@@ -338,6 +351,7 @@ policy:
           bgp:
             community-set: SELECTED_PATH
         action:
+          policy-result: accept
           bgp:
             local-preference:
               set: 350
@@ -500,25 +514,34 @@ policy:
     statement:
       - name: localpref_avoid
         match:
+          prefix:
+            prefix-set: pybal
           bgp:
             community-set: AVOIDED_PATH
         action:
+          policy-result: accept
           bgp:
             local-preference:
               set: 50
       - name: localpref_backup
         match:
+          prefix:
+            prefix-set: pybal
           bgp:
             community-set: BACKUP_PATH
         action:
+          policy-result: accept
           bgp:
             local-preference:
               set: 70
       - name: localpref_prefer
         match:
+          prefix:
+            prefix-set: pybal
           bgp:
             community-set: SELECTED_PATH
         action:
+          policy-result: accept
           bgp:
             local-preference:
               set: 350
