@@ -81,6 +81,20 @@ prefix-set:
       - ip-prefix: "2620:0:860:305::/64"
         mask-length-range: 122..122
 
+  - name: k8s_mlserve-ipv4
+    prefix:
+      - ip-prefix: "10.67.16.0/21"
+        mask-length-range: 26..26
+      - ip-prefix: "10.194.16.0/21"
+        mask-length-range: 26..26
+
+  - name: k8s_mlserve-ipv6
+    prefix:
+      - ip-prefix: "2620:0:861:300::/64"
+        mask-length-range: 122..122
+      - ip-prefix: "2620:0:860:300::/64"
+        mask-length-range: 122..122
+
   - name: anycast-ipv4
     prefix:
       - ip-prefix: "10.3.0.0/24"
@@ -419,6 +433,28 @@ policy:
         match:
           prefix:
             prefix-set: k8s_aux-ipv6
+        action:
+          policy-result: accept
+
+  - name: k8s_mlserve4_in
+    default-action:
+      policy-result: reject
+    statement:
+      - name: k8s_mlserve_prefixes
+        match:
+          prefix:
+            prefix-set: k8s_mlserve-ipv4
+        action:
+          policy-result: accept
+
+  - name: k8s_mlserve6_in
+    default-action:
+      policy-result: reject
+    statement:
+      - name: k8s_mlserve_prefixes
+        match:
+          prefix:
+            prefix-set: k8s_mlserve-ipv6
         action:
           policy-result: accept
 

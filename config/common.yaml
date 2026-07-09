@@ -441,17 +441,17 @@ bgp_group_data:
     asns:
       eqiad: 64601
       codfw: 64602
-  k8s-stage:
+  k8s_stage:
     local_as: 14907
     asns:
       eqiad: 64603
       codfw: 64604
-  k8s-mlserve:
+  k8s_mlserve:
     local_as: 14907
     asns:
       eqiad: 64606
       codfw: 64607
-  k8s-mlstaging:
+  k8s_mlstaging:
     local_as: 14907
     asns:
       codfw: 64608
