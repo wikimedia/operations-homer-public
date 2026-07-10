@@ -36,12 +36,11 @@ class SrlBgp(BaseNokiaRpc):
             ibgp_groups = ["ibgp_evpn"] if ibgp_data.get("evpn", False) else ["ibgp_ipv4", "ibgp_ipv6"]
             for group in ibgp_groups:
                 address_fams = ["evpn"] if ibgp_data.get("evpn", False) else [f"{group.split('_')[-1]}-unicast"]
-                # TODO - get the policy names for the group, add them to _data["required_items"]
                 bgp_config["group"].append(
                     self._get_bgp_group(
                         bgp_group_name=group,
                         import_pol="ALL",
-                        export_pol="ALL",
+                        export_pol="ALL" if ibgp_data.get("evpn", False) else f"{group}_out",
                         address_fams=address_fams,
                         peer_as=self._data["asn"],
                     )

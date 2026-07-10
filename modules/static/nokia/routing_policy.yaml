@@ -9,15 +9,25 @@ prefix-set:
       - ip-prefix: "::/0"
         mask-length-range: 0..0
 
-  - name: no_host_routes4
+  - name: host_routes4
     prefix:
       - ip-prefix: "0.0.0.0/0"
         mask-length-range: 32..32
 
-  - name: no_host_routes6
+  - name: host_routes6
     prefix:
       - ip-prefix: "::/0"
         mask-length-range: 128..128
+
+  - name: linknet4
+    prefix:
+      - ip-prefix: 0.0.0.0/0
+        mask-length-range: 31..31
+
+  - name: linknet6
+    prefix:
+      - ip-prefix: '::/0'
+        mask-length-range: 127..127
 
   - name: overlay_loopback4
     prefix:
@@ -232,6 +242,90 @@ policy:
     default-action:
       policy-result: reject
 
+  - name: ibgp_ipv4_out
+    default-action:
+      policy-result: reject
+    statement:
+      - name: no_ospf
+        match:
+          protocol: ospfv2
+        action:
+          policy-result: reject
+      - name: no_loopbacks
+        match:
+          protocol: local
+          prefix:
+            prefix-set: host_routes4
+        action:
+          policy-result: reject
+      - name: no_linknets
+        match:
+          protocol: local
+          prefix:
+            prefix-set: linknet4
+        action:
+          policy-result: reject
+      - name: local
+        match:
+          protocol: local
+        action:
+          policy-result: accept
+          bgp:
+            local-preference:
+              set: 100
+            next-hop:
+              set: self
+      - name: bgp
+        match:
+          protocol: bgp
+        action:
+          policy-result: accept
+          bgp:
+            next-hop:
+              set: self
+
+  - name: ibgp_ipv6_out
+    default-action:
+      policy-result: reject
+    statement:
+      - name: no_ospf
+        match:
+          protocol: ospfv3
+        action:
+          policy-result: reject
+      - name: no_linknets
+        match:
+          protocol: local
+          prefix:
+            prefix-set: linknet6
+        action:
+          policy-result: reject
+      - name: no_loopbacks
+        match:
+          protocol: local
+          prefix:
+            prefix-set: host_routes6
+        action:
+          policy-result: reject
+      - name: local
+        match:
+          protocol: local
+        action:
+          policy-result: accept
+          bgp:
+            local-preference:
+              set: 100
+            next-hop:
+              set: self
+      - name: bgp
+        match:
+          protocol: bgp
+        action:
+          policy-result: accept
+          bgp:
+            next-hop:
+              set: self
+
   - name: evpn_external4_out
     default-action:
       policy-result: reject
@@ -245,7 +339,7 @@ policy:
       - name: no_host_routes4
         match:
           prefix:
-            prefix-set: no_host_routes4
+            prefix-set: host_routes4
           bgp:
             as-path-length:
               value: 0
@@ -268,7 +362,7 @@ policy:
       - name: no_host_routes6
         match:
           prefix:
-            prefix-set: no_host_routes6
+            prefix-set: host_routes6
           bgp:
             as-path-length:
               value: 0
