@@ -247,6 +247,10 @@ ospf:
       cr1-eqiad.wikimedia.org: et-1/1/5.1800
       bfd: true
       metric: 500
+    - cr3-ulsfo.wikimedia.org: et-0/0/0.1802
+      cr1-eqiad.wikimedia.org: et-1/1/5.1802
+      bfd: true
+      metric: 5000
 
   stub:
     mr1-eqiad.wikimedia.org:
