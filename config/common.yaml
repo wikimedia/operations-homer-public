@@ -239,16 +239,20 @@ ospf:
       bfd: true
     - cloudsw1-c8-eqiad.mgmt.eqiad.wmnet: irb.1104
       cloudsw1-d5-eqiad.mgmt.eqiad.wmnet: irb.1104
-    - cr2-eqsin.wikimedia.org: et-0/0/0.1801
-      cr1-eqiad.wikimedia.org: et-1/1/5.1801
-      bfd: true
-      metric: 5000
     - cr1-esams.wikimedia.org: et-1/0/1.1800
       cr1-eqiad.wikimedia.org: et-1/1/5.1800
       bfd: true
       metric: 500
+    - cr2-eqsin.wikimedia.org: et-0/0/0.1801
+      cr1-eqiad.wikimedia.org: et-1/1/5.1801
+      bfd: true
+      metric: 5000
     - cr3-ulsfo.wikimedia.org: et-0/0/0.1802
       cr1-eqiad.wikimedia.org: et-1/1/5.1802
+      bfd: true
+      metric: 5000
+    - cr2-drmrs.wikimedia.org: et-0/0/0.61
+      cr2-eqiad.wikimedia.org: et-0/0/0.61
       bfd: true
       metric: 5000
 
