@@ -187,6 +187,7 @@ cr4-ulsfo.wikimedia.org:
       cr_switch:
         asw1-22-ulsfo: {4: 198.35.26.147, 6: 2620:0:863:fe0a::2, peer_as: 4265004001}
         asw1-23-ulsfo: {4: 198.35.26.145, 6: 2620:0:863:fe0b::2, peer_as: 4265004002}
+    rib_sharding: true
 
 asw1-22-ulsfo.mgmt.ulsfo.wmnet:
   config:

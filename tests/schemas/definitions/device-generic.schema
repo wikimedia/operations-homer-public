@@ -609,6 +609,10 @@
         "minimum": 48,
         "maximum": 55
       }
+    },
+    "rib_sharding": {
+      "type": "boolean",
+      "description": "Feature flag for BGP RIB sharding rollout"
     }
   }
 }
