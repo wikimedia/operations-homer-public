@@ -251,6 +251,14 @@ ospf:
       cr1-eqiad.wikimedia.org: et-1/1/5.1802
       bfd: true
       metric: 5000
+    - cr2-esams.wikimedia.org: et-0/0/0.31
+      cr2-eqiad.wikimedia.org: et-0/0/0.31
+      bfd: true
+      metric: 5000
+    - cr3-eqsin.wikimedia.org: et-0/0/0.51
+      cr2-eqiad.wikimedia.org: et-0/0/0.51
+      bfd: true
+      metric: 5000
     - cr2-drmrs.wikimedia.org: et-0/0/0.61
       cr2-eqiad.wikimedia.org: et-0/0/0.61
       bfd: true
