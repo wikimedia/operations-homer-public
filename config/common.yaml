@@ -254,7 +254,7 @@ ospf:
     - cr2-esams.wikimedia.org: et-0/0/0.31
       cr2-eqiad.wikimedia.org: et-0/0/0.31
       bfd: true
-      metric: 5000
+      metric: 500
     - cr4-ulsfo.wikimedia.org: et-0/0/0.41
       cr2-eqiad.wikimedia.org: et-0/0/0.41
       bfd: true
