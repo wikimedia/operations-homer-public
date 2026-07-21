@@ -266,7 +266,7 @@ ospf:
     - cr2-drmrs.wikimedia.org: et-0/0/0.61
       cr2-eqiad.wikimedia.org: et-0/0/0.61
       bfd: true
-      metric: 5000
+      metric: 500
 
   stub:
     cr3-eqsin.wikimedia.org:
