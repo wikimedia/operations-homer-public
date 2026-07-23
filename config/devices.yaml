@@ -946,7 +946,7 @@ mr1-eqsin.wikimedia.org:
         interfaces: ['lo0.0', 'ge-0/0/4.401', 'ge-0/0/4.402']
       - name: untrust
         services: ['ssh', 'ping', 'traceroute']
-        interfaces: ['ge-0/0/0.0']
+        interfaces: ['ge-0/0/7.0']
       - name: mgmt
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
         interfaces: ['irb.900']
