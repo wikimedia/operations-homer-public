@@ -279,6 +279,7 @@ cr2-esams.wikimedia.org:
       bgptools:
         bgptools: {4: 193.239.118.186, 6: 2001:7f8:13::a521:2232:1}
     primary_ixp: true
+    rib_sharding: true
 
 asw1-bw27-esams.mgmt.esams.wmnet:
   config:
