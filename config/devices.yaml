@@ -409,6 +409,7 @@ cr2-drmrs.wikimedia.org:
         asw1-b13-drmrs: {4: 185.15.58.145, 6: 2a02:ec80:600:fe09::2, peer_as: 4265006002}
       ris:
         RRC21: {4: 37.49.232.30, 6: 2001:7f8:54:5::30}
+    rib_sharding: true
 
 # access switches
 asw2-a-eqiad.mgmt.eqiad.wmnet:
