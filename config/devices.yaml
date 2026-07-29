@@ -1052,6 +1052,7 @@ cr2-magru.wikimedia.org:
         asw1-b4-magru: {4: 195.200.68.145, 6: 2a02:ec80:700:fe09::2, peer_as: 4265007002}
       bgptools:
         bgptools: {4: 187.16.211.46, 6: 2001:12f8::211:46}
+    rib_sharding: true
 
 
 mr1-magru.wikimedia.org:
