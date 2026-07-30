@@ -357,6 +357,18 @@ cr2-eqsin.wikimedia.org:
       sw_mr:
         mr1-eqsin: {4: 103.102.166.143, 6: 2001:df2:e500:fe04::2}
 
+asw1-603-eqsin.mgmt.eqsin.wmnet:
+  config:
+    asn: 4265005001
+    capirca:
+      - srl-common-loopback
+
+asw1-604-eqsin.mgmt.eqsin.wmnet:
+  config:
+    asn: 4265005002
+    capirca:
+      - srl-common-loopback
+
 cr1-drmrs.wikimedia.org:
   config:
     transits:
@@ -946,7 +958,7 @@ mr1-eqsin.wikimedia.org:
     security_zones:
       - name: production
         services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3', 'bgp']
-        interfaces: ['lo0.0', 'ge-0/0/4.401', 'ge-0/0/4.402']
+        interfaces: ['lo0.0', 'ge-0/0/4.401', 'ge-0/0/4.402', 'ge-0/0/3.0']
       - name: untrust
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['ge-0/0/7.0']
