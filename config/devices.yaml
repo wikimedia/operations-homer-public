@@ -633,7 +633,7 @@ lsw1-d8-eqiad.mgmt.eqiad.wmnet:
 
 lswtest-d8-eqiad.mgmt.eqiad.wmnet:
   config:
-    srlinux_version: 25.10.1
+    srlinux_version: 26.7.1
     capirca:
       - srl-common-loopback
       - srl-sw-analytics

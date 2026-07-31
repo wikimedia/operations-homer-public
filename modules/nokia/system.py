@@ -172,8 +172,15 @@ class SrlSystem(BaseNokiaRpc):
         yield NokiaRpc(path="/system/json-rpc-server", config=config)
 
     def srl_dns(self) -> Iterator[NokiaRpc]:
-        config = {"server-list": ["10.3.0.1"], "network-instance": "mgmt"}
-        yield NokiaRpc(path="/system/dns", config=config)
+
+        srl_major_ver = int(self._data["srlinux_version"].split(".")[0])
+
+        if srl_major_ver <= 25:
+            config = {"server-list": ["10.3.0.1"], "network-instance": "mgmt"}
+            yield NokiaRpc(path="/system/dns", config=config)
+        else:  # from v26
+            config = {"server-list": ["10.3.0.1"], "network-instance": "mgmt", "name": "mgmt"}
+            yield NokiaRpc(path="/system/dns-instance", config=config)
 
     def srl_ntp(self) -> Iterator[NokiaRpc]:
         config = {

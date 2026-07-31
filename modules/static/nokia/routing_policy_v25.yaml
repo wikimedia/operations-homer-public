@@ -272,8 +272,7 @@ policy:
           policy-result: accept
           bgp:
             local-preference:
-              value: 100
-              operation: set
+              set: 100
             next-hop:
               set: self
       - name: bgp
@@ -315,8 +314,7 @@ policy:
           policy-result: accept
           bgp:
             local-preference:
-              value: 100
-              operation: set
+              set: 100
             next-hop:
               set: self
       - name: bgp
@@ -379,8 +377,7 @@ policy:
       policy-result: accept
       bgp:
         local-preference:
-          value: 100
-          operation: set
+          set: 100
     statement:
       - name: graceful_shutdown
         match:
@@ -390,8 +387,7 @@ policy:
           policy-result: accept
           bgp:
             local-preference:
-              value: 1
-              operation: set
+              set: 1
       - name: localpref_avoid
         match:
           bgp:
@@ -400,8 +396,7 @@ policy:
           policy-result: accept
           bgp:
             local-preference:
-              value: 50
-              operation: set
+              set: 50
       - name: localpref_backup
         match:
           bgp:
@@ -410,8 +405,7 @@ policy:
           policy-result: accept
           bgp:
             local-preference:
-              value: 70
-              operation: set
+              set: 70
       - name: localpref_prefer
         match:
           bgp:
@@ -420,8 +414,7 @@ policy:
           policy-result: accept
           bgp:
             local-preference:
-              value: 350
-              operation: set
+              set: 350
 
   - name: sw_external_out
     default-action:
@@ -432,8 +425,7 @@ policy:
       policy-result: accept
       bgp:
         local-preference:
-          value: 100
-          operation: set
+          set: 100
     statement:
       - name: graceful_shutdown
         match:
@@ -443,8 +435,7 @@ policy:
           policy-result: accept
           bgp:
             local-preference:
-              value: 1
-              operation: set
+              set: 1
       - name: localpref_avoid
         match:
           bgp:
@@ -453,8 +444,7 @@ policy:
           policy-result: accept
           bgp:
             local-preference:
-              value: 50
-              operation: set
+              set: 50
       - name: localpref_backup
         match:
           bgp:
@@ -463,8 +453,7 @@ policy:
           policy-result: accept
           bgp:
             local-preference:
-              value: 70
-              operation: set
+              set: 70
       - name: localpref_prefer
         match:
           bgp:
@@ -473,8 +462,7 @@ policy:
           policy-result: accept
           bgp:
             local-preference:
-              value: 350
-              operation: set
+              set: 350
 
   - name: k8s4_in
     default-action:
@@ -664,8 +652,7 @@ policy:
           policy-result: accept
           bgp:
             local-preference:
-              value: 50
-              operation: set
+              set: 50
       - name: localpref_backup
         match:
           prefix:
@@ -676,8 +663,7 @@ policy:
           policy-result: accept
           bgp:
             local-preference:
-              value: 70
-              operation: set
+              set: 70
       - name: localpref_prefer
         match:
           prefix:
@@ -688,8 +674,7 @@ policy:
           policy-result: accept
           bgp:
             local-preference:
-              value: 350
-              operation: set
+              set: 350
       - name: pybal_prefixes
         match:
           prefix:
