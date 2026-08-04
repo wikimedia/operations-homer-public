@@ -287,7 +287,22 @@ ospf:
       cr1-codfw.wikimedia.org: et-3/1/2.1808
       bfd: true
       metric: 5000
-
+    - cr2-esams.wikimedia.org: et-0/0/0.32
+      cr2-codfw.wikimedia.org: et-0/0/0.32
+      bfd: true
+      metric: 5000
+    - cr4-ulsfo.wikimedia.org: et-0/0/0.42
+      cr2-codfw.wikimedia.org: et-0/0/0.42
+      bfd: true
+      metric: 5000
+    - cr3-eqsin.wikimedia.org: et-0/0/0.52
+      cr2-codfw.wikimedia.org: et-0/0/0.52
+      bfd: true
+      metric: 5000
+    - cr2-drmrs.wikimedia.org: et-0/0/0.62
+      cr2-codfw.wikimedia.org: et-0/0/0.62
+      bfd: true
+      metric: 5000
 
   stub:
     cr3-eqsin.wikimedia.org:
