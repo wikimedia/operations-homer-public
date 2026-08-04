@@ -278,7 +278,7 @@ eqsin:
     - ae1.530
   tcp_mss_clamping: true
   prepend_as_out: false
-  srlinux_version: 25.10.3
+  srlinux_version: 26.7.1
   customers:
     - 64612  # Ganeti
 
