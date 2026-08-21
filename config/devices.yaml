@@ -70,22 +70,6 @@ cr2-eqiad.wikimedia.org:
       sw_mr:
         mr1-eqiad: {4: 208.80.154.207, 6: 2620:0:861:fe05::2}
 
-cr2-eqord.wikimedia.org:
-  config:
-    transits:
-      192.80.17.197:
-        provider: NTT
-      2001:418:16::118:
-        provider: NTT
-      4.53.96.37:
-        provider: Lumen
-      208.115.136.37:
-        provider: "Hurricane Electric"  # Partial transit
-      2001:504:0:4::6939:1:
-        provider: "Hurricane Electric"
-      2001:1900:2100::999:
-        provider: Lumen
-
 cr1-codfw.wikimedia.org:
   config:
     mgmt_ip: [10.193.0.10/16, 10.193.0.11/16]
