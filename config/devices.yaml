@@ -23,6 +23,18 @@ cr1-eqiad.wikimedia.org:
       - et-1/0/5.1023  # analytics1-d-eqiad
     vrrp_bandwidth_threshold: true
     rpm_probes:
+      esams-he:
+        ip4: {source: 185.15.59.136, target: 185.15.59.137}
+        ip6: {source: 2a02:ec80:300:fe0a::1, target: 2a02:ec80:300:fe0a::2}
+      eqsin-he:
+        ip4: {source: 103.102.166.146, target: 103.102.166.147}
+        ip6: {source: 2001:df2:e500:fe07::1, target: 2001:df2:e500:fe07::2}
+      ulsfo-he:
+        ip4: {source: 198.35.26.150, target: 198.35.26.151}
+        ip6: {source: 2620:0:863:fe0c::1, target: 2620:0:863:fe0c::2}
+      drmrs-he:
+        ip4: {source: 185.15.58.152, target: 185.15.58.153}
+        ip6: {source: 2a02:ec80:600:fe0b::1, target: 2a02:ec80:600:fe0b::2}
       magru-he:
         ip4: {source: 195.200.68.136, target: 195.200.68.137}
         ip6: {source: 2a02:ec80:700:fe0c::1, target: 2a02:ec80:700:fe0c::2}
@@ -60,6 +72,22 @@ cr2-eqiad.wikimedia.org:
       - et-1/0/5.1023  # analytics1-d-eqiad
     damping: [xe-3/2/1]
     vrrp_bandwidth_threshold: true
+    rpm_probes:
+      esams-arelion:
+        ip4: {source: 185.15.59.140, target: 185.15.59.141}
+        ip6: {source: 2a02:ec80:300:fe0c::1, target: 2a02:ec80:300:fe0c::2}
+      ulsfo-arelion:
+        ip4: {source: 198.35.26.154, target: 198.35.26.155}
+        ip6: {source: 2620:0:863:fe0e::1, target: 2620:0:863:fe0e::2}
+      eqsin-arelion:
+        ip4: {source: 103.102.166.150, target: 103.102.166.151}
+        ip6: {source: 2001:df2:e500:fe09::1, target: 2001:df2:e500:fe09::2}
+      drmrs-arelion:
+        ip4: {source: 185.15.58.156, target: 185.15.58.157}
+        ip6: {source: 2a02:ec80:600:fe0d::1, target: 2a02:ec80:600:fe0d::2}
+      magru-telxius:
+        ip4: {source: 195.200.68.150, target: 195.200.68.151}
+        ip6: {source: 2a02:ec80:700:fe0a::1, target: 2a02:ec80:700:fe0a::2}
     capirca:
       - common-sandbox
       - common-loopback
@@ -85,15 +113,27 @@ cr1-codfw.wikimedia.org:
     urpf_strict:
       - xe-1/0/4:0.1000  # cloud-hosts networks
     damping: [xe-1/0/1:2]
+    rpm_probes:
+      magru-he:
+        ip4: {source: 195.200.68.138, target: 195.200.68.139}
+        ip6: {source: 2a02:ec80:700:fe0d::1, target: 2a02:ec80:700:fe0d::2}
+      esams-he:
+        ip4: {source: 185.15.59.138, target: 185.15.59.139}
+        ip6: {source: 2a02:ec80:300:fe0b::1, target: 2a02:ec80:300:fe0b::2}
+      eqsin-he:
+        ip4: {source: 103.102.166.148, target: 103.102.166.149}
+        ip6: {source: 2001:df2:e500:fe08::1, target: 2001:df2:e500:fe08::2}
+      ulsfo-he:
+        ip4: {source: 198.35.26.152, target: 198.35.26.153}
+        ip6: {source: 2620:0:863:fe0d::1, target: 2620:0:863:fe0d::2}
+      drmrs-he:
+        ip4: {source: 185.15.58.154, target: 185.15.58.155}
+        ip6: {source: 2a02:ec80:600:fe0c::1, target: 2a02:ec80:600:fe0c::2}
     capirca:
       - common-loopback
       - cr-border-in
       - cr-cloud-hosts  # Cloud hosts (wmf prod. realm)
       - cr-cloud-vrf  # Cloud VRF (cloud realm, incl. VMs)
-    rpm_probes:
-      magru-he:
-        ip4: {source: 195.200.68.138, target: 195.200.68.139}
-        ip6: {source: 2a02:ec80:700:fe0d::1, target: 2a02:ec80:700:fe0d::2}
     device_bgp:
       cr_switch:
         ssw1-a1-codfw: {4: 10.192.254.5, 6: 2620:0:860:132::2, peer_as: 64811}
@@ -116,6 +156,19 @@ cr2-codfw.wikimedia.org:
     urpf_strict:
       - xe-0/0/4:0.1000  # cloud-hosts networks
     primary_ixp: true
+    rpm_probes:
+      esams-arelion:
+        ip4: {source: 185.15.59.142, target: 185.15.59.143}
+        ip6: {source: 2a02:ec80:300:fe0d::1, target: 2a02:ec80:300:fe0d::2}
+      ulsfo-arelion:
+        ip4: {source: 198.35.26.156, target: 198.35.26.157}
+        ip6: {source: 2620:0:863:fe0f::1, target: 2620:0:863:fe0f::2}
+      eqsin-arelion:
+        ip4: {source: 103.102.166.152, target: 103.102.166.153}
+        ip6: {source: 2001:df2:e500:fe0a::1, target: 2001:df2:e500:fe0a::2}
+      drmrs-arelion:
+        ip4: {source: 185.15.58.158, target: 185.15.58.159}
+        ip6: {source: 2a02:ec80:600:fe0e::1, target: 2a02:ec80:600:fe0e::2}
     capirca:
       - common-loopback
       - cr-border-in
@@ -142,6 +195,10 @@ cr2-eqdfw.wikimedia.org:
         provider: NTT
       2001:504:0:5::6939:1:
         provider: "Hurricane Electric"
+    rpm_probes:
+      eqdfw-edgeuno:
+        ip4: {source: 195.200.68.152, target: 195.200.68.153}
+        ip6: {source: 2a02:ec80:700:fe0b::1, target: 2a02:ec80:700:fe0b::2}
 
 cr3-ulsfo.wikimedia.org:
   config:
