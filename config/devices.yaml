@@ -22,6 +22,10 @@ cr1-eqiad.wikimedia.org:
       - et-1/0/5.1022  # analytics1-c-eqiad
       - et-1/0/5.1023  # analytics1-d-eqiad
     vrrp_bandwidth_threshold: true
+    rpm_probes:
+      magru-he:
+        ip4: {source: 195.200.68.136, target: 195.200.68.137}
+        ip6: {source: 2a02:ec80:700:fe0c::1, target: 2a02:ec80:700:fe0c::2}
     capirca:
       - common-sandbox
       - common-loopback
@@ -86,6 +90,10 @@ cr1-codfw.wikimedia.org:
       - cr-border-in
       - cr-cloud-hosts  # Cloud hosts (wmf prod. realm)
       - cr-cloud-vrf  # Cloud VRF (cloud realm, incl. VMs)
+    rpm_probes:
+      magru-he:
+        ip4: {source: 195.200.68.138, target: 195.200.68.139}
+        ip6: {source: 2a02:ec80:700:fe0d::1, target: 2a02:ec80:700:fe0d::2}
     device_bgp:
       cr_switch:
         ssw1-a1-codfw: {4: 10.192.254.5, 6: 2620:0:860:132::2, peer_as: 64811}

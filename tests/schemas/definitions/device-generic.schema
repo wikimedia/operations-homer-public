@@ -613,6 +613,34 @@
     "rib_sharding": {
       "type": "boolean",
       "description": "Feature flag for BGP RIB sharding rollout"
+    },
+    "rpm_probes": {
+      "type": "object",
+      "description": "RPM probes, keyed by probe name, each probe has a test for each address fam",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "ip4": {
+            "type": "object",
+            "properties": {
+              "source": { "type": "string", "format": "ipv4" },
+              "target": { "type": "string", "format": "ipv4" }
+            },
+            "required": ["source", "target"],
+            "additionalProperties": false
+          },
+          "ip6": {
+            "type": "object",
+            "properties": {
+              "source": { "type": "string", "format": "ipv6" },
+              "target": { "type": "string", "format": "ipv6" }
+            },
+            "required": ["source", "target"],
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
     }
   }
 }
