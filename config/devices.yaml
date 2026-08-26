@@ -88,6 +88,9 @@ cr2-eqiad.wikimedia.org:
       magru-telxius:
         ip4: {source: 195.200.68.150, target: 195.200.68.151}
         ip6: {source: 2a02:ec80:700:fe0a::1, target: 2a02:ec80:700:fe0a::2}
+      codfw-lumen:
+        ip4: {source: 195.200.68.150, target: 195.200.68.151}
+        ip6: {source: 2a02:ec80:700:fe0a::1, target: 2a02:ec80:700:fe0a::2}
     capirca:
       - common-sandbox
       - common-loopback
@@ -129,6 +132,9 @@ cr1-codfw.wikimedia.org:
       drmrs-he:
         ip4: {source: 185.15.58.154, target: 185.15.58.155}
         ip6: {source: 2a02:ec80:600:fe0c::1, target: 2a02:ec80:600:fe0c::2}
+      eqiad-arelion:
+        ip4: {source: 208.80.153.221, target: 208.80.153.220}
+        ip6: {source: 2620:0:860:fe01::2, target: 2620:0:860:fe01::1}
     capirca:
       - common-loopback
       - cr-border-in
@@ -356,28 +362,6 @@ asw1-by27-esams.mgmt.esams.wmnet:
     channelized_ports:
       - 55
 
-cr3-eqsin.wikimedia.org:
-  config:
-    transits:
-      62.115.148.76:
-        provider: Arelion
-        import_policy: true
-        export_policy: true
-      2001:2035:0:15b5::1:
-        provider: Arelion
-        import_policy: true
-        export_policy: true
-      27.111.228.81:
-        provider: "Hurricane Electric"
-      2001:de8:4::6939:1:
-        provider: "Hurricane Electric"
-    damping: [xe-0/1/0]
-    device_bgp:
-      ris:
-        RRC23: {4: 27.111.228.137, 6: 2001:de8:4::1:2654:1}
-      sw_mr:
-        mr1-eqsin: {4: 103.102.166.133, 6: 2001:df2:e500:fe03::2}
-
 cr2-eqsin.wikimedia.org:
   config:
     transits:
@@ -403,20 +387,58 @@ cr2-eqsin.wikimedia.org:
     device_bgp:
       bgptools:
         bgptools: {4: 103.231.152.58, 6: 2001:df5:b800:bb00:0:21:2232:1}
-      sw_mr:
-        mr1-eqsin: {4: 103.102.166.143, 6: 2001:df2:e500:fe04::2}
+      cr_switch:
+        asw1-603-eqsin: {4: 103.102.166.141, 6: 2001:df2:e500:fe0b::2, peer_as: 4265005001}
+        asw1-604-eqsin: {4: 103.102.166.155, 6: 2001:df2:e500:fe01::2, peer_as: 4265005002}
+    rib_sharding: true
+
+cr3-eqsin.wikimedia.org:
+  config:
+    transits:
+      62.115.148.76:
+        provider: Arelion
+        import_policy: true
+        export_policy: true
+      2001:2035:0:15b5::1:
+        provider: Arelion
+        import_policy: true
+        export_policy: true
+      27.111.228.81:
+        provider: "Hurricane Electric"
+      2001:de8:4::6939:1:
+        provider: "Hurricane Electric"
+    damping: [xe-0/1/0]
+    device_bgp:
+      ris:
+        RRC23: {4: 27.111.228.137, 6: 2001:de8:4::1:2654:1}
+      cr_switch:
+        asw1-603-eqsin: {4: 103.102.166.157, 6: 2001:df2:e500:fe0c::2, peer_as: 4265005001}
+        asw1-604-eqsin: {4: 103.102.166.159, 6: 2001:df2:e500:fe0d::2, peer_as: 4265005002}
+    rib_sharding: true
 
 asw1-603-eqsin.mgmt.eqsin.wmnet:
   config:
     asn: 4265005001
     capirca:
       - srl-common-loopback
+    device_bgp:
+      sw_mr:
+        mr1-eqsin: {4: 10.132.127.3, 6: 2001:df2:e500:fe03::2}
+      sw_external:
+        cr2-eqsin: {4: 103.102.166.140, 6: 2001:df2:e500:fe0b::1}
+        cr3-eqsin: {4: 103.102.166.156, 6: 2001:df2:e500:fe0c::1}
 
 asw1-604-eqsin.mgmt.eqsin.wmnet:
   config:
     asn: 4265005002
     capirca:
       - srl-common-loopback
+    device_bgp:
+      sw_mr:
+        mr1-eqsin: {4: 10.132.127.1, 6: 2001:df2:e500:fe04::2}
+      sw_external:
+        cr2-eqsin: {4: 103.102.166.154, 6: 2001:df2:e500:fe01::1}
+        cr3-eqsin: {4: 103.102.166.158, 6: 2001:df2:e500:fe0d::1}
 
 cr1-drmrs.wikimedia.org:
   config:
@@ -952,10 +974,6 @@ lsw1-f4-codfw.mgmt.codfw.wmnet:
     capirca:
       - srl-common-loopback
 
-asw1-eqsin.mgmt.eqsin.wmnet:
-  config:
-    lldp_disabled: ['ge-0/0/23']  # SRXs show L2 errors when receiving LLDP frames
-
 # management switches/routers
 mr1-eqiad.wikimedia.org:
   timeout: 120
@@ -1002,12 +1020,12 @@ mr1-eqsin.wikimedia.org:
   config:
     device_bgp:
       mr_sw:
-        cr2-eqsin: {4: 103.102.166.142, 6: 2001:df2:e500:fe04::1, peer_as: 14907}
-        cr3-eqsin: {4: 103.102.166.132, 6: 2001:df2:e500:fe03::1, peer_as: 14907}
+        asw1-603-eqsin: {4: 10.132.127.2, 6: 2001:df2:e500:fe03::1, peer_as: 4265005001}
+        asw1-604-eqsin: {4: 10.132.127.0, 6: 2001:df2:e500:fe04::1, peer_as: 4265005002}
     security_zones:
       - name: production
-        services: ['ssh', 'ping', 'traceroute', 'snmp', 'ospf', 'ospf3', 'bgp']
-        interfaces: ['lo0.0', 'ge-0/0/4.401', 'ge-0/0/4.402', 'ge-0/0/3.0']
+        services: ['ssh', 'ping', 'traceroute', 'snmp', 'bgp']
+        interfaces: ['lo0.0', 'ge-0/0/3.0', 'ge-0/0/4.0']
       - name: untrust
         services: ['ssh', 'ping', 'traceroute']
         interfaces: ['ge-0/0/7.0']

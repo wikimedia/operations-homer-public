@@ -135,11 +135,17 @@ prefix-set:
     prefix:
       - ip-prefix: "10.80.2.0/24"
         mask-length-range: 32..32
+      - ip-prefix: "10.132.2.0/24"
+        mask-length-range: 32..32
       - ip-prefix: "10.128.2.0/24"
         mask-length-range: 32..32
       - ip-prefix: "10.140.2.0/24"
         mask-length-range: 32..32
       - ip-prefix: "10.192.24.0/23"
+        mask-length-range: 32..32
+      - ip-prefix: "103.102.166.72/29"
+        mask-length-range: 32..32
+      - ip-prefix: "103.102.166.96/27"
         mask-length-range: 32..32
       - ip-prefix: "185.15.59.72/29"
         mask-length-range: 32..32
@@ -154,9 +160,14 @@ prefix-set:
       - ip-prefix: "208.80.152.128/27"
         mask-length-range: 32..32
 
-
   - name: ganeti-ipv6
     prefix:
+      - ip-prefix: "2001:df2:e500:3::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2001:df2:e500:103::/64"
+        mask-length-range: 128..128
+      - ip-prefix: "2001:df2:e500:202::/64"
+        mask-length-range: 128..128
       - ip-prefix: "2620:0:860:5::/64"
         mask-length-range: 128..128
       - ip-prefix: "2620:0:860:140::/64"
