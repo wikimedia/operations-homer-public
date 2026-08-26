@@ -231,19 +231,19 @@ ospf:
     - cr1-esams.wikimedia.org: et-1/0/1.1805
       cr1-codfw.wikimedia.org: et-3/1/2.1805
       bfd: true
-      metric: 500
+      metric: 5000
     - cr2-eqsin.wikimedia.org: et-0/0/0.1806
       cr1-codfw.wikimedia.org: et-3/1/2.1806
       bfd: true
-      metric: 500
+      metric: 5000
     - cr3-ulsfo.wikimedia.org: et-0/0/0.1807
       cr1-codfw.wikimedia.org: et-3/1/2.1807
       bfd: true
-      metric: 500
+      metric: 5000
     - cr1-drmrs.wikimedia.org: et-0/0/0.1808
       cr1-codfw.wikimedia.org: et-3/1/2.1808
       bfd: true
-      metric: 500
+      metric: 5000
     - cr1-magru.wikimedia.org: et-0/0/0.1809
       cr1-codfw.wikimedia.org: et-3/1/2.1809
       bfd: true

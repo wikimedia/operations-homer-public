@@ -196,7 +196,7 @@ cr2-eqdfw.wikimedia.org:
       2001:504:0:5::6939:1:
         provider: "Hurricane Electric"
     rpm_probes:
-      eqdfw-edgeuno:
+      magru-edgeuno:
         ip4: {source: 195.200.68.152, target: 195.200.68.153}
         ip6: {source: 2a02:ec80:700:fe0b::1, target: 2a02:ec80:700:fe0b::2}
 
