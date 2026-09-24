@@ -641,6 +641,10 @@
         },
         "additionalProperties": false
       }
+    },
+    "hostkey_algorithm": {
+      "type": "boolean",
+      "description": "Junos configuration option deprecated. To be progresively removed as we upgrade."
     }
   }
 }

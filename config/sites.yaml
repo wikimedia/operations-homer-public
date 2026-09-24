@@ -20,6 +20,7 @@ eqiad:
     2a02:ec80:53::/48: BGP_from_anycast  # ns2.wikimedia.org anycast
   ping_offload_vip: 208.80.154.224/32
   ping_offload_redirect: 10.64.32.63  # ping1004.eqiad.wmnet
+  hostkey_algorithm: true  # See T439136 - to be removed once all Junos are upgraded
   sampling:
     collectors:
       netflow1002: 10.64.16.82
@@ -124,6 +125,7 @@ codfw:
     2a02:ec80:53::/48: BGP_from_anycast  # ns2.wikimedia.org anycast
   ping_offload_vip: 208.80.153.224/32
   ping_offload_redirect: 10.192.48.9  # ping2004.codfw.wmnet
+  hostkey_algorithm: true  # See T439136 - to be removed once all Junos are upgraded
   sampling:
     collectors:
       netflow2003: 10.192.32.159
@@ -208,6 +210,7 @@ eqdfw:
     collectors:
       netflow2003: 10.192.32.159
   prepend_as_out: false
+  hostkey_algorithm: true  # See T439136 - to be removed once all Junos are upgraded
 
 ulsfo:
   confed: 65004
@@ -232,6 +235,7 @@ ulsfo:
     - et-0/0/1.1221
   prepend_as_out: false
   srlinux_version: 25.10.2
+  hostkey_algorithm: true  # See T439136 - to be removed once all Junos are upgraded
   customers:
     - 64612  # Ganeti
 
@@ -261,6 +265,7 @@ eqsin:
   tcp_mss_clamping: true
   prepend_as_out: false
   srlinux_version: 26.7.1
+  hostkey_algorithm: true  # See T439136 - to be removed once all Junos are upgraded
   customers:
     - 64612  # Ganeti
 
@@ -282,6 +287,7 @@ esams:
     collectors:
       netflow3004: 10.80.2.8
   prepend_as_out: false
+  hostkey_algorithm: true  # See T439136 - to be removed once all Junos are upgraded
   customers:
     - 64612  # Ganeti
 
@@ -323,5 +329,6 @@ magru:
     name: install7002
     ip: 195.200.68.100
   prepend_as_out: false
+  hostkey_algorithm: true  # See T439136 - to be removed once all Junos are upgraded
   customers:
     - 64612  # Ganeti
