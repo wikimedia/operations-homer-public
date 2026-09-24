@@ -210,7 +210,6 @@ eqdfw:
     collectors:
       netflow2003: 10.192.32.159
   prepend_as_out: false
-  hostkey_algorithm: true  # See T439136 - to be removed once all Junos are upgraded
 
 ulsfo:
   confed: 65004
@@ -235,7 +234,6 @@ ulsfo:
     - et-0/0/1.1221
   prepend_as_out: false
   srlinux_version: 25.10.2
-  hostkey_algorithm: true  # See T439136 - to be removed once all Junos are upgraded
   customers:
     - 64612  # Ganeti
 
@@ -265,7 +263,6 @@ eqsin:
   tcp_mss_clamping: true
   prepend_as_out: false
   srlinux_version: 26.7.1
-  hostkey_algorithm: true  # See T439136 - to be removed once all Junos are upgraded
   customers:
     - 64612  # Ganeti
 
@@ -287,7 +284,6 @@ esams:
     collectors:
       netflow3004: 10.80.2.8
   prepend_as_out: false
-  hostkey_algorithm: true  # See T439136 - to be removed once all Junos are upgraded
   customers:
     - 64612  # Ganeti
 
@@ -329,6 +325,5 @@ magru:
     name: install7002
     ip: 195.200.68.100
   prepend_as_out: false
-  hostkey_algorithm: true  # See T439136 - to be removed once all Junos are upgraded
   customers:
     - 64612  # Ganeti
