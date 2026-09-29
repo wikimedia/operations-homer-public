@@ -228,10 +228,6 @@ ulsfo:
   dhcp_server:
     name: install4004
     ip: 198.35.26.98
-  dhcp_relay_ra:
-    - et-0/0/1.1201
-    - et-0/0/1.1211
-    - et-0/0/1.1221
   prepend_as_out: false
   srlinux_version: 25.10.2
   customers:
@@ -254,12 +250,6 @@ eqsin:
   dhcp_server:
     name: install5004
     ip: 103.102.166.104
-  dhcp_relay_ra:
-    - ae1.510
-    - ae1.512
-    - ae1.520
-    - ae1.522
-    - ae1.530
   tcp_mss_clamping: true
   prepend_as_out: false
   srlinux_version: 26.7.1
