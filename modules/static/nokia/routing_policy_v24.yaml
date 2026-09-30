@@ -63,8 +63,6 @@ prefix-set:
 
   - name: k8s_dse-ipv4
     prefix:
-      - ip-prefix: "10.67.24.0/21"
-        mask-length-range: 26..26
       - ip-prefix: "10.68.0.0/17"
         mask-length-range: 26..26
       - ip-prefix: "10.192.96.0/21"
