@@ -231,7 +231,7 @@ ospf:
     - cr1-esams.wikimedia.org: et-1/0/1.1805
       cr1-codfw.wikimedia.org: et-3/1/2.1805
       bfd: true
-      metric: 5000
+      metric: 500
     - cr2-eqsin.wikimedia.org: et-0/0/0.1806
       cr1-codfw.wikimedia.org: et-3/1/2.1806
       bfd: true
