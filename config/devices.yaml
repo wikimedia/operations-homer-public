@@ -92,6 +92,7 @@ cr1-codfw.wikimedia.org:
         ssw1-d1-codfw: {4: 10.192.254.11, 6: 2620:0:860:135::2, peer_as: 64811}
         ssw1-e1-codfw: {4: 10.192.253.165, 6: 2620:0:860:139::1b, peer_as: 64813}
         cloudsw1-b1-codfw: {4: 10.192.254.1, 6: 2620:0:860:130::2, peer_as: 64711}
+    rib_sharding: true
 
 cr2-codfw.wikimedia.org:
   config:
