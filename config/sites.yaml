@@ -76,6 +76,7 @@ eqiad:
             - ssw1-d1-eqiad
             - ssw1-d8-eqiad
           client:
+            - lsw1-c1-eqiad
             - lsw1-c2-eqiad
             - lsw1-c3-eqiad
             - lsw1-c4-eqiad
