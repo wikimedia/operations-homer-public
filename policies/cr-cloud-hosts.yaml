@@ -84,7 +84,7 @@ filters:
         protocol: tcp
         action: accept
       - name: pki
-        destination-address: pki_group
+        destination-address: pki_group pki_vips
         protocol: tcp
         destination-port: WEB
         action: accept

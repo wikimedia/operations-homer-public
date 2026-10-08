@@ -112,3 +112,6 @@ ns_group = 208.80.154.238   # ns0 v4
            2620:0:860:53::1 # ns1 v6
            198.35.27.27     # nsa v4
            2a02:ec80:53::1  # nsa v6
+
+pki_vips = 10.2.1.96  # pki.svc.codfw.wmnet.
+           10.2.2.96  # pki.svc.eqiad.wmnet.
