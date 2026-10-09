@@ -333,6 +333,10 @@ policy:
           prefix:
             prefix-set: overlay_loopback4
         action:
+          bgp:
+            med:
+              value: route-table-cost
+              operation: set
           policy-result: accept
       - name: no_host_routes4
         match:
@@ -345,7 +349,12 @@ policy:
           policy-result: reject
       - name: overlay_routes
         action:
+          bgp:
+            med:
+              value: route-table-cost
+              operation: set
           policy-result: accept
+
 
   - name: evpn_external6_out
     default-action:
@@ -356,6 +365,10 @@ policy:
           prefix:
             prefix-set: overlay_loopback6
         action:
+          bgp:
+            med:
+              value: route-table-cost
+              operation: set
           policy-result: accept
       - name: no_host_routes6
         match:
@@ -368,6 +381,10 @@ policy:
           policy-result: reject
       - name: overlay_routes
         action:
+          bgp:
+            med:
+              value: route-table-cost
+              operation: set
           policy-result: accept
 
   - name: evpn_external_in
@@ -416,6 +433,10 @@ policy:
 
   - name: sw_external_out
     default-action:
+      bgp:
+        med:
+          value: route-table-cost
+          operation: set
       policy-result: accept
 
   - name: sw_external_in
