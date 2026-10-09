@@ -1,10 +1,13 @@
 """Nokia SR-Linux module for /interface related configuration."""
 
+import re
 from collections import defaultdict
 from ipaddress import ip_interface
 from typing import Any, Iterator
 
 from . import BaseNokiaRpc, NokiaRpc
+
+NOKIA_BREAKOUT_REGEXP = r"^ethernet-1/\d+/\d+$"
 
 NOKIA_PORT_BLOCKS = [
     (1, 2, 3, 6),
@@ -32,12 +35,18 @@ class SrlInterface(BaseNokiaRpc):
         hostname = self._data["metadata"]["netbox_object"].name
         interfaces: list[dict[str, Any]] = []
         sub_ints: dict[str, Any] = defaultdict(dict)
+        breakout_ports: dict[str, int] = {}
         for int_name, int_data in self._data["netbox"]["device_plugin"]["device_interfaces"].items():
             # If it's a sub-interface just record for later and continue
             if int_data["type"] == "virtual" and int_data["parent"]:
                 parent = int_data["parent"]["name"]
                 sub_ints[parent][int_name] = int_data
                 continue
+
+            if re.match(NOKIA_BREAKOUT_REGEXP, int_name):
+                breakout_port_name = "/".join(int_name.split("/")[0:-1])
+                breakout_port_speed = int(int_data["type"].split("gbase")[0])
+                breakout_ports[breakout_port_name] = breakout_port_speed
 
             srl_int = self.get_srl_base_int(int_name, int_data)
             # Access interface
@@ -57,9 +66,10 @@ class SrlInterface(BaseNokiaRpc):
                 }
             )
 
-        # Now loop over the interface config we built and add L3 subints to parents where needed
+        # Now loop over the interfaces, add subints to parents and configure breakouts
         for interface in interfaces:
-            if interface["value"]["name"] in sub_ints:
+            int_name = interface["value"]["name"]
+            if int_name in sub_ints:
                 parent_name = interface["value"]["name"]
                 if parent_name.startswith("ethernet-1"):
                     interface["value"]["vlan-tagging"] = True
@@ -67,6 +77,13 @@ class SrlInterface(BaseNokiaRpc):
                     # No L2 sub-ints are already defined
                     interface["value"]["subinterface"] = []
                 interface["value"]["subinterface"].extend(get_srl_l3_subints(sub_ints[parent_name], self._data))
+            if int_name in breakout_ports:
+                interface["value"]["breakout-mode"] = {
+                    # Hard-coding as 4 for now, we can revisit if we ever use 8x25 on 200G etc
+                    "num-breakout-ports": "4",
+                    "breakout-port-speed": f"{breakout_ports[int_name]}G",
+                }
+
         for interface in interfaces:
             yield NokiaRpc(path=interface["path"], config=interface["value"])
 
@@ -78,8 +95,12 @@ class SrlInterface(BaseNokiaRpc):
         }
         # If the port is disabled - T409178
         # check if there are enabled ports in the same group
-        # to set the disabled one at the same speed
-        if not int_data["enabled"] and self._data["metadata"]["type"] == "7220-ixr-d2l":
+        # to set the disabled one at the same speed, ignore breakout ports
+        if (
+            not int_data["enabled"]
+            and self._data["metadata"]["type"] == "7220-ixr-d2l"
+            and not re.match(NOKIA_BREAKOUT_REGEXP, int_name)
+        ):
             port_block_speed = self._get_port_block_speed(int_name)
             if port_block_speed:
                 # That shouldn't conflict with the LACP base_int["ethernet"]
