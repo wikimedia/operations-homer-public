@@ -30,6 +30,7 @@ cr1-eqiad.wikimedia.org:
       - cr-cloud-vrf  # Cloud VRF (cloud realm, incl. VMs)
     device_bgp:
       cr_switch:
+        ssw1-a1-eqiad: {4: 10.66.0.25, 6: 2620:0:861:fe18::2, peer_as: 64814}
         ssw1-d1-eqiad: {4: 10.66.0.21, 6: 2620:0:861:fe16::2, peer_as: 64814}
         ssw1-e1-eqiad: {4: 10.66.0.9, 6: 2620:0:861:fe07::2, peer_as: 64810}
         cloudsw1-c8-eqiad: {4: 10.64.147.17, 6: 2620:0:861:fe09::2, peer_as: 64710}
@@ -64,6 +65,7 @@ cr2-eqiad.wikimedia.org:
       - cr-cloud-vrf  # Cloud VRF (cloud realm, incl. VMs)
     device_bgp:
       cr_switch:
+        ssw1-a8-eqiad: {4: 10.66.0.27, 6: 2620:0:861:fe19::2, peer_as: 64814}
         ssw1-f1-eqiad: {4: 10.66.0.11, 6: 2620:0:861:fe08::2, peer_as: 64810}
         ssw1-d8-eqiad: {4: 10.66.0.23, 6: 2620:0:861:fe17::2, peer_as: 64814}
         cloudsw-d5-eqiad: {4: 10.64.147.15, 6: 2620:0:861:fe0a::2, peer_as: 64710}
@@ -436,6 +438,8 @@ ssw1-e1-eqiad.mgmt.eqiad.wmnet:
     device_bgp:
       sw_external:
         cr1-eqiad: {4: 10.66.0.8, 6: 2620:0:861:fe07::1}
+        ssw1-a1-eqiad: {4: 10.64.147.24, 6: 2620:0:861:146::c, peer_as: 64814}
+        ssw1-a8-eqiad: {4: 10.64.147.28, 6: 2620:0:861:146::10, peer_as: 64814}
         ssw1-d1-eqiad: {4: 10.64.147.8, 6: 2620:0:861:146::2, peer_as: 64814}
         ssw1-d8-eqiad: {4: 10.64.147.18, 6: 2620:0:861:146::6, peer_as: 64814}
 
@@ -488,6 +492,8 @@ ssw1-f1-eqiad.mgmt.eqiad.wmnet:
     device_bgp:
       sw_external:
         cr2-eqiad: {4: 10.66.0.10, 6: 2620:0:861:fe08::1}
+        ssw1-a1-eqiad: {4: 10.64.147.22, 6: 2620:0:861:146::a, peer_as: 64814}
+        # ssw1-a8-eqiad: {4: 10.64.147.26, 6: 2620:0:861:146::e, peer_as: 64814}
         ssw1-d1-eqiad: {4: 10.64.147.10, 6: 2620:0:861:146::4, peer_as: 64814}
         ssw1-d8-eqiad: {4: 10.64.147.20, 6: 2620:0:861:146::8, peer_as: 64814}
 
@@ -533,9 +539,130 @@ lsw1-f8-eqiad.mgmt.eqiad.wmnet:
       - common-loopback
       - sw-analytics
 
+ssw1-a1-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+    device_bgp:
+      evpn_external:
+        cr1-eqiad: {4: 10.66.0.24, 6: 2620:0:861:fe18::1}
+        ssw1-e1-eqiad: {4: 10.64.147.25, 6: 2620:0:861:146::d, peer_as: 64810}
+        ssw1-f1-eqiad: {4: 10.64.147.23, 6: 2620:0:861:146::b, peer_as: 64810}
+    esi_lag:
+      lag1: "11"
+      lag2: "12"
+
+ssw1-a8-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+    device_bgp:
+      evpn_external:
+        cr2-eqiad: {4: 10.66.0.26, 6: 2620:0:861:fe19::1}
+        ssw1-e1-eqiad: {4: 10.64.147.29, 6: 2620:0:861:146::11, peer_as: 64810}
+        ssw1-f1-eqiad: {4: 10.64.147.27, 6: 2620:0:861:146::f, peer_as: 64810}
+    esi_lag:
+      lag1: "11"
+      lag2: "12"
+
+lsw1-a1-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-a2-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-a3-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-a4-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-a5-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-a6-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-a7-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-a8-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-b1-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-b2-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-b3-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-b4-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-b5-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-b6-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-b7-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
+lsw1-b8-eqiad.mgmt.eqiad.wmnet:
+  config:
+    capirca:
+      - srl-common-loopback
+      - srl-sw-analytics
+
 ssw1-d1-eqiad.mgmt.eqiad.wmnet:
   config:
-    srlinux_version: 26.7.3
     capirca:
       - srl-common-loopback
     device_bgp:
@@ -556,92 +683,103 @@ ssw1-d8-eqiad.mgmt.eqiad.wmnet:
 
 lsw1-c1-eqiad.mgmt.eqiad.wmnet:
   config:
-    srlinux_version: 26.7.3
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lsw1-c2-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 24.10.4
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lsw1-c3-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 24.10.4
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lsw1-c4-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 24.10.4
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lsw1-c5-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 24.10.4
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lsw1-c6-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 24.10.4
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lsw1-c7-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 24.10.4
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lsw1-d1-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 24.10.4
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lsw1-d2-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 24.10.4
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lsw1-d3-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 24.10.4
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lsw1-d4-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 24.10.4
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lsw1-d6-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 24.10.4
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lsw1-d7-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 24.10.4
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lsw1-d8-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 24.10.4
     capirca:
       - srl-common-loopback
       - srl-sw-analytics
 
 lswtest-d8-eqiad.mgmt.eqiad.wmnet:
   config:
-    srlinux_version: 26.7.1
     capirca:
       - srl-common-loopback
       - srl-sw-analytics

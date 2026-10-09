@@ -44,7 +44,7 @@ eqiad:
     - ae2.1202
   tcp_mss_clamping: true
   prepend_as_out: false
-  srlinux_version: 24.10.4
+  srlinux_version: 26.7.3
   ibgp_clusters:
     "64810":
       evpn: true
@@ -71,6 +71,27 @@ eqiad:
     "64814":
       evpn: true
       pods:
+        ab:
+          rr:
+            - ssw1-a1-eqiad
+            - ssw1-a8-eqiad
+          client:
+            - lsw1-a1-eqiad
+            - lsw1-a2-eqiad
+            - lsw1-a3-eqiad
+            - lsw1-a4-eqiad
+            - lsw1-a5-eqiad
+            - lsw1-a6-eqiad
+            - lsw1-a7-eqiad
+            - lsw1-a8-eqiad
+            - lsw1-b1-eqiad
+            - lsw1-b2-eqiad
+            - lsw1-b3-eqiad
+            - lsw1-b4-eqiad
+            - lsw1-b5-eqiad
+            - lsw1-b6-eqiad
+            - lsw1-b7-eqiad
+            - lsw1-b8-eqiad
         cd:
           rr:
             - ssw1-d1-eqiad
