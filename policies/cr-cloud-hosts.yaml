@@ -84,7 +84,7 @@ filters:
         protocol: tcp
         action: accept
       - name: pki
-        destination-address: pki_group pki_vips
+        destination-address: pki_group pki.svc.eqiad.wmnet pki.svc.codfw.wmnet
         protocol: tcp
         destination-port: WEB
         action: accept
