@@ -535,6 +535,7 @@ lsw1-f8-eqiad.mgmt.eqiad.wmnet:
 
 ssw1-d1-eqiad.mgmt.eqiad.wmnet:
   config:
+    srlinux_version: 26.7.3
     capirca:
       - srl-common-loopback
     device_bgp:
