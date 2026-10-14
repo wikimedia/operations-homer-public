@@ -929,6 +929,7 @@ mr1-eqiad.wikimedia.org:
       mr_sw:
         cr1-eqiad: {4: 208.80.154.204, 6: 2620:0:861:fe04::1, peer_as: 14907}
         cr2-eqiad: {4: 208.80.154.206, 6: 2620:0:861:fe05::1, peer_as: 14907}
+    hostkey_algorithm: false
 
 msw1-eqiad.mgmt.eqiad.wmnet:
   config:
