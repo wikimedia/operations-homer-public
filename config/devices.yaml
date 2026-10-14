@@ -924,7 +924,7 @@ mr1-eqiad.wikimedia.org:
         interfaces: ['ge-0/0/7.0']
       - name: mgmt
         services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: ['ge-0/0/0.0']
+        interfaces: ['irb.900']
     device_bgp:
       mr_sw:
         cr1-eqiad: {4: 208.80.154.204, 6: 2620:0:861:fe04::1, peer_as: 14907}
