@@ -1076,16 +1076,6 @@ msw1-eqiad.mgmt.eqiad.wmnet:
 mr1-codfw.wikimedia.org:
   timeout: 120
   config:
-    security_zones:
-      - name: production
-        services: ['ssh', 'ping', 'traceroute', 'snmp', 'bgp']
-        interfaces: ['lo0.0', 'ge-0/0/3.0', 'ge-0/0/4.0']
-      - name: untrust
-        services: ['ssh', 'ping', 'traceroute']
-        interfaces: ['ge-0/0/7.0']
-      - name: mgmt
-        services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: ['irb.900']
     device_bgp:
       mr_sw:
         lsw1-a2-codfw: {4: 10.192.254.8, 6: 2620:0:860:134::1, peer_as: 64811}
@@ -1099,16 +1089,6 @@ mr1-eqsin.wikimedia.org:
       mr_sw:
         asw1-603-eqsin: {4: 10.132.127.2, 6: 2001:df2:e500:fe03::1, peer_as: 4265005001}
         asw1-604-eqsin: {4: 10.132.127.0, 6: 2001:df2:e500:fe04::1, peer_as: 4265005002}
-    security_zones:
-      - name: production
-        services: ['ssh', 'ping', 'traceroute', 'snmp', 'bgp']
-        interfaces: ['lo0.0', 'ge-0/0/3.0', 'ge-0/0/4.0']
-      - name: untrust
-        services: ['ssh', 'ping', 'traceroute']
-        interfaces: ['ge-0/0/7.0']
-      - name: mgmt
-        services: ['ssh', 'ping', 'traceroute', 'dhcp']
-        interfaces: ['irb.900']
 
 msw1-codfw.mgmt.codfw.wmnet:
   config:
