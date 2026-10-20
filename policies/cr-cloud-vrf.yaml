@@ -20,7 +20,7 @@ filters:
       - name: deny-to-private-subnets
         comment: |-
           Deny any communication with private subnets
-        destination-address: RFC1918 wikimedia-private
+        destination-address: RFC1918 wikimedia-private kubernetes
         action: reject
       - name: allow-public
         source-address: cloud-public
