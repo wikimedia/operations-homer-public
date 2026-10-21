@@ -77,6 +77,12 @@ filters:
         destination-prefix: private6
         restrict-address-family: inet6
         action: deny
+      - name: our-kubernetes
+        comment: |-
+          Discard outside traffic to Kubernetes pod/service ranges
+        destination-address: kubernetes
+        restrict-address-family: inet6
+        action: deny
       - name: set-qos
         comment: "Map external traffic to normal priority forwarding class and set DSCP BE"
         qos: normal
