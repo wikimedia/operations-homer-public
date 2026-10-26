@@ -438,7 +438,7 @@ transit_providers:
     AS: 1136
   LibertyGlobal:
     AS: 6830
-    flowspec: true
+    flowspec: false  # Disabled for T441325
   NTT:
     AS: 2914
     export_policy: true
