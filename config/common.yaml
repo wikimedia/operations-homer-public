@@ -42,7 +42,7 @@ anycast_prefixes:
   - 208.80.153.231/32        # ns1.wikimedia.org
   - 2620:0:861:53::1/128     # ns0.wikimedia.org
   - 2620:0:860:53::1/128     # ns1.wikimedia.org
-  - 2a02:ec80:53::1/128      # ns2.wikimedia.org
+  - 2a02:ec80:53::/48        # ns2.wikimedia.org range
 
 # Next available UID: 2042
 # When adding a new user, please make sure to update "next available UID" above
