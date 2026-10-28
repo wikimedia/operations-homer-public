@@ -18,7 +18,7 @@ cr1-eqiad.wikimedia.org:
     urpf_strict:
       - xe-3/0/4.1000  # cloud-hosts networks
       - et-0/1/0.1030  # analytics1-a-eqiad
-      - ae2.1021  # analytics1-b-eqiad
+      - et-0/1/0.1021  # analytics1-b-eqiad
       - et-1/0/5.1022  # analytics1-c-eqiad
       - et-1/0/5.1023  # analytics1-d-eqiad
     vrrp_bandwidth_threshold: true
@@ -52,7 +52,7 @@ cr2-eqiad.wikimedia.org:
     urpf_strict:
       - xe-3/0/4.1100  # cloud-hosts networks
       - et-0/1/0.1030  # analytics1-a-eqiad
-      - ae2.1021  # analytics1-b-eqiad
+      - et-0/1/0.1021  # analytics1-b-eqiad
       - et-1/0/5.1022  # analytics1-c-eqiad
       - et-1/0/5.1023  # analytics1-d-eqiad
     damping: [xe-3/2/1]
