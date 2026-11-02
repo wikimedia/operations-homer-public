@@ -58,11 +58,6 @@ users:
     class: super-user
     sshkeys:
       - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPZtRQLd8irAKUoVpuswkf6VpNWqUJHZEvTfEETzcfsA bblack"
-  - name: elukey
-    uid: 2021
-    class: super-user
-    sshkeys:
-      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKnio9xxcmPlCm6nopqtSflVBliGUzjQnmKJsBLcoo4c ltoscano@wikimedia.org"
   - name: filippo
     uid: 2018
     class: super-user
