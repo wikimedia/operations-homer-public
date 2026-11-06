@@ -78,8 +78,9 @@ class SrlInterface(BaseNokiaRpc):
                     interface["value"]["subinterface"] = []
                 interface["value"]["subinterface"].extend(get_srl_l3_subints(sub_ints[parent_name], self._data))
             if int_name in breakout_ports:
+                # Hard-coding as 4 for now, we can revisit if we ever use 8x25 on 200G etc
+                interface["value"]["description"] = f"4x{breakout_ports[int_name]}G breakout no-mon"
                 interface["value"]["breakout-mode"] = {
-                    # Hard-coding as 4 for now, we can revisit if we ever use 8x25 on 200G etc
                     "num-breakout-ports": "4",
                     "breakout-port-speed": f"{breakout_ports[int_name]}G",
                 }
