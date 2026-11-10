@@ -215,7 +215,7 @@ cr1-esams.wikimedia.org:
       2001:7f8:1::a500:6939:1:
         provider: "Hurricane Electric"
     minimum_links:
-      ae1: 2
+      ae0: 2
     device_bgp:
       cr_switch:
         asw1-bw27-esams: {4: 185.15.59.157, 6: 2a02:ec80:300:fe04::2, peer_as: 4265003001}
@@ -289,8 +289,6 @@ asw1-by27-esams.mgmt.esams.wmnet:
       sw_external:
         cr1-esams: {4: 185.15.59.154, 6: 2a02:ec80:300:fe05::1}
         cr2-esams: {4: 185.15.59.150, 6: 2a02:ec80:300:fe08::1}
-    channelized_ports:
-      - 55
 
 cr2-eqsin.wikimedia.org:
   config:
