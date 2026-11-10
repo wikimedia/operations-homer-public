@@ -201,7 +201,6 @@ asw1-23-ulsfo.mgmt.ulsfo.wmnet:
 
 cr1-esams.wikimedia.org:
   config:
-    mgmt_ip: [10.80.128.2/17, 10.80.128.4/17]
     transits:
       62.115.179.162:
         provider: Arelion

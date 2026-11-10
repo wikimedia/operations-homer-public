@@ -173,10 +173,10 @@ ospf:
       cr2-codfw.wikimedia.org: ae0.0
     - cr1-eqiad.wikimedia.org: ae0.0
       cr2-eqiad.wikimedia.org: ae0.0
-    - cr1-esams.wikimedia.org: et-1/0/0.341
+    - cr1-esams.wikimedia.org: et-0/0/2.341
       cr2-esams.wikimedia.org: et-0/0/2.341
       bfd: true
-    - cr1-esams.wikimedia.org: ae0.342
+    - cr1-esams.wikimedia.org: et-0/0/1.342
       cr2-esams.wikimedia.org: et-0/0/1.342
       bfd: true
     - cr3-ulsfo.wikimedia.org: et-0/0/1.441
@@ -203,7 +203,7 @@ ospf:
     - cr1-magru.wikimedia.org: et-0/0/2.742
       cr2-magru.wikimedia.org: et-0/0/2.742
       bfd: true
-    - cr1-esams.wikimedia.org: et-1/0/1.1800
+    - cr1-esams.wikimedia.org: et-0/0/0.1800
       cr1-eqiad.wikimedia.org: et-1/1/5.1800
       bfd: true
       metric: 500
@@ -223,7 +223,7 @@ ospf:
       cr1-eqiad.wikimedia.org: et-1/1/5.1804
       bfd: true
       metric: 5000
-    - cr1-esams.wikimedia.org: et-1/0/1.1805
+    - cr1-esams.wikimedia.org: et-0/0/0.1805
       cr1-codfw.wikimedia.org: et-3/1/2.1805
       bfd: true
       metric: 500
