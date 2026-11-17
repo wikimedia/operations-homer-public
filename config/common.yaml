@@ -242,7 +242,7 @@ ospf:
     - cr1-magru.wikimedia.org: et-0/0/0.1809
       cr1-codfw.wikimedia.org: et-3/1/2.1809
       bfd: true
-      metric: 500
+      metric: 5000
     - cr2-eqiad.wikimedia.org: et-0/0/0.21
       cr2-codfw.wikimedia.org: et-0/0/0.21
       bfd: true
